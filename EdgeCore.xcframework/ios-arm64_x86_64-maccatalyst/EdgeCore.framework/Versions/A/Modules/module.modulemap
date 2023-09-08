@@ -1,0 +1,4 @@
+framework module EdgeCore {
+  header "EdgeCore-Swift.h"
+  requires objc
+}

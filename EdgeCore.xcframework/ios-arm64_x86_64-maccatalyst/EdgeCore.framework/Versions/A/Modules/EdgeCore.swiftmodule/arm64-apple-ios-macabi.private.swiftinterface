@@ -1,0 +1,1141 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios15.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name EdgeCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Alamofire
+import AppAuth
+import Foundation
+import JWTDecode
+import Swift
+import SwiftyJSON
+import UIKit
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import os.log
+import os
+extension EdgeCore.EdgeClient {
+  final public class func responseJSON(response: Alamofire.AFDataResponse<Foundation.Data>, jsonDataKey: Swift.String? = nil) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  final public class func responseData(response: Alamofire.AFDataResponse<Foundation.Data>) -> Swift.Result<Foundation.Data, Foundation.NSError>
+  final public class func responsePagingInfo(response: Alamofire.AFDataResponse<Foundation.Data>, pagingHandler: (_ paging: EdgeCore.EdgeClient.PagingInfo?) -> Swift.Void)
+  final public class func responseError(response: Alamofire.AFDataResponse<Foundation.Data>) -> Foundation.NSError?
+}
+@objc public class MIMIKDriveFileData : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var kind: Swift.String?
+  public var files: [EdgeCore.MIMIKDriveFile]?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(kind: Swift.String?, files: [EdgeCore.MIMIKDriveFile]?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func parseFiles(data: Foundation.Data) -> [EdgeCore.MIMIKDriveFile]?
+  public class func parseFile(data: Foundation.Data) -> EdgeCore.MIMIKDriveFile?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public class func callBackend<T>(config: EdgeCore.EdgeClient.CallConfig, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public class func callBackend(config: EdgeCore.EdgeClient.CallConfig) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  #endif
+}
+public struct JSONDataEncoding : Alamofire.ParameterEncoding {
+  public func encode(_ urlRequest: any Alamofire.URLRequestConvertible, with parameters: Alamofire.Parameters?) throws -> Foundation.URLRequest
+  public static func encodingParameters(jsonData: Foundation.Data?) -> Alamofire.Parameters?
+}
+extension EdgeCore.MIMIKBeamProvider {
+  public struct CreateBeam {
+    public var sourceNodeId: Swift.String
+    public var destinationNodeId: Swift.String
+    public var mimeType: Swift.String
+    public var name: Swift.String
+    public var thumbnailBase64: Swift.String
+    public var filename: Swift.String
+    public var expiration: Swift.Int64
+    public var localStoragePath: Swift.String
+    public init(sourceNodeId: Swift.String, destinationNodeId: Swift.String, mimeType: Swift.String, name: Swift.String, thumbnailBase64: Swift.String, filename: Swift.String, expiration: Swift.Int64, localStoragePath: Swift.String)
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func create(beam: EdgeCore.MIMIKBeamProvider.CreateBeam, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, superdriveMicroservice: EdgeCore.MIMIKMicroservice, beamOwnerCode: Swift.String) async -> Swift.Bool
+  #endif
+}
+@objc public class MIMIKBeamData : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var data: [EdgeCore.MIMIKBeam]?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(data: [EdgeCore.MIMIKBeam]?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func parseBeams(data: Foundation.Data) -> [EdgeCore.MIMIKBeam]?
+  public class func parseBeam(data: Foundation.Data) -> EdgeCore.MIMIKBeam?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class MIMIKBeam : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public enum ReadStatus : Swift.String {
+    case unknown
+    case read
+    case unread
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum AccessStatus {
+    case ready(message: Swift.String)
+    case error(message: Swift.String)
+    public func message() -> Swift.String
+  }
+  public var id: Swift.String?
+  public var name: Swift.String?
+  public var mimeType: Swift.String?
+  public var url: Swift.String?
+  public var nodeId: Swift.String?
+  public var createTime: Swift.String?
+  public var readStatus: Swift.String?
+  public var thumbnailContentHint: EdgeCore.MIMIKBeamThumbnail?
+  public var deletableTime: Swift.String?
+  public var expirationDate: Foundation.Date {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(id: Swift.String?, name: Swift.String?, mimeType: Swift.String?, url: Swift.String?, nodeId: Swift.String?, createTime: Swift.String?, readStatus: Swift.String?, deletableTime: Swift.String?, thumbnailContentHint: EdgeCore.MIMIKBeamThumbnail?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func defaultNodeName() -> Swift.String
+  public func readStatusEnum() -> EdgeCore.MIMIKBeam.ReadStatus
+  public func filename() -> Swift.String?
+  public func fileExtension() -> Swift.String?
+  public func uttype() -> UniformTypeIdentifiers.UTType?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EdgeCore.EdgeClient.IdentityResponse {
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case connection
+    case provider
+    case userId
+    case isSocial
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension EdgeCore.EdgeClient.IdentityUser {
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case userId
+    case email
+    case phoneNumber
+    case roles
+    case identities
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func dictionary() -> [Swift.String : Any]?
+  public func jsonString() -> Swift.String?
+}
+extension Swift.String : Swift.CodingKey {
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(stringValue: Swift.String)
+  public var intValue: Swift.Int? {
+    get
+  }
+  public init?(intValue: Swift.Int)
+}
+extension Swift.KeyedEncodingContainerProtocol {
+  public mutating func encodeArray<T>(_ values: [T], forKey key: Self.Key) throws where T : Swift.Encodable
+  public mutating func encodeArrayIfPresent<T>(_ values: [T]?, forKey key: Self.Key) throws where T : Swift.Encodable
+  public mutating func encodeMap<T>(_ pairs: [Self.Key : T]) throws where T : Swift.Encodable, Self.Key : Swift.Hashable
+  public mutating func encodeMapIfPresent<T>(_ pairs: [Self.Key : T]?) throws where T : Swift.Encodable, Self.Key : Swift.Hashable
+}
+extension Swift.KeyedDecodingContainerProtocol {
+  public func decodeArray<T>(_ type: T.Type, forKey key: Self.Key) throws -> [T] where T : Swift.Decodable
+  public func decodeArrayIfPresent<T>(_ type: T.Type, forKey key: Self.Key) throws -> [T]? where T : Swift.Decodable
+  public func decodeMap<T>(_ type: T.Type, excludedKeys: Swift.Set<Self.Key>) throws -> [Self.Key : T] where T : Swift.Decodable, Self.Key : Swift.Hashable
+}
+@objc public class MIMIKMicroservice : ObjectiveC.NSObject {
+  public enum Component : Swift.String {
+    case image
+    case container
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public var container: EdgeCore.MIMIKMicroserviceContainer?
+  public var image: EdgeCore.MIMIKMicroserviceImage?
+  public var imageTarPath: Swift.String?
+  public var clientId: Swift.String?
+  public var apiKey: Swift.String?
+  public init(image: EdgeCore.MIMIKMicroserviceImage, container: EdgeCore.MIMIKMicroserviceContainer)
+  public class func validateMicroserviceResponse(response: Alamofire.AFDataResponse<Any>, encapsulatedData: Swift.Bool = false) -> (dataJSON: SwiftyJSON.JSON?, error: (any Swift.Error)?)
+  public class func microserviceConfiguration(imageName: Swift.String, containerName: Swift.String, baseAPIPath: Swift.String, edgeEngineUrlComponents: Foundation.URLComponents, clientId: Swift.String, signatureKey: Swift.String, ownerCode: Swift.String) -> EdgeCore.MIMIKMicroserviceConfig?
+  public class func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
+  public class func expectedImageName(name: Swift.String) -> Swift.String
+  public class func expectedContainerName(name: Swift.String) -> Swift.String
+  public class func expectedBaseApiPath(name: Swift.String) -> Swift.String
+  public class func expectedDeployedBaseApiPath(name: Swift.String, clientId: Swift.String) -> Swift.String
+  public func basePath() -> Swift.String?
+  @available(*, unavailable, renamed: "basePath")
+  public func baseApiPath() -> Swift.String?
+  public func fullPath() -> Swift.String?
+  public func urlComponents() -> Foundation.URLComponents?
+  public func urlComponents(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
+  @objc deinit
+}
+extension EdgeCore.EdgeClient {
+  @objc public class Service : ObjectiveC.NSObject {
+    public var rootUrl: Foundation.URL
+    public var clientId: Swift.String
+    public var expectedSwaggerFileVersion: Swift.String?
+    public var healthCheckPath: Swift.String?
+    public var authScopes: [Swift.String]?
+    public var basePath: Swift.String?
+    required convenience public init?(coder aDecoder: Foundation.NSCoder)
+    public init(rootUrl: Foundation.URL, clientId: Swift.String, expectedSwaggerFileVersion: Swift.String?, healthCheckPath: Swift.String?, basePath: Swift.String? = nil, authScopes: [Swift.String]? = [])
+    convenience public init(rootUrl: Foundation.URL, clientId: Swift.String, basePath: Swift.String? = nil, authScopes: [Swift.String] = [])
+    public func encode(with aCoder: Foundation.NSCoder)
+    public func urlComponents() -> Foundation.URLComponents?
+    @objc deinit
+  }
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKBeamProvider : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func beams(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<[EdgeCore.MIMIKBeam], Foundation.NSError>
+  #endif
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension EdgeCore.MIMIKBeamProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func beamTokens(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> [EdgeCore.MIMIKBeamToken]?
+  #endif
+}
+extension EdgeCore.MIMIKBeamProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func effectiveBeamUrl(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beam: EdgeCore.MIMIKBeam, beamOwnerCode: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<Foundation.URL, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func downloadBeamFile(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beam: EdgeCore.MIMIKBeam, storageUrl: Foundation.URL, beamOwnerCode: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<Foundation.URL, Foundation.NSError>
+  #endif
+}
+public struct APIHelper {
+  public static func rejectNil(_ source: [Swift.String : Any?]) -> [Swift.String : Any]?
+  public static func rejectNilHeaders(_ source: [Swift.String : Any?]) -> [Swift.String : Swift.String]
+  public static func convertBoolToString(_ source: [Swift.String : Any]?) -> [Swift.String : Any]?
+  public static func mapValuesToQueryItems(_ source: [Swift.String : Any?]) -> [Foundation.URLQueryItem]?
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKMicroserviceImage : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public var id: Swift.String?
+  public var digest: Swift.String?
+  public var created: Swift.Double
+  public var name: Swift.String?
+  public var size: Swift.Int
+  public var repoTags: SwiftyJSON.JSON?
+  public var fullJSON: SwiftyJSON.JSON?
+  convenience public init?(json: SwiftyJSON.JSON)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension EdgeCore.MIMIKBeamProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func deleteBeam(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beam: EdgeCore.MIMIKBeam, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.MIMIKBeam, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func updateBeam(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beam: EdgeCore.MIMIKBeam, status: EdgeCore.MIMIKBeam.ReadStatus, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.MIMIKBeam, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func openBeam(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beam: EdgeCore.MIMIKBeam, beamOwnerCode: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.MIMIKBeam, Foundation.NSError>
+  #endif
+}
+@objc public class MIMIKMicroserviceConfig : ObjectiveC.NSObject {
+  public var imageName: Swift.String
+  public var containerName: Swift.String
+  public var baseApiPath: Swift.String
+  public var envVariables: [Swift.String : Swift.String]
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(imageName: Swift.String, containerName: Swift.String, baseApiPath: Swift.String, envVariables: [Swift.String : Swift.String])
+  @objc deinit
+}
+extension EdgeCore.MIMIKDriveProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func delete(file: EdgeCore.MIMIKDriveFile, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.MIMIKMicroservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.MIMIKDriveFile, Foundation.NSError>
+  #endif
+}
+@objc public class MIMIKBeamToken : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public enum TokenStatus : Swift.String {
+    case unknown
+    case active
+    case cancelled
+    case expired
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var id: Swift.String?
+  public var token: Swift.String?
+  public var name: Swift.String?
+  public var mimeType: Swift.String?
+  public var toNodeId: Swift.String?
+  public var expires: Swift.Int64?
+  public var url: Swift.String?
+  public var playQueueUrl: Swift.String?
+  public var status: Swift.String?
+  public var viewCount: Swift.Int64?
+  public var lastViewedAt: Swift.Int64?
+  public var thumbnailContentHint: EdgeCore.MIMIKBeamThumbnail?
+  public var expirationDate: Foundation.Date {
+    get
+  }
+  public var lastViewedDate: Foundation.Date? {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(id: Swift.String?, token: Swift.String?, name: Swift.String?, mimeType: Swift.String?, toNodeId: Swift.String?, expires: Swift.Int64?, url: Swift.String?, playQueueUrl: Swift.String?, status: Swift.String?, viewCount: Swift.Int64?, lastViewedAt: Swift.Int64?, thumbnailContentHint: EdgeCore.MIMIKBeamThumbnail?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public func isExpired() -> Swift.Bool
+  public func tokenStatus() -> EdgeCore.MIMIKBeamToken.TokenStatus
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKMicroserviceContainer : ObjectiveC.NSObject {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public var imageId: Swift.String?
+  public var image: Swift.String?
+  public var state: Swift.String?
+  public var created: Swift.Double
+  public var name: Swift.String?
+  public var id: Swift.String?
+  public var env: [Swift.String : Any]?
+  public var fullJSON: SwiftyJSON.JSON?
+  convenience public init?(json: SwiftyJSON.JSON)
+  public func mcmBaseApiPath() -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct MIMIKMicroserviceEmbedError : Swift.Codable {
+  public var statusCode: Swift.Int
+  public var message: Swift.String
+  public init(statusCode: Swift.Int, message: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers final public class EdgeClient : ObjectiveC.NSObject {
+  public enum Backend : Swift.String {
+    case development
+    case qa
+    case staging
+    case production
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  final public class func setLoggingLevel(level: EdgeCore.MIMIKLog.Level, subsystem: EdgeCore.MIMIKLog.SubSystem = .edgeCore)
+  final public class func selectBackend(backend: EdgeCore.EdgeClient.Backend)
+  final public class func selectedBackend() -> EdgeCore.EdgeClient.Backend
+  final public class func activateExternalEdgeEngine(host: Swift.String, port: Swift.Int) -> Swift.Result<Foundation.URLComponents, Foundation.NSError>
+  final public class func externalEdgeEngineActivated() -> Swift.Bool
+  final public class func deactivateExternalEdgeEngine() -> Swift.Result<Swift.Bool, Foundation.NSError>
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func healthCheck(service: EdgeCore.EdgeClient.Service, requireMatch: Swift.Bool = false) async -> Swift.Result<EdgeCore.EdgeClient.HealthCheck.Response, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployMicroservice(edgeEngineAccessToken: Swift.String, config: EdgeCore.MIMIKMicroserviceConfig, imageTarPath: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func updateMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.MIMIKMicroservice, imageTarPath: Swift.String, envVariables: [Swift.String : Swift.String]? = [:]) async -> Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func updateMicroserviceConfig(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.MIMIKMicroservice, envVariables: [Swift.String : Swift.String]) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func undeployMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func undeployMicroserviceComponent(edgeEngineAccessToken: Swift.String, component: EdgeCore.MIMIKMicroservice.Component, identifier: Swift.String) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroservices(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.MIMIKMicroservice], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func verifyDeployedMicroserviceMatching(imageId: Swift.String, edgeEngineAccessToken: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroserviceImages(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.MIMIKMicroserviceImage], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroserviceImage(imageId: Swift.String, edgeEngineAccessToken: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroserviceImage?, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroserviceContainers(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.MIMIKMicroserviceContainer], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroserviceContainer(containerId: Swift.String, edgeEngineAccessToken: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroserviceContainer?, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func edgeEngineIdToken() async -> Swift.Result<Swift.String, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func edgeEngineInfo() async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func externalEdgeEngineIsRunning() async -> Swift.Bool
+  #endif
+  final public func edgeEngineUrlComponents() -> Foundation.URLComponents
+  final public func edgeEngineUrlString() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum JSONValue : Swift.Codable, Swift.Equatable {
+  case string(Swift.String)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  case bool(Swift.Bool)
+  case object([Swift.String : EdgeCore.JSONValue])
+  case array([EdgeCore.JSONValue])
+  case null
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public static func == (a: EdgeCore.JSONValue, b: EdgeCore.JSONValue) -> Swift.Bool
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByIntegerLiteral {
+  public init(integerLiteral value: Swift.Int)
+  public typealias IntegerLiteralType = Swift.Int
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.Double)
+  public typealias FloatLiteralType = Swift.Double
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByBooleanLiteral {
+  public init(booleanLiteral value: Swift.Bool)
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, EdgeCore.JSONValue)...)
+  public typealias Key = Swift.String
+  public typealias Value = EdgeCore.JSONValue
+}
+extension EdgeCore.JSONValue : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: EdgeCore.JSONValue...)
+  public typealias ArrayLiteralElement = EdgeCore.JSONValue
+}
+extension EdgeCore.JSONValue {
+  public func decodeJSONValue<T>() throws -> T where T : Swift.Decodable
+}
+extension EdgeCore.EdgeClient {
+  final public class func manuallySelectedBackend() -> EdgeCore.EdgeClient.Backend?
+  final public class func applicationBackend() -> EdgeCore.EdgeClient.Backend
+  final public class func forceDefaultBackendSelection()
+  final public class func defaultBackend() -> EdgeCore.EdgeClient.Backend
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKClusterProvider : ObjectiveC.NSObject {
+  public enum ClusterType : Swift.String {
+    case nearby
+    case account
+    case friend
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func findNodes(type: EdgeCore.MIMIKClusterProvider.ClusterType, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> [EdgeCore.EdgeEngineNode]?
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func findNodesDebugJson(type: EdgeCore.MIMIKClusterProvider.ClusterType, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> SwiftyJSON.JSON?
+  #endif
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class MIMIKNodeData : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var type: Swift.String?
+  public var data: [EdgeCore.EdgeEngineNode]?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(type: Swift.String?, data: [EdgeCore.EdgeEngineNode]?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func parseNodes(data: Foundation.Data) -> [EdgeCore.EdgeEngineNode]?
+  public class func parseNode(data: Foundation.Data) -> EdgeCore.EdgeEngineNode?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public typealias EncodeResult = (data: Foundation.Data?, error: (any Swift.Error)?)
+@_hasMissingDesignatedInitializers open class CodableHelper {
+  public static var dateformatter: Foundation.DateFormatter?
+  open class func decode<T>(_ type: T.Type, from data: Foundation.Data) -> (decodableObj: T?, error: (any Swift.Error)?) where T : Swift.Decodable
+  open class func encode<T>(_ value: T, prettyPrint: Swift.Bool = false) -> EdgeCore.EncodeResult where T : Swift.Encodable
+  @objc deinit
+}
+extension EdgeCore.MIMIKDriveProvider {
+  public struct CreateFile {
+    public var name: Swift.String
+    public var mimeType: Swift.String
+    public var localId: Swift.String
+    public var thumbnailBase64: Swift.String
+    public var storageUrl: Foundation.URL
+    public init(name: Swift.String, mimeType: Swift.String, localId: Swift.String, thumbnailBase64: Swift.String, storageUrl: Foundation.URL)
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func create(file: EdgeCore.MIMIKDriveProvider.CreateFile, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.MIMIKMicroservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.MIMIKDriveFile, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.MIMIKClusterProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func nodePresenceCheck(beam: EdgeCore.MIMIKBeam, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.EdgeEngineNode, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func nodePresenceCheck(node: EdgeCore.EdgeEngineNode, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.EdgeEngineNode, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func nodePresenceCheck(nodeId: Swift.String, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.MIMIKMicroservice) async -> Swift.Result<EdgeCore.EdgeEngineNode, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  final public class func convertStringToDictionary(text: Swift.String) -> [Swift.String : Any]?
+}
+extension Swift.String {
+  public func base64Encoded() -> Swift.String?
+  public func base64Decoded() -> Swift.String?
+}
+extension Foundation.Formatter {
+  public static let iso8601: Foundation.DateFormatter
+  public static let iso8601NoMillis: Foundation.DateFormatter
+}
+extension Foundation.Date {
+  @available(*, deprecated, message: "deprecated")
+  public var trackerISO8601NoMillis: Swift.String {
+    get
+  }
+}
+extension Foundation.Formatter {
+  @available(*, deprecated, message: "deprecated")
+  public static let trackerISO8601NoMillis: Foundation.DateFormatter
+}
+extension Foundation.Date {
+  public static var startOfToday: Foundation.Date? {
+    get
+  }
+  public static var startOfYesterday: Foundation.Date? {
+    get
+  }
+  public var iso8601: Swift.String {
+    get
+  }
+  public var iso8601NoMillis: Swift.String {
+    get
+  }
+  public static func tomorrow() -> Foundation.Date?
+  public static func yesterday() -> Foundation.Date?
+  public func toString(format: Swift.String = "yyyy-MM-dd") -> Swift.String
+  public func get(_ components: Foundation.Calendar.Component..., calendar: Foundation.Calendar = Calendar.current) -> Foundation.DateComponents
+  public func get(_ component: Foundation.Calendar.Component, calendar: Foundation.Calendar = Calendar.current) -> Swift.Int
+}
+extension Swift.String {
+  public func iso8601Date() -> Foundation.Date?
+  public func iso8601DateNoMillis() -> Foundation.Date?
+}
+extension Swift.Encodable {
+  public var dictionary: [Swift.String : Any]? {
+    get
+  }
+  public var json: SwiftyJSON.JSON {
+    get
+  }
+  public var jsonString: Swift.String? {
+    get
+  }
+}
+@objc public class MIMIKBeamThumbnail : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var image: Swift.String?
+  public var mimeType: Swift.String?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(image: Swift.String?, mimeType: Swift.String?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EdgeCore.EdgeClient.Authorization {
+  public enum AccountAssociationAction : Swift.String {
+    case authorize
+    case unauthorize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum TokenType : Swift.String {
+    case edgeEngineAccessToken
+    case custom
+    case driveAccessToken
+    case userAccessToken
+    case validationCodes
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum GrantType : Swift.String {
+    case phoneNumber
+    case emailPassword
+    case idTokenSignin
+    case trustTokenSignin
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum GrantAction : Swift.String {
+    case register
+    case login
+    case changePassword
+    case resetPassword
+    case resetPasswordApply
+    case loginApply
+    case emptyActionPhoneNumber
+    case emptyActionIdToken
+    case emptyActionDeveloperIdToken
+    case emptyActionFederation
+    case emptyActionCreateEmail
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct ValidationCodes {
+    public var mfaCode: Swift.String? {
+      get
+    }
+    public var oobCode: Swift.String? {
+      get
+    }
+    public var bindingCode: Swift.String? {
+      get
+    }
+    public init(mfaCode: Swift.String?, oobCode: Swift.String?, bindingCode: Swift.String?)
+    public var description: Swift.String {
+      get
+    }
+  }
+}
+@objc public class MIMIKDriveFile : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var id: Swift.String?
+  public var kind: Swift.String?
+  public var name: Swift.String?
+  public var mimeType: Swift.String?
+  public var createTime: Swift.String?
+  public var localId: Swift.String?
+  public var path: Swift.String?
+  public var thumbnailLink: Swift.String?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(id: Swift.String?, kind: Swift.String?, name: Swift.String?, mimeType: Swift.String?, createTime: Swift.String?, localId: Swift.String?, path: Swift.String?, thumbnailLink: Swift.String?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public func contentUrl() -> Foundation.URL?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKLog : ObjectiveC.NSObject {
+  public enum Level : Swift.Int {
+    case debug
+    case info
+    case error
+    case fault
+    case off
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum SubSystem {
+    case custom(Swift.String)
+    case edgeCore
+    case edgeEngine
+    case edgeUser
+    case mimikAccess
+  }
+  public class func selectedLoggingLevel(subsystem: EdgeCore.MIMIKLog.SubSystem) -> EdgeCore.MIMIKLog.Level
+  public class func logType(function: Swift.String, line: Swift.Int, items: Any..., type: EdgeCore.MIMIKLog.Level, subsystem: EdgeCore.MIMIKLog.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
+  public class func logInfo(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.MIMIKLog.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
+  public class func logDebug(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.MIMIKLog.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
+  public class func logFault(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.MIMIKLog.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
+  public class func logError(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.MIMIKLog.SubSystem, marker: Swift.String? = "⚠️⚠️⚠️", displayPrivately: Swift.Bool = false)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension EdgeCore.EdgeClient {
+  public struct IdentityResponse : Swift.Codable {
+    public var connection: Swift.String?
+    public var provider: Swift.String?
+    public var userId: Swift.String?
+    public var isSocial: Swift.Bool?
+    public init(connection: Swift.String?, provider: Swift.String?, userId: Swift.String?, isSocial: Swift.Bool?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension EdgeCore.EdgeClient {
+  public typealias ProgressHandler = (_ progress: Foundation.Progress) -> Swift.Void
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.EdgeClient.ProgressHandler) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.EdgeClient.ProgressHandler) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, any Swift.Error>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  @objc public class CallConfig : ObjectiveC.NSObject {
+    final public let service: EdgeCore.EdgeClient.Service
+    final public let path: Swift.String
+    final public let method: Alamofire.HTTPMethod
+    final public let queryItems: [Foundation.URLQueryItem]?
+    final public let authorization: EdgeCore.EdgeClient.Authorization?
+    final public let parameters: [Swift.String : Any]?
+    final public let httpHeaders: Alamofire.HTTPHeaders?
+    final public let jsonDataKey: Swift.String?
+    final public let pagingHandler: EdgeCore.EdgeClient.PagingHandler?
+    public init(service: EdgeCore.EdgeClient.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, parameters: [Swift.String : Any]?, httpHeaders: Alamofire.HTTPHeaders? = nil, jsonDataKey: Swift.String? = nil, pagingHandler: EdgeCore.EdgeClient.PagingHandler? = nil)
+    @objc deinit
+  }
+}
+extension EdgeCore.MIMIKDriveProvider {
+  public struct CreateManagedFile {
+    public var name: Swift.String
+    public var mimeType: Swift.String
+    public var localId: Swift.String
+    public var thumbnailBase64: Swift.String
+    public var inputUrl: Foundation.URL
+    public init(name: Swift.String, mimeType: Swift.String, localId: Swift.String, thumbnailBase64: Swift.String, inputUrl: Foundation.URL)
+    public func filename() -> Swift.String?
+    public func storageUrl() -> Foundation.URL?
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func createManaged(file: EdgeCore.MIMIKDriveProvider.CreateManagedFile, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.MIMIKMicroservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.MIMIKDriveFile, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  final public class func uttypeFor(fileExtension: Swift.String) -> UniformTypeIdentifiers.UTType?
+  final public class func uttypeFor(mimeType: Swift.String) -> UniformTypeIdentifiers.UTType?
+  final public class func fileExtensionFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+  final public class func fileExtentionFor(mimeType: Swift.String) -> Swift.String?
+  final public class func mimeTypeFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+  final public class func mimeTypeFor(fileExtension: Swift.String) -> Swift.String?
+}
+extension EdgeCore.EdgeClient {
+  public struct IdentityUser : Swift.Codable {
+    public var userId: Swift.String?
+    public var email: Swift.String?
+    public var phoneNumber: Swift.String?
+    public var roles: [Swift.String]?
+    public var identities: EdgeCore.JSONValue?
+    public init(userId: Swift.String?, email: Swift.String?, phoneNumber: Swift.String?, roles: [Swift.String]?, identities: EdgeCore.JSONValue?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+@_hasMissingDesignatedInitializers open class Configuration {
+  public static var dateFormat: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class SwaggerClientAPI {
+  public static var basePath: Swift.String
+  public static var credential: Foundation.URLCredential?
+  public static var customHeaders: [Swift.String : Swift.String]
+  @objc deinit
+}
+open class RequestBuilder<T> {
+  final public let parameters: [Swift.String : Any]?
+  final public let isBody: Swift.Bool
+  final public let method: Swift.String
+  final public let URLString: Swift.String
+  public var onProgressReady: ((Foundation.Progress) -> ())?
+  required public init(method: Swift.String, URLString: Swift.String, parameters: [Swift.String : Any]?, isBody: Swift.Bool, headers: [Swift.String : Swift.String] = [:])
+  open func addHeaders(_ aHeaders: [Swift.String : Swift.String])
+  open func execute(_ completion: @escaping (_ response: EdgeCore.Response<T>?, _ error: (any Swift.Error)?) -> Swift.Void)
+  public func addHeader(name: Swift.String, value: Swift.String) -> Self
+  open func addCredential() -> Self
+  @objc deinit
+}
+public protocol RequestBuilderFactory {
+  func getNonDecodableBuilder<T>() -> EdgeCore.RequestBuilder<T>.Type
+  func getBuilder<T>() -> EdgeCore.RequestBuilder<T>.Type where T : Swift.Decodable
+}
+@objc public class EdgeEngineNode : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var id: Swift.String?
+  public var name: Swift.String?
+  public var accountId: Swift.String?
+  public var os: Swift.String?
+  public var url: Swift.String?
+  public var routing: EdgeCore.EdgeEngineNodeRouting?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(id: Swift.String?, name: Swift.String?, accountId: Swift.String?, os: Swift.String?, url: Swift.String?, routing: EdgeCore.EdgeEngineNodeRouting?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func defaultNodeName() -> Swift.String
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public func defaultNodeName() -> Swift.String
+  public func effectiveUrl() -> Foundation.URL?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public enum ErrorResponse : Swift.Error {
+  case error(Swift.Int, Foundation.Data?, any Swift.Error)
+}
+open class Response<T> {
+  final public let statusCode: Swift.Int
+  final public let header: [Swift.String : Swift.String]
+  final public let body: T?
+  public init(statusCode: Swift.Int, header: [Swift.String : Swift.String], body: T?)
+  convenience public init(response: Foundation.HTTPURLResponse, body: T?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class MIMIKDriveProvider : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func files(userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.MIMIKMicroservice) async -> [EdgeCore.MIMIKDriveFile]?
+  #endif
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension EdgeCore.EdgeClient {
+  public struct HealthCheck : Swift.Codable {
+    public enum Result : Swift.String {
+      case unknown
+      case expected
+      case unexpectedContinue
+      case unexpectedFail
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    @objc public class Response : ObjectiveC.NSObject {
+      public var service: EdgeCore.EdgeClient.Service
+      public var result: EdgeCore.EdgeClient.HealthCheck.Result
+      public var message: Swift.String
+      @objc override dynamic public var description: Swift.String {
+        @objc get
+      }
+      public init(service: EdgeCore.EdgeClient.Service, result: EdgeCore.EdgeClient.HealthCheck.Result, message: Swift.String)
+      @objc deinit
+    }
+    public struct HealthCheckClusterStatus : Swift.Codable {
+      public var nbServers: Swift.String?
+      public var updatedAt: Foundation.Date?
+      public init(nbServers: Swift.String?, updatedAt: Foundation.Date?)
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct HealthCheckDeploymentGitRepo : Swift.Codable {
+      public var branch: Swift.String?
+      public var hashKey: Swift.String?
+      public init(branch: Swift.String?, hashKey: Swift.String?)
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct HealthCheckDeployment : Swift.Codable {
+      public var gitRepo: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeploymentGitRepo?
+      public var time: Swift.String?
+      public init(gitRepo: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeploymentGitRepo?, time: Swift.String?)
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public var swaggerFileVersion: Swift.String?
+    public var type: Swift.String?
+    public var uptime: Foundation.Decimal?
+    public var version: Swift.String?
+    public var registrationStatus: Swift.String?
+    public var port: Swift.String?
+    public var platform: Swift.String?
+    public var pidValue: Swift.Int?
+    public var nodeVersion: Swift.String?
+    public var name: Swift.String?
+    public var memoryUsage: EdgeCore.JSONValue?
+    public var location: EdgeCore.JSONValue?
+    public var id: Swift.String?
+    public var environment: Swift.String?
+    public var deployment: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeployment?
+    public var cpuUsage: EdgeCore.JSONValue?
+    public var clusterStatus: EdgeCore.EdgeClient.HealthCheck.HealthCheckClusterStatus?
+    public var addresses: EdgeCore.JSONValue?
+    public init(swaggerFileVersion: Swift.String?, type: Swift.String?, uptime: Foundation.Decimal?, version: Swift.String?, registrationStatus: Swift.String?, port: Swift.String?, platform: Swift.String?, pidValue: Swift.Int?, nodeVersion: Swift.String?, name: Swift.String?, memoryUsage: EdgeCore.JSONValue?, location: EdgeCore.JSONValue?, id: Swift.String?, environment: Swift.String?, deployment: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeployment?, cpuUsage: EdgeCore.JSONValue?, clusterStatus: EdgeCore.EdgeClient.HealthCheck.HealthCheckClusterStatus?, addresses: EdgeCore.JSONValue?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension EdgeCore.EdgeClient {
+  public typealias PagingHandler = (_ paging: EdgeCore.EdgeClient.PagingInfo?) -> Swift.Void
+  @objc public class PagingInfo : ObjectiveC.NSObject {
+    final public let count: Swift.Int
+    final public let startAfter: Swift.String
+    public init(count: Swift.Int, startAfter: Swift.String)
+    @objc deinit
+  }
+}
+extension EdgeCore.EdgeClient.Authorization {
+  final public class func jwtTokenDecoded(token: Swift.String) -> (any JWTDecode.JWT)?
+  final public class func jwtTokenExpiry(token: Swift.String) -> Foundation.Date?
+  final public class func jwtTokenValidation(token: Swift.String, type: EdgeCore.EdgeClient.Authorization.TokenType) -> Swift.Bool
+  final public class func jwtTokenJson(token: Swift.String) -> SwiftyJSON.JSON?
+  final public class func valueFromToken(token: Swift.String, key: Swift.String) -> Swift.String?
+}
+@objc public class MIMIKBeamTokenData : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var data: [EdgeCore.MIMIKBeamToken]?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(data: [EdgeCore.MIMIKBeamToken]?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public class func parseBeamTokens(data: Foundation.Data) -> [EdgeCore.MIMIKBeamToken]?
+  public class func parseBeamToken(data: Foundation.Data) -> EdgeCore.MIMIKBeamToken?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EdgeCore.EdgeClient {
+  @objc final public class Authorization : ObjectiveC.NSObject {
+    final public var type: EdgeCore.EdgeClient.Authorization.TokenType
+    @objc override final public var description: Swift.String {
+      @objc get
+    }
+    convenience public init?(validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes)
+    required public init?(type: EdgeCore.EdgeClient.Authorization.TokenType?, userAccessToken: Swift.String?, idToken: Swift.String? = nil, refreshToken: Swift.String? = nil, validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes? = nil, accessTokenExpirationDate: Foundation.Date? = nil, tokenType: Swift.String? = nil, scope: Swift.String? = nil)
+    final public func accessToken() -> Swift.String?
+    final public func idToken() -> Swift.String?
+    final public func refreshToken() -> Swift.String?
+    final public func validationCodes() -> EdgeCore.EdgeClient.Authorization.ValidationCodes?
+    final public func accessTokenValidation() -> Swift.Bool
+    final public func accessTokenDecoded() -> (any JWTDecode.JWT)?
+    final public func accessTokenSub() -> Swift.String?
+    final public func accessTokenScopes() -> Swift.String?
+    final public func accessTokenExpiryDate() -> Foundation.Date?
+    final public class func accessTokenSub(token: Swift.String) -> Swift.String?
+    @objc deinit
+  }
+}
+extension EdgeCore.EdgeClient {
+  final public class func workingDirectory(searchPathDirectory: Foundation.FileManager.SearchPathDirectory, subFolder: Swift.String, filename: Swift.String? = nil) -> Foundation.URL?
+  final public class func edgeEngineWorkingDirectory() -> Foundation.URL?
+}
+public struct ModelError : Swift.Codable {
+  public var statusCode: Swift.Int
+  public var title: Swift.String
+  public var message: Swift.String
+  public var info: EdgeCore.JSONValue?
+  public init(statusCode: Swift.Int, title: Swift.String, message: Swift.String, info: EdgeCore.JSONValue?)
+  public func mimikDescription() -> Swift.String
+  public func userInfo() -> [Swift.String : Any]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class JSONEncodingHelper {
+  open class func encodingParameters<T>(forEncodableObject encodableObj: T?) -> Alamofire.Parameters? where T : Swift.Encodable
+  open class func encodingParameters(forEncodableObject encodableObj: Any?) -> Alamofire.Parameters?
+  @objc deinit
+}
+@objc public class EdgeEngineNodeRouting : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  public var id: Swift.String?
+  public var port: Swift.Int64?
+  public var url: Swift.String?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  public init(id: Swift.String?, port: Swift.Int64?, url: Swift.String?)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+extension EdgeCore.MIMIKBeamProvider {
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func deleteBeamToken(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beamToken: EdgeCore.MIMIKBeamToken, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> EdgeCore.MIMIKBeamToken?
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public class func updateBeamToken(status: EdgeCore.MIMIKBeamToken.TokenStatus, edgeServiceLink: Swift.String, userAccessToken: Swift.String, beamToken: EdgeCore.MIMIKBeamToken, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.MIMIKMicroservice) async -> EdgeCore.MIMIKBeamToken?
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authenticateDeveloperAccess(developerIdToken: Swift.String, edgeEngineIdToken: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(*, unavailable, renamed: "authenticateDeveloperAccess")
+  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, developerIdToken: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, phoneNumber: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, grantAction: EdgeCore.EdgeClient.Authorization.GrantAction, email: Swift.String, currentPassword: Swift.String?, newPassword: Swift.String?, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func validateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, grantType: EdgeCore.EdgeClient.Authorization.GrantType, grantAction: EdgeCore.EdgeClient.Authorization.GrantAction, codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, edgeEngineIdToken: Swift.String?, currentPassword: Swift.String? = nil, newPassword: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authenticateUserAccess(service: EdgeCore.EdgeClient.Service, edgeEngineAccessAuthorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authenticateUserAccess(service: EdgeCore.EdgeClient.Service, federatedToken: Swift.String, policyId: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func deleteAccount(service: EdgeCore.EdgeClient.Service, accessToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func accountInformation(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func supportedAuthenticationScopes(serverUrl: Foundation.URL) async -> Swift.Result<[Swift.String], Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  open class URLComponentsBuilder {
+    public init()
+    open func create() -> Foundation.URLComponents
+    open func set(service: EdgeCore.EdgeClient.Service) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int, path: Swift.String) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(scheme: Swift.String) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(host: Swift.String) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(port: Swift.Int) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(path: Swift.String) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func append(path: Swift.String) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    open func set(queryItems: [Swift.String : Any]) -> EdgeCore.EdgeClient.URLComponentsBuilder
+    @objc deinit
+  }
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  @objc @_inheritsConvenienceInitializers public class Request : ObjectiveC.NSObject {
+    public class func backendEncodedUrlRequest(urlRequest: Foundation.URLRequest, dictionary: [Swift.String : Any]?) -> Foundation.URLRequest?
+    public class func backendUrlRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, authorization: EdgeCore.EdgeClient.Authorization?, httpHeaders: Alamofire.HTTPHeaders? = nil) -> Foundation.URLRequest?
+    public class func frontendUrlRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, dictionary: [Swift.String : Any]?, microservice: EdgeCore.MIMIKMicroservice, authorization: EdgeCore.EdgeClient.Authorization?, timeoutInterval: Foundation.TimeInterval = 60.0, cachePolicy: Foundation.URLRequest.CachePolicy = .useProtocolCachePolicy) -> Foundation.URLRequest?
+    @objc override dynamic public init()
+    @objc deinit
+  }
+}
+extension EdgeCore.MIMIKBeam.ReadStatus : Swift.Equatable {}
+extension EdgeCore.MIMIKBeam.ReadStatus : Swift.Hashable {}
+extension EdgeCore.MIMIKBeam.ReadStatus : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.Equatable {}
+extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.Hashable {}
+extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.Equatable {}
+extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.Hashable {}
+extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.RawRepresentable {}
+extension EdgeCore.MIMIKMicroservice.Component : Swift.Equatable {}
+extension EdgeCore.MIMIKMicroservice.Component : Swift.Hashable {}
+extension EdgeCore.MIMIKMicroservice.Component : Swift.RawRepresentable {}
+extension EdgeCore.MIMIKBeamToken.TokenStatus : Swift.Equatable {}
+extension EdgeCore.MIMIKBeamToken.TokenStatus : Swift.Hashable {}
+extension EdgeCore.MIMIKBeamToken.TokenStatus : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Backend : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Backend : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Backend : Swift.RawRepresentable {}
+extension EdgeCore.MIMIKClusterProvider.ClusterType : Swift.Equatable {}
+extension EdgeCore.MIMIKClusterProvider.ClusterType : Swift.Hashable {}
+extension EdgeCore.MIMIKClusterProvider.ClusterType : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.RawRepresentable {}
+extension EdgeCore.MIMIKLog.Level : Swift.Equatable {}
+extension EdgeCore.MIMIKLog.Level : Swift.Hashable {}
+extension EdgeCore.MIMIKLog.Level : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.Equatable {}
+extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.Hashable {}
+extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.RawRepresentable {}
