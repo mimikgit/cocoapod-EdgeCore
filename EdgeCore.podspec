@@ -21,6 +21,7 @@ EdgeCore cocoapod is a Cocopods.org distributed framework that provides APIs to 
 
   s.author       = { "mimik" => "apps@mimik.com" }
   s.source       = { :git => "https://github.com/mimikgit/cocoapod-EdgeCore.git", :tag => "#{s.version}" }
+  s.swift_versions = '5.0'
 
   s.vendored_frameworks = "EdgeCore.xcframework"
 
