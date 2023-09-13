@@ -25,9 +25,9 @@ EdgeCore cocoapod is a Cocopods.org distributed framework that provides APIs to 
 
   s.vendored_frameworks = "EdgeCore.xcframework"
 
-  s.dependency 'Alamofire', '~> 5.7.1'
+  s.dependency 'Alamofire', '~> 5.8.0'
   s.dependency 'SwiftyJSON', '~> 5.0.1'
-  s.dependency 'JWTDecode', '~> 3.0.1'
+  s.dependency 'JWTDecode', '~> 3.1.0'
   s.dependency 'AppAuth', '~> 1.6.2'
 
   s.platform = 'ios', '15.0'
