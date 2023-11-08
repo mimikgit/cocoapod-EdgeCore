@@ -212,13 +212,12 @@ extension Swift.KeyedDecodingContainerProtocol {
   public class func validateMicroserviceResponse(response: Alamofire.AFDataResponse<Any>, encapsulatedData: Swift.Bool = false) -> (dataJSON: SwiftyJSON.JSON?, error: (any Swift.Error)?)
   public class func microserviceConfiguration(imageName: Swift.String, containerName: Swift.String, baseAPIPath: Swift.String, edgeEngineUrlComponents: Foundation.URLComponents, clientId: Swift.String, signatureKey: Swift.String, ownerCode: Swift.String) -> EdgeCore.MIMIKMicroserviceConfig?
   public class func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
+  public class func expectedDeployedContainerId(containerName: Swift.String, clientId: Swift.String) -> Swift.String
+  public class func expectedDeployedBaseApiPath(name: Swift.String, clientId: Swift.String) -> Swift.String
   public class func expectedImageName(name: Swift.String) -> Swift.String
   public class func expectedContainerName(name: Swift.String) -> Swift.String
   public class func expectedBaseApiPath(name: Swift.String) -> Swift.String
-  public class func expectedDeployedBaseApiPath(name: Swift.String, clientId: Swift.String) -> Swift.String
   public func basePath() -> Swift.String?
-  @available(*, unavailable, renamed: "basePath")
-  public func baseApiPath() -> Swift.String?
   public func fullPath() -> Swift.String?
   public func urlComponents() -> Foundation.URLComponents?
   public func urlComponents(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
@@ -414,6 +413,10 @@ public struct MIMIKMicroserviceEmbedError : Swift.Codable {
   final public func deployedMicroservices(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.MIMIKMicroservice], Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  final public func deployedMicroservice(imageId: Swift.String, containerId: Swift.String, edgeEngineAccessToken: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(*, deprecated, renamed: "deployedMicroservice")
   final public func verifyDeployedMicroserviceMatching(imageId: Swift.String, edgeEngineAccessToken: Swift.String) async -> Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
@@ -566,16 +569,6 @@ extension Swift.String {
 extension Foundation.Formatter {
   public static let iso8601: Foundation.DateFormatter
   public static let iso8601NoMillis: Foundation.DateFormatter
-}
-extension Foundation.Date {
-  @available(*, deprecated, message: "deprecated")
-  public var trackerISO8601NoMillis: Swift.String {
-    get
-  }
-}
-extension Foundation.Formatter {
-  @available(*, deprecated, message: "deprecated")
-  public static let trackerISO8601NoMillis: Foundation.DateFormatter
 }
 extension Foundation.Date {
   public static var startOfToday: Foundation.Date? {
@@ -813,7 +806,7 @@ extension EdgeCore.EdgeClient {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@_hasMissingDesignatedInitializers open class Configuration {
+@_hasMissingDesignatedInitializers open class ConfigurationSwaggerClient {
   public static var dateFormat: Swift.String
   @objc deinit
 }
@@ -978,9 +971,6 @@ extension EdgeCore.EdgeClient.Authorization {
 extension EdgeCore.EdgeClient {
   @objc final public class Authorization : ObjectiveC.NSObject {
     final public var type: EdgeCore.EdgeClient.Authorization.TokenType
-    @objc override final public var description: Swift.String {
-      @objc get
-    }
     convenience public init?(validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes)
     required public init?(type: EdgeCore.EdgeClient.Authorization.TokenType?, userAccessToken: Swift.String?, idToken: Swift.String? = nil, refreshToken: Swift.String? = nil, validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes? = nil, accessTokenExpirationDate: Foundation.Date? = nil, tokenType: Swift.String? = nil, scope: Swift.String? = nil)
     final public func accessToken() -> Swift.String?
@@ -1041,10 +1031,6 @@ extension EdgeCore.MIMIKBeamProvider {
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
   final public func authenticateDeveloperAccess(developerIdToken: Swift.String, edgeEngineIdToken: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  @available(*, unavailable, renamed: "authenticateDeveloperAccess")
-  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, developerIdToken: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
   final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, phoneNumber: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>

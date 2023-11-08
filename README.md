@@ -23,7 +23,7 @@
  * `undeployMicroservice`
  * `undeployMicroserviceComponent`
  * `deployedMicroservices`
- * `verifyDeployedMicroserviceMatching`
+ * `deployedMicroservice`
  * `deployedMicroserviceImages`
  * `deployedMicroserviceImage`
  * `deployedMicroserviceContainers`

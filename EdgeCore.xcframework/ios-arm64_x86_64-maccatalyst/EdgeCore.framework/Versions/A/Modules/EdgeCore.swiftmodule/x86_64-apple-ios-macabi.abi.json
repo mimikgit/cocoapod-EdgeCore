@@ -3717,7 +3717,8 @@
             "mangledName": "$s8EdgeCore17MIMIKMicroserviceC9ComponentO",
             "moduleName": "EdgeCore",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "enumRawTypeName": "String",
             "conformances": [
@@ -4539,7 +4540,8 @@
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4573,15 +4575,22 @@
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "expectedImageName",
-            "printedName": "expectedImageName(name:)",
+            "name": "expectedDeployedContainerId",
+            "printedName": "expectedDeployedContainerId(containerName:clientId:)",
             "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
               {
                 "kind": "TypeNominal",
                 "name": "String",
@@ -4596,68 +4605,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore17MIMIKMicroserviceC17expectedImageName4nameS2S_tFZ",
-            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC17expectedImageName4nameS2S_tFZ",
+            "usr": "s:8EdgeCore17MIMIKMicroserviceC27expectedDeployedContainerId13containerName06clientG0S2S_SStFZ",
+            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC27expectedDeployedContainerId13containerName06clientG0S2S_SStFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "expectedContainerName",
-            "printedName": "expectedContainerName(name:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore17MIMIKMicroserviceC21expectedContainerName4nameS2S_tFZ",
-            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC21expectedContainerName4nameS2S_tFZ",
-            "moduleName": "EdgeCore",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "expectedBaseApiPath",
-            "printedName": "expectedBaseApiPath(name:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore17MIMIKMicroserviceC19expectedBaseApiPath4nameS2S_tFZ",
-            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC19expectedBaseApiPath4nameS2S_tFZ",
-            "moduleName": "EdgeCore",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4691,7 +4645,95 @@
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "expectedImageName",
+            "printedName": "expectedImageName(name:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore17MIMIKMicroserviceC17expectedImageName4nameS2S_tFZ",
+            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC17expectedImageName4nameS2S_tFZ",
+            "moduleName": "EdgeCore",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "expectedContainerName",
+            "printedName": "expectedContainerName(name:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore17MIMIKMicroserviceC21expectedContainerName4nameS2S_tFZ",
+            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC21expectedContainerName4nameS2S_tFZ",
+            "moduleName": "EdgeCore",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "expectedBaseApiPath",
+            "printedName": "expectedBaseApiPath(name:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore17MIMIKMicroserviceC19expectedBaseApiPath4nameS2S_tFZ",
+            "mangledName": "$s8EdgeCore17MIMIKMicroserviceC19expectedBaseApiPath4nameS2S_tFZ",
+            "moduleName": "EdgeCore",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -13038,6 +13080,61 @@
           },
           {
             "kind": "Function",
+            "name": "deployedMicroservice",
+            "printedName": "deployedMicroservice(imageId:containerId:edgeEngineAccessToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.MIMIKMicroservice, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MIMIKMicroservice",
+                    "printedName": "EdgeCore.MIMIKMicroservice",
+                    "usr": "c:@M@EdgeCore@objc(cs)MIMIKMicroservice"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC20deployedMicroservice7imageId09containerG021edgeEngineAccessTokens6ResultOyAA17MIMIKMicroserviceCSo7NSErrorCGSS_S2StYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC20deployedMicroservice7imageId09containerG021edgeEngineAccessTokens6ResultOyAA17MIMIKMicroserviceCSo7NSErrorCGSS_S2StYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "verifyDeployedMicroserviceMatching",
             "printedName": "verifyDeployedMicroserviceMatching(imageId:edgeEngineAccessToken:)",
             "children": [
@@ -13078,10 +13175,11 @@
             "usr": "s:8EdgeCore0A6ClientC34verifyDeployedMicroserviceMatching7imageId21edgeEngineAccessTokens6ResultOyAA17MIMIKMicroserviceCSo7NSErrorCGSS_SStYaF",
             "mangledName": "$s8EdgeCore0A6ClientC34verifyDeployedMicroserviceMatching7imageId21edgeEngineAccessTokens6ResultOyAA17MIMIKMicroserviceCSo7NSErrorCGSS_SStYaF",
             "moduleName": "EdgeCore",
+            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment"
+              "Available"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -23169,58 +23267,6 @@
                 ]
               },
               {
-                "kind": "Var",
-                "name": "description",
-                "printedName": "description",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Var",
-                "usr": "s:8EdgeCore0A6ClientC13AuthorizationC11descriptionSSvp",
-                "mangledName": "$s8EdgeCore0A6ClientC13AuthorizationC11descriptionSSvp",
-                "moduleName": "EdgeCore",
-                "overriding": true,
-                "objc_name": "description",
-                "declAttributes": [
-                  "Final",
-                  "ObjC",
-                  "AccessControl",
-                  "Override",
-                  "RawDocComment"
-                ],
-                "accessors": [
-                  {
-                    "kind": "Accessor",
-                    "name": "Get",
-                    "printedName": "Get()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationC11descriptionSSvg",
-                    "mangledName": "$s8EdgeCore0A6ClientC13AuthorizationC11descriptionSSvg",
-                    "moduleName": "EdgeCore",
-                    "overriding": true,
-                    "objc_name": "description",
-                    "declAttributes": [
-                      "Final",
-                      "ObjC"
-                    ],
-                    "accessorKind": "get"
-                  }
-                ]
-              },
-              {
                 "kind": "Constructor",
                 "name": "init",
                 "printedName": "init(validationCodes:)",
@@ -23252,7 +23298,8 @@
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "Convenience",
-                  "AccessControl"
+                  "AccessControl",
+                  "RawDocComment"
                 ],
                 "init_kind": "Convenience"
               },
@@ -32993,8 +33040,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "Configuration",
-        "printedName": "Configuration",
+        "name": "ConfigurationSwaggerClient",
+        "printedName": "ConfigurationSwaggerClient",
         "children": [
           {
             "kind": "Var",
@@ -33009,8 +33056,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:8EdgeCore13ConfigurationC10dateFormatSSvpZ",
-            "mangledName": "$s8EdgeCore13ConfigurationC10dateFormatSSvpZ",
+            "usr": "s:8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvpZ",
+            "mangledName": "$s8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvpZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -33035,8 +33082,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8EdgeCore13ConfigurationC10dateFormatSSvgZ",
-                "mangledName": "$s8EdgeCore13ConfigurationC10dateFormatSSvgZ",
+                "usr": "s:8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvgZ",
+                "mangledName": "$s8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvgZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "implicit": true,
@@ -33063,8 +33110,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8EdgeCore13ConfigurationC10dateFormatSSvsZ",
-                "mangledName": "$s8EdgeCore13ConfigurationC10dateFormatSSvsZ",
+                "usr": "s:8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvsZ",
+                "mangledName": "$s8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvsZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "implicit": true,
@@ -33085,8 +33132,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8EdgeCore13ConfigurationC10dateFormatSSvMZ",
-                "mangledName": "$s8EdgeCore13ConfigurationC10dateFormatSSvMZ",
+                "usr": "s:8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvMZ",
+                "mangledName": "$s8EdgeCore26ConfigurationSwaggerClientC10dateFormatSSvMZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "implicit": true,
@@ -33099,8 +33146,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "s:8EdgeCore13ConfigurationC",
-        "mangledName": "$s8EdgeCore13ConfigurationC",
+        "usr": "s:8EdgeCore26ConfigurationSwaggerClientC",
+        "mangledName": "$s8EdgeCore26ConfigurationSwaggerClientC",
         "moduleName": "EdgeCore",
         "isOpen": true,
         "declAttributes": [
@@ -44038,50 +44085,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "trackerISO8601NoMillis",
-            "printedName": "trackerISO8601NoMillis",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10Foundation4DateV8EdgeCoreE22trackerISO8601NoMillisSSvp",
-            "mangledName": "$s10Foundation4DateV8EdgeCoreE22trackerISO8601NoMillisSSvp",
-            "moduleName": "EdgeCore",
-            "deprecated": true,
-            "declAttributes": [
-              "AccessControl",
-              "Available"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10Foundation4DateV8EdgeCoreE22trackerISO8601NoMillisSSvg",
-                "mangledName": "$s10Foundation4DateV8EdgeCoreE22trackerISO8601NoMillisSSvg",
-                "moduleName": "EdgeCore",
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "startOfToday",
             "printedName": "startOfToday",
             "children": [
@@ -45231,61 +45234,6 @@
                 "accessorKind": "get"
               }
             ]
-          },
-          {
-            "kind": "Var",
-            "name": "trackerISO8601NoMillis",
-            "printedName": "trackerISO8601NoMillis",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DateFormatter",
-                "printedName": "Foundation.DateFormatter",
-                "usr": "c:objc(cs)NSDateFormatter"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:So11NSFormatterC8EdgeCoreE22trackerISO8601NoMillisSo15NSDateFormatterCvpZ",
-            "mangledName": "$sSo11NSFormatterC8EdgeCoreE22trackerISO8601NoMillisSo15NSDateFormatterCvpZ",
-            "moduleName": "EdgeCore",
-            "static": true,
-            "deprecated": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "Available"
-            ],
-            "isFromExtension": true,
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DateFormatter",
-                    "printedName": "Foundation.DateFormatter",
-                    "usr": "c:objc(cs)NSDateFormatter"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:So11NSFormatterC8EdgeCoreE22trackerISO8601NoMillisSo15NSDateFormatterCvgZ",
-                "mangledName": "$sSo11NSFormatterC8EdgeCoreE22trackerISO8601NoMillisSo15NSDateFormatterCvgZ",
-                "moduleName": "EdgeCore",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
           }
         ],
         "declKind": "Class",
@@ -46251,378 +46199,385 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/SwaggerClient\/Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1705,
+      "offset": 1718,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/SwaggerClient\/Extensions.swift",
       "kind": "Dictionary",
-      "offset": 4014,
+      "offset": 4027,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 367,
+      "offset": 423,
       "length": 8,
       "value": "\"images\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 401,
+      "offset": 457,
       "length": 12,
       "value": "\"containers\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 367,
+      "offset": 423,
       "length": 8,
       "value": "\"images\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 401,
+      "offset": 457,
       "length": 12,
       "value": "\"containers\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 482,
+      "offset": 538,
       "length": 115,
       "value": "\"\nmicroservice container:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 536,
+      "offset": 592,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 542,
+      "offset": 598,
       "length": 1,
       "value": "\")\n\nmicroservice image:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 590,
+      "offset": 646,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 596,
+      "offset": 652,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "BooleanLiteral",
-      "offset": 1132,
+      "offset": 1188,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 1487,
+      "offset": 1543,
       "length": 3,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 1547,
+      "offset": 1603,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 2207,
+      "offset": 2317,
       "length": 20,
       "value": "\"Service Link Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 2259,
+      "offset": 2369,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3004,
+      "offset": 3282,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3115,
-      "length": 5,
-      "value": "\"-v1\""
+      "offset": 3607,
+      "length": 3,
+      "value": "\"-\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3220,
-      "length": 5,
-      "value": "\"-v1\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
-      "kind": "StringLiteral",
-      "offset": 3316,
+      "offset": 3928,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3329,
+      "offset": 3941,
       "length": 5,
       "value": "\"\/v1\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3462,
+      "offset": 4289,
+      "length": 5,
+      "value": "\"-v1\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
+      "kind": "StringLiteral",
+      "offset": 4653,
+      "length": 5,
+      "value": "\"-v1\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
+      "kind": "StringLiteral",
+      "offset": 5004,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3475,
+      "offset": 5017,
       "length": 5,
       "value": "\"\/v1\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3686,
+      "offset": 5228,
       "length": 13,
       "value": "\"msuperdrive\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3701,
+      "offset": 5243,
       "length": 12,
       "value": "\"superdrive\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3877,
+      "offset": 5419,
       "length": 7,
       "value": "\"mbeam\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 3967,
+      "offset": 5509,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4066,
+      "offset": 5608,
       "length": 9,
       "value": "\"\/mds\/v1\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4108,
+      "offset": 5650,
       "length": 6,
       "value": "\"BEAM\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4136,
+      "offset": 5678,
       "length": 6,
       "value": "\"uMDS\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4244,
+      "offset": 5786,
       "length": 7,
       "value": "\"mbeam\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4253,
+      "offset": 5795,
       "length": 6,
       "value": "\"beam\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "Dictionary",
-      "offset": 4292,
+      "offset": 5834,
       "length": 33,
       "value": "[(\"MCM.WEBSOCKET_SUPPORT\", \"true\")]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4351,
+      "offset": 5893,
       "length": 14,
       "value": "\"signatureKey\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4481,
+      "offset": 6023,
       "length": 11,
       "value": "\"ownerCode\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4605,
+      "offset": 6147,
       "length": 8,
       "value": "\"mdrive\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4615,
+      "offset": 6157,
       "length": 7,
       "value": "\"drive\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "Dictionary",
-      "offset": 4673,
+      "offset": 6215,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4706,
+      "offset": 6248,
       "length": 19,
       "value": "\"AUTHORIZATION_KEY\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4783,
+      "offset": 6325,
       "length": 8,
       "value": "\"mdebug\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "Dictionary",
-      "offset": 4824,
+      "offset": 6366,
       "length": 34,
       "value": "[(\"MCM.WEBSOCKET_SUPPORT\", \"false\")]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 4884,
+      "offset": 6426,
       "length": 11,
       "value": "\"ownerCode\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "Dictionary",
-      "offset": 5031,
+      "offset": 6573,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 5428,
+      "offset": 6976,
       "length": 19,
       "value": "\"MCM.BASE_API_PATH\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 5538,
+      "offset": 7086,
       "length": 11,
       "value": "\"Env Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 5581,
+      "offset": 7129,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 6287,
+      "offset": 7701,
       "length": 11,
       "value": "\"Env Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 6330,
+      "offset": 7744,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 6904,
+      "offset": 8318,
       "length": 11,
       "value": "\"Env Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 6947,
+      "offset": 8361,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 7259,
+      "offset": 8673,
       "length": 11,
       "value": "\"Env Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 7302,
+      "offset": 8716,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 8049,
+      "offset": 9463,
       "length": 11,
       "value": "\"Env Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/MIMIKMicroservice.swift",
       "kind": "StringLiteral",
-      "offset": 8092,
+      "offset": 9506,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
@@ -48029,189 +47984,189 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 1547,
+      "offset": 1702,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 1562,
+      "offset": 1717,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "Dictionary",
-      "offset": 1750,
+      "offset": 1905,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2025,
+      "offset": 2180,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2084,
+      "offset": 2239,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2150,
+      "offset": 2305,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 2185,
+      "offset": 2340,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2714,
+      "offset": 2869,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2773,
+      "offset": 2928,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 2843,
+      "offset": 2998,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 2878,
+      "offset": 3033,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 3601,
+      "offset": 3756,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 3660,
+      "offset": 3815,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 3726,
+      "offset": 3881,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 3761,
+      "offset": 3916,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 4359,
+      "offset": 4514,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 4418,
+      "offset": 4573,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 4484,
+      "offset": 4639,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 4519,
+      "offset": 4674,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "BooleanLiteral",
-      "offset": 4933,
+      "offset": 5088,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 5000,
+      "offset": 5155,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 5015,
+      "offset": 5170,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 5189,
+      "offset": 5344,
       "length": 6,
       "value": "\"name\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 5231,
+      "offset": 5386,
       "length": 7,
       "value": "\"image\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 5270,
+      "offset": 5425,
       "length": 5,
       "value": "\"env\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "Dictionary",
-      "offset": 5507,
+      "offset": 5662,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 5532,
+      "offset": 5687,
       "length": 19,
       "value": "\"MCM.BASE_API_PATH\""
     },
@@ -50316,6 +50271,13 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient.swift",
+      "kind": "StringLiteral",
+      "offset": 10702,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/SwaggerClient\/JSONValue.swift",
       "kind": "StringLiteral",
       "offset": 1826,
@@ -51381,29 +51343,22 @@
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Extensions.swift",
-      "kind": "StringLiteral",
-      "offset": 2585,
-      "length": 30,
-      "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3344,
+      "offset": 2813,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3530,
+      "offset": 2999,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 3618,
+      "offset": 3087,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
@@ -53265,7 +53220,7 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/SwaggerClient\/Configuration.swift",
       "kind": "StringLiteral",
-      "offset": 382,
+      "offset": 395,
       "length": 32,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ\""
     },
@@ -54105,112 +54060,42 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "StringLiteral",
-      "offset": 2259,
-      "length": 7,
-      "value": "\"type:\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2269,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2295,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2323,
-      "length": 5,
-      "value": "\"N\/A\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2332,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2356,
-      "length": 5,
-      "value": "\"N\/A\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2365,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2394,
-      "length": 5,
-      "value": "\"N\/A\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2403,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 2448,
-      "length": 5,
-      "value": "\"N\/A\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
-      "kind": "StringLiteral",
-      "offset": 3234,
+      "offset": 3252,
       "length": 26,
       "value": "\"Authorization init Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "StringLiteral",
-      "offset": 3292,
+      "offset": 3310,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "BooleanLiteral",
-      "offset": 4670,
+      "offset": 4688,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "StringLiteral",
-      "offset": 5281,
+      "offset": 5299,
       "length": 5,
       "value": "\"sub\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "StringLiteral",
-      "offset": 5542,
+      "offset": 5560,
       "length": 7,
       "value": "\"scope\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient+Authorization.swift",
       "kind": "StringLiteral",
-      "offset": 5940,
+      "offset": 5958,
       "length": 5,
       "value": "\"sub\""
     },
@@ -54917,217 +54802,217 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 13191,
+      "offset": 13198,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 13206,
+      "offset": 13213,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 13836,
+      "offset": 13879,
       "length": 18,
       "value": "\"(parse) imageId:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 13895,
+      "offset": 13938,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 13961,
+      "offset": 14004,
       "length": 20,
       "value": "\"Resource Not Found\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 13989,
+      "offset": 14032,
       "length": 3,
       "value": "404"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "Array",
-      "offset": 14359,
+      "offset": 14402,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15144,
+      "offset": 15187,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15183,
+      "offset": 15226,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15249,
+      "offset": 15292,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 15264,
+      "offset": 15307,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15373,
+      "offset": 15416,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15502,
+      "offset": 15545,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15541,
+      "offset": 15584,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15607,
+      "offset": 15650,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 15622,
+      "offset": 15665,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "Array",
-      "offset": 15694,
+      "offset": 15737,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15918,
+      "offset": 15961,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 15957,
+      "offset": 16000,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16434,
+      "offset": 16477,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16473,
+      "offset": 16516,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16539,
+      "offset": 16582,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 16554,
+      "offset": 16597,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16677,
+      "offset": 16720,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16809,
+      "offset": 16852,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16848,
+      "offset": 16891,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 16914,
+      "offset": 16957,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 16929,
+      "offset": 16972,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "Array",
-      "offset": 17009,
+      "offset": 17052,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 17250,
+      "offset": 17293,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 17289,
+      "offset": 17332,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },

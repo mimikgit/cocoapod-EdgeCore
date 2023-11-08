@@ -360,17 +360,6 @@ SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 
 
 
-@interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
-@end
-
-
-@interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
-@end
-
-
-
-
-
 
 @interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
 @end
@@ -379,6 +368,17 @@ SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
 @end
 
+
+
+
+
+@interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
+@end
+
+
+
+@interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
+@end
 
 
 @interface EdgeClient (SWIFT_EXTENSION(EdgeCore))
@@ -427,7 +427,6 @@ SWIFT_CLASS("_TtC8EdgeCore21EdgeEngineNodeRouting")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 
