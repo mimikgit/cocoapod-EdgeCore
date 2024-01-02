@@ -128,7 +128,7 @@ end
 
 ## Tutorial
 
-Visit this [tutorial](https://devdocs.mimik.com/tutorials/03-index) to learn more about the mimik client library and how to integrate it into your iOS project.
+Visit this [tutorial](https://devdocs.mimik.com/tutorials/11-index) to learn more about the mimik client library and how to integrate it into your iOS project.
 
 ## mimik client libraries
 
