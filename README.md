@@ -1,48 +1,75 @@
-# EdgeCore
+# ``EdgeCore``
 
- EdgeCore client library can help you interact with mimik core services with the following APIs:
- 
-## Core Services
+mimik Client Library provides a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running.
 
-### Environment
+@Metadata {
+    @CallToAction(purpose: link, url: "https://github.com/mimikgit/cocoapod-EdgeCore")
+    @PageKind(article)
+    @PageColor(purple)
+}
 
- * `setLoggingLevel`
- * `selectBackend`
- * `selectedBackend`
- * `healthCheck`
- * `manuallySelectedBackend`
- * `applicationBackend`
- * `forceDefaultBackendSelection`
- * `defaultBackend`
- * `workingDirectory`
- * `edgeEngineWorkingDirectory`
+## Overview
 
-### edgeEngine controls
- 
- * `deployMicroservice`
- * `undeployMicroservice`
- * `undeployMicroserviceComponent`
- * `deployedMicroservices`
- * `deployedMicroservice`
- * `deployedMicroserviceImages`
- * `deployedMicroserviceImage`
- * `deployedMicroserviceContainers`
- * `deployedMicroserviceContainer`
- * `updateMicroservice`
- * `updateMicroserviceConfig`
- * `edgeEngineIdToken`
- * `edgeEngineInfo`
- * `externalEdgeEngineIsRunning`
- * `edgeEngineUrlComponents`
- * `edgeEngineUrlString`
- * `edgeEngineWorkingDirectory`
- * `edgeEngineWebSocketServiceLink`
- 
-### External edgeEngine controls
+The purpose of the mimik Client Library is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
 
- * `activateExternalEdgeEngine`
- * `deactivateExternalEdgeEngine`
- * `externalEdgeEngineActivated`
+By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
+
+Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
+
+Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+
+
+## EdgeClient
+
+### Setting up the Environment
+
+- ``EdgeClient/setLoggingLevel(level:subsystem:)``
+- ``EdgeClient/selectBackend(backend:)``
+- ``EdgeClient/selectedBackend()``
+- ``EdgeClient/manuallySelectedBackend()``
+- ``EdgeClient/applicationBackend()``
+- ``EdgeClient/forceDefaultBackendSelection()``
+- ``EdgeClient/defaultBackend()``
+- ``EdgeClient/workingDirectory(searchPathDirectory:subFolder:filename:)``
+- ``EdgeClient/edgeEngineWorkingDirectory()``
+- ``EdgeClient/healthCheck(service:requireMatch:)``
+
+### Querying the Environment
+
+- ``EdgeClient/edgeEngineIdToken()``
+- ``EdgeClient/edgeEngineInfo()``
+- ``EdgeClient/activateExternalEdgeEngine(host:port:)``
+- ``EdgeClient/externalEdgeEngineIsRunning()``
+- ``EdgeClient/externalEdgeEngineActivated()``
+- ``EdgeClient/edgeEngineUrlComponents()``
+- ``EdgeClient/edgeEngineUrlString()``
+- ``EdgeClient/edgeEngineWorkingDirectory()``
+
+### Working with edge microservices
+
+- ``EdgeClient/deployMicroservice(edgeEngineAccessToken:config:imageTarPath:)``
+- ``EdgeClient/deployedMicroservices(edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroserviceImages(edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroserviceContainers(edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroserviceImage(imageId:edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroserviceContainer(containerId:edgeEngineAccessToken:)``
+- ``EdgeClient/updateMicroservice(edgeEngineAccessToken:microservice:imageTarPath:envVariables:)``
+- ``EdgeClient/updateMicroserviceConfig(edgeEngineAccessToken:microservice:envVariables:)``
+
+## EdgeEngineClient Platform Protocol
+
+### Controlling the edgeEngine Runtime
+
+- ``EdgeEngineClient/startEdgeEngine(parameters:)``
+- ``EdgeEngineClient/stopEdgeEngine()``
+- ``EdgeEngineClient/restartEdgeEngine()``
+- ``EdgeEngineClient/resetEdgeEngine()``
+- ``EdgeEngineClient/edgeEngineIsRunning()``
+- ``EdgeEngineClient/edgeEngineRuntimeIsManaged()``
+- ``EdgeEngineClient/edgeEngineParameters()``
+- ``EdgeEngineClient/manageEdgeEngineRuntime(enable:)``
+- ``EdgeEngineClient/expectedEdgeEngineVersion()``
+- ``EdgeEngineClient/setCustomPort(number:)``
 
 ### Backend Calls
  * `callBackend`
