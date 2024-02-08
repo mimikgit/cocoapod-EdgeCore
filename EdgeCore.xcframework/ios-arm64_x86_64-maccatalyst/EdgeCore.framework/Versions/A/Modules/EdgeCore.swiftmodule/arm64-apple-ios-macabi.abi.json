@@ -193,6 +193,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
         "declKind": "Import",
@@ -14956,6 +14966,118 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "authorizeBackendUse",
+            "printedName": "authorizeBackendUse(authorization:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Authorization",
+                "printedName": "EdgeCore.EdgeClient.Authorization",
+                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC19authorizeBackendUse13authorization7services6ResultOyAC13AuthorizationVSo7NSErrorCGAJ_AC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC19authorizeBackendUse13authorization7services6ResultOyAC13AuthorizationVSo7NSErrorCGAJ_AC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authorizeBackendUse",
+            "printedName": "authorizeBackendUse(federatedToken:policyId:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC19authorizeBackendUse14federatedToken8policyId010edgeEnginejH07services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC19authorizeBackendUse14federatedToken8policyId010edgeEnginejH07services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "TypeDecl",
             "name": "Service",
             "printedName": "Service",
@@ -16438,6 +16560,68 @@
             "mangledName": "$s8EdgeCore0A6ClientC14defaultBackendAC0E0OyFZ",
             "moduleName": "EdgeCore",
             "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authorizeUser",
+            "printedName": "authorizeUser(email:password:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC13authorizeUser5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC13authorizeUser5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -24151,6 +24335,74 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "passwordChange",
+            "printedName": "passwordChange(email:currentPassword:newPassword:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC14passwordChange5email15currentPassword03newH017edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S3SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC14passwordChange5email15currentPassword03newH017edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S3SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "TypeDecl",
             "name": "IdentityUser",
             "printedName": "IdentityUser",
@@ -25481,6 +25733,183 @@
                 "mangledName": "$sSE"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "authorizeDeveloper",
+            "printedName": "authorizeDeveloper(developerIdToken:edgeEngineIdToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC18authorizeDeveloper16developerIdToken010edgeEnginegH0s6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSSgtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC18authorizeDeveloper16developerIdToken010edgeEnginegH0s6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSSgtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "passwordReset",
+            "printedName": "passwordReset(email:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC13passwordReset5email17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC13passwordReset5email17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "validatePasswordReset",
+            "printedName": "validatePasswordReset(codes:newPassword:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ValidationCodes",
+                "printedName": "EdgeCore.EdgeClient.Authorization.ValidationCodes",
+                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV15ValidationCodesV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC21validatePasswordReset5codes03newE017edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC21validatePasswordReset5codes03newE017edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "TypeDecl",
@@ -31901,6 +32330,242 @@
           },
           {
             "kind": "Function",
+            "name": "authorizeUser",
+            "printedName": "authorizeUser(phoneNumber:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC13authorizeUser11phoneNumber17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC13authorizeUser11phoneNumber17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "validateUser",
+            "printedName": "validateUser(codes:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ValidationCodes",
+                "printedName": "EdgeCore.EdgeClient.Authorization.ValidationCodes",
+                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV15ValidationCodesV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC12validateUser5codes17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAK15ValidationCodesV_SSAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC12validateUser5codes17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAK15ValidationCodesV_SSAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "signup",
+            "printedName": "signup(email:password:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC6signup5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC6signup5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "validateSignup",
+            "printedName": "validateSignup(codes:password:edgeEngineIdToken:service:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Authorization",
+                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ValidationCodes",
+                "printedName": "EdgeCore.EdgeClient.Authorization.ValidationCodes",
+                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV15ValidationCodesV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC14validateSignup5codes8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC14validateSignup5codes8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "workingDirectory",
             "printedName": "workingDirectory(searchPathDirectory:subFolder:filename:)",
             "children": [
@@ -31994,8 +32659,8 @@
           },
           {
             "kind": "Function",
-            "name": "authenticateDeveloperAccess",
-            "printedName": "authenticateDeveloperAccess(developerIdToken:edgeEngineIdToken:)",
+            "name": "deleteAccount",
+            "printedName": "deleteAccount(email:password:edgeEngineIdToken:service:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -32025,23 +32690,26 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC27authenticateDeveloperAccess16developerIdToken010edgeEnginehI0s6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSSgtYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC27authenticateDeveloperAccess16developerIdToken010edgeEnginehI0s6ResultOyAC13AuthorizationVSo7NSErrorCGSS_SSSgtYaF",
+            "usr": "s:8EdgeCore0A6ClientC13deleteAccount5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC13deleteAccount5email8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGSS_S2SAC7ServiceVtYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
@@ -32053,8 +32721,8 @@
           },
           {
             "kind": "Function",
-            "name": "authenticateEdgeEngineAccess",
-            "printedName": "authenticateEdgeEngineAccess(service:phoneNumber:edgeEngineIdToken:)",
+            "name": "validateDeleteAccount",
+            "printedName": "validateDeleteAccount(codes:password:edgeEngineIdToken:service:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -32075,170 +32743,6 @@
                   }
                 ],
                 "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Service",
-                "printedName": "EdgeCore.EdgeClient.Service",
-                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC012authenticateA12EngineAccess7service11phoneNumber04edgeE7IdTokens6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_S2StYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC012authenticateA12EngineAccess7service11phoneNumber04edgeE7IdTokens6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_S2StYaF",
-            "moduleName": "EdgeCore",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "authenticateEdgeEngineAccess",
-            "printedName": "authenticateEdgeEngineAccess(service:grantAction:email:currentPassword:newPassword:edgeEngineIdToken:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Authorization",
-                    "printedName": "EdgeCore.EdgeClient.Authorization",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Service",
-                "printedName": "EdgeCore.EdgeClient.Service",
-                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "GrantAction",
-                "printedName": "EdgeCore.EdgeClient.Authorization.GrantAction",
-                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV11GrantActionO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC012authenticateA12EngineAccess7service11grantAction5email15currentPassword03newL004edgeE7IdTokens6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_AN05GrantI0OS2SSgAVSStYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC012authenticateA12EngineAccess7service11grantAction5email15currentPassword03newL004edgeE7IdTokens6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_AN05GrantI0OS2SSgAVSStYaF",
-            "moduleName": "EdgeCore",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "validateEdgeEngineAccess",
-            "printedName": "validateEdgeEngineAccess(service:grantType:grantAction:codes:edgeEngineIdToken:currentPassword:newPassword:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Authorization",
-                    "printedName": "EdgeCore.EdgeClient.Authorization",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Service",
-                "printedName": "EdgeCore.EdgeClient.Service",
-                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "GrantType",
-                "printedName": "EdgeCore.EdgeClient.Authorization.GrantType",
-                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV9GrantTypeO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "GrantAction",
-                "printedName": "EdgeCore.EdgeClient.Authorization.GrantAction",
-                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV11GrantActionO"
               },
               {
                 "kind": "TypeNominal",
@@ -32248,102 +32752,26 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC08validateA12EngineAccess7service9grantType0H6Action5codes04edgeE7IdToken15currentPassword03newP0s6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_AO05GrantI0OAO0vJ0OAO15ValidationCodesVSSSgA_A_tYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC08validateA12EngineAccess7service9grantType0H6Action5codes04edgeE7IdToken15currentPassword03newP0s6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_AO05GrantI0OAO0vJ0OAO15ValidationCodesVSSSgA_A_tYaF",
-            "moduleName": "EdgeCore",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "authenticateUserAccess",
-            "printedName": "authenticateUserAccess(service:edgeEngineAccessAuthorization:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Authorization",
-                    "printedName": "EdgeCore.EdgeClient.Authorization",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Service",
                 "printedName": "EdgeCore.EdgeClient.Service",
                 "usr": "s:8EdgeCore0A6ClientC7ServiceV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Authorization",
-                "printedName": "EdgeCore.EdgeClient.Authorization",
-                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC22authenticateUserAccess7service010edgeEngineF13Authorizations6ResultOyAC0J0VSo7NSErrorCGAC7ServiceV_AJtYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC22authenticateUserAccess7service010edgeEngineF13Authorizations6ResultOyAC0J0VSo7NSErrorCGAC7ServiceV_AJtYaF",
+            "usr": "s:8EdgeCore0A6ClientC21validateDeleteAccount5codes8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC21validateDeleteAccount5codes8password17edgeEngineIdToken7services6ResultOyAC13AuthorizationVSo7NSErrorCGAL15ValidationCodesV_S2SAC7ServiceVtYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
@@ -32355,70 +32783,8 @@
           },
           {
             "kind": "Function",
-            "name": "authenticateUserAccess",
-            "printedName": "authenticateUserAccess(service:federatedToken:policyId:edgeEngineIdToken:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Authorization",
-                    "printedName": "EdgeCore.EdgeClient.Authorization",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Service",
-                "printedName": "EdgeCore.EdgeClient.Service",
-                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC22authenticateUserAccess7service14federatedToken8policyId010edgeEnginekI0s6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_S3StYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC22authenticateUserAccess7service14federatedToken8policyId010edgeEnginekI0s6ResultOyAC13AuthorizationVSo7NSErrorCGAC7ServiceV_S3StYaF",
-            "moduleName": "EdgeCore",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "deleteAccount",
-            "printedName": "deleteAccount(service:accessToken:)",
+            "name": "executeDeleteAccount",
+            "printedName": "executeDeleteAccount(authorization:service:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -32442,20 +32808,20 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Service",
-                "printedName": "EdgeCore.EdgeClient.Service",
-                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
+                "name": "Authorization",
+                "printedName": "EdgeCore.EdgeClient.Authorization",
+                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Service",
+                "printedName": "EdgeCore.EdgeClient.Service",
+                "usr": "s:8EdgeCore0A6ClientC7ServiceV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC13deleteAccount7service11accessTokens6ResultOyAC12IdentityUserVSo7NSErrorCGAC7ServiceV_SStYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC13deleteAccount7service11accessTokens6ResultOyAC12IdentityUserVSo7NSErrorCGAC7ServiceV_SStYaF",
+            "usr": "s:8EdgeCore0A6ClientC20executeDeleteAccount13authorization7services6ResultOyAC12IdentityUserVSo7NSErrorCGAC13AuthorizationV_AC7ServiceVtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC20executeDeleteAccount13authorization7services6ResultOyAC12IdentityUserVSo7NSErrorCGAC13AuthorizationV_AC7ServiceVtYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
@@ -32517,8 +32883,8 @@
           },
           {
             "kind": "Function",
-            "name": "supportedAuthenticationScopes",
-            "printedName": "supportedAuthenticationScopes(serverUrl:)",
+            "name": "authenticationScopes",
+            "printedName": "authenticationScopes(serverUrl:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -32556,8 +32922,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC29supportedAuthenticationScopes9serverUrls6ResultOySaySSGSo7NSErrorCG10Foundation3URLV_tYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC29supportedAuthenticationScopes9serverUrls6ResultOySaySSGSo7NSErrorCG10Foundation3URLV_tYaF",
+            "usr": "s:8EdgeCore0A6ClientC20authenticationScopes9serverUrls6ResultOySaySSGSo7NSErrorCG10Foundation3URLV_tYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC20authenticationScopes9serverUrls6ResultOySaySSGSo7NSErrorCG10Foundation3URLV_tYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
@@ -34584,6 +34950,16 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "EdgeCore"
       },
       {
@@ -35007,6 +35383,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
         "declKind": "Import",
@@ -35038,6 +35424,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
         "declKind": "Import",
@@ -35052,6 +35448,16 @@
         "printedName": "SwiftyJSON",
         "declKind": "Import",
         "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -35246,6 +35652,16 @@
         "printedName": "SwiftyJSON",
         "declKind": "Import",
         "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -35589,6 +36005,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -35598,6 +36024,16 @@
         "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "EdgeCore",
         "declAttributes": [
@@ -36234,154 +36670,154 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1786,
+      "offset": 1787,
       "length": 391,
       "value": "\"\nMIMIKBeam\nid:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1816,
+      "offset": 1817,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1822,
+      "offset": 1823,
       "length": 1,
       "value": "\"\nname: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1845,
+      "offset": 1846,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1851,
+      "offset": 1852,
       "length": 1,
       "value": "\"\nmimeType: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1882,
+      "offset": 1883,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1888,
+      "offset": 1889,
       "length": 1,
       "value": "\"\nurl: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1909,
+      "offset": 1910,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1915,
+      "offset": 1916,
       "length": 1,
       "value": "\"\nnodeId: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1942,
+      "offset": 1943,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1948,
+      "offset": 1949,
       "length": 1,
       "value": "\"\ncreateTime: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1983,
+      "offset": 1984,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 1989,
+      "offset": 1990,
       "length": 1,
       "value": "\"\nreadStatus: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 2024,
+      "offset": 2025,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 2030,
+      "offset": 2031,
       "length": 1,
       "value": "\"\ndeletableTime: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 2071,
+      "offset": 2072,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 2077,
+      "offset": 2078,
       "length": 1,
       "value": "\"\nexpirationDate: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 2145,
+      "offset": 2146,
       "length": 1,
       "value": "\"\nthumbnailContentHint: omitted\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 4022,
+      "offset": 4023,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 4278,
+      "offset": 4279,
       "length": 6,
       "value": "\"read\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 4332,
+      "offset": 4333,
       "length": 8,
       "value": "\"unread\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider.Beams+Beam.swift",
       "kind": "StringLiteral",
-      "offset": 4659,
+      "offset": 4660,
       "length": 3,
       "value": "\".\""
     },
@@ -38110,133 +38546,112 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 2804,
+      "offset": 2813,
       "length": 9,
       "value": "\"\/mID\/v1\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 2850,
+      "offset": 2859,
       "length": 11,
       "value": "\"\/users\/me\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3049,
-      "length": 15,
-      "value": "\"authorization\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
-      "kind": "StringLiteral",
-      "offset": 3136,
-      "length": 7,
-      "value": "\"Error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3151,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
-      "kind": "StringLiteral",
-      "offset": 3433,
+      "offset": 3117,
       "length": 16,
       "value": "\"(access token)\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3481,
+      "offset": 3165,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3551,
+      "offset": 3235,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "IntegerLiteral",
-      "offset": 3566,
+      "offset": 3250,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3814,
+      "offset": 3498,
       "length": 11,
       "value": "\"(request)\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3857,
+      "offset": 3541,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 3927,
+      "offset": 3611,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "IntegerLiteral",
-      "offset": 3942,
+      "offset": 3626,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 4493,
+      "offset": 4177,
       "length": 16,
       "value": "\"(decodableObj)\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 4541,
+      "offset": 4225,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 4623,
+      "offset": 4307,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "IntegerLiteral",
-      "offset": 4638,
+      "offset": 4322,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "StringLiteral",
-      "offset": 4997,
+      "offset": 4681,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthAccount.swift",
       "kind": "IntegerLiteral",
-      "offset": 5012,
+      "offset": 4696,
       "length": 3,
       "value": "500"
     },
@@ -41085,147 +41500,147 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "BooleanLiteral",
-      "offset": 213,
+      "offset": 214,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 744,
+      "offset": 745,
       "length": 17,
       "value": "\"Invalid Request\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "IntegerLiteral",
-      "offset": 769,
+      "offset": 770,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 1341,
+      "offset": 1342,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 1380,
+      "offset": 1381,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 1749,
+      "offset": 1750,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 1788,
+      "offset": 1789,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 1898,
+      "offset": 1899,
       "length": 14,
       "value": "\"Invalid Data\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "IntegerLiteral",
-      "offset": 1920,
+      "offset": 1921,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 2326,
+      "offset": 2327,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 2874,
+      "offset": 2875,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 2913,
+      "offset": 2914,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3039,
+      "offset": 3040,
       "length": 13,
       "value": "\"\/play_queue\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3055,
+      "offset": 3056,
       "length": 37,
       "value": "\"?userAccessToken=\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3091,
+      "offset": 3092,
       "length": 5,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3095,
+      "offset": 3096,
       "length": 29,
       "value": "\"&ownerCode=\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3123,
+      "offset": 3124,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3385,
+      "offset": 3386,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3424,
+      "offset": 3425,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3759,
+      "offset": 3760,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Providers\/EdgeProvider+Beams.swift",
       "kind": "StringLiteral",
-      "offset": 3798,
+      "offset": 3799,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
@@ -41750,84 +42165,84 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 733,
+      "offset": 746,
       "length": 32,
       "value": "\"Generating edgeEngine ID Token\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 797,
+      "offset": 810,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 962,
+      "offset": 975,
       "length": 27,
       "value": "\"edgeEngine ID Token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "IntegerLiteral",
-      "offset": 997,
+      "offset": 1010,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "Array",
-      "offset": 1356,
+      "offset": 1379,
       "length": 76,
       "value": "[\"openid\", \"read:me\", \"edge:mcm\", \"edge:clusters\", \"edge:account:associate\"]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1522,
+      "offset": 1545,
       "length": 5,
       "value": "\"aud\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1610,
+      "offset": 1633,
       "length": 5,
       "value": "\"iss\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1707,
+      "offset": 1730,
       "length": 26,
       "value": "\"Developer ID token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "IntegerLiteral",
-      "offset": 1741,
+      "offset": 1764,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1915,
+      "offset": 1938,
       "length": 11,
       "value": "\"clientId:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1938,
+      "offset": 1961,
       "length": 6,
       "value": "\"url:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1981,
+      "offset": 2004,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
@@ -43458,42 +43873,42 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "StringLiteral",
-      "offset": 762,
+      "offset": 753,
       "length": 17,
       "value": "\"(configuration)\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "StringLiteral",
-      "offset": 781,
+      "offset": 772,
       "length": 8,
       "value": "\"error:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "StringLiteral",
-      "offset": 822,
+      "offset": 813,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "StringLiteral",
-      "offset": 859,
+      "offset": 850,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "StringLiteral",
-      "offset": 957,
+      "offset": 948,
       "length": 21,
       "value": "\"Configuration Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient+AuthScopes.swift",
       "kind": "IntegerLiteral",
-      "offset": 986,
+      "offset": 977,
       "length": 3,
       "value": "500"
     },

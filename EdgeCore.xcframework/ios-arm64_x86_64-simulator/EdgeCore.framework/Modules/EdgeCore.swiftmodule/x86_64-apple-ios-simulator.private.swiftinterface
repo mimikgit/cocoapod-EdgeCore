@@ -143,6 +143,14 @@ extension EdgeCore.EdgeProvider.Beams {
   }
 }
 extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authorizeBackendUse(authorization: EdgeCore.EdgeClient.Authorization, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authorizeBackendUse(federatedToken: Swift.String, policyId: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
   public struct Service {
     public var rootUrl: Foundation.URL
     public var clientId: Swift.String
@@ -452,6 +460,11 @@ extension EdgeCore.EdgeProvider.Beams {
   public static func create(beam: EdgeCore.EdgeProvider.Beams.CreateBeam, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, superdriveMicroservice: EdgeCore.EdgeClient.Microservice, beamOwnerCode: Swift.String) async -> Swift.Bool
   #endif
 }
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authorizeUser(email: Swift.String, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+}
 extension EdgeCore.EdgeProvider.Drive {
   #if compiler(>=5.3) && $AsyncAwait
   public static func createManaged(file: EdgeCore.EdgeProvider.Drive.FileCreateManaged, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.EdgeProvider.Drive.File, Foundation.NSError>
@@ -755,6 +768,11 @@ extension EdgeCore.EdgeClient {
   final public class func mimeTypeFor(fileExtension: Swift.String) -> Swift.String?
 }
 extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func passwordChange(email: Swift.String, currentPassword: Swift.String, newPassword: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
   public struct IdentityUser : Swift.Codable {
     public var userId: Swift.String?
     public var email: Swift.String?
@@ -765,6 +783,19 @@ extension EdgeCore.EdgeClient {
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authorizeDeveloper(developerIdToken: Swift.String, edgeEngineIdToken: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func passwordReset(email: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func validatePasswordReset(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, newPassword: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
 }
 extension EdgeCore.EdgeClient {
   public struct HealthCheck : Swift.Codable {
@@ -908,6 +939,14 @@ extension EdgeCore.EdgeClient {
     public static func accessTokenSub(token: Swift.String) -> Swift.String?
   }
 }
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func authorizeUser(phoneNumber: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func validateUser(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+}
 public protocol EdgeEngineClient {
   static func setCustomPort(number: Swift.Int32) -> Swift.Bool
   static func expectedEdgeEngineVersion() -> Swift.String
@@ -923,6 +962,14 @@ public protocol EdgeEngineClient {
   func edgeEngineIsRunning() -> Swift.Bool
   func edgeEngineParameters() -> EdgeCore.EdgeClient.StartupParameters?
   func edgeEngineRuntimeIsManaged() -> Swift.Bool
+}
+extension EdgeCore.EdgeClient {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func signup(email: Swift.String, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func validateSignup(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  #endif
 }
 extension EdgeCore.EdgeProvider.Beams {
   public struct BeamTokenData : Swift.Codable {
@@ -945,31 +992,21 @@ extension EdgeCore.EdgeClient {
 }
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
-  final public func authenticateDeveloperAccess(developerIdToken: Swift.String, edgeEngineIdToken: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  final public func deleteAccount(email: Swift.String, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, phoneNumber: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  final public func validateDeleteAccount(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func authenticateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, grantAction: EdgeCore.EdgeClient.Authorization.GrantAction, email: Swift.String, currentPassword: Swift.String?, newPassword: Swift.String?, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
+  final public func executeDeleteAccount(authorization: EdgeCore.EdgeClient.Authorization, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
   #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  final public func validateEdgeEngineAccess(service: EdgeCore.EdgeClient.Service, grantType: EdgeCore.EdgeClient.Authorization.GrantType, grantAction: EdgeCore.EdgeClient.Authorization.GrantAction, codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, edgeEngineIdToken: Swift.String?, currentPassword: Swift.String? = nil, newPassword: Swift.String? = nil) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  final public func authenticateUserAccess(service: EdgeCore.EdgeClient.Service, edgeEngineAccessAuthorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  final public func authenticateUserAccess(service: EdgeCore.EdgeClient.Service, federatedToken: Swift.String, policyId: Swift.String, edgeEngineIdToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  final public func deleteAccount(service: EdgeCore.EdgeClient.Service, accessToken: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
-  #endif
+}
+extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
   final public func accountInformation(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func supportedAuthenticationScopes(serverUrl: Foundation.URL) async -> Swift.Result<[Swift.String], Foundation.NSError>
+  final public func authenticationScopes(serverUrl: Foundation.URL) async -> Swift.Result<[Swift.String], Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient.Request {

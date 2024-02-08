@@ -19,42 +19,93 @@ Additionally, this component provides utility APIs that help developers with cor
 Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
 
 
+## Documentation
+
+The full Xcode docc documentation archive can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip). 
+Download the zip file, expand it and then open the .docarchive in Xcode.
+
 ## EdgeClient
 
-### Setting up the Environment
+### Authentication
 
-- ``EdgeClient/setLoggingLevel(level:subsystem:)``
-- ``EdgeClient/selectBackend(backend:)``
-- ``EdgeClient/selectedBackend()``
-- ``EdgeClient/manuallySelectedBackend()``
-- ``EdgeClient/applicationBackend()``
-- ``EdgeClient/forceDefaultBackendSelection()``
-- ``EdgeClient/defaultBackend()``
-- ``EdgeClient/workingDirectory(searchPathDirectory:subFolder:filename:)``
-- ``EdgeClient/edgeEngineWorkingDirectory()``
-- ``EdgeClient/healthCheck(service:requireMatch:)``
+- ``EdgeClient/authorizeDeveloper(developerIdToken:edgeEngineIdToken:)``
+- ``EdgeClient/authorizeUser(email:password:edgeEngineIdToken:service:)``
+- ``EdgeClient/authorizeUser(phoneNumber:edgeEngineIdToken:service:)``
+- ``EdgeClient/validateUser(codes:edgeEngineIdToken:service:)``
+- ``EdgeClient/signup(email:password:edgeEngineIdToken:service:)``
+- ``EdgeClient/validateSignup(codes:password:edgeEngineIdToken:service:)``
+- ``EdgeClient/authorizeBackendUse(authorization:service:)``
+- ``EdgeClient/authorizeBackendUse(federatedToken:policyId:edgeEngineIdToken:service:)``
 
-### Querying the Environment
+### Account Management
+
+- ``EdgeClient/accountInformation(service:authorization:)``
+- ``EdgeClient/passwordReset(email:edgeEngineIdToken:service:)``
+- ``EdgeClient/validatePasswordReset(codes:newPassword:edgeEngineIdToken:service:)``
+- ``EdgeClient/passwordChange(email:currentPassword:newPassword:edgeEngineIdToken:service:)``
+- ``EdgeClient/deleteAccount(email:password:edgeEngineIdToken:service:)``
+- ``EdgeClient/validateDeleteAccount(codes:password:edgeEngineIdToken:service:)``
+- ``EdgeClient/executeDeleteAccount(authorization:service:)``
+
+### Environment
 
 - ``EdgeClient/edgeEngineIdToken()``
 - ``EdgeClient/edgeEngineInfo()``
-- ``EdgeClient/activateExternalEdgeEngine(host:port:)``
 - ``EdgeClient/externalEdgeEngineIsRunning()``
 - ``EdgeClient/externalEdgeEngineActivated()``
 - ``EdgeClient/edgeEngineUrlComponents()``
 - ``EdgeClient/edgeEngineUrlString()``
-- ``EdgeClient/edgeEngineWorkingDirectory()``
+- ``EdgeClient/authenticationScopes(serverUrl:)``
+- ``EdgeClient/healthCheck(service:requireMatch:)``
 
-### Working with edge microservices
+### Managing edge microservices
 
 - ``EdgeClient/deployMicroservice(edgeEngineAccessToken:config:imageTarPath:)``
 - ``EdgeClient/deployedMicroservices(edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroservice(imageId:containerId:edgeEngineAccessToken:)``
 - ``EdgeClient/deployedMicroserviceImages(edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroserviceContainers(edgeEngineAccessToken:)``
 - ``EdgeClient/deployedMicroserviceImage(imageId:edgeEngineAccessToken:)``
+- ``EdgeClient/deployedMicroserviceContainers(edgeEngineAccessToken:)``
 - ``EdgeClient/deployedMicroserviceContainer(containerId:edgeEngineAccessToken:)``
 - ``EdgeClient/updateMicroservice(edgeEngineAccessToken:microservice:imageTarPath:envVariables:)``
 - ``EdgeClient/updateMicroserviceConfig(edgeEngineAccessToken:microservice:envVariables:)``
+- ``EdgeClient/undeployMicroservice(edgeEngineAccessToken:microservice:)``
+- ``EdgeClient/undeployMicroserviceComponent(edgeEngineAccessToken:component:identifier:)``
+
+### Misc Utilities
+
+- ``EdgeClient/downloadContent(sourceUrl:destinationFileUrl:progressHandler:)``
+- ``EdgeClient/downloadImageContent(sourceUrl:)``
+- ``EdgeClient/exportVideo(session:outputURL:outFileType:)``
+- ``EdgeClient/uploadContent(sourceFileUrl:destinationUrl:mimeType:progressHandler:)``
+- ``EdgeClient/healthCheck(service:requireMatch:)``
+
+## Class Methods
+
+- ``EdgeClient/activateExternalEdgeEngine(host:port:)``
+- ``EdgeClient/applicationBackend()``
+- ``EdgeClient/callBackend(config:)``
+- ``EdgeClient/callBackend(config:type:)``
+- ``EdgeClient/deactivateExternalEdgeEngine()``
+- ``EdgeClient/defaultBackend()``
+- ``EdgeClient/edgeEngineWorkingDirectory()``
+- ``EdgeClient/externalEdgeEngineActivated()``
+- ``EdgeClient/fileExtensionFor(type:)``
+- ``EdgeClient/fileExtentionFor(mimeType:)``
+- ``EdgeClient/forceDefaultBackendSelection()``
+- ``EdgeClient/manuallySelectedBackend()``
+- ``EdgeClient/mimeTypeFor(type:)``
+- ``EdgeClient/mimeTypeFor(fileExtension:)``
+- ``EdgeClient/responseData(response:)``
+- ``EdgeClient/responseError(response:)``
+- ``EdgeClient/responseJSON(response:jsonDataKey:)``
+- ``EdgeClient/responsePagingInfo(response:pagingHandler:)``
+- ``EdgeClient/selectedBackend()``
+- ``EdgeClient/selectBackend(backend:)``
+- ``EdgeClient/setLoggingLevel(level:subsystem:)``
+- ``EdgeClient/uttypeFor(mimeType:)``
+- ``EdgeClient/uttypeFor(fileExtension:)``
+- ``EdgeClient/workingDirectory(searchPathDirectory:subFolder:filename:)``
 
 ## EdgeEngineClient Platform Protocol
 
@@ -71,42 +122,6 @@ Furthermore, the mimik Client Library Engine component provides additional edgeE
 - ``EdgeEngineClient/expectedEdgeEngineVersion()``
 - ``EdgeEngineClient/setCustomPort(number:)``
 
-### Backend Calls
- * `callBackend`
-
-### Response Validation
- 
- * `responseJSON`
- * `responseData`
- * `responsePagingInfo`
- * `responseError`
-
-### UTType Documents
- * `uttypeFor`
- * `fileExtensionFor`
- * `mimeTypeFor`
-
- 
-### Content Services
- * `uploadContent`
- * `downloadContent`
- * `downloadImageContent`
- * `exportVideo`
-
-## Authentication Services
- 
- * `authenticateDeveloperAccess`
- * `authenticateEdgeEngineAccess`
- * `validateEdgeEngineAccess`
- * `authenticateUserAccess`
- * `deleteAccount`
- * `accountInformation`
- * `supportedAuthenticationScopes`
-
- Please see the in-code documentation in Xcode for more details.
-
-## edgeEngine Framework 
- 
 For adding edgeEngine framework to your project please see: [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine)
 
 ## Supported Platforms, Targets
@@ -155,13 +170,18 @@ end
 
 ## Tutorial
 
-Visit this [tutorial](https://devdocs.mimik.com/tutorials/11-index) to learn more about the mimik client library and how to integrate it into your iOS project.
+Visit this [tutorial](https://devdocs.mimik.com/tutorials/03-index) to learn more about the mimik client library and how to integrate it into your iOS project.
 
-## mimik client libraries
+## mimik client and service libraries
 
-Don't forget to checkout all mimik client libraries [available on Github](https://github.com/search?q=cocoapod-Edge)
+Don't forget to checkout all mimik client and service libraries [available on Github](https://github.com/search?q=cocoapod-Edge)
 
-Direct links:
+Umbrella cocoapods:
+
+ * [EdgeClientLibrary (Core + Engine)](https://github.com/mimikgit/cocoapod-EdgeClientLibrary)
+ * [EdgeClientLibraryTrial (Core + EngineTrial)](https://github.com/mimikgit/cocoapod-EdgeClientLibraryTrial)
+ 
+Individual cocoapods:
  
  * [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore)
  * [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine)
@@ -173,9 +193,9 @@ Direct links:
 mimik
 
 ```
-https://developer.mimik.com
+https://github.com/mimikgit/cocoapod-EdgeCore
 ```
 
 ## License
 
-The aforementioned mimik client libraries are available under the MIT license. See the LICENSE file for more information.
+The aforementioned mimik client and service libraries are available under the MIT license. See the LICENSE file for more information.

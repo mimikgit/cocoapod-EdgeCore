@@ -367,6 +367,14 @@ SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 
 
 
+
+
+
+
+
+
+
+
 SWIFT_CLASS("_TtC8EdgeCore12EdgeProvider")
 @interface EdgeProvider : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
