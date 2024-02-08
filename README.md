@@ -18,11 +18,9 @@ Additionally, this component provides utility APIs that help developers with cor
 
 Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
 
-
 ## Documentation
 
-The full Xcode docc documentation archive can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip). 
-Download the zip file, expand it and then open the .docarchive in Xcode.
+The full documentation can be accessed from [GitHub Pages](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore) or the Xcode docc archive file can be downloaded as a [zip](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally in Xcode.
 
 ## EdgeClient
 
