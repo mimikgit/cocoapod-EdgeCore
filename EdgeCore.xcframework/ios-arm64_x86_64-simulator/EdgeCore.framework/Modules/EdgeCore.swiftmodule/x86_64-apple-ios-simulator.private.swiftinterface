@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name EdgeCore
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name EdgeCore
 import AVFoundation
 import Alamofire
 import AppAuth
@@ -16,11 +15,9 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.log
 import os
-extension EdgeCore.EdgeClient {
-  final public class func responseJSON(response: Alamofire.AFDataResponse<Foundation.Data>, jsonDataKey: Swift.String? = nil) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
-  final public class func responseData(response: Alamofire.AFDataResponse<Foundation.Data>) -> Swift.Result<Foundation.Data, Foundation.NSError>
-  final public class func responsePagingInfo(response: Alamofire.AFDataResponse<Foundation.Data>, pagingHandler: (_ paging: EdgeCore.EdgeClient.Request.PagingInfo?) -> Swift.Void)
-  final public class func responseError(response: Alamofire.AFDataResponse<Foundation.Data>) -> Foundation.NSError?
+extension EdgeCore.EdgeClient.Request {
+  public static func responseJSON(response: Alamofire.AFDataResponse<Foundation.Data>, dataKey: Swift.String? = nil) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  public static func responseError(response: Alamofire.AFDataResponse<Foundation.Data>) -> Foundation.NSError?
 }
 extension EdgeCore.EdgeClient {
   public struct Node : Swift.Codable {
@@ -33,70 +30,22 @@ extension EdgeCore.EdgeClient {
     public var description: Swift.String {
       get
     }
-    public init(id: Swift.String?, name: Swift.String?, accountId: Swift.String?, os: Swift.String?, url: Swift.String?, routing: EdgeCore.EdgeClient.Node.Routing?)
-    public init?(coder aDecoder: Foundation.NSCoder)
-    public static func defaultNodeName() -> Swift.String
-    public func encode(with aCoder: Foundation.NSCoder)
-    public func defaultNodeName() -> Swift.String
+    public static func preferredNodeName() -> Swift.String
     public func effectiveUrl() -> Foundation.URL?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-extension EdgeCore.EdgeClient {
+extension EdgeCore.EdgeClient.Request {
   #if compiler(>=5.3) && $AsyncAwait
-  final public class func callBackend<T>(config: EdgeCore.EdgeClient.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  public static func call<T>(config: EdgeCore.EdgeClient.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public class func callBackend(config: EdgeCore.EdgeClient.Request.Config) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  public static func call(config: EdgeCore.EdgeClient.Request.Config) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
   #endif
 }
-extension EdgeCore.EdgeClient.IdentityResponse {
-  public enum CodingKeys : Swift.String, Swift.CodingKey {
-    case connection
-    case provider
-    case userId
-    case isSocial
-    public init?(rawValue: Swift.String)
-    public init?(stringValue: Swift.String)
-    public init?(intValue: Swift.Int)
-    public typealias RawValue = Swift.String
-    public var intValue: Swift.Int? {
-      get
-    }
-    public var rawValue: Swift.String {
-      get
-    }
-    public var stringValue: Swift.String {
-      get
-    }
-  }
-  public func dictionary() -> [Swift.String : Any]?
-  public func jsonString() -> Swift.String?
-}
-extension EdgeCore.EdgeClient.IdentityUser {
-  public enum CodingKeys : Swift.String, Swift.CodingKey {
-    case userId
-    case email
-    case phoneNumber
-    case roles
-    case identities
-    public init?(rawValue: Swift.String)
-    public init?(stringValue: Swift.String)
-    public init?(intValue: Swift.Int)
-    public typealias RawValue = Swift.String
-    public var intValue: Swift.Int? {
-      get
-    }
-    public var rawValue: Swift.String {
-      get
-    }
-    public var stringValue: Swift.String {
-      get
-    }
-  }
-  public func dictionary() -> [Swift.String : Any]?
-  public func jsonString() -> Swift.String?
+extension EdgeCore.EdgeClient.Request {
+  public static func decode<T>(_ type: T.Type, from data: Foundation.Data) -> (decodableObj: T?, error: (any Swift.Error)?) where T : Swift.Decodable
 }
 extension EdgeCore.EdgeProvider.Beams {
   public struct Beam : Swift.Codable {
@@ -142,6 +91,25 @@ extension EdgeCore.EdgeProvider.Beams {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
+extension EdgeCore.EdgeClient.Authorization {
+  public struct ValidationCodes : Swift.Codable {
+    public var mfaCode: Swift.String? {
+      get
+    }
+    public var oobCode: Swift.String? {
+      get
+    }
+    public var bindingCode: Swift.String? {
+      get
+    }
+    public init(mfaCode: Swift.String?, oobCode: Swift.String?, bindingCode: Swift.String?)
+    public var description: Swift.String {
+      get
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
   final public func authorizeBackendUse(authorization: EdgeCore.EdgeClient.Authorization, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
@@ -151,18 +119,23 @@ extension EdgeCore.EdgeClient {
   #endif
 }
 extension EdgeCore.EdgeClient {
-  public struct Service {
+  public struct Service : Swift.Codable {
     public var rootUrl: Foundation.URL
-    public var clientId: Swift.String
-    public var expectedSwaggerFileVersion: Swift.String?
-    public var healthCheckPath: Swift.String?
-    public var authScopes: [Swift.String]?
     public var basePath: Swift.String?
-    public init?(coder aDecoder: Foundation.NSCoder)
-    public init(rootUrl: Foundation.URL, clientId: Swift.String, expectedSwaggerFileVersion: Swift.String?, healthCheckPath: Swift.String?, basePath: Swift.String? = nil, authScopes: [Swift.String]? = [])
-    public init(rootUrl: Foundation.URL, clientId: Swift.String, basePath: Swift.String? = nil, authScopes: [Swift.String] = [])
-    public func encode(with aCoder: Foundation.NSCoder)
+    public var clientId: Swift.String?
+    public var expectedVersion: Swift.String?
+    public var healthCheckPath: Swift.String?
+    public var scope: [Swift.String]?
+    public init(rootUrl: Foundation.URL, basePath: Swift.String? = nil, clientId: Swift.String? = nil, expectedVersion: Swift.String? = nil, healthCheckPath: Swift.String? = nil, scope: [Swift.String]? = [])
+    #if compiler(>=5.3) && $AsyncAwait
+    public func healthCheck() async -> Swift.Result<EdgeCore.EdgeClient.Service.HealthCheck, Foundation.NSError>
+    #endif
+    #if compiler(>=5.3) && $AsyncAwait
+    public func versionCheck(requireMatch: Swift.Bool = false) async -> Swift.Result<EdgeCore.EdgeClient.Service.VersionCheck, Foundation.NSError>
+    #endif
     public func urlComponents() -> Foundation.URLComponents?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider.Beams {
@@ -181,9 +154,6 @@ extension EdgeCore.EdgeClient.Node {
     public var description: Swift.String {
       get
     }
-    public init(id: Swift.String?, port: Swift.Int64?, url: Swift.String?)
-    public init?(coder aDecoder: Foundation.NSCoder)
-    public func encode(with aCoder: Foundation.NSCoder)
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -194,10 +164,12 @@ extension EdgeCore.EdgeProvider.Beams {
   #endif
 }
 extension EdgeCore.EdgeProvider {
-  public struct Drive {
+  public struct Drive : Swift.Codable {
     #if compiler(>=5.3) && $AsyncAwait
     public static func files(userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice) async -> [EdgeCore.EdgeProvider.Drive.File]?
     #endif
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 @objc @_inheritsConvenienceInitializers public class EdgeProvider : ObjectiveC.NSObject {
@@ -205,10 +177,7 @@ extension EdgeCore.EdgeProvider {
   @objc deinit
 }
 extension EdgeCore.EdgeClient.Microservice {
-  public struct Image {
-    public var description: Swift.String {
-      get
-    }
+  public struct Image : Swift.Codable {
     public var id: Swift.String?
     public var digest: Swift.String?
     public var created: Swift.Double
@@ -216,7 +185,12 @@ extension EdgeCore.EdgeClient.Microservice {
     public var size: Swift.Int
     public var repoTags: SwiftyJSON.JSON?
     public var fullJSON: SwiftyJSON.JSON?
+    public var description: Swift.String {
+      get
+    }
     public init?(json: SwiftyJSON.JSON)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider.Beams {
@@ -253,29 +227,32 @@ extension EdgeCore.EdgeClient.Microservice {
   public struct Config {
     public var imageName: Swift.String
     public var containerName: Swift.String
-    public var baseApiPath: Swift.String
+    public var basePath: Swift.String
     public var envVariables: [Swift.String : Swift.String]
     public var description: Swift.String {
       get
     }
-    public init(imageName: Swift.String, containerName: Swift.String, baseApiPath: Swift.String, envVariables: [Swift.String : Swift.String])
+    public init(imageName: Swift.String, containerName: Swift.String, basePath: Swift.String, envVariables: [Swift.String : Swift.String])
   }
 }
 extension EdgeCore.EdgeClient.Microservice {
-  public struct Container {
-    public var description: Swift.String {
-      get
-    }
+  public struct Container : Swift.Codable {
     public var imageId: Swift.String?
+    @available(*, deprecated, renamed: "imageId")
     public var image: Swift.String?
     public var state: Swift.String?
     public var created: Swift.Double
     public var name: Swift.String?
     public var id: Swift.String?
-    public var env: [Swift.String : Any]?
+    public var env: [Swift.String : SwiftyJSON.JSON]?
     public var fullJSON: SwiftyJSON.JSON?
+    public var description: Swift.String {
+      get
+    }
     public init?(json: SwiftyJSON.JSON)
-    public func mcmBaseApiPath() -> Swift.String?
+    public func basePath() -> Swift.String?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider.Drive {
@@ -290,27 +267,21 @@ extension EdgeCore.EdgeProvider.Drive {
     public func storageUrl() -> Foundation.URL?
   }
 }
+extension EdgeCore.EdgeClient.Microservice {
+  public static func validateMicroserviceResponse(response: Alamofire.AFDataResponse<Any>, encapsulatedData: Swift.Bool = false) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  public static func preferredConfig(imageName: Swift.String, containerName: Swift.String, basePath: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, clientId: Swift.String, envVariables: [Swift.String : Swift.String]? = nil, signatureKey: Swift.String? = nil, ownerCode: Swift.String? = nil) -> EdgeCore.EdgeClient.Microservice.Config?
+  public static func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
+  public static func expectedDeployedContainerId(containerName: Swift.String, clientId: Swift.String) -> Swift.String
+  public static func expectedDeployedBasePath(path: Swift.String, clientId: Swift.String) -> Swift.String
+  public static func preferredImageName(name: Swift.String) -> Swift.String
+  public static func preferredContainerName(name: Swift.String) -> Swift.String
+  public static func preferredBasePath(path: Swift.String) -> Swift.String
+}
 @objc @_inheritsConvenienceInitializers final public class EdgeClient : ObjectiveC.NSObject {
-  public enum Backend : Swift.String {
-    case development
-    case qa
-    case staging
-    case production
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  final public class func setLoggingLevel(level: EdgeCore.EdgeClient.Log.Level, subsystem: EdgeCore.EdgeClient.Log.SubSystem = .edgeCore)
-  final public class func selectBackend(backend: EdgeCore.EdgeClient.Backend)
-  final public class func selectedBackend() -> EdgeCore.EdgeClient.Backend
+  final public class func setLoggingLevel(level: EdgeCore.EdgeClient.Log.Level, module: EdgeCore.EdgeClient.Log.Module = .edgeCore)
   final public class func activateExternalEdgeEngine(host: Swift.String, port: Swift.Int) -> Swift.Result<Foundation.URLComponents, Foundation.NSError>
-  final public class func externalEdgeEngineActivated() -> Swift.Bool
-  final public class func deactivateExternalEdgeEngine() -> Swift.Result<Swift.Bool, Foundation.NSError>
-  #if compiler(>=5.3) && $AsyncAwait
-  final public func healthCheck(service: EdgeCore.EdgeClient.Service, requireMatch: Swift.Bool = false) async -> Swift.Result<EdgeCore.EdgeClient.HealthCheck.Response, Foundation.NSError>
-  #endif
+  final public class func externalEdgeEngineIsActivated() -> Swift.Bool
+  final public class func deactivateExternalEdgeEngine() -> Swift.Result<Swift.Void, Foundation.NSError>
   #if compiler(>=5.3) && $AsyncAwait
   final public func deployMicroservice(edgeEngineAccessToken: Swift.String, config: EdgeCore.EdgeClient.Microservice.Config, imageTarPath: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Microservice, Foundation.NSError>
   #endif
@@ -318,13 +289,13 @@ extension EdgeCore.EdgeProvider.Drive {
   final public func updateMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, imageTarPath: Swift.String, envVariables: [Swift.String : Swift.String]? = [:]) async -> Swift.Result<EdgeCore.EdgeClient.Microservice, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func updateMicroserviceConfig(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, envVariables: [Swift.String : Swift.String]) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  final public func updateMicroserviceEnv(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, envVariables: [Swift.String : Swift.String]) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func undeployMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  final public func undeployMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func undeployMicroserviceComponent(edgeEngineAccessToken: Swift.String, component: EdgeCore.EdgeClient.Microservice.Component, identifier: Swift.String) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  final public func undeployMicroserviceComponent(edgeEngineAccessToken: Swift.String, component: EdgeCore.EdgeClient.Microservice.Component, identifier: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
   final public func deployedMicroservices(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.EdgeClient.Microservice], Foundation.NSError>
@@ -353,8 +324,7 @@ extension EdgeCore.EdgeProvider.Drive {
   #if compiler(>=5.3) && $AsyncAwait
   final public func externalEdgeEngineIsRunning() async -> Swift.Bool
   #endif
-  final public func edgeEngineUrlComponents() -> Foundation.URLComponents
-  final public func edgeEngineUrlString() -> Swift.String
+  final public func edgeEngineFullPathUrl() -> Foundation.URLComponents
   @objc override dynamic public init()
   @objc deinit
 }
@@ -438,12 +408,6 @@ extension EdgeCore.EdgeProvider.Beams {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-extension EdgeCore.EdgeClient {
-  final public class func manuallySelectedBackend() -> EdgeCore.EdgeClient.Backend?
-  final public class func applicationBackend() -> EdgeCore.EdgeClient.Backend
-  final public class func forceDefaultBackendSelection()
-  final public class func defaultBackend() -> EdgeCore.EdgeClient.Backend
-}
 extension EdgeCore.EdgeProvider.Beams {
   public struct CreateBeam {
     public var sourceNodeId: Swift.String
@@ -470,16 +434,21 @@ extension EdgeCore.EdgeProvider.Drive {
   public static func createManaged(file: EdgeCore.EdgeProvider.Drive.FileCreateManaged, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.EdgeProvider.Drive.File, Foundation.NSError>
   #endif
 }
-extension EdgeCore.EdgeClient.Request {
-  @_hasMissingDesignatedInitializers open class CodableHelper {
-    public static var dateformatter: Foundation.DateFormatter?
-    open class func decode<T>(_ type: T.Type, from data: Foundation.Data) -> (decodableObj: T?, error: (any Swift.Error)?) where T : Swift.Decodable
-    open class func encode<T>(_ value: T, prettyPrint: Swift.Bool = false) -> (data: Foundation.Data?, error: (any Swift.Error)?) where T : Swift.Encodable
-    @objc deinit
+extension Swift.Encodable {
+  public var dictionary: [Swift.String : Any]? {
+    get
   }
+  public func json() -> SwiftyJSON.JSON?
+  public func jsonString() -> Swift.String?
+  public func jsonData() -> Foundation.Data?
+  public func encoded() throws -> Foundation.Data
+}
+extension Foundation.Data {
+  public func decoded<T>(type: T.Type) -> T? where T : Swift.Decodable
+  public func decoded<T>() throws -> T where T : Swift.Decodable
 }
 extension EdgeCore.EdgeClient {
-  public struct Microservice {
+  public struct Microservice : Swift.Codable {
     public enum Component : Swift.String {
       case image
       case container
@@ -494,26 +463,16 @@ extension EdgeCore.EdgeClient {
     }
     public var container: EdgeCore.EdgeClient.Microservice.Container?
     public var image: EdgeCore.EdgeClient.Microservice.Image?
-    public var imageTarPath: Swift.String?
-    public var clientId: Swift.String?
-    public var apiKey: Swift.String?
     public init(image: EdgeCore.EdgeClient.Microservice.Image, container: EdgeCore.EdgeClient.Microservice.Container)
-    public static func validateMicroserviceResponse(response: Alamofire.AFDataResponse<Any>, encapsulatedData: Swift.Bool = false) -> (dataJSON: SwiftyJSON.JSON?, error: (any Swift.Error)?)
-    public static func microserviceConfiguration(imageName: Swift.String, containerName: Swift.String, baseAPIPath: Swift.String, edgeEngineUrlComponents: Foundation.URLComponents, clientId: Swift.String, signatureKey: Swift.String, ownerCode: Swift.String) -> EdgeCore.EdgeClient.Microservice.Config?
-    public static func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
-    public static func expectedDeployedContainerId(containerName: Swift.String, clientId: Swift.String) -> Swift.String
-    public static func expectedDeployedBaseApiPath(name: Swift.String, clientId: Swift.String) -> Swift.String
-    public static func expectedImageName(name: Swift.String) -> Swift.String
-    public static func expectedContainerName(name: Swift.String) -> Swift.String
-    public static func expectedBaseApiPath(name: Swift.String) -> Swift.String
+    public func fullPathUrl() -> Foundation.URLComponents?
+    public func fullPathUrl(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
     public func basePath() -> Swift.String?
-    public func fullPath() -> Swift.String?
-    public func urlComponents() -> Foundation.URLComponents?
-    public func urlComponents(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider {
-  public struct Clusters {
+  public struct Clusters : Swift.Codable {
     public enum ClusterType : Swift.String {
       case nearby
       case account
@@ -530,86 +489,42 @@ extension EdgeCore.EdgeProvider {
     #if compiler(>=5.3) && $AsyncAwait
     public static func findNodesDebugJson(type: EdgeCore.EdgeProvider.Clusters.ClusterType, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.EdgeClient.Microservice) async -> SwiftyJSON.JSON?
     #endif
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider {
-  public struct Beams {
+  public struct Beams : Swift.Codable {
     #if compiler(>=5.3) && $AsyncAwait
     public static func beams(edgeServiceLink: Swift.String, userAccessToken: Swift.String, beamOwnerCode: Swift.String, beamMicroservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<[EdgeCore.EdgeProvider.Beams.Beam], Foundation.NSError>
     #endif
-  }
-}
-extension EdgeCore.EdgeClient.Authorization {
-  public enum AccountAssociationAction : Swift.String {
-    case authorize
-    case unauthorize
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum TokenType : Swift.String {
-    case edgeEngineAccessToken
-    case custom
-    case driveAccessToken
-    case userAccessToken
-    case validationCodes
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum GrantType : Swift.String {
-    case phoneNumber
-    case emailPassword
-    case idTokenSignin
-    case trustTokenSignin
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum GrantAction : Swift.String {
-    case register
-    case login
-    case changePassword
-    case resetPassword
-    case resetPasswordApply
-    case loginApply
-    case emptyActionPhoneNumber
-    case emptyActionIdToken
-    case emptyActionDeveloperIdToken
-    case emptyActionFederation
-    case emptyActionCreateEmail
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public struct ValidationCodes {
-    public var mfaCode: Swift.String? {
-      get
-    }
-    public var oobCode: Swift.String? {
-      get
-    }
-    public var bindingCode: Swift.String? {
-      get
-    }
-    public init(mfaCode: Swift.String?, oobCode: Swift.String?, bindingCode: Swift.String?)
-    public var description: Swift.String {
-      get
-    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider.Drive {
   #if compiler(>=5.3) && $AsyncAwait
   public static func create(file: EdgeCore.EdgeProvider.Drive.FileCreate, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.EdgeProvider.Drive.File, Foundation.NSError>
   #endif
+}
+extension EdgeCore.EdgeClient.Service {
+  public struct VersionCheck : Swift.Codable {
+    public enum Result : Swift.String, Swift.Codable {
+      case unknown
+      case expected
+      case unexpectedWarning
+      case unexpectedFailure
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public let result: EdgeCore.EdgeClient.Service.VersionCheck.Result
+    public let message: Swift.String
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
 }
 extension EdgeCore.EdgeProvider.Beams {
   #if compiler(>=5.3) && $AsyncAwait
@@ -623,7 +538,7 @@ extension EdgeCore.EdgeProvider.Beams {
   #endif
 }
 extension EdgeCore.EdgeClient {
-  public struct Log {
+  public struct Log : Swift.Codable {
     public enum Level : Swift.Int {
       case debug
       case info
@@ -636,19 +551,30 @@ extension EdgeCore.EdgeClient {
         get
       }
     }
-    public enum SubSystem {
+    public enum Privacy {
+      case privateOnly
+      case publicAccess
+      public static func == (a: EdgeCore.EdgeClient.Log.Privacy, b: EdgeCore.EdgeClient.Log.Privacy) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public enum Module {
       case custom(Swift.String)
       case edgeCore
       case edgeEngine
       case edgeUser
       case mimikAccess
     }
-    public static func loggingLevel(subsystem: EdgeCore.EdgeClient.Log.SubSystem) -> EdgeCore.EdgeClient.Log.Level
-    public static func logType(function: Swift.String, line: Swift.Int, items: Any..., type: EdgeCore.EdgeClient.Log.Level, subsystem: EdgeCore.EdgeClient.Log.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
-    public static func logInfo(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.EdgeClient.Log.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
-    public static func logDebug(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.EdgeClient.Log.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
-    public static func logFault(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.EdgeClient.Log.SubSystem, marker: Swift.String? = nil, displayPrivately: Swift.Bool = false)
-    public static func logError(function: Swift.String, line: Swift.Int, items: Any..., subsystem: EdgeCore.EdgeClient.Log.SubSystem, marker: Swift.String? = "⚠️⚠️⚠️", displayPrivately: Swift.Bool = false)
+    public static func loggingLevel(module: EdgeCore.EdgeClient.Log.Module) -> EdgeCore.EdgeClient.Log.Level
+    public static func log(level: EdgeCore.EdgeClient.Log.Level, function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public static func logInfo(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public static func logDebug(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public static func logFault(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public static func logError(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = "⚠️⚠️⚠️", privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeProvider.Drive {
@@ -656,13 +582,39 @@ extension EdgeCore.EdgeProvider.Drive {
   public static func delete(file: EdgeCore.EdgeProvider.Drive.File, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.EdgeProvider.Drive.File, Foundation.NSError>
   #endif
 }
-extension EdgeCore.EdgeClient {
-  public struct IdentityResponse : Swift.Codable {
-    public var connection: Swift.String?
-    public var provider: Swift.String?
-    public var userId: Swift.String?
-    public var isSocial: Swift.Bool?
-    public init(connection: Swift.String?, provider: Swift.String?, userId: Swift.String?, isSocial: Swift.Bool?)
+extension EdgeCore.EdgeClient.Authorization {
+  public struct AccessToken : Swift.Codable {
+    public var accessToken: Swift.String? {
+      get
+    }
+    public var refreshToken: Swift.String? {
+      get
+    }
+    public var scope: Swift.String? {
+      get
+    }
+    public var tokenType: Swift.String? {
+      get
+    }
+    public var expiresIn: Foundation.Date? {
+      get
+    }
+    public var idToken: Swift.String? {
+      get
+    }
+    public init(accessToken: Swift.String? = nil, refreshToken: Swift.String? = nil, scope: Swift.String? = nil, tokenType: Swift.String? = nil, expiresIn: Foundation.Date? = nil, idToken: Swift.String? = nil)
+    public func validate() -> Swift.Result<Swift.Void, Foundation.NSError>
+    public func decodeToJWT() -> (any JWTDecode.JWT)?
+    public func decodeToJson() -> SwiftyJSON.JSON?
+    public func subscriber() -> Swift.String?
+    public func clientId() -> Swift.String?
+    public func valueFrom(key: Swift.String) -> Swift.String?
+    public static func validate(token: Swift.String, simpleCheck: Swift.Bool = false) -> Swift.Result<Swift.Void, Foundation.NSError>
+    public static func decodeToJWT(token: Swift.String) -> (any JWTDecode.JWT)?
+    public static func decodeToJson(token: Swift.String) -> SwiftyJSON.JSON?
+    public static func subscriber(token: Swift.String) -> Swift.String?
+    public static func expiresIn(token: Swift.String) -> Foundation.Date?
+    public static func valueFrom(token: Swift.String, key: Swift.String) -> Swift.String?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -683,15 +635,15 @@ extension EdgeCore.EdgeProvider.Drive {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-extension EdgeCore.EdgeClient {
+extension EdgeCore.EdgeClient.Request {
   #if compiler(>=5.3) && $AsyncAwait
-  final public func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, any Swift.Error>
+  public func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient.Request {
@@ -703,13 +655,18 @@ extension EdgeCore.EdgeClient.Request {
     public let authorization: EdgeCore.EdgeClient.Authorization?
     public let parameters: [Swift.String : Any]?
     public let httpHeaders: Alamofire.HTTPHeaders?
-    public let jsonDataKey: Swift.String?
-    public let pagingHandler: EdgeCore.EdgeClient.Request.PagingHandler?
-    public init(service: EdgeCore.EdgeClient.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, parameters: [Swift.String : Any]?, httpHeaders: Alamofire.HTTPHeaders? = nil, jsonDataKey: Swift.String? = nil, pagingHandler: EdgeCore.EdgeClient.Request.PagingHandler? = nil)
+    public let dataKey: Swift.String?
+    public let pagingHandler: EdgeCore.EdgeClient.Request.PagingInfoHandler?
+    public init(service: EdgeCore.EdgeClient.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, parameters: [Swift.String : Any]?, httpHeaders: Alamofire.HTTPHeaders? = nil, dataKey: Swift.String? = nil, pagingHandler: EdgeCore.EdgeClient.Request.PagingInfoHandler? = nil)
   }
 }
 extension EdgeCore.EdgeClient {
   public struct StartupParameters : Swift.Codable {
+    public var license: Swift.String
+    public var logLevel: EdgeCore.EdgeClient.StartupParameters.LogLevel
+    public var nodeInfoLevel: EdgeCore.EdgeClient.StartupParameters.NodeInfoLevel
+    public var nodeName: Swift.String
+    public var localDiscovery: EdgeCore.EdgeClient.StartupParameters.LocalDiscovery
     public enum LogLevel : Swift.String, Swift.Codable {
       case trace
       case debug
@@ -744,28 +701,13 @@ extension EdgeCore.EdgeClient {
         get
       }
     }
-    public var logLevel: EdgeCore.EdgeClient.StartupParameters.LogLevel
-    public var nodeInfoLevel: EdgeCore.EdgeClient.StartupParameters.NodeInfoLevel
-    public var nodeName: Swift.String
-    public var localDiscovery: EdgeCore.EdgeClient.StartupParameters.LocalDiscovery
-    public var license: Swift.String
     public var description: Swift.String {
       get
     }
     public init(license: Swift.String, logLevel: EdgeCore.EdgeClient.StartupParameters.LogLevel = .error, nodeInfoLevel: EdgeCore.EdgeClient.StartupParameters.NodeInfoLevel = .off, nodeName: Swift.String = UIDevice.current.name + "-" + UIDevice.current.model, localDiscovery: EdgeCore.EdgeClient.StartupParameters.LocalDiscovery = .off)
-    public init?(coder aDecoder: Foundation.NSCoder)
-    public func encode(with aCoder: Foundation.NSCoder)
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
-}
-extension EdgeCore.EdgeClient {
-  final public class func uttypeFor(fileExtension: Swift.String) -> UniformTypeIdentifiers.UTType?
-  final public class func uttypeFor(mimeType: Swift.String) -> UniformTypeIdentifiers.UTType?
-  final public class func fileExtensionFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
-  final public class func fileExtentionFor(mimeType: Swift.String) -> Swift.String?
-  final public class func mimeTypeFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
-  final public class func mimeTypeFor(fileExtension: Swift.String) -> Swift.String?
 }
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
@@ -773,13 +715,25 @@ extension EdgeCore.EdgeClient {
   #endif
 }
 extension EdgeCore.EdgeClient {
-  public struct IdentityUser : Swift.Codable {
+  public struct User : Swift.Codable {
     public var userId: Swift.String?
     public var email: Swift.String?
     public var phoneNumber: Swift.String?
     public var roles: [Swift.String]?
     public var identities: EdgeCore.EdgeClient.JSONValue?
     public init(userId: Swift.String?, email: Swift.String?, phoneNumber: Swift.String?, roles: [Swift.String]?, identities: EdgeCore.EdgeClient.JSONValue?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension EdgeCore.EdgeClient {
+  public struct Document : Swift.Codable {
+    public static func uttypeFor(filenameExtension: Swift.String) -> UniformTypeIdentifiers.UTType?
+    public static func uttypeFor(mimeType: Swift.String) -> UniformTypeIdentifiers.UTType?
+    public static func filenameExtensionFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+    public static func filenameExtentionFor(mimeType: Swift.String) -> Swift.String?
+    public static func mimeTypeFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+    public static func mimeTypeFor(filenameExtension: Swift.String) -> Swift.String?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -797,68 +751,71 @@ extension EdgeCore.EdgeClient {
   final public func validatePasswordReset(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, newPassword: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
   #endif
 }
-extension EdgeCore.EdgeClient {
+extension EdgeCore.EdgeClient.Service {
   public struct HealthCheck : Swift.Codable {
-    public enum Result : Swift.String {
-      case unknown
-      case expected
-      case unexpectedContinue
-      case unexpectedFail
-      public init?(rawValue: Swift.String)
-      public typealias RawValue = Swift.String
-      public var rawValue: Swift.String {
-        get
-      }
-    }
-    public struct Response {
-      public var service: EdgeCore.EdgeClient.Service
-      public var result: EdgeCore.EdgeClient.HealthCheck.Result
-      public var message: Swift.String
-      public var description: Swift.String {
-        get
-      }
-      public init(service: EdgeCore.EdgeClient.Service, result: EdgeCore.EdgeClient.HealthCheck.Result, message: Swift.String)
-    }
-    public struct HealthCheckClusterStatus : Swift.Codable {
-      public var nbServers: Swift.String?
-      public var updatedAt: Foundation.Date?
-      public init(nbServers: Swift.String?, updatedAt: Foundation.Date?)
+    public struct ClusterStatus : Swift.Codable {
+      public let nbServers: Swift.String?
+      public let updatedAt: Foundation.Date?
       public func encode(to encoder: any Swift.Encoder) throws
       public init(from decoder: any Swift.Decoder) throws
     }
-    public struct HealthCheckDeploymentGitRepo : Swift.Codable {
-      public var branch: Swift.String?
-      public var hashKey: Swift.String?
-      public init(branch: Swift.String?, hashKey: Swift.String?)
+    public struct GitRepo : Swift.Codable {
+      public let branch: Swift.String?
+      public let hashKey: Swift.String?
       public func encode(to encoder: any Swift.Encoder) throws
       public init(from decoder: any Swift.Decoder) throws
     }
-    public struct HealthCheckDeployment : Swift.Codable {
-      public var gitRepo: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeploymentGitRepo?
-      public var time: Swift.String?
-      public init(gitRepo: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeploymentGitRepo?, time: Swift.String?)
+    public struct Deployment : Swift.Codable {
+      public let gitRepo: EdgeCore.EdgeClient.Service.HealthCheck.GitRepo?
+      public let time: Swift.String?
       public func encode(to encoder: any Swift.Encoder) throws
       public init(from decoder: any Swift.Decoder) throws
     }
-    public var swaggerFileVersion: Swift.String?
-    public var type: Swift.String?
-    public var uptime: Foundation.Decimal?
-    public var version: Swift.String?
-    public var registrationStatus: Swift.String?
-    public var port: Swift.String?
-    public var platform: Swift.String?
-    public var pidValue: Swift.Int?
-    public var nodeVersion: Swift.String?
-    public var name: Swift.String?
-    public var memoryUsage: EdgeCore.EdgeClient.JSONValue?
-    public var location: EdgeCore.EdgeClient.JSONValue?
-    public var id: Swift.String?
-    public var environment: Swift.String?
-    public var deployment: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeployment?
-    public var cpuUsage: EdgeCore.EdgeClient.JSONValue?
-    public var clusterStatus: EdgeCore.EdgeClient.HealthCheck.HealthCheckClusterStatus?
-    public var addresses: EdgeCore.EdgeClient.JSONValue?
-    public init(swaggerFileVersion: Swift.String?, type: Swift.String?, uptime: Foundation.Decimal?, version: Swift.String?, registrationStatus: Swift.String?, port: Swift.String?, platform: Swift.String?, pidValue: Swift.Int?, nodeVersion: Swift.String?, name: Swift.String?, memoryUsage: EdgeCore.EdgeClient.JSONValue?, location: EdgeCore.EdgeClient.JSONValue?, id: Swift.String?, environment: Swift.String?, deployment: EdgeCore.EdgeClient.HealthCheck.HealthCheckDeployment?, cpuUsage: EdgeCore.EdgeClient.JSONValue?, clusterStatus: EdgeCore.EdgeClient.HealthCheck.HealthCheckClusterStatus?, addresses: EdgeCore.EdgeClient.JSONValue?)
+    public struct Address : Swift.Codable {
+      public let local: Swift.String?
+      public let addressPublic: Swift.String?
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct MemoryUsage : Swift.Codable {
+      public let xternal: Swift.Int?
+      public let rss: Swift.Int?
+      public let arrayBuffers: Swift.Int?
+      public let heapUsed: Swift.Int?
+      public let heapTotal: Swift.Int?
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct CPUUsage : Swift.Codable {
+      public let user: Swift.Int?
+      public let system: Swift.Int?
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct Location : Swift.Codable {
+      public let type: Swift.String?
+      public let coordinates: [Swift.Double]?
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public let swaggerFileVersion: Swift.String?
+    public let type: Swift.String?
+    public let uptime: Foundation.Decimal?
+    public let version: Swift.String?
+    public let registrationStatus: Swift.String?
+    public let port: Swift.String?
+    public let platform: Swift.String?
+    public let pidValue: Swift.Int?
+    public let nodeVersion: Swift.String?
+    public let name: Swift.String?
+    public let memoryUsage: EdgeCore.EdgeClient.Service.HealthCheck.MemoryUsage?
+    public let location: EdgeCore.EdgeClient.Service.HealthCheck.Location?
+    public let id: Swift.String?
+    public let environment: Swift.String?
+    public let deployment: EdgeCore.EdgeClient.Service.HealthCheck.Deployment?
+    public let cpuUsage: EdgeCore.EdgeClient.Service.HealthCheck.CPUUsage?
+    public let clusterStatus: EdgeCore.EdgeClient.Service.HealthCheck.ClusterStatus?
+    public let addresses: [EdgeCore.EdgeClient.Service.HealthCheck.Address]?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -885,7 +842,8 @@ extension EdgeCore.EdgeProvider.Drive {
   }
 }
 extension EdgeCore.EdgeClient.Request {
-  public typealias PagingHandler = (_ paging: EdgeCore.EdgeClient.Request.PagingInfo?) -> Swift.Void
+  public typealias PagingInfoHandler = (_ paging: EdgeCore.EdgeClient.Request.PagingInfo?) -> Swift.Void
+  public typealias ProgressHandler = (_ progress: Foundation.Progress) -> Swift.Void
   public struct PagingInfo {
     public let count: Swift.Int
     public let startAfter: Swift.String
@@ -903,13 +861,6 @@ extension EdgeCore.EdgeProvider.Clusters {
   public static func nodePresenceCheck(nodeId: Swift.String, userAccessToken: Swift.String, beamOwnerCode: Swift.String, edgeServiceLink: Swift.String, superdriveMicroservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<EdgeCore.EdgeClient.Node, Foundation.NSError>
   #endif
 }
-extension EdgeCore.EdgeClient.Authorization {
-  public static func jwtTokenDecoded(token: Swift.String) -> (any JWTDecode.JWT)?
-  public static func jwtTokenExpiry(token: Swift.String) -> Foundation.Date?
-  public static func jwtTokenValidation(token: Swift.String, type: EdgeCore.EdgeClient.Authorization.TokenType) -> Swift.Bool
-  public static func jwtTokenJson(token: Swift.String) -> SwiftyJSON.JSON?
-  public static func valueFromToken(token: Swift.String, key: Swift.String) -> Swift.String?
-}
 extension EdgeCore.EdgeProvider.Drive {
   public struct FileCreate : Swift.Codable {
     public var name: Swift.String
@@ -923,20 +874,17 @@ extension EdgeCore.EdgeProvider.Drive {
   }
 }
 extension EdgeCore.EdgeClient {
-  public struct Authorization {
-    public var type: EdgeCore.EdgeClient.Authorization.TokenType
-    public init?(validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes)
-    public init?(type: EdgeCore.EdgeClient.Authorization.TokenType?, userAccessToken: Swift.String?, idToken: Swift.String? = nil, refreshToken: Swift.String? = nil, validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes? = nil, accessTokenExpirationDate: Foundation.Date? = nil, tokenType: Swift.String? = nil, scope: Swift.String? = nil)
-    public func accessToken() -> Swift.String?
-    public func idToken() -> Swift.String?
-    public func refreshToken() -> Swift.String?
-    public func validationCodes() -> EdgeCore.EdgeClient.Authorization.ValidationCodes?
-    public func accessTokenValidation() -> Swift.Bool
-    public func accessTokenDecoded() -> (any JWTDecode.JWT)?
-    public func accessTokenSub() -> Swift.String?
-    public func accessTokenScopes() -> Swift.String?
-    public func accessTokenExpiryDate() -> Foundation.Date?
-    public static func accessTokenSub(token: Swift.String) -> Swift.String?
+  public struct Authorization : Swift.Codable {
+    public var token: EdgeCore.EdgeClient.Authorization.AccessToken? {
+      get
+    }
+    public var validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes? {
+      get
+    }
+    public init(token: EdgeCore.EdgeClient.Authorization.AccessToken)
+    public init(validationCodes: EdgeCore.EdgeClient.Authorization.ValidationCodes)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeClient {
@@ -948,20 +896,20 @@ extension EdgeCore.EdgeClient {
   #endif
 }
 public protocol EdgeEngineClient {
-  static func setCustomPort(number: Swift.Int32) -> Swift.Bool
+  static func setCustomPort(number: Swift.Int32) -> Swift.Result<Swift.Void, Foundation.NSError>
   static func expectedEdgeEngineVersion() -> Swift.String
-  static func manageEdgeEngineRuntime(enable: Swift.Bool) throws
+  static func manageEdgeEngineLifecycle(manage: Swift.Bool) -> Swift.Result<Swift.Void, Foundation.NSError>
   #if compiler(>=5.3) && $AsyncAwait
-  func startEdgeEngine(parameters: EdgeCore.EdgeClient.StartupParameters) async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  func startEdgeEngine(parameters: EdgeCore.EdgeClient.StartupParameters) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   func stopEdgeEngine()
   #if compiler(>=5.3) && $AsyncAwait
-  func restartEdgeEngine() async -> Swift.Result<Swift.Bool, Foundation.NSError>
+  func restartEdgeEngine() async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
-  func resetEdgeEngine() -> Swift.Bool
+  func resetEdgeEngine() -> Swift.Result<Swift.Void, Foundation.NSError>
   func edgeEngineIsRunning() -> Swift.Bool
   func edgeEngineParameters() -> EdgeCore.EdgeClient.StartupParameters?
-  func edgeEngineRuntimeIsManaged() -> Swift.Bool
+  func edgeEngineLifecycleIsManaged() -> Swift.Bool
 }
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
@@ -987,7 +935,6 @@ extension EdgeCore.EdgeProvider.Beams {
   }
 }
 extension EdgeCore.EdgeClient {
-  final public class func workingDirectory(searchPathDirectory: Foundation.FileManager.SearchPathDirectory, subFolder: Swift.String, filename: Swift.String? = nil) -> Foundation.URL?
   final public class func edgeEngineWorkingDirectory() -> Foundation.URL?
 }
 extension EdgeCore.EdgeClient {
@@ -998,12 +945,12 @@ extension EdgeCore.EdgeClient {
   final public func validateDeleteAccount(codes: EdgeCore.EdgeClient.Authorization.ValidationCodes, password: Swift.String, edgeEngineIdToken: Swift.String, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.Authorization, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  final public func executeDeleteAccount(authorization: EdgeCore.EdgeClient.Authorization, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
+  final public func executeDeleteAccount(authorization: EdgeCore.EdgeClient.Authorization, service: EdgeCore.EdgeClient.Service) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient {
   #if compiler(>=5.3) && $AsyncAwait
-  final public func accountInformation(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.IdentityUser, Foundation.NSError>
+  final public func accountInformation(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<EdgeCore.EdgeClient.User, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
   final public func authenticationScopes(serverUrl: Foundation.URL) async -> Swift.Result<[Swift.String], Foundation.NSError>
@@ -1022,34 +969,28 @@ extension EdgeCore.EdgeClient.Request {
     open func set(path: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     open func append(path: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     public func set(queryItems: [Swift.String : Any]) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
+    public func set(query: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
+    public func set(user: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
+    public func set(password: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
+    public func set(fragment: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     @objc deinit
   }
 }
-extension EdgeCore.EdgeClient {
+extension EdgeCore.EdgeClient.Request {
   #if compiler(>=5.3) && $AsyncAwait
-  final public func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient {
-  public struct Request {
-    public typealias ProgressHandler = (_ progress: Foundation.Progress) -> Swift.Void
-    public static func backendEncodedUrlRequest(urlRequest: Foundation.URLRequest, dictionary: [Swift.String : Any]?) -> Foundation.URLRequest?
-    public static func backendUrlRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, authorization: EdgeCore.EdgeClient.Authorization?, httpHeaders: Alamofire.HTTPHeaders? = nil) -> Foundation.URLRequest?
-    public static func frontendUrlRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, dictionary: [Swift.String : Any]?, microservice: EdgeCore.EdgeClient.Microservice, authorization: EdgeCore.EdgeClient.Authorization?, timeoutInterval: Foundation.TimeInterval = 60.0, cachePolicy: Foundation.URLRequest.CachePolicy = .useProtocolCachePolicy) -> Foundation.URLRequest?
+  public struct Request : Swift.Codable {
+    public static func authorizedRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, authorization: EdgeCore.EdgeClient.Authorization?, httpHeaders: Alamofire.HTTPHeaders?, parameters: [Swift.String : Any]?, contentType: Swift.String = "application/json") -> Foundation.URLRequest?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
-extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.Equatable {}
-extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.Hashable {}
-extension EdgeCore.EdgeClient.IdentityResponse.CodingKeys : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.Equatable {}
-extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.Hashable {}
-extension EdgeCore.EdgeClient.IdentityUser.CodingKeys : Swift.RawRepresentable {}
 extension EdgeCore.EdgeProvider.Beams.Beam.ReadStatus : Swift.Equatable {}
 extension EdgeCore.EdgeProvider.Beams.Beam.ReadStatus : Swift.Hashable {}
 extension EdgeCore.EdgeProvider.Beams.Beam.ReadStatus : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.Backend : Swift.Equatable {}
-extension EdgeCore.EdgeClient.Backend : Swift.Hashable {}
-extension EdgeCore.EdgeClient.Backend : Swift.RawRepresentable {}
 extension EdgeCore.EdgeProvider.Beams.BeamToken.TokenStatus : Swift.Equatable {}
 extension EdgeCore.EdgeProvider.Beams.BeamToken.TokenStatus : Swift.Hashable {}
 extension EdgeCore.EdgeProvider.Beams.BeamToken.TokenStatus : Swift.RawRepresentable {}
@@ -1059,21 +1000,14 @@ extension EdgeCore.EdgeClient.Microservice.Component : Swift.RawRepresentable {}
 extension EdgeCore.EdgeProvider.Clusters.ClusterType : Swift.Equatable {}
 extension EdgeCore.EdgeProvider.Clusters.ClusterType : Swift.Hashable {}
 extension EdgeCore.EdgeProvider.Clusters.ClusterType : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.Equatable {}
-extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.Hashable {}
-extension EdgeCore.EdgeClient.Authorization.AccountAssociationAction : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.Equatable {}
-extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.Hashable {}
-extension EdgeCore.EdgeClient.Authorization.TokenType : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.Equatable {}
-extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.Hashable {}
-extension EdgeCore.EdgeClient.Authorization.GrantType : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.Equatable {}
-extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.Hashable {}
-extension EdgeCore.EdgeClient.Authorization.GrantAction : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Service.VersionCheck.Result : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Service.VersionCheck.Result : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Service.VersionCheck.Result : Swift.RawRepresentable {}
 extension EdgeCore.EdgeClient.Log.Level : Swift.Equatable {}
 extension EdgeCore.EdgeClient.Log.Level : Swift.Hashable {}
 extension EdgeCore.EdgeClient.Log.Level : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.Log.Privacy : Swift.Equatable {}
+extension EdgeCore.EdgeClient.Log.Privacy : Swift.Hashable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.Equatable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.Hashable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.RawRepresentable {}
@@ -1083,6 +1017,3 @@ extension EdgeCore.EdgeClient.StartupParameters.NodeInfoLevel : Swift.RawReprese
 extension EdgeCore.EdgeClient.StartupParameters.LocalDiscovery : Swift.Equatable {}
 extension EdgeCore.EdgeClient.StartupParameters.LocalDiscovery : Swift.Hashable {}
 extension EdgeCore.EdgeClient.StartupParameters.LocalDiscovery : Swift.RawRepresentable {}
-extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.Equatable {}
-extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.Hashable {}
-extension EdgeCore.EdgeClient.HealthCheck.Result : Swift.RawRepresentable {}
