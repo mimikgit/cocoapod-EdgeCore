@@ -637,13 +637,13 @@ extension EdgeCore.EdgeProvider.Drive {
 }
 extension EdgeCore.EdgeClient.Request {
   #if compiler(>=5.3) && $AsyncAwait
-  public func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  public static func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  public func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  public static func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.EdgeClient.Request.ProgressHandler) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
   #if compiler(>=5.3) && $AsyncAwait
-  public func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
+  public static func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient.Request {
@@ -978,7 +978,7 @@ extension EdgeCore.EdgeClient.Request {
 }
 extension EdgeCore.EdgeClient.Request {
   #if compiler(>=5.3) && $AsyncAwait
-  public func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  public static func exportVideo(session: AVFoundation.AVAssetExportSession, outputURL: Foundation.URL, outFileType: AVFoundation.AVFileType) async -> Swift.Result<Swift.Void, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient {

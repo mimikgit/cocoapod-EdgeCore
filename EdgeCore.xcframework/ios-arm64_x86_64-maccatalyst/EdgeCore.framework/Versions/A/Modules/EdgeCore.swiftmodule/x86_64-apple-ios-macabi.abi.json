@@ -29418,9 +29418,10 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC7RequestV13uploadContent13sourceFileUrl011destinationI08mimeType15progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_ARSSySo10NSProgressCctYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC7RequestV13uploadContent13sourceFileUrl011destinationI08mimeType15progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_ARSSySo10NSProgressCctYaF",
+                "usr": "s:8EdgeCore0A6ClientC7RequestV13uploadContent13sourceFileUrl011destinationI08mimeType15progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_ARSSySo10NSProgressCctYaFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC7RequestV13uploadContent13sourceFileUrl011destinationI08mimeType15progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_ARSSySo10NSProgressCctYaFZ",
                 "moduleName": "EdgeCore",
+                "static": true,
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
@@ -29484,9 +29485,10 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC7RequestV15downloadContent9sourceUrl015destinationFileH015progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_AQySo10NSProgressCctYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC7RequestV15downloadContent9sourceUrl015destinationFileH015progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_AQySo10NSProgressCctYaF",
+                "usr": "s:8EdgeCore0A6ClientC7RequestV15downloadContent9sourceUrl015destinationFileH015progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_AQySo10NSProgressCctYaFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC7RequestV15downloadContent9sourceUrl015destinationFileH015progressHandlers6ResultOyytSo7NSErrorCG10Foundation3URLV_AQySo10NSProgressCctYaFZ",
                 "moduleName": "EdgeCore",
+                "static": true,
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
@@ -29527,9 +29529,10 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaF",
+                "usr": "s:8EdgeCore0A6ClientC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaFZ",
                 "moduleName": "EdgeCore",
+                "static": true,
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
@@ -30965,9 +30968,10 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC7RequestV11exportVideo7session9outputURL11outFileTypes6ResultOyytSo7NSErrorCGSo20AVAssetExportSessionC_10Foundation0I0VSo06AVFileL0atYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC7RequestV11exportVideo7session9outputURL11outFileTypes6ResultOyytSo7NSErrorCGSo20AVAssetExportSessionC_10Foundation0I0VSo06AVFileL0atYaF",
+                "usr": "s:8EdgeCore0A6ClientC7RequestV11exportVideo7session9outputURL11outFileTypes6ResultOyytSo7NSErrorCGSo20AVAssetExportSessionC_10Foundation0I0VSo06AVFileL0atYaFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC7RequestV11exportVideo7session9outputURL11outFileTypes6ResultOyytSo7NSErrorCGSo20AVAssetExportSessionC_10Foundation0I0VSo06AVFileL0atYaFZ",
                 "moduleName": "EdgeCore",
+                "static": true,
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
