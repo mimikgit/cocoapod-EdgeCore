@@ -4,6 +4,7 @@
 import AVFoundation
 import Alamofire
 import AppAuth
+import CoreLocation
 import Foundation
 import JWTDecode
 import Swift
@@ -580,6 +581,81 @@ extension EdgeCore.EdgeClient {
 extension EdgeCore.EdgeProvider.Drive {
   #if compiler(>=5.3) && $AsyncAwait
   public static func delete(file: EdgeCore.EdgeProvider.Drive.File, userAccessToken: Swift.String, edgeEngineRuntimeLink: Foundation.URLComponents, driveMicroservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<EdgeCore.EdgeProvider.Drive.File, Foundation.NSError>
+  #endif
+}
+public protocol EdgeUserClient {
+  associatedtype MPOUser
+  associatedtype MPOUserUpdate
+  associatedtype MPOUserItem
+  associatedtype MPONewConsent
+  associatedtype MPONewUser
+  associatedtype MPOPlace
+  associatedtype MFDFriendList
+  associatedtype MFDFriend
+  associatedtype MFDFriendRequestList
+  associatedtype MFDRequestFriendList
+  #if compiler(>=5.3) && $AsyncAwait
+  func addUserProfileNotificationsConsent(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, consent: Self.MPONewConsent) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func deleteUserProfileNotificationsConsent(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, consentId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func findUser(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, email: Swift.String) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func updateUserAvatarLegacy(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.MPOUser, image: UIKit.UIImage, attributeKey: Swift.String?, targetSize: CoreFoundation.CGSize?, compressionQuality: CoreFoundation.CGFloat?, bytesLimit: Swift.Int?) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func updateUserProfile(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, update: Self.MPOUserUpdate) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func updateUserProfileAttributes(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, attributes: [Self.MPOUserItem]) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func updateUserProfileProperties(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, parameters: [Swift.String : Any]) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func userAvatarLegacy(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.MPOUser) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func userAvatarLegacyAttribute(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.MPOUser, attributeKey: Swift.String) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func userProfile(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.MPOUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func addressSuggestions(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, address: Swift.String, maxSuggestions: Swift.Int?, language: Swift.String?, countries: [Swift.String]?, geoLocation: CoreLocation.CLLocation?, geoFence: (southWest: CoreLocation.CLLocation, northEast: CoreLocation.CLLocation)?) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func places(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, address: Swift.String, maxPlaces: Swift.Int?, language: Swift.String?, countries: [Swift.String]?, geoLocation: CoreLocation.CLLocation?, geoFence: (southWest: CoreLocation.CLLocation, northEast: CoreLocation.CLLocation)?) async -> Swift.Result<[Self.MPOPlace], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func acceptFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func cancelFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func friendList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.MFDFriendList, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func friends(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.MFDFriend], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func receivedFriendRequestList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.MFDFriendRequestList, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func receivedFriendRequests(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.MFDFriend], Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func requestFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Self.MPONewUser, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func sentFriendRequestList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.MFDRequestFriendList, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func sentFriendRequests(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.MFDFriend], Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient.Authorization {

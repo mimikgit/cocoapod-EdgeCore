@@ -1,6 +1,6 @@
 # ``EdgeCore``
 
-mimik Client Library provides a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running.
+mimik Client Library for iOS provides a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running.
 
 @Metadata {
     @CallToAction(purpose: link, url: "https://github.com/mimikgit/cocoapod-EdgeCore")
@@ -11,13 +11,13 @@ mimik Client Library provides a programmatic way to work with the edgeEngine Run
 
 ## Overview
 
-The purpose of the mimik Client Library is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
+The purpose of the **mimik Client Library for iOS** is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
 
-By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
+By leveraging the **`EdgeCore cocoapod component`** of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
 
 Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
 
-Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+Furthermore, the mimik Client Library **`EdgeEngine cocoapod component`** provides edgeEngine Runtime lifecycle control APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
 
 
 ## Supported Platforms, Targets
@@ -31,10 +31,13 @@ Furthermore, the mimik Client Library Engine component provides additional edgeE
 iOS 15.0+
 ```
 
-
 ## Installation
 
-To install it, simply add the following lines to your Podfile:
+To install `EdgeCore` cocoapod simply add the following lines to your Podfile:
+
+> **_NOTE:_** Individual developers wanting to use their **developer edge license** from [mimik developer console](https://developer.mimik.com/console) should add  [EdgeEngineTrial](https://github.com/mimikgit/cocoapod-EdgeClientLibraryTrial) cocoapod to their `Podfile`.
+
+> **_NOTE:_** Enterprise developers should add [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) cocoapod to their `Podfile` and use the **enterprise edge license** received from [mimik support](https://developer.mimik.com/support/).
 
 
 ```swift
@@ -47,7 +50,7 @@ inhibit_all_warnings!
 
 def mimik
   pod 'EdgeCore'
-  pod 'EdgeEngineTrial'
+  pod 'EdgeEngineTrial' ### or pod 'EdgeEngine' (see notes above)
 end
 
 target '{target}' do
@@ -66,7 +69,6 @@ post_install do |installer|
 end
 ```
 
-
 ## Tutorials
 
 After installation, try the following tutorials:
@@ -77,14 +79,15 @@ After installation, try the following tutorials:
 - [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/10-index)
 
 
-## Online API Reference Documentation
+## Documentation
 
-The full API reference documentation can be found at [GitHub Pages](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore). 
+`EdgeCore/EdgeClient` API reference documentation can be found  [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient). Alternatively a docc archive file can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally in Xcode.
 
-Alternatively the Xcode docc archive file can be downloaded as a [zip](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally.
+`EdgeEngineClient` platform protocol API reference documentation can also be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
 
+`EdgeUserClient` platform protocol API reference documentation can be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeuserclient) as well.
 
-## EdgeClient API References
+## EdgeClient API
 
 ### Authentication
 
@@ -194,7 +197,8 @@ Alternatively the Xcode docc archive file can be downloaded as a [zip](https://g
 - ``EdgeClient/Service/versionCheck(requireMatch:)``
 
 
-## EdgeEngineClient Platform Protocol
+## EdgeEngineClient protocol API
+> **_NOTE:_**  To activate the EdgeEngineClient protocol API developers needs to add [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) or [EdgeEngineTrial](https://github.com/mimikgit/cocoapod-EdgeClientLibraryTrial) cocoapod to their `Podfile`.
 
 - ``EdgeEngineClient/startEdgeEngine(parameters:)``
 - ``EdgeEngineClient/stopEdgeEngine()``
@@ -206,6 +210,30 @@ Alternatively the Xcode docc archive file can be downloaded as a [zip](https://g
 - ``EdgeEngineClient/manageEdgeEngineLifecycle(manage:)``
 - ``EdgeEngineClient/expectedEdgeEngineVersion()``
 - ``EdgeEngineClient/setCustomPort(number:)``
+
+## EdgeUserClient protocol API
+> **_NOTE:_**  To activate the EdgeUserClient protocol API developers needs to add [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser) cocoapod to their `Podfile`.
+
+- ``EdgeUserClient/addUserProfileNotificationsConsent(service:authorization:consent:)``
+- ``EdgeUserClient/deleteUserProfileNotificationsConsent(service:authorization:consentId:)``
+- ``EdgeUserClient/findUser(service:authorization:email:)``
+- ``EdgeUserClient/updateUserProfile(service:authorization:update:)``
+- ``EdgeUserClient/updateUserProfileAttributes(service:authorization:attributes:)``
+- ``EdgeUserClient/updateUserProfileProperties(service:authorization:parameters:)``
+- ``EdgeUserClient/userProfile(service:authorization:)``
+
+- ``EdgeUserClient/addressSuggestions(service:authorization:address:maxSuggestions:language:countries:geoLocation:geoFence:)``
+- ``EdgeUserClient/places(service:authorization:address:maxPlaces:language:countries:geoLocation:geoFence:)``
+
+- ``EdgeUserClient/acceptFriendship(service:authorization:friendId:)``
+- ``EdgeUserClient/cancelFriendship(service:authorization:friendId:)``
+- ``EdgeUserClient/friendList(service:authorization:)``
+- ``EdgeUserClient/friends(service:authorization:)``
+- ``EdgeUserClient/receivedFriendRequests(service:authorization:)``
+- ``EdgeUserClient/receivedFriendRequestList(service:authorization:)``
+- ``EdgeUserClient/requestFriendship(service:authorization:friendId:)``
+- ``EdgeUserClient/sentFriendRequests(service:authorization:)``
+- ``EdgeUserClient/sentFriendRequestList(service:authorization:)``
 
 
 ## mimik client libraries
@@ -224,14 +252,16 @@ Individual cocoapods:
  * [EdgeEngineTrial](https://github.com/mimikgit/cocoapod-EdgeEngineTrial)
  * [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser)
 
+
 ## Author
 
-mimik
+[mimik Technology, Inc.](https://mimik.com)
 
-```
-https://github.com/mimikgit/cocoapod-EdgeCore
-```
+More details about how the edgeEngine platform revolutionizes computing with the hybrid-cloud approach are at [mimik Developer Documentation](https://devdocs.mimik.com).
+
 
 ## License
 
-The aforementioned mimik client and service libraries are available under the MIT license. See the LICENSE file for more information.
+Developers can get their edge trial license by following this [tutorial](https://devdocs.mimik.com/tutorials/02-index).
+
+For details about a full enterprise edge license please contact [mimik support](https://mimik.com/contact-us/).

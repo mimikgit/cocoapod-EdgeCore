@@ -303,6 +303,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
 /// Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
 /// Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+/// note:
+/// Requires <a href="https://github.com/mimikgit/cocoapod-EdgeCore">EdgeCore</a> component to be added to the project <code>Podfile</code>.
 SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -663,6 +665,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
 /// Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
 /// Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+/// note:
+/// Requires <a href="https://github.com/mimikgit/cocoapod-EdgeCore">EdgeCore</a> component to be added to the project <code>Podfile</code>.
 SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
