@@ -13,11 +13,19 @@ mimik Client Library for iOS provides a programmatic way to work with the edgeEn
 
 The purpose of the **mimik Client Library for iOS** is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
 
-By leveraging the **`EdgeCore cocoapod component`** of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
+The **mimik Client Library for iOS suite** consists of three individual cocoapod components:
 
-Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
+    - EdgeCore
+    - EdgeEngineTrial or EdgeEngine
+    - EdgeUser
 
-Furthermore, the mimik Client Library **`EdgeEngine cocoapod component`** provides edgeEngine Runtime lifecycle control APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+By leveraging the **`EdgeCore cocoapod component`**, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
+
+Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of network calls.
+
+Furthermore, the **`EdgeEngineTrial or EdgeEngine cocoapod component`** provides edgeEngine Runtime lifecycle control APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+
+Expanding the client library ecosystem is the **`EdgeUser cocoapod component`**, providing additional user facing APIs.
 
 
 ## Supported Platforms, Targets
@@ -87,7 +95,7 @@ After installation, try the following tutorials:
 
 `EdgeUserClient` platform protocol API reference documentation can be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeuserclient) as well.
 
-## EdgeClient API
+## EdgeClient
 
 ### Authentication
 
@@ -197,7 +205,7 @@ After installation, try the following tutorials:
 - ``EdgeClient/Service/versionCheck(requireMatch:)``
 
 
-## EdgeEngineClient protocol API
+## EdgeEngineClient protocol
 > **_NOTE:_**  To activate the EdgeEngineClient protocol API developers needs to add [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) or [EdgeEngineTrial](https://github.com/mimikgit/cocoapod-EdgeClientLibraryTrial) cocoapod to their `Podfile`.
 
 - ``EdgeEngineClient/startEdgeEngine(parameters:)``
@@ -211,7 +219,7 @@ After installation, try the following tutorials:
 - ``EdgeEngineClient/expectedEdgeEngineVersion()``
 - ``EdgeEngineClient/setCustomPort(number:)``
 
-## EdgeUserClient protocol API
+## EdgeUserClient protocol
 > **_NOTE:_**  To activate the EdgeUserClient protocol API developers needs to add [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser) cocoapod to their `Podfile`.
 
 - ``EdgeUserClient/addUserProfileNotificationsConsent(service:authorization:consent:)``
@@ -234,6 +242,35 @@ After installation, try the following tutorials:
 - ``EdgeUserClient/requestFriendship(service:authorization:friendId:)``
 - ``EdgeUserClient/sentFriendRequests(service:authorization:)``
 - ``EdgeUserClient/sentFriendRequestList(service:authorization:)``
+
+
+## EdgeProvider
+
+### Beams
+
+- ``EdgeProvider/Beams/beamTokens(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/beams(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/create(beam:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/deleteBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/deleteBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/openBeam(id:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
+- ``EdgeProvider/Beams/updateBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
+- ``EdgeProvider/Beams/updateBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
+
+### Drive
+
+- ``EdgeProvider/Drive/create(file:userAccessToken:edgeEngineFullPathUrl:driveMicroservice:driveOwnerCode:)``
+- ``EdgeProvider/Drive/delete(file:userAccessToken:edgeEngineFullPathUrl:driveMicroservice:driveOwnerCode:)``
+- ``EdgeProvider/Drive/fileWith(localId:userAccessToken:edgeEngineFullPathUrl:microservice:)``
+- ``EdgeProvider/Drive/files(userAccessToken:edgeEngineFullPathUrl:microservice:)``
+
+### Clusters
+
+- ``EdgeProvider/Clusters/accountNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
+- ``EdgeProvider/Clusters/friendNodes(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
+- ``EdgeProvider/Clusters/friendNodesList(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
+- ``EdgeProvider/Clusters/nearbyNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
+- ``EdgeProvider/Clusters/nodePresenceCheck(nodeId:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
 
 
 ## mimik client libraries

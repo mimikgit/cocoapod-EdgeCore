@@ -15,77 +15,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XTxSmWNKk3jY/dZWUK36zU7n27A8GzDuWeSR2Y6yGlw=
+			iDBwfNWK+15AX6yjcKx77sK7LgT3i5oJZURf0vxvra8=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TMCciHvPHdDDzFdnp8SC/8YLuSWYLNcTP+isiwFJCAI=
+			1gxlKFu3+cOTEwnvVT6e4KVVairjFyHmQ6u1NpGm+fY=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8t5cIHOs3g4kZjxOWUXx15N3E2q+ZkVKVs7ON9nuzew=
+			9baOpcSNUnEkRTa3fR8zAWxMJ9EYCYaEmuPckY3Z+Cc=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pb5R5O5Xkb2pFbd8uFGZfGL7v0qQYF9RJ1cxBf0zOy0=
+			BDMwnFWKDlLsns8MPYQqjCEwDWEMgMM6gqUEZQ5LxsQ=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8t5cIHOs3g4kZjxOWUXx15N3E2q+ZkVKVs7ON9nuzew=
+			9baOpcSNUnEkRTa3fR8zAWxMJ9EYCYaEmuPckY3Z+Cc=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BT/6FFNrP7iWLL1D/NH+NoNK4rCdbo9rxQVw6BYOmXQ=
+			U6T8vzt6oIs3sHYiGDifD5xryVd0B8M0l6FPHw8bS/0=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TMCciHvPHdDDzFdnp8SC/8YLuSWYLNcTP+isiwFJCAI=
+			1gxlKFu3+cOTEwnvVT6e4KVVairjFyHmQ6u1NpGm+fY=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gj6ze5MzQb2NHnDw4u+mcAf7C383CPl5lcf7mEEEZP4=
+			ofsP5Dlc4BnB4nUX1hsCt/uZDo7yDC76cQ5cOMvlMgA=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bN/nP//FxZLu6z7ES49WzT6CL09ZjnmqZuVon/I0NvM=
+			pcRgrA4kJSELvjS4epG6Ad7zn3u/Cf1B9SAtmo7uyVA=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gj6ze5MzQb2NHnDw4u+mcAf7C383CPl5lcf7mEEEZP4=
+			ofsP5Dlc4BnB4nUX1hsCt/uZDo7yDC76cQ5cOMvlMgA=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FuQ1mYTrcRzzOYydVNtv+VODfXBpa0ul2uReFLlFay4=
+			ZIPc5fgZwPoWYJ7oViesu9KEcNvlxCS9n8xcvMXh7nQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
