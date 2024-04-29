@@ -35558,154 +35558,154 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 1194,
+      "offset": 1188,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2106,
+      "offset": 2100,
       "length": 5,
       "value": "\"err\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2106,
+      "offset": 2100,
       "length": 5,
       "value": "\"err\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2344,
+      "offset": 2338,
       "length": 4,
       "value": "\"on\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2372,
+      "offset": 2366,
       "length": 5,
       "value": "\"off\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2402,
+      "offset": 2396,
       "length": 11,
       "value": "\"name_only\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2444,
+      "offset": 2438,
       "length": 14,
       "value": "\"hw_info_only\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2344,
+      "offset": 2338,
       "length": 4,
       "value": "\"on\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2372,
+      "offset": 2366,
       "length": 5,
       "value": "\"off\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2402,
+      "offset": 2396,
       "length": 11,
       "value": "\"name_only\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2444,
+      "offset": 2438,
       "length": 14,
       "value": "\"hw_info_only\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2724,
+      "offset": 2718,
       "length": 10,
       "value": "\"logLevel\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2768,
+      "offset": 2762,
       "length": 15,
       "value": "\"nodeInfoLevel\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2812,
+      "offset": 2806,
       "length": 10,
       "value": "\"nodeName\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2857,
+      "offset": 2851,
       "length": 22,
       "value": "\"local-discovery-type\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2907,
+      "offset": 2901,
       "length": 9,
       "value": "\"license\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2724,
+      "offset": 2718,
       "length": 10,
       "value": "\"logLevel\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2768,
+      "offset": 2762,
       "length": 15,
       "value": "\"nodeInfoLevel\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2812,
+      "offset": 2806,
       "length": 10,
       "value": "\"nodeName\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2857,
+      "offset": 2851,
       "length": 22,
       "value": "\"local-discovery-type\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 2907,
+      "offset": 2901,
       "length": 9,
       "value": "\"license\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+StartupParameters+Public.swift",
       "kind": "StringLiteral",
-      "offset": 4247,
+      "offset": 4235,
       "length": 3,
       "value": "\"-\""
     },
