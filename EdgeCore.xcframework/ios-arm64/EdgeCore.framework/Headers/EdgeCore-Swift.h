@@ -343,18 +343,6 @@ SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 
 
 
-
-/// Additional services for the devices at the edge.
-/// note:
-/// Visit <a href="https://github.com/edgeMicroservice">mimik edgeMicroservice</a> for more information.
-SWIFT_CLASS("_TtC8EdgeCore12EdgeProvider")
-@interface EdgeProvider : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.4.0"
+  s.version      = "5.5.0"
   s.summary      = "mimik edge core client library"
 
   s.description  = <<-DESC
