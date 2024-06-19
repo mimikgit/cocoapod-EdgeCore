@@ -16,16 +16,16 @@ The purpose of the **mimik Client Library for iOS** is to provide a programmatic
 The **mimik Client Library for iOS suite** consists of three individual cocoapod components:
 
     - EdgeCore
-    - EdgeEngine (or EdgeEngineDeveloper) 
+    - EdgeEngineDeveloper (or EdgeEngine for enterprise solutions) 
     - EdgeUser
 
 By leveraging the **`EdgeCore cocoapod component`**, developers can build applications compatible with the edgeEngine Runtime.
 
 Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of network calls.
 
-Furthermore, the **`EdgeEngine (or EdgeEngineDeveloper) cocoapod component`** provides edgeEngine Runtime lifecycle control API, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
+Furthermore, the **`EdgeEngineDeveloper (or EdgeEngine for enterprise solutions) cocoapod component`** provides edgeEngine Runtime lifecycle control API, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
 
-Expanding the client library ecosystem is the **`EdgeUser cocoapod component`**, providing additional user facing API.
+Expanding the client library ecosystem is the **`EdgeUser cocoapod component`**, providing API for integrating mimik Hybrid Edge Cloud edge and backend microservices.
 
 
 ## Supported Platforms, Targets
@@ -41,7 +41,7 @@ iOS 15.0+
 
 ## Installation
 
-To install `EdgeCore` and `EdgeEngine (or EdgeEngineDeveloper)` cocoapods simply add the following lines to your Podfile:
+To install `EdgeCore` and `EdgeEngineDeveloper (or EdgeEngine for enterprise solutions)` cocoapods simply add the following lines to your Podfile:
 
 > **_NOTE:_** Developers wanting to use their **developer edge license** from [mimik developer console](https://developer.mimik.com/console) should specify  [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper) cocoapod in their `Podfile`.
 
@@ -94,7 +94,7 @@ After installation, try the following tutorials:
 
 `EdgeEngineClient` platform protocol API reference documentation can also be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
 
-`EdgeUserClient` platform protocol API reference documentation can be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeuserclient) as well.
+`EdgeServiceClient` platform protocol API reference documentation can be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeuserclient) as well.
 
 ## EdgeClient
 
@@ -130,16 +130,10 @@ After installation, try the following tutorials:
 ### Edge microservices
 
 - ``EdgeClient/deployMicroservice(edgeEngineAccessToken:config:imageTarPath:)``
-- ``EdgeClient/deployedMicroservices(edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroservice(imageId:containerId:edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroserviceImages(edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroserviceImage(imageId:edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroserviceContainers(edgeEngineAccessToken:)``
-- ``EdgeClient/deployedMicroserviceContainer(containerId:edgeEngineAccessToken:)``
-- ``EdgeClient/updateMicroservice(edgeEngineAccessToken:microservice:imageTarPath:envVariables:)``
+- ``EdgeClient/microservices(edgeEngineAccessToken:)``
+- ``EdgeClient/microservice(containerName:edgeEngineAccessToken:)``
 - ``EdgeClient/updateMicroserviceEnv(edgeEngineAccessToken:microservice:envVariables:)``
 - ``EdgeClient/undeployMicroservice(edgeEngineAccessToken:microservice:)``
-- ``EdgeClient/undeployMicroserviceComponent(edgeEngineAccessToken:component:identifier:)``
 
 ### EdgeClient Type
 
@@ -149,6 +143,17 @@ After installation, try the following tutorials:
 - ``EdgeClient/externalEdgeEngineIsActivated()``
 - ``EdgeClient/setLoggingLevel(level:module:)``
 
+
+## EdgeClient/Authorization/AccessToken
+
+- ``EdgeClient/Authorization/AccessToken/clientId(token:)``
+- ``EdgeClient/Authorization/AccessToken/decodeToJWT(token:)``
+- ``EdgeClient/Authorization/AccessToken/decodeToJson(token:)``
+- ``EdgeClient/Authorization/AccessToken/expiresIn(token:)``
+- ``EdgeClient/Authorization/AccessToken/subscriber(token:)``
+- ``EdgeClient/Authorization/AccessToken/validate(token:simpleCheck:)``
+- ``EdgeClient/Authorization/AccessToken/validate(token:simpleCheck:)``
+- ``EdgeClient/Authorization/AccessToken/valueFrom(key:)``
 
 ## EdgeClient/Document
 - ``EdgeClient/Document/filenameExtensionFor(type:)``
@@ -170,6 +175,10 @@ After installation, try the following tutorials:
 
 ## EdgeClient/Microservice
 - ``EdgeClient/Microservice/basePath()``
+- ``EdgeClient/Microservice/call(config:)``
+- ``EdgeClient/Microservice/call(config:type:)``
+- ``EdgeClient/Microservice/callStream(config:streamHandler:)``
+- ``EdgeClient/Microservice/callStream(config:type:streamHandler:)``
 - ``EdgeClient/Microservice/fullPathUrl()``
 - ``EdgeClient/Microservice/fullPathUrl(withEndpoint:)``
 - ``EdgeClient/Microservice/expectedDeployedBasePath(path:clientId:)``
@@ -180,6 +189,12 @@ After installation, try the following tutorials:
 - ``EdgeClient/Microservice/preferredContainerName(name:)``
 - ``EdgeClient/Microservice/preferredImageName(name:)``
 - ``EdgeClient/Microservice/validateMicroserviceResponse(response:encapsulatedData:)``
+
+## EdgeClient/Microservice/Container
+- ``EdgeClient/Microservice/Container/basePath()
+
+## EdgeClient/Microservice/Request
+- ``EdgeClient/Microservice/Request/microserviceRequest(url:method:httpBody:microservice:authorization:httpHeaders:timeoutInterval:cachePolicy:simpleCheck:)``
 
 
 ## EdgeClient/Node
@@ -192,12 +207,28 @@ After installation, try the following tutorials:
 - ``EdgeClient/Request/downloadImageContent(sourceUrl:)``
 - ``EdgeClient/Request/exportVideo(session:outputURL:outFileType:)``
 - ``EdgeClient/Request/uploadContent(sourceFileUrl:destinationUrl:mimeType:progressHandler:)``
-- ``EdgeClient/Request/authorizedRequest(url:method:authorization:httpHeaders:parameters:contentType:)``
+- ``EdgeClient/Request/authorizedRequest(url:method:authorization:httpHeaders:httpBody:contentType:)``
 - ``EdgeClient/Request/call(config:)``
 - ``EdgeClient/Request/call(config:type:)``
 - ``EdgeClient/Request/decode(_:from:)``
 - ``EdgeClient/Request/responseError(response:)``
 - ``EdgeClient/Request/responseJSON(response:dataKey:)``
+
+## EdgeClient/Request/URLComponentsBuilder
+- ``EdgeClient/Request/URLComponentsBuilder/append(path:)``
+- ``EdgeClient/Request/URLComponentsBuilder/create()``
+- ``EdgeClient/Request/URLComponentsBuilder/set(fragment:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(host:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(password:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(path:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(port:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(query:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(queryItems:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:path:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(service:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(user:)``
 
 
 ## EdgeClient/Service
@@ -207,7 +238,10 @@ After installation, try the following tutorials:
 
 
 ## EdgeEngineClient protocol
-> **_NOTE:_**  To activate the EdgeEngineClient protocol API developers have to add [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) or [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper) cocoapod to their `Podfile`.
+    
+Provides edgeEngine controls and vendors the actual edgeEngine binary into the project.
+
+> **To enable EdgeEngineClient** protocol API in the project, add [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper) or [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) to the `Podfile`.
 
 - ``EdgeEngineClient/startEdgeEngine(parameters:)``
 - ``EdgeEngineClient/stopEdgeEngine()``
@@ -220,75 +254,79 @@ After installation, try the following tutorials:
 - ``EdgeEngineClient/expectedEdgeEngineVersion()``
 - ``EdgeEngineClient/setCustomPort(number:)``
 
-## EdgeUserClient protocol
-> **_NOTE:_**  To activate the EdgeUserClient protocol API developers have to add [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser) cocoapod to their `Podfile`.
+## EdgeServiceClient protocol
 
-- ``EdgeUserClient/addUserProfileNotificationsConsent(service:authorization:consent:)``
-- ``EdgeUserClient/deleteUserProfileNotificationsConsent(service:authorization:consentId:)``
-- ``EdgeUserClient/findUser(service:authorization:email:)``
-- ``EdgeUserClient/updateUserProfile(service:authorization:update:)``
-- ``EdgeUserClient/updateUserProfileAttributes(service:authorization:attributes:)``
-- ``EdgeUserClient/updateUserProfileProperties(service:authorization:parameters:)``
-- ``EdgeUserClient/userProfile(service:authorization:)``
+Provides API for integrating mimik Hybrid Edge Cloud edge and backend microservices.
 
-- ``EdgeUserClient/addressSuggestions(service:authorization:address:maxSuggestions:language:countries:geoLocation:geoFence:)``
-- ``EdgeUserClient/places(service:authorization:address:maxPlaces:language:countries:geoLocation:geoFence:)``
+> **To enable EdgeServiceClient** protocol API in the project, add [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser) to the `Podfile`.
 
-- ``EdgeUserClient/acceptFriendship(service:authorization:friendId:)``
-- ``EdgeUserClient/cancelFriendship(service:authorization:friendId:)``
-- ``EdgeUserClient/friendList(service:authorization:)``
-- ``EdgeUserClient/friends(service:authorization:)``
-- ``EdgeUserClient/receivedFriendRequests(service:authorization:)``
-- ``EdgeUserClient/receivedFriendRequestList(service:authorization:)``
-- ``EdgeUserClient/requestFriendship(service:authorization:friendId:)``
-- ``EdgeUserClient/sentFriendRequests(service:authorization:)``
-- ``EdgeUserClient/sentFriendRequestList(service:authorization:)``
+### Profile - mPO backend microservice
 
+- ``EdgeServiceClient/addUserProfileNotificationsConsent(service:authorization:consent:)``
+- ``EdgeServiceClient/deleteUserProfileNotificationsConsent(service:authorization:consentId:)``
+- ``EdgeServiceClient/findUser(service:authorization:email:)``
+- ``EdgeServiceClient/updateUserProfile(service:authorization:update:)``
+- ``EdgeServiceClient/updateUserProfileAttributes(service:authorization:attributes:)``
+- ``EdgeServiceClient/updateUserProfileProperties(service:authorization:parameters:)``
+- ``EdgeServiceClient/userProfile(service:authorization:)``
 
-## EdgeProvider
+- ``EdgeServiceClient/addressSuggestions(service:authorization:address:maxSuggestions:language:countries:geoLocation:geoFence:)``
+- ``EdgeServiceClient/places(service:authorization:address:maxPlaces:language:countries:geoLocation:geoFence:)``
 
-### Beams
+### Friends - mFD backend microservice
 
-- ``EdgeProvider/Beams/beamTokens(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/beams(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/create(beam:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/deleteBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/deleteBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/openBeam(id:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
-- ``EdgeProvider/Beams/updateBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
-- ``EdgeProvider/Beams/updateBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
+- ``EdgeServiceClient/acceptFriendship(service:authorization:friendId:)``
+- ``EdgeServiceClient/cancelFriendship(service:authorization:friendId:)``
+- ``EdgeServiceClient/friendList(service:authorization:)``
+- ``EdgeServiceClient/friends(service:authorization:)``
+- ``EdgeServiceClient/receivedFriendRequests(service:authorization:)``
+- ``EdgeServiceClient/receivedFriendRequestList(service:authorization:)``
+- ``EdgeServiceClient/requestFriendship(service:authorization:friendId:)``
+- ``EdgeServiceClient/sentFriendRequests(service:authorization:)``
+- ``EdgeServiceClient/sentFriendRequestList(service:authorization:)``
 
-### Drive
+### Beams - mBeam edge microservice
 
-- ``EdgeProvider/Drive/create(file:userAccessToken:edgeEngineFullPathUrl:driveMicroservice:driveOwnerCode:)``
-- ``EdgeProvider/Drive/delete(file:userAccessToken:edgeEngineFullPathUrl:driveMicroservice:driveOwnerCode:)``
-- ``EdgeProvider/Drive/fileWith(localId:userAccessToken:edgeEngineFullPathUrl:microservice:)``
-- ``EdgeProvider/Drive/files(userAccessToken:edgeEngineFullPathUrl:microservice:)``
+- ``EdgeServiceClient/beamTokens(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeServiceClient/beams(userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeServiceClient/create(beam:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
+- ``EdgeServiceClient/deleteBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeServiceClient/deleteBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:)``
+- ``EdgeServiceClient/openBeam(id:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:ownerCode:)``
+- ``EdgeServiceClient/updateBeam(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
+- ``EdgeServiceClient/updateBeamToken(id:userAccessToken:edgeEngineFullPathUrl:microservice:ownerCode:status:)``
 
-### Clusters
+### Drive - mDrive edge microservice
 
-- ``EdgeProvider/Clusters/accountNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
-- ``EdgeProvider/Clusters/friendNodes(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
-- ``EdgeProvider/Clusters/friendNodesList(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
-- ``EdgeProvider/Clusters/nearbyNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
-- ``EdgeProvider/Clusters/nodePresenceCheck(nodeId:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
+- ``EdgeServiceClient/create(file:userAccessToken:edgeEngineFullPathUrl:microservice:driveOwnerCode:)``
+- ``EdgeServiceClient/delete(file:userAccessToken:edgeEngineFullPathUrl:microservice:driveOwnerCode:)``
+- ``EdgeServiceClient/fileWith(localId:userAccessToken:edgeEngineFullPathUrl:microservice:)``
+- ``EdgeServiceClient/files(userAccessToken:edgeEngineFullPathUrl:microservice:)``
+
+### Device Clusters - mSuperdrive edge microservice
+
+- ``EdgeServiceClient/accountNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
+- ``EdgeServiceClient/friendNodes(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
+- ``EdgeServiceClient/friendNodesList(userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
+- ``EdgeServiceClient/nearbyNodes(userAccessToken:edgeEngineFullPathUrl:microservice:edgeAccessToken:)``
+- ``EdgeServiceClient/nodePresenceCheck(nodeId:userAccessToken:edgeEngineFullPathUrl:edgeAccessToken:microservice:)``
 
 
 ## mimik client libraries
 
-Don't forget to checkout all mimik client libraries [available on Github](https://github.com/search?q=cocoapod-Edge)
+Explore all mimik client libraries [available on Github](https://github.com/search?q=cocoapod-Edge).
 
-Cocoapods sets:
+Cocoapod sets:
 
- * [EdgeClientLibrary = (EdgeCore + EdgeEngine)](https://github.com/mimikgit/cocoapod-EdgeClientLibrary)
- * [EdgeClientLibraryDeveloper = (EdgeCore + EdgeEngineDeveloper)](https://github.com/mimikgit/cocoapod-EdgeClientLibraryDeveloper)
+* [EdgeClientLibraryDeveloper = (EdgeCore + EdgeEngineDeveloper)](https://github.com/mimikgit/cocoapod-EdgeClientLibraryDeveloper)
+* [EdgeClientLibrary = (EdgeCore + EdgeEngine)](https://github.com/mimikgit/cocoapod-EdgeClientLibrary)
  
-Individual cocoapods:
+Cocoapod individual pods:
  
- * [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore)
- * [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine)
- * [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper)
- * [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser)
+* [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore)
+* [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper)
+* [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine)
+* [EdgeUser](https://github.com/mimikgit/cocoapod-EdgeUser)
 
 
 ## Author

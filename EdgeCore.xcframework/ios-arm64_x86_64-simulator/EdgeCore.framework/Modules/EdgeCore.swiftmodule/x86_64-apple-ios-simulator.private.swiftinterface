@@ -249,9 +249,6 @@ extension EdgeCore.EdgeClient {
     public var container: EdgeCore.EdgeClient.Microservice.Container?
     public var image: EdgeCore.EdgeClient.Microservice.Image?
     public init(image: EdgeCore.EdgeClient.Microservice.Image, container: EdgeCore.EdgeClient.Microservice.Container)
-    #if compiler(>=5.3) && $AsyncAwait
-    public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
-    #endif
     public func fullPathUrl() -> Foundation.URLComponents?
     public func fullPathUrl(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
     public func basePath() -> Swift.String?
@@ -297,6 +294,20 @@ extension EdgeCore.EdgeClient.Service {
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
+}
+extension EdgeCore.EdgeClient.Microservice {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func call(config: EdgeCore.EdgeClient.Microservice.Request.Config) async -> Swift.Result<Foundation.Data, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func callStream(config: EdgeCore.EdgeClient.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<Foundation.Data, Foundation.NSError>) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func callStream<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type, streamHandler: @escaping (_ stream: Swift.Result<T, Foundation.NSError>) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #endif
 }
 extension EdgeCore.EdgeClient {
   public struct Log : Swift.Codable {
