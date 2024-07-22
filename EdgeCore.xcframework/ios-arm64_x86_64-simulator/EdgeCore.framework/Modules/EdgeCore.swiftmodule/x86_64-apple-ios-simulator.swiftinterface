@@ -4,7 +4,6 @@
 import AVFoundation
 import Alamofire
 import AppAuth
-import CoreLocation
 import Foundation
 import JWTDecode
 import Swift
@@ -16,10 +15,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.log
 import os
-extension EdgeCore.EdgeClient.Request {
-  public static func responseJSON(response: Alamofire.AFDataResponse<Foundation.Data>, dataKey: Swift.String? = nil) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
-  public static func responseError(response: Alamofire.AFDataResponse<Foundation.Data>) -> Foundation.NSError?
-}
 extension EdgeCore.EdgeClient {
   public struct Node : Swift.Codable {
     public var id: Swift.String?
@@ -158,7 +153,6 @@ extension EdgeCore.EdgeClient.Microservice {
   }
 }
 extension EdgeCore.EdgeClient.Microservice {
-  public static func validateMicroserviceResponse(response: Alamofire.AFDataResponse<Any>, encapsulatedData: Swift.Bool = false) -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
   public static func preferredConfig(imageName: Swift.String, containerName: Swift.String, basePath: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, clientId: Swift.String, envVariables: [Swift.String : Swift.String]? = nil, signatureKey: Swift.String? = nil, ownerCode: Swift.String? = nil) -> EdgeCore.EdgeClient.Microservice.Config?
   public static func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
   public static func expectedDeployedContainerId(containerName: Swift.String, clientId: Swift.String) -> Swift.String
@@ -227,10 +221,6 @@ extension Swift.Encodable {
   public func jsonString() -> Swift.String?
   public func jsonData() -> Foundation.Data?
   public func encoded() throws -> Foundation.Data
-}
-extension Foundation.Data {
-  public func decoded<T>(type: T.Type) -> T? where T : Swift.Decodable
-  public func decoded<T>() throws -> T where T : Swift.Decodable
 }
 extension EdgeCore.EdgeClient {
   public struct Microservice : Swift.Codable {
@@ -336,7 +326,7 @@ extension EdgeCore.EdgeClient {
       case custom(Swift.String)
       case edgeCore
       case edgeEngine
-      case edgeUser
+      case edgeService
       case mimikAccess
     }
     public static func loggingLevel(module: EdgeCore.EdgeClient.Log.Module) -> EdgeCore.EdgeClient.Log.Level
@@ -348,142 +338,6 @@ extension EdgeCore.EdgeClient {
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
-}
-public protocol EdgeServiceClient {
-  associatedtype Beam
-  associatedtype BeamReadStatus
-  associatedtype Beams
-  associatedtype CreateBeam
-  associatedtype NewBeam
-  associatedtype BeamToken
-  associatedtype BeamTokenStatus
-  #if compiler(>=5.3) && $AsyncAwait
-  static func beams(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<[Self.Beam], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func create(beam: Self.CreateBeam, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, edgeAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<Self.NewBeam, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func deleteBeam(id: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<Self.Beam, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func updateBeam(id: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String, status: Self.BeamReadStatus) async -> Swift.Result<Self.Beam, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func openBeam(id: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, edgeAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<Self.Beam, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func deleteBeamToken(id: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<Self.BeamToken, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func updateBeamToken(id: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String, status: Self.BeamTokenStatus) async -> Swift.Result<Self.BeamToken, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func beamTokens(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, ownerCode: Swift.String) async -> Swift.Result<[Self.BeamToken], Foundation.NSError>
-  #endif
-  associatedtype FriendNodesList
-  associatedtype File
-  associatedtype FileCreate
-  #if compiler(>=5.3) && $AsyncAwait
-  static func friendNodesList(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, edgeAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<[Self.FriendNodesList], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func friendNodes(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, edgeAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<[EdgeCore.EdgeClient.Node], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func accountNodes(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, edgeAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.EdgeClient.Node], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func nearbyNodes(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, edgeAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.EdgeClient.Node], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func nodePresenceCheck(nodeId: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, edgeAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<EdgeCore.EdgeClient.Node, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func fileWith(localId: Swift.String, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<Self.File, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func files(userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<[Self.File], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func create(file: Self.FileCreate, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<Self.File, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  static func delete(file: Self.File, userAccessToken: Swift.String, edgeEngineFullPathUrl: Foundation.URLComponents, microservice: EdgeCore.EdgeClient.Microservice, driveOwnerCode: Swift.String) async -> Swift.Result<Self.File, Foundation.NSError>
-  #endif
-  associatedtype User
-  associatedtype UserUpdate
-  associatedtype UserItem
-  associatedtype NewConsent
-  associatedtype NewUser
-  associatedtype Place
-  associatedtype FriendList
-  associatedtype Friend
-  associatedtype FriendRequestList
-  associatedtype RequestFriendList
-  #if compiler(>=5.3) && $AsyncAwait
-  func addUserProfileNotificationsConsent(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, consent: Self.NewConsent) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func deleteUserProfileNotificationsConsent(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, consentId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func findUser(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, email: Swift.String) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func updateUserAvatarLegacy(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.User, image: UIKit.UIImage, attributeKey: Swift.String?, targetSize: CoreFoundation.CGSize?, compressionQuality: CoreFoundation.CGFloat?, bytesLimit: Swift.Int?) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func updateUserProfile(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, update: Self.UserUpdate) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func updateUserProfileAttributes(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, attributes: [Self.UserItem]) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func updateUserProfileProperties(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, parameters: [Swift.String : Any]) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func userAvatarLegacy(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.User) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func userAvatarLegacyAttribute(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, profileUser: Self.User, attributeKey: Swift.String) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func userProfile(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.User, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func addressSuggestions(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, address: Swift.String, maxSuggestions: Swift.Int?, language: Swift.String?, countries: [Swift.String]?, geoLocation: CoreLocation.CLLocation?, geoFence: (southWest: CoreLocation.CLLocation, northEast: CoreLocation.CLLocation)?) async -> Swift.Result<SwiftyJSON.JSON, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func places(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, address: Swift.String, maxPlaces: Swift.Int?, language: Swift.String?, countries: [Swift.String]?, geoLocation: CoreLocation.CLLocation?, geoFence: (southWest: CoreLocation.CLLocation, northEast: CoreLocation.CLLocation)?) async -> Swift.Result<[Self.Place], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func acceptFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func cancelFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Swift.Void, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func friendList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.FriendList, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func friends(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.Friend], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func receivedFriendRequestList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.FriendRequestList, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func receivedFriendRequests(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.Friend], Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func requestFriendship(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization, friendId: Swift.String) async -> Swift.Result<Self.NewUser, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func sentFriendRequestList(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<Self.RequestFriendList, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  func sentFriendRequests(service: EdgeCore.EdgeClient.Service, authorization: EdgeCore.EdgeClient.Authorization) async -> Swift.Result<[Self.Friend], Foundation.NSError>
-  #endif
 }
 extension EdgeCore.EdgeClient.Authorization {
   public struct AccessToken : Swift.Codable {
@@ -543,9 +397,8 @@ extension EdgeCore.EdgeClient.Request {
     public let authorization: EdgeCore.EdgeClient.Authorization?
     public let httpBody: Alamofire.Parameters?
     public let httpHeaders: Alamofire.HTTPHeaders?
-    public let dataKey: Swift.String?
     public let pagingHandler: EdgeCore.EdgeClient.Request.PagingInfoHandler?
-    public init(service: EdgeCore.EdgeClient.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, dataKey: Swift.String? = nil, pagingHandler: EdgeCore.EdgeClient.Request.PagingInfoHandler? = nil)
+    public init(service: EdgeCore.EdgeClient.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, pagingHandler: EdgeCore.EdgeClient.Request.PagingInfoHandler? = nil)
   }
 }
 extension EdgeCore.EdgeClient {
@@ -603,6 +456,11 @@ extension EdgeCore.EdgeClient {
   #endif
 }
 extension EdgeCore.EdgeClient {
+  public struct AuthUserData : Swift.Codable {
+    public let data: EdgeCore.EdgeClient.AuthUser?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
   public struct AuthUser : Swift.Codable {
     public var userId: Swift.String?
     public var email: Swift.String?
@@ -640,6 +498,11 @@ extension EdgeCore.EdgeClient {
   #endif
 }
 extension EdgeCore.EdgeClient.Service {
+  public struct HealthCheckData : Swift.Codable {
+    public let data: EdgeCore.EdgeClient.Service.HealthCheck?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
   public struct HealthCheck : Swift.Codable {
     public struct ClusterStatus : Swift.Codable {
       public let nbServers: Swift.String?
@@ -711,10 +574,11 @@ extension EdgeCore.EdgeClient.Service {
 extension EdgeCore.EdgeClient.Request {
   public typealias PagingInfoHandler = (_ paging: EdgeCore.EdgeClient.Request.PagingInfo?) -> Swift.Void
   public typealias ProgressHandler = (_ progress: Foundation.Progress) -> Swift.Void
-  public struct PagingInfo {
+  public struct PagingInfo : Swift.Decodable {
     public let count: Swift.Int
     public let startAfter: Swift.String
     public init(count: Swift.Int, startAfter: Swift.String)
+    public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.EdgeClient {
