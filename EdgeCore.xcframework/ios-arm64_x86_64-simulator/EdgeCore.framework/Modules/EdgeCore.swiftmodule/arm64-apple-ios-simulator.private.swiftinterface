@@ -292,11 +292,20 @@ extension EdgeCore.EdgeClient.Microservice {
   #if compiler(>=5.3) && $AsyncAwait
   public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
   #endif
+}
+extension EdgeCore.EdgeClient.Microservice {
+  public enum ServerSentEventType {
+    case empty
+    case comment(Swift.String)
+    case event(Swift.String)
+    case data(Swift.String)
+    case id(Swift.String)
+    case retry(Swift.String)
+    case other
+    case unknown
+  }
   #if compiler(>=5.3) && $AsyncAwait
-  public func callStream(config: EdgeCore.EdgeClient.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<Foundation.Data, Foundation.NSError>) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
-  public func callStream<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type, streamHandler: @escaping (_ stream: Swift.Result<T, Foundation.NSError>) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  public func callStreamSSE(config: EdgeCore.EdgeClient.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.EdgeClient.Microservice.ServerSentEventType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
   #endif
 }
 extension EdgeCore.EdgeClient {
@@ -471,6 +480,14 @@ extension EdgeCore.EdgeClient {
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
+}
+extension EdgeCore.EdgeClient.Microservice {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func callStream(config: EdgeCore.EdgeClient.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<Foundation.Data, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func callStream<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type, streamHandler: @escaping (_ stream: Swift.Result<T, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #endif
 }
 extension EdgeCore.EdgeClient {
   public struct Document : Swift.Codable {

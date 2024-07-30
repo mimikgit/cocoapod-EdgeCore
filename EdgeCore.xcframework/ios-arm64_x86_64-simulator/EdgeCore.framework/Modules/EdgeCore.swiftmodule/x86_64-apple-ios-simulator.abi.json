@@ -207,6 +207,37 @@
       },
       {
         "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "JWTDecode",
+        "printedName": "JWTDecode",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -9298,9 +9329,479 @@
                 "funcSelfKind": "NonMutating"
               },
               {
+                "kind": "TypeDecl",
+                "name": "ServerSentEventType",
+                "printedName": "ServerSentEventType",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "empty",
+                    "printedName": "empty",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerSentEventType",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5emptyyA2GmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5emptyyA2GmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "comment",
+                    "printedName": "comment",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> (Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO7commentyAGSScAGmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO7commentyAGSScAGmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "event",
+                    "printedName": "event",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> (Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5eventyAGSScAGmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5eventyAGSScAGmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "data",
+                    "printedName": "data",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> (Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO4datayAGSScAGmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO4datayAGSScAGmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "id",
+                    "printedName": "id",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> (Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO2idyAGSScAGmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO2idyAGSScAGmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "retry",
+                    "printedName": "retry",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> (Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeFunc",
+                            "name": "Function",
+                            "printedName": "(Swift.String) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5retryyAGSScAGmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5retryyAGSScAGmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "other",
+                    "printedName": "other",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerSentEventType",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5otheryA2GmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO5otheryA2GmF",
+                    "moduleName": "EdgeCore"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "unknown",
+                    "printedName": "unknown",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type) -> EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerSentEventType",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ServerSentEventType",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO7unknownyA2GmF",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO7unknownyA2GmF",
+                    "moduleName": "EdgeCore"
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO",
+                "moduleName": "EdgeCore",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true
+              },
+              {
+                "kind": "Function",
+                "name": "callStreamSSE",
+                "printedName": "callStreamSSE(config:streamHandler:requestHandler:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Completion",
+                        "printedName": "Alamofire.DataStreamRequest.Completion",
+                        "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Config",
+                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Result<EdgeCore.EdgeClient.Microservice.ServerSentEventType, Foundation.NSError>) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Result",
+                        "printedName": "Swift.Result<EdgeCore.EdgeClient.Microservice.ServerSentEventType, Foundation.NSError>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerSentEventType",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.ServerSentEventType",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV19ServerSentEventTypeO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSError",
+                            "printedName": "Foundation.NSError",
+                            "usr": "c:objc(cs)NSError"
+                          }
+                        ],
+                        "usr": "s:s6ResultO"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Alamofire.DataStreamRequest) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DataStreamRequest",
+                        "printedName": "Alamofire.DataStreamRequest",
+                        "usr": "s:9Alamofire17DataStreamRequestC"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV13callStreamSSE6config13streamHandler07requestJ0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_yAKyAE19ServerSentEventTypeOARGcyANctYaF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV13callStreamSSE6config13streamHandler07requestJ0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_yAKyAE19ServerSentEventTypeOARGcyANctYaF",
+                "moduleName": "EdgeCore",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
                 "kind": "Function",
                 "name": "callStream",
-                "printedName": "callStream(config:streamHandler:)",
+                "printedName": "callStream(config:streamHandler:requestHandler:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9359,11 +9860,29 @@
                         "usr": "s:s6ResultO"
                       }
                     ]
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Alamofire.DataStreamRequest) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DataStreamRequest",
+                        "printedName": "Alamofire.DataStreamRequest",
+                        "usr": "s:9Alamofire17DataStreamRequestC"
+                      }
+                    ]
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV10callStream6config13streamHandlers6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0M0V6ConfigV_yAJy10Foundation0L0VAQGctYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV10callStream6config13streamHandlers6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0M0V6ConfigV_yAJy10Foundation0L0VAQGctYaF",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV10callStream6config13streamHandler07requestI0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0N0V6ConfigV_yAKy10Foundation0M0VARGcyANctYaF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV10callStream6config13streamHandler07requestI0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0N0V6ConfigV_yAKy10Foundation0M0VARGcyANctYaF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
@@ -9375,7 +9894,7 @@
               {
                 "kind": "Function",
                 "name": "callStream",
-                "printedName": "callStream(config:type:streamHandler:)",
+                "printedName": "callStream(config:type:streamHandler:requestHandler:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9445,11 +9964,29 @@
                         "usr": "s:s6ResultO"
                       }
                     ]
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Alamofire.DataStreamRequest) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DataStreamRequest",
+                        "printedName": "Alamofire.DataStreamRequest",
+                        "usr": "s:9Alamofire17DataStreamRequestC"
+                      }
+                    ]
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV10callStream6config4type13streamHandlers6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0N0V6ConfigV_xmyAKyxARGctYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV10callStream6config4type13streamHandlers6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0N0V6ConfigV_xmyAKyxARGctYaSeRzSERzlF",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV10callStream6config4type13streamHandler07requestJ0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_xmyALyxASGcyAOctYaSeRzSERzlF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV10callStream6config4type13streamHandler07requestJ0s6ResultOy9Alamofire04DataF7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_xmyALyxASGcyAOctYaSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
@@ -20752,6 +21289,37 @@
       },
       {
         "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "JWTDecode",
+        "printedName": "JWTDecode",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -20963,6 +21531,37 @@
         "kind": "Import",
         "name": "AppAuth",
         "printedName": "AppAuth",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "JWTDecode",
+        "printedName": "JWTDecode",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
         "declKind": "Import",
         "moduleName": "EdgeCore",
         "declAttributes": [
@@ -21200,6 +21799,37 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "JWTDecode",
+        "printedName": "JWTDecode",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "AppAuth",
         "printedName": "AppAuth",
         "declKind": "Import",
@@ -21245,6 +21875,37 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "JWTDecode",
+        "printedName": "JWTDecode",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
       },
       {
         "kind": "Import",
@@ -22136,6 +22797,76 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3204,
+      "length": 3,
+      "value": "\":\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3229,
+      "length": 8,
+      "value": "\"event:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3258,
+      "length": 7,
+      "value": "\"data:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3284,
+      "length": 5,
+      "value": "\"id:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3311,
+      "length": 8,
+      "value": "\"retry:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3204,
+      "length": 3,
+      "value": "\":\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3229,
+      "length": 8,
+      "value": "\"event:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3258,
+      "length": 7,
+      "value": "\"data:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3284,
+      "length": 5,
+      "value": "\"id:\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3311,
+      "length": 8,
+      "value": "\"retry:\""
+    },
+    {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/EdgeClient.Microservice+Image.swift",
       "kind": "FloatLiteral",
       "offset": 751,
@@ -22187,14 +22918,14 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice.Request+Internal.swift",
       "kind": "FloatLiteral",
-      "offset": 598,
+      "offset": 519,
       "length": 4,
       "value": "60.0"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice.Request+Internal.swift",
       "kind": "BooleanLiteral",
-      "offset": 687,
+      "offset": 608,
       "length": 5,
       "value": "false"
     },

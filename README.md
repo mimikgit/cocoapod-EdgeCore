@@ -25,7 +25,7 @@ Additionally, this component provides utility APIs that help developers with cor
 
 Furthermore, the **`EdgeEngineDeveloper (or EdgeEngine for enterprise projects) cocoapod`** provides edgeEngine Runtime lifecycle control API, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
 
-Expanding the client library ecosystem is the **`EdgeService` cocoapod**, providing API for integrating mimik Hybrid Edge Cloud edge and backend microservices.
+Expanding the client library ecosystem is the **`EdgeService` cocoapod**, providing API for integrating mimik edge and backend microservices.
 
 
 ## Supported Platforms, Targets
@@ -177,8 +177,9 @@ After installation, try the following tutorials:
 - ``EdgeClient/Microservice/basePath()``
 - ``EdgeClient/Microservice/call(config:)``
 - ``EdgeClient/Microservice/call(config:type:)``
-- ``EdgeClient/Microservice/callStream(config:streamHandler:)``
-- ``EdgeClient/Microservice/callStream(config:type:streamHandler:)``
+- ``EdgeClient/Microservice/callStream(config:streamHandler:requestHandler:)``
+- ``EdgeClient/Microservice/callStream(config:type:streamHandler:requestHandler:)``
+- ``EdgeClient/Microservice/callStreamSSE(config:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/fullPathUrl()``
 - ``EdgeClient/Microservice/fullPathUrl(withEndpoint:)``
 - ``EdgeClient/Microservice/expectedDeployedBasePath(path:clientId:)``
