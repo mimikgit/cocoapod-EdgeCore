@@ -141,7 +141,7 @@ After installation, try the following tutorials:
 - ``EdgeClient/deactivateExternalEdgeEngine()``
 - ``EdgeClient/edgeEngineWorkingDirectory()``
 - ``EdgeClient/externalEdgeEngineIsActivated()``
-- ``EdgeClient/setLoggingLevel(level:module:)``
+- ``EdgeClient/setLoggingLevel(module:level:privacy:)``
 
 
 ## EdgeClient/Authorization/AccessToken
@@ -165,12 +165,13 @@ After installation, try the following tutorials:
 
 
 ## EdgeClient/Log
-- ``EdgeClient/Log/log(level:function:line:items:module:marker:privacy:)``
-- ``EdgeClient/Log/logDebug(function:line:items:module:marker:privacy:)``
-- ``EdgeClient/Log/logError(function:line:items:module:marker:privacy:)``
-- ``EdgeClient/Log/logFault(function:line:items:module:marker:privacy:)``
-- ``EdgeClient/Log/logInfo(function:line:items:module:marker:privacy:)``
+- ``EdgeClient/Log/log(level:function:line:items:module:marker:)``
+- ``EdgeClient/Log/logDebug(function:line:items:module:marker:)``
+- ``EdgeClient/Log/logError(function:line:items:module:marker:)``
+- ``EdgeClient/Log/logFault(function:line:items:module:marker:)``
+- ``EdgeClient/Log/logInfo(function:line:items:module:marker:)``
 - ``EdgeClient/Log/loggingLevel(module:)``
+- ``EdgeClient/Log/loggingPrivacy(module:)``
 
 
 ## EdgeClient/Microservice

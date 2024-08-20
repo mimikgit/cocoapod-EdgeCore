@@ -162,7 +162,7 @@ extension EdgeCore.EdgeClient.Microservice {
   public static func preferredBasePath(path: Swift.String) -> Swift.String
 }
 @objc @_inheritsConvenienceInitializers final public class EdgeClient : ObjectiveC.NSObject {
-  final public class func setLoggingLevel(level: EdgeCore.EdgeClient.Log.Level, module: EdgeCore.EdgeClient.Log.Module = .edgeCore)
+  final public class func setLoggingLevel(module: EdgeCore.EdgeClient.Log.Module, level: EdgeCore.EdgeClient.Log.Level, privacy: EdgeCore.EdgeClient.Log.Privacy)
   final public class func activateExternalEdgeEngine(host: Swift.String, port: Swift.Int) -> Swift.Result<Foundation.URLComponents, Foundation.NSError>
   final public class func externalEdgeEngineIsActivated() -> Swift.Bool
   final public class func deactivateExternalEdgeEngine() -> Swift.Result<Swift.Void, Foundation.NSError>
@@ -322,12 +322,12 @@ extension EdgeCore.EdgeClient {
         get
       }
     }
-    public enum Privacy {
+    public enum Privacy : Swift.Int {
       case privateOnly
       case publicAccess
-      public static func == (a: EdgeCore.EdgeClient.Log.Privacy, b: EdgeCore.EdgeClient.Log.Privacy) -> Swift.Bool
-      public func hash(into hasher: inout Swift.Hasher)
-      public var hashValue: Swift.Int {
+      public init?(rawValue: Swift.Int)
+      public typealias RawValue = Swift.Int
+      public var rawValue: Swift.Int {
         get
       }
     }
@@ -339,11 +339,12 @@ extension EdgeCore.EdgeClient {
       case mimikAccess
     }
     public static func loggingLevel(module: EdgeCore.EdgeClient.Log.Module) -> EdgeCore.EdgeClient.Log.Level
-    public static func log(level: EdgeCore.EdgeClient.Log.Level, function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
-    public static func logInfo(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
-    public static func logDebug(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
-    public static func logFault(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil, privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
-    public static func logError(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = "⚠️⚠️⚠️", privacy: EdgeCore.EdgeClient.Log.Privacy = .privateOnly)
+    public static func loggingPrivacy(module: EdgeCore.EdgeClient.Log.Module) -> EdgeCore.EdgeClient.Log.Privacy
+    public static func log(level: EdgeCore.EdgeClient.Log.Level, function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil)
+    public static func logInfo(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil)
+    public static func logDebug(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil)
+    public static func logFault(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = nil)
+    public static func logError(function: Swift.String, line: Swift.Int, items: Any..., module: EdgeCore.EdgeClient.Log.Module, marker: Swift.String? = "⚠️⚠️⚠️")
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -709,6 +710,7 @@ extension EdgeCore.EdgeClient.Log.Level : Swift.Hashable {}
 extension EdgeCore.EdgeClient.Log.Level : Swift.RawRepresentable {}
 extension EdgeCore.EdgeClient.Log.Privacy : Swift.Equatable {}
 extension EdgeCore.EdgeClient.Log.Privacy : Swift.Hashable {}
+extension EdgeCore.EdgeClient.Log.Privacy : Swift.RawRepresentable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.Equatable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.Hashable {}
 extension EdgeCore.EdgeClient.StartupParameters.LogLevel : Swift.RawRepresentable {}

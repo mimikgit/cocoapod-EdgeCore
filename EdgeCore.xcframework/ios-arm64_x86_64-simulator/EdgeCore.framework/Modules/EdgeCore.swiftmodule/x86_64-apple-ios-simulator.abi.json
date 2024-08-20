@@ -510,12 +510,18 @@
           {
             "kind": "Function",
             "name": "setLoggingLevel",
-            "printedName": "setLoggingLevel(level:module:)",
+            "printedName": "setLoggingLevel(module:level:privacy:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Module",
+                "printedName": "EdgeCore.EdgeClient.Log.Module",
+                "usr": "s:8EdgeCore0A6ClientC3LogV6ModuleO"
               },
               {
                 "kind": "TypeNominal",
@@ -525,15 +531,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Module",
-                "printedName": "EdgeCore.EdgeClient.Log.Module",
-                "hasDefaultArg": true,
-                "usr": "s:8EdgeCore0A6ClientC3LogV6ModuleO"
+                "name": "Privacy",
+                "printedName": "EdgeCore.EdgeClient.Log.Privacy",
+                "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC15setLoggingLevel5level6moduleyAC3LogV0F0O_AH6ModuleOtFZ",
-            "mangledName": "$s8EdgeCore0A6ClientC15setLoggingLevel5level6moduleyAC3LogV0F0O_AH6ModuleOtFZ",
+            "usr": "s:8EdgeCore0A6ClientC15setLoggingLevel6module5level7privacyyAC3LogV6ModuleO_AI0F0OAI7PrivacyOtFZ",
+            "mangledName": "$s8EdgeCore0A6ClientC15setLoggingLevel6module5level7privacyyAC3LogV6ModuleO_AI0F0OAI7PrivacyOtFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -13239,41 +13244,42 @@
                     ]
                   },
                   {
-                    "kind": "Function",
-                    "name": "==",
-                    "printedName": "==(_:_:)",
+                    "kind": "Constructor",
+                    "name": "init",
+                    "printedName": "init(rawValue:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
+                        "name": "Optional",
+                        "printedName": "EdgeCore.EdgeClient.Log.Privacy?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Privacy",
+                            "printedName": "EdgeCore.EdgeClient.Log.Privacy",
+                            "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
+                          }
+                        ],
+                        "usr": "s:Sq"
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Privacy",
-                        "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                        "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Privacy",
-                        "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                        "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
                       }
                     ],
-                    "declKind": "Func",
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO2eeoiySbAG_AGtFZ",
-                    "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO2eeoiySbAG_AGtFZ",
+                    "declKind": "Constructor",
+                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueAGSgSi_tcfc",
+                    "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueAGSgSi_tcfc",
                     "moduleName": "EdgeCore",
-                    "static": true,
                     "implicit": true,
-                    "funcSelfKind": "NonMutating"
+                    "init_kind": "Designated"
                   },
                   {
                     "kind": "Var",
-                    "name": "hashValue",
-                    "printedName": "hashValue",
+                    "name": "rawValue",
+                    "printedName": "rawValue",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -13283,8 +13289,8 @@
                       }
                     ],
                     "declKind": "Var",
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO9hashValueSivp",
-                    "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO9hashValueSivp",
+                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueSivp",
+                    "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueSivp",
                     "moduleName": "EdgeCore",
                     "implicit": true,
                     "accessors": [
@@ -13301,38 +13307,13 @@
                           }
                         ],
                         "declKind": "Accessor",
-                        "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO9hashValueSivg",
-                        "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO9hashValueSivg",
+                        "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueSivg",
+                        "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO8rawValueSivg",
                         "moduleName": "EdgeCore",
                         "implicit": true,
                         "accessorKind": "get"
                       }
                     ]
-                  },
-                  {
-                    "kind": "Function",
-                    "name": "hash",
-                    "printedName": "hash(into:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Hasher",
-                        "printedName": "Swift.Hasher",
-                        "paramValueOwnership": "InOut",
-                        "usr": "s:s6HasherV"
-                      }
-                    ],
-                    "declKind": "Func",
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO4hash4intoys6HasherVz_tF",
-                    "mangledName": "$s8EdgeCore0A6ClientC3LogV7PrivacyO4hash4intoys6HasherVz_tF",
-                    "moduleName": "EdgeCore",
-                    "implicit": true,
-                    "funcSelfKind": "NonMutating"
                   }
                 ],
                 "declKind": "Enum",
@@ -13343,6 +13324,7 @@
                   "AccessControl",
                   "RawDocComment"
                 ],
+                "enumRawTypeName": "Int",
                 "conformances": [
                   {
                     "kind": "Conformance",
@@ -13357,6 +13339,28 @@
                     "printedName": "Hashable",
                     "usr": "s:SH",
                     "mangledName": "$sSH"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "RawRepresentable",
+                    "printedName": "RawRepresentable",
+                    "children": [
+                      {
+                        "kind": "TypeWitness",
+                        "name": "RawValue",
+                        "printedName": "RawValue",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:SY",
+                    "mangledName": "$sSY"
                   }
                 ]
               },
@@ -13604,8 +13608,37 @@
               },
               {
                 "kind": "Function",
+                "name": "loggingPrivacy",
+                "printedName": "loggingPrivacy(module:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Privacy",
+                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
+                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Module",
+                    "printedName": "EdgeCore.EdgeClient.Log.Module",
+                    "usr": "s:8EdgeCore0A6ClientC3LogV6ModuleO"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC3LogV14loggingPrivacy6moduleAE0F0OAE6ModuleO_tFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV14loggingPrivacy6moduleAE0F0OAE6ModuleO_tFZ",
+                "moduleName": "EdgeCore",
+                "static": true,
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
                 "name": "log",
-                "printedName": "log(level:function:line:items:module:marker:privacy:)",
+                "printedName": "log(level:function:line:items:module:marker:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -13663,18 +13696,11 @@
                     ],
                     "hasDefaultArg": true,
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Privacy",
-                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                    "hasDefaultArg": true,
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC3LogV3log5level8function4line5items6module6marker7privacyyAE5LevelO_SSSiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
-                "mangledName": "$s8EdgeCore0A6ClientC3LogV3log5level8function4line5items6module6marker7privacyyAE5LevelO_SSSiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
+                "usr": "s:8EdgeCore0A6ClientC3LogV3log5level8function4line5items6module6markeryAE5LevelO_SSSiypdAE6ModuleOSSSgtFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV3log5level8function4line5items6module6markeryAE5LevelO_SSSiypdAE6ModuleOSSSgtFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -13686,7 +13712,7 @@
               {
                 "kind": "Function",
                 "name": "logInfo",
-                "printedName": "logInfo(function:line:items:module:marker:privacy:)",
+                "printedName": "logInfo(function:line:items:module:marker:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -13738,18 +13764,11 @@
                     ],
                     "hasDefaultArg": true,
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Privacy",
-                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                    "hasDefaultArg": true,
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC3LogV7logInfo8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
-                "mangledName": "$s8EdgeCore0A6ClientC3LogV7logInfo8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
+                "usr": "s:8EdgeCore0A6ClientC3LogV7logInfo8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV7logInfo8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -13761,7 +13780,7 @@
               {
                 "kind": "Function",
                 "name": "logDebug",
-                "printedName": "logDebug(function:line:items:module:marker:privacy:)",
+                "printedName": "logDebug(function:line:items:module:marker:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -13813,18 +13832,11 @@
                     ],
                     "hasDefaultArg": true,
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Privacy",
-                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                    "hasDefaultArg": true,
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC3LogV8logDebug8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
-                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logDebug8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
+                "usr": "s:8EdgeCore0A6ClientC3LogV8logDebug8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logDebug8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -13836,7 +13848,7 @@
               {
                 "kind": "Function",
                 "name": "logFault",
-                "printedName": "logFault(function:line:items:module:marker:privacy:)",
+                "printedName": "logFault(function:line:items:module:marker:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -13888,18 +13900,11 @@
                     ],
                     "hasDefaultArg": true,
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Privacy",
-                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                    "hasDefaultArg": true,
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC3LogV8logFault8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
-                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logFault8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
+                "usr": "s:8EdgeCore0A6ClientC3LogV8logFault8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logFault8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -13911,7 +13916,7 @@
               {
                 "kind": "Function",
                 "name": "logError",
-                "printedName": "logError(function:line:items:module:marker:privacy:)",
+                "printedName": "logError(function:line:items:module:marker:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -13963,18 +13968,11 @@
                     ],
                     "hasDefaultArg": true,
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Privacy",
-                    "printedName": "EdgeCore.EdgeClient.Log.Privacy",
-                    "hasDefaultArg": true,
-                    "usr": "s:8EdgeCore0A6ClientC3LogV7PrivacyO"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC3LogV8logError8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
-                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logError8function4line5items6module6marker7privacyySS_SiypdAE6ModuleOSSSgAE7PrivacyOtFZ",
+                "usr": "s:8EdgeCore0A6ClientC3LogV8logError8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
+                "mangledName": "$s8EdgeCore0A6ClientC3LogV8logError8function4line5items6module6markerySS_SiypdAE6ModuleOSSSgtFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -23064,8 +23062,50 @@
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1003,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1135,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1003,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1135,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1003,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1135,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/EdgeClient+Log.swift",
       "kind": "StringLiteral",
-      "offset": 8132,
+      "offset": 9116,
       "length": 20,
       "value": "\"⚠️⚠️⚠️\""
     },
