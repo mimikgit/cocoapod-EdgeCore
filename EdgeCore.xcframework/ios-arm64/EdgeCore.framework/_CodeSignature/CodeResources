@@ -14,23 +14,23 @@
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		VWbhOqOJzMH7DscO0vnRrjobmAA=
+		7zGpI0qvdXyeozhDRfM/SQCVVXg=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		MAI/uJOviK6E68e6ts9jL3veeUk=
+		esQvxigNYI0r0ltO1EfxR/daSXo=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		MLZD0aDBMeFv69IymjUAaQFLBt8=
+		l8ZEA2ZngyP038pYSxBbPhE4Rh4=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		MAI/uJOviK6E68e6ts9jL3veeUk=
+		esQvxigNYI0r0ltO1EfxR/daSXo=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		6U4cL/EXShUvqGfBTlMeoNFVNHo=
+		pdtciLOlDPPN4Sk8ZNBIhqkITRs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,35 +50,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			00rZpF2m7aMTTQtYQYvSofK3+AkfmMhdU51ZpjKUMWI=
+			gz4j0HagHLi7PAeKBaX6SDElRcSoNufyo83Pjkn7YEc=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GYexKEsc2XRTjLgUbzfCw3NRx7Cx0+1k0Ew9uqE7zaI=
+			hZvneBAVfX2ssBi9f3LKFxhrijy5TIM4/anqKdgmyJw=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PkQ9iGWjxPJLPOrH/qzovtwY4cSYHMankhDnpI6cc8A=
+			jgVXYNK6ZXQsTHjxQnqTrL22dVrwN/TShfxfFIFiUgY=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GYexKEsc2XRTjLgUbzfCw3NRx7Cx0+1k0Ew9uqE7zaI=
+			hZvneBAVfX2ssBi9f3LKFxhrijy5TIM4/anqKdgmyJw=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e6QaAwzh6B0DamTXhIgpTna3cA6R3d31YFWGVJAFV3U=
+			b0KksksvAFdqcHMNADhd257jkKB3aG7KXQTI5QaOM8I=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

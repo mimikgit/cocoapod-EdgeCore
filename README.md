@@ -150,7 +150,7 @@ After installation, try the following tutorials:
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAIModel(accessToken:apiKey:model:useCase:downloadHandler:requestHandler:)``
 - ``EdgeClient/askAI(modelId:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)``
-- ``EdgeClient/availableModels(accessToken:apiKey:useCase:)``
+- ``EdgeClient/availableAIModels(accessToken:apiKey:useCase:)``
 
 
 ## EdgeClient/Authorization/AccessToken

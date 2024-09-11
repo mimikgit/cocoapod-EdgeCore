@@ -3015,8 +3015,8 @@
           },
           {
             "kind": "Function",
-            "name": "availableModels",
-            "printedName": "availableModels(accessToken:apiKey:useCase:)",
+            "name": "availableAIModels",
+            "printedName": "availableAIModels(accessToken:apiKey:useCase:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3066,8 +3066,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC15availableModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC15availableModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
+            "usr": "s:8EdgeCore0A6ClientC17availableAIModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC17availableAIModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
