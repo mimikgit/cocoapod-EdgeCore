@@ -129,6 +129,7 @@ After installation, try the following tutorials:
 
 ### Edge microservices
 
+- ``EdgeClient/deployUseCase(accessToken:configUrl:dynamicConfig:)``
 - ``EdgeClient/deployMicroservice(edgeEngineAccessToken:config:imageTarPath:)``
 - ``EdgeClient/microservices(edgeEngineAccessToken:)``
 - ``EdgeClient/microservice(containerName:edgeEngineAccessToken:)``
@@ -142,6 +143,14 @@ After installation, try the following tutorials:
 - ``EdgeClient/edgeEngineWorkingDirectory()``
 - ``EdgeClient/externalEdgeEngineIsActivated()``
 - ``EdgeClient/setLoggingLevel(module:level:privacy:)``
+
+
+## EdgeClient/AI
+
+- ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
+- ``EdgeClient/downloadAIModel(accessToken:apiKey:model:useCase:downloadHandler:requestHandler:)``
+- ``EdgeClient/askAI(modelId:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)``
+- ``EdgeClient/availableModels(accessToken:apiKey:useCase:)``
 
 
 ## EdgeClient/Authorization/AccessToken
