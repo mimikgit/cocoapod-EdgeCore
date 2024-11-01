@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name EdgeCore
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
@@ -70,10 +70,17 @@ extension EdgeCore.EdgeClient {
   }
 }
 extension EdgeCore.EdgeClient {
-  final public func integrateAI(accessToken: Swift.String, apiKey: Swift.String, configUrl: Swift.String, model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest?, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.UseCase.Deployment, Foundation.NSError>
+  final public func integrateAI(accessToken: Swift.String, apiKey: Swift.String, configUrl: Swift.String, model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest?, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>
+  @available(*, deprecated, renamed: "integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)")
+  final public func integrateAI(accessToken: Swift.String, apiKey: Swift.String, configUrl: Swift.String, downloadModel: EdgeCore.EdgeClient.AI.Model.CreateModelRequest?, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>
+  final public func downloadAI(model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
+  @available(*, deprecated, renamed: "downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)")
   final public func downloadAIModel(accessToken: Swift.String, apiKey: Swift.String, model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest, useCase: EdgeCore.EdgeClient.UseCase, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
   final public func askAI(modelId: Swift.String, accessToken: Swift.String, apiKey: Swift.String, question: Swift.String, useCase: EdgeCore.EdgeClient.UseCase, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
+  final public func aiModels(accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<[EdgeCore.EdgeClient.AI.Model], Foundation.NSError>
+  @available(*, deprecated, renamed: "aiModels(accessToken:apiKey:useCase:)")
   final public func availableAIModels(accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<[EdgeCore.EdgeClient.AI.Model], Foundation.NSError>
+  final public func aiModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
 }
 extension EdgeCore.EdgeClient.Request {
   public static func call<T>(config: EdgeCore.EdgeClient.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
@@ -200,12 +207,6 @@ extension EdgeCore.EdgeClient.Microservice {
 }
 extension EdgeCore.EdgeClient {
   public struct UseCase : Swift.Codable {
-    public struct Deployment : Swift.Codable {
-      public let microservices: [EdgeCore.EdgeClient.Microservice]
-      public let useCase: EdgeCore.EdgeClient.UseCase
-      public func encode(to encoder: any Swift.Encoder) throws
-      public init(from decoder: any Swift.Decoder) throws
-    }
     public let name: Swift.String?
     public let version: Swift.String?
     public let features: [EdgeCore.EdgeClient.UseCase.Feature]?
@@ -260,6 +261,7 @@ extension EdgeCore.EdgeClient {
       public func encode(to encoder: any Swift.Encoder) throws
       public init(from decoder: any Swift.Decoder) throws
     }
+    public var deployedMicroservices: [EdgeCore.EdgeClient.Microservice]?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -279,7 +281,7 @@ extension EdgeCore.EdgeClient.Microservice {
   final public class func externalEdgeEngineIsActivated() -> Swift.Bool
   final public class func deactivateExternalEdgeEngine() -> Swift.Result<Swift.Void, Foundation.NSError>
   final public func deployMicroservice(edgeEngineAccessToken: Swift.String, config: EdgeCore.EdgeClient.Microservice.Config, imageTarPath: Swift.String) async -> Swift.Result<EdgeCore.EdgeClient.Microservice, Foundation.NSError>
-  final public func deployUseCase(accessToken: Swift.String, configUrl: Swift.String, dynamicConfig: [Swift.String : Swift.String]) async -> Swift.Result<EdgeCore.EdgeClient.UseCase.Deployment, Foundation.NSError>
+  final public func deployUseCase(accessToken: Swift.String, configUrl: Swift.String, dynamicConfig: [Swift.String : Swift.String]) async -> Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>
   final public func updateMicroserviceEnv(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice, envVariables: [Swift.String : Swift.String]) async -> Swift.Result<EdgeCore.EdgeClient.Microservice, Foundation.NSError>
   final public func undeployMicroservice(edgeEngineAccessToken: Swift.String, microservice: EdgeCore.EdgeClient.Microservice) async -> Swift.Result<Swift.Void, Foundation.NSError>
   final public func microservices(edgeEngineAccessToken: Swift.String) async -> Swift.Result<[EdgeCore.EdgeClient.Microservice], Foundation.NSError>
@@ -434,6 +436,7 @@ extension EdgeCore.EdgeClient.AI.Model {
         get
       }
     }
+    public init(id: Swift.String, object: Swift.String, url: Swift.String, expectedDownloadSize: Swift.Int64, ownedBy: Swift.String? = nil)
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
