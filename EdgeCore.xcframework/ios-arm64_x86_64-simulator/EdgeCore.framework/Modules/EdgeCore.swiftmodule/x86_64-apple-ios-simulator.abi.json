@@ -190,6 +190,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "JWTDecode",
         "printedName": "JWTDecode",
         "declKind": "Import",
@@ -2785,127 +2795,6 @@
           },
           {
             "kind": "Function",
-            "name": "integrateAI",
-            "printedName": "integrateAI(accessToken:apiKey:configUrl:downloadModel:downloadHandler:requestHandler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UseCase",
-                    "printedName": "EdgeCore.EdgeClient.UseCase",
-                    "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "EdgeCore.EdgeClient.AI.Model.CreateModelRequest?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CreateModelRequest",
-                    "printedName": "EdgeCore.EdgeClient.AI.Model.CreateModelRequest",
-                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06CreateE7RequestV"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "DownloadProgress",
-                        "printedName": "EdgeCore.EdgeClient.AI.Model.DownloadProgress",
-                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV16DownloadProgressV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Alamofire.DataStreamRequest) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DataStreamRequest",
-                    "printedName": "Alamofire.DataStreamRequest",
-                    "usr": "s:9Alamofire17DataStreamRequestC"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC11integrateAI11accessToken6apiKey9configUrl13downloadModel0L7Handler07requestN0s6ResultOyAC7UseCaseVSo7NSErrorCGSS_S2SAC0E0V0M0V06CreateM7RequestVSgyALyAU16DownloadProgressVAPGcy9Alamofire010DataStreamU0CctYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC11integrateAI11accessToken6apiKey9configUrl13downloadModel0L7Handler07requestN0s6ResultOyAC7UseCaseVSo7NSErrorCGSS_S2SAC0E0V0M0V06CreateM7RequestVSgyALyAU16DownloadProgressVAPGcy9Alamofire010DataStreamU0CctYaF",
-            "moduleName": "EdgeCore",
-            "deprecated": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "Available"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "downloadAI",
             "printedName": "downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)",
             "children": [
@@ -3018,19 +2907,19 @@
           },
           {
             "kind": "Function",
-            "name": "downloadAIModel",
-            "printedName": "downloadAIModel(accessToken:apiKey:model:useCase:downloadHandler:requestHandler:)",
+            "name": "askAIModel",
+            "printedName": "askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>",
+                "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Model",
-                    "printedName": "EdgeCore.EdgeClient.AI.Model",
-                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV"
+                    "name": "Completion",
+                    "printedName": "Alamofire.DataStreamRequest.Completion",
+                    "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -3055,9 +2944,15 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "CreateModelRequest",
-                "printedName": "EdgeCore.EdgeClient.AI.Model.CreateModelRequest",
-                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06CreateE7RequestV"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -3068,7 +2963,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> ()",
+                "printedName": "(Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3078,13 +2973,13 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Result",
-                    "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>",
+                    "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "DownloadProgress",
-                        "printedName": "EdgeCore.EdgeClient.AI.Model.DownloadProgress",
-                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV16DownloadProgressV"
+                        "name": "CompletionType",
+                        "printedName": "EdgeCore.EdgeClient.AI.Model.CompletionType",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV14CompletionTypeO"
                       },
                       {
                         "kind": "TypeNominal",
@@ -3117,14 +3012,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC15downloadAIModel11accessToken6apiKey5model7useCase0D7Handler07requestM0s6ResultOyAC2AIV5ModelVSo7NSErrorCGSS_SSAP06CreateQ7RequestVAC03UseL0VyALyAP16DownloadProgressVARGcy9Alamofire010DataStreamT0CctYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC15downloadAIModel11accessToken6apiKey5model7useCase0D7Handler07requestM0s6ResultOyAC2AIV5ModelVSo7NSErrorCGSS_SSAP06CreateQ7RequestVAC03UseL0VyALyAP16DownloadProgressVARGcy9Alamofire010DataStreamT0CctYaF",
+            "usr": "s:8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S3SAC03UseM0VyAMyAC2AIV5ModelV0V4TypeOATGcyAPctYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S3SAC03UseM0VyAMyAC2AIV5ModelV0V4TypeOATGcyAPctYaF",
             "moduleName": "EdgeCore",
-            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "Available"
+              "RawDocComment"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -3239,10 +3133,11 @@
             "usr": "s:8EdgeCore0A6ClientC5askAI7modelId11accessToken6apiKey8question7useCase13streamHandler07requestP0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S3SAC03UseN0VyAMyAC0E0V5ModelV0W4TypeOATGcyAPctYaF",
             "mangledName": "$s8EdgeCore0A6ClientC5askAI7modelId11accessToken6apiKey8question7useCase13streamHandler07requestP0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S3SAC03UseN0VyAMyAC0E0V5ModelV0W4TypeOATGcyAPctYaF",
             "moduleName": "EdgeCore",
+            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment"
+              "Available"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -3313,71 +3208,6 @@
           },
           {
             "kind": "Function",
-            "name": "availableAIModels",
-            "printedName": "availableAIModels(accessToken:apiKey:useCase:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<[EdgeCore.EdgeClient.AI.Model], Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[EdgeCore.EdgeClient.AI.Model]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Model",
-                        "printedName": "EdgeCore.EdgeClient.AI.Model",
-                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UseCase",
-                "printedName": "EdgeCore.EdgeClient.UseCase",
-                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC17availableAIModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC17availableAIModels11accessToken6apiKey7useCases6ResultOySayAC2AIV5ModelVGSo7NSErrorCGSS_SSAC03UseK0VtYaF",
-            "moduleName": "EdgeCore",
-            "deprecated": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "Available"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "aiModel",
             "printedName": "aiModel(id:accessToken:apiKey:useCase:)",
             "children": [
@@ -3429,6 +3259,68 @@
             "declKind": "Func",
             "usr": "s:8EdgeCore0A6ClientC7aiModel2id11accessToken6apiKey7useCases6ResultOyAC2AIV0E0VSo7NSErrorCGSS_S2SAC03UseL0VtYaF",
             "mangledName": "$s8EdgeCore0A6ClientC7aiModel2id11accessToken6apiKey7useCases6ResultOyAC2AIV0E0VSo7NSErrorCGSS_S2SAC03UseL0VtYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteAIModel",
+            "printedName": "deleteAIModel(id:accessToken:apiKey:useCase:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.DeleteModelResponseData, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DeleteModelResponseData",
+                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponseData",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UseCase",
+                "printedName": "EdgeCore.EdgeClient.UseCase",
+                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC13deleteAIModel2id11accessToken6apiKey7useCases6ResultOyAC2AIV5ModelV06DeleteO12ResponseDataVSo7NSErrorCGSS_S2SAC03UseL0VtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC13deleteAIModel2id11accessToken6apiKey7useCases6ResultOyAC2AIV5ModelV06DeleteO12ResponseDataVSo7NSErrorCGSS_S2SAC03UseL0VtYaF",
             "moduleName": "EdgeCore",
             "declAttributes": [
               "Final",
@@ -11828,6 +11720,36 @@
               },
               {
                 "kind": "Function",
+                "name": "urlComponents",
+                "printedName": "urlComponents()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.URLComponents?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URLComponents",
+                        "printedName": "Foundation.URLComponents",
+                        "usr": "s:10Foundation13URLComponentsV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV13urlComponents10Foundation13URLComponentsVSgyF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV13urlComponents10Foundation13URLComponentsVSgyF",
+                "moduleName": "EdgeCore",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
                 "name": "fullPathUrl",
                 "printedName": "fullPathUrl()",
                 "children": [
@@ -11849,6 +11771,43 @@
                 "declKind": "Func",
                 "usr": "s:8EdgeCore0A6ClientC12MicroserviceV11fullPathUrl10Foundation13URLComponentsVSgyF",
                 "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV11fullPathUrl10Foundation13URLComponentsVSgyF",
+                "moduleName": "EdgeCore",
+                "deprecated": true,
+                "declAttributes": [
+                  "AccessControl",
+                  "Available"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "urlComponents",
+                "printedName": "urlComponents(withEndpoint:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.URLComponents?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URLComponents",
+                        "printedName": "Foundation.URLComponents",
+                        "usr": "s:10Foundation13URLComponentsV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV13urlComponents12withEndpoint10Foundation13URLComponentsVSgSS_tF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV13urlComponents12withEndpoint10Foundation13URLComponentsVSgSS_tF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
@@ -11886,9 +11845,10 @@
                 "usr": "s:8EdgeCore0A6ClientC12MicroserviceV11fullPathUrl12withEndpoint10Foundation13URLComponentsVSgSS_tF",
                 "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV11fullPathUrl12withEndpoint10Foundation13URLComponentsVSgSS_tF",
                 "moduleName": "EdgeCore",
+                "deprecated": true,
                 "declAttributes": [
                   "AccessControl",
-                  "RawDocComment"
+                  "Available"
                 ],
                 "funcSelfKind": "NonMutating"
               },
@@ -11985,130 +11945,8 @@
                     "children": [
                       {
                         "kind": "Var",
-                        "name": "authorization",
-                        "printedName": "authorization",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "EdgeCore.EdgeClient.Authorization?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Authorization",
-                                "printedName": "EdgeCore.EdgeClient.Authorization",
-                                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Var",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvp",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvp",
-                        "moduleName": "EdgeCore",
-                        "declAttributes": [
-                          "HasStorage",
-                          "AccessControl",
-                          "RawDocComment"
-                        ],
-                        "isLet": true,
-                        "hasStorage": true,
-                        "accessors": [
-                          {
-                            "kind": "Accessor",
-                            "name": "Get",
-                            "printedName": "Get()",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Optional",
-                                "printedName": "EdgeCore.EdgeClient.Authorization?",
-                                "children": [
-                                  {
-                                    "kind": "TypeNominal",
-                                    "name": "Authorization",
-                                    "printedName": "EdgeCore.EdgeClient.Authorization",
-                                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                                  }
-                                ],
-                                "usr": "s:Sq"
-                              }
-                            ],
-                            "declKind": "Accessor",
-                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvg",
-                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvg",
-                            "moduleName": "EdgeCore",
-                            "implicit": true,
-                            "accessorKind": "get"
-                          }
-                        ]
-                      },
-                      {
-                        "kind": "Var",
-                        "name": "edgeAccessToken",
-                        "printedName": "edgeAccessToken",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Var",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvp",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvp",
-                        "moduleName": "EdgeCore",
-                        "declAttributes": [
-                          "HasStorage",
-                          "AccessControl",
-                          "RawDocComment"
-                        ],
-                        "isLet": true,
-                        "hasStorage": true,
-                        "accessors": [
-                          {
-                            "kind": "Accessor",
-                            "name": "Get",
-                            "printedName": "Get()",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Optional",
-                                "printedName": "Swift.String?",
-                                "children": [
-                                  {
-                                    "kind": "TypeNominal",
-                                    "name": "String",
-                                    "printedName": "Swift.String",
-                                    "usr": "s:SS"
-                                  }
-                                ],
-                                "usr": "s:Sq"
-                              }
-                            ],
-                            "declKind": "Accessor",
-                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvg",
-                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvg",
-                            "moduleName": "EdgeCore",
-                            "implicit": true,
-                            "accessorKind": "get"
-                          }
-                        ]
-                      },
-                      {
-                        "kind": "Var",
-                        "name": "endpoint",
-                        "printedName": "endpoint",
+                        "name": "path",
+                        "printedName": "path",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -12118,8 +11956,8 @@
                           }
                         ],
                         "declKind": "Var",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvp",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvp",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4pathSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4pathSSvp",
                         "moduleName": "EdgeCore",
                         "declAttributes": [
                           "HasStorage",
@@ -12142,8 +11980,8 @@
                               }
                             ],
                             "declKind": "Accessor",
-                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvg",
-                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvg",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4pathSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4pathSSvg",
                             "moduleName": "EdgeCore",
                             "implicit": true,
                             "accessorKind": "get"
@@ -12266,6 +12104,67 @@
                             "declKind": "Accessor",
                             "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV10queryItemsSay10Foundation12URLQueryItemVGSgvg",
                             "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV10queryItemsSay10Foundation12URLQueryItemVGSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "authorization",
+                        "printedName": "authorization",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "EdgeCore.EdgeClient.Authorization?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Authorization",
+                                "printedName": "EdgeCore.EdgeClient.Authorization",
+                                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.Authorization?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Authorization",
+                                    "printedName": "EdgeCore.EdgeClient.Authorization",
+                                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorizationAC13AuthorizationVSgvg",
                             "moduleName": "EdgeCore",
                             "implicit": true,
                             "accessorKind": "get"
@@ -12484,72 +12383,10 @@
                         ]
                       },
                       {
-                        "kind": "Constructor",
-                        "name": "init",
-                        "printedName": "init(edgeAccessToken:endpoint:method:)",
+                        "kind": "Var",
+                        "name": "edgeAccessToken",
+                        "printedName": "edgeAccessToken",
                         "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Config",
-                                "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
-                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "HTTPMethod",
-                            "printedName": "Alamofire.HTTPMethod",
-                            "usr": "s:9Alamofire10HTTPMethodV"
-                          }
-                        ],
-                        "declKind": "Constructor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessToken8endpoint6methodAISgSS_SS9Alamofire10HTTPMethodVtcfc",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessToken8endpoint6methodAISgSS_SS9Alamofire10HTTPMethodVtcfc",
-                        "moduleName": "EdgeCore",
-                        "declAttributes": [
-                          "AccessControl",
-                          "RawDocComment"
-                        ],
-                        "init_kind": "Designated"
-                      },
-                      {
-                        "kind": "Constructor",
-                        "name": "init",
-                        "printedName": "init(edgeAccessToken:endpoint:method:queryItems:httpBody:httpHeaders:dataKey:)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Config",
-                                "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
-                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
                           {
                             "kind": "TypeNominal",
                             "name": "Optional",
@@ -12560,6 +12397,115 @@
                                 "name": "String",
                                 "printedName": "Swift.String",
                                 "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvp",
+                        "moduleName": "EdgeCore",
+                        "deprecated": true,
+                        "declAttributes": [
+                          "HasInitialValue",
+                          "HasStorage",
+                          "AccessControl",
+                          "Available"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.String?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessTokenSSSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "endpoint",
+                        "printedName": "endpoint",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvp",
+                        "moduleName": "EdgeCore",
+                        "deprecated": true,
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "Available"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV8endpointSSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(path:method:queryItems:authorization:httpBody:httpHeaders:dataKey:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Config",
+                                "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
                               }
                             ],
                             "usr": "s:Sq"
@@ -12594,6 +12540,20 @@
                                   }
                                 ],
                                 "usr": "s:Sa"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "EdgeCore.EdgeClient.Authorization?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Authorization",
+                                "printedName": "EdgeCore.EdgeClient.Authorization",
+                                "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
                               }
                             ],
                             "usr": "s:Sq"
@@ -12656,134 +12616,8 @@
                           }
                         ],
                         "declKind": "Constructor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessToken8endpoint6method10queryItems8httpBody0N7Headers7dataKeyAISgSSSg_SS9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgSDySSs8Sendable_pGSgAS11HTTPHeadersVSgARtcfc",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV15edgeAccessToken8endpoint6method10queryItems8httpBody0N7Headers7dataKeyAISgSSSg_SS9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgSDySSs8Sendable_pGSgAS11HTTPHeadersVSgARtcfc",
-                        "moduleName": "EdgeCore",
-                        "declAttributes": [
-                          "AccessControl",
-                          "RawDocComment"
-                        ],
-                        "init_kind": "Designated"
-                      },
-                      {
-                        "kind": "Constructor",
-                        "name": "init",
-                        "printedName": "init(authorization:endpoint:method:queryItems:httpBody:httpHeaders:dataKey:)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Config",
-                                "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
-                                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Authorization",
-                            "printedName": "EdgeCore.EdgeClient.Authorization",
-                            "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "HTTPMethod",
-                            "printedName": "Alamofire.HTTPMethod",
-                            "usr": "s:9Alamofire10HTTPMethodV"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "[Foundation.URLQueryItem]?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Array",
-                                "printedName": "[Foundation.URLQueryItem]",
-                                "children": [
-                                  {
-                                    "kind": "TypeNominal",
-                                    "name": "URLQueryItem",
-                                    "printedName": "Foundation.URLQueryItem",
-                                    "usr": "s:10Foundation12URLQueryItemV"
-                                  }
-                                ],
-                                "usr": "s:Sa"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "[Swift.String : any Swift.Sendable]?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Dictionary",
-                                "printedName": "[Swift.String : any Swift.Sendable]",
-                                "children": [
-                                  {
-                                    "kind": "TypeNominal",
-                                    "name": "String",
-                                    "printedName": "Swift.String",
-                                    "usr": "s:SS"
-                                  },
-                                  {
-                                    "kind": "TypeNominal",
-                                    "name": "Sendable",
-                                    "printedName": "any Swift.Sendable",
-                                    "usr": "s:s8SendableP"
-                                  }
-                                ],
-                                "usr": "s:SD"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Alamofire.HTTPHeaders?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "HTTPHeaders",
-                                "printedName": "Alamofire.HTTPHeaders",
-                                "usr": "s:9Alamofire11HTTPHeadersV"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Constructor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorization8endpoint6method10queryItems8httpBody0L7Headers7dataKeyAISgAC13AuthorizationV_SS9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgSDySSs8Sendable_pGSgAT11HTTPHeadersVSgSSSgtcfc",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV13authorization8endpoint6method10queryItems8httpBody0L7Headers7dataKeyAISgAC13AuthorizationV_SS9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgSDySSs8Sendable_pGSgAT11HTTPHeadersVSgSSSgtcfc",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4path6method10queryItems13authorization8httpBody0L7Headers7dataKeyAISgSS_9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAR11HTTPHeadersVSgSSSgtcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV4path6method10queryItems13authorization8httpBody0L7Headers7dataKeyAISgSS_9Alamofire10HTTPMethodVSay10Foundation12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAR11HTTPHeadersVSgSSSgtcfc",
                         "moduleName": "EdgeCore",
                         "declAttributes": [
                           "AccessControl",
@@ -12820,7 +12654,7 @@
                   {
                     "kind": "Function",
                     "name": "microserviceRequest",
-                    "printedName": "microserviceRequest(url:method:httpBody:microservice:authorization:httpHeaders:timeoutInterval:cachePolicy:simpleCheck:)",
+                    "printedName": "microserviceRequest(microservice:path:method:queryItems:authorization:httpBody:httpHeaders:timeoutInterval:cachePolicy:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -12844,15 +12678,57 @@
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "URL",
-                        "printedName": "Foundation.URL",
-                        "usr": "s:10Foundation3URLV"
+                        "name": "Microservice",
+                        "printedName": "EdgeCore.EdgeClient.Microservice",
+                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
                       },
                       {
                         "kind": "TypeNominal",
                         "name": "HTTPMethod",
                         "printedName": "Alamofire.HTTPMethod",
                         "usr": "s:9Alamofire10HTTPMethodV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[Foundation.URLQueryItem]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Foundation.URLQueryItem]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "URLQueryItem",
+                                "printedName": "Foundation.URLQueryItem",
+                                "usr": "s:10Foundation12URLQueryItemV"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "EdgeCore.EdgeClient.Authorization?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Authorization",
+                            "printedName": "EdgeCore.EdgeClient.Authorization",
+                            "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
+                          }
+                        ],
+                        "usr": "s:Sq"
                       },
                       {
                         "kind": "TypeNominal",
@@ -12884,26 +12760,6 @@
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Microservice",
-                        "printedName": "EdgeCore.EdgeClient.Microservice",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "EdgeCore.EdgeClient.Authorization?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Authorization",
-                            "printedName": "EdgeCore.EdgeClient.Authorization",
-                            "usr": "s:8EdgeCore0A6ClientC13AuthorizationV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
                         "name": "Optional",
                         "printedName": "Alamofire.HTTPHeaders?",
                         "children": [
@@ -12919,29 +12775,38 @@
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Double",
-                        "printedName": "Swift.Double",
+                        "name": "Optional",
+                        "printedName": "Swift.Double?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Double",
+                            "printedName": "Swift.Double",
+                            "usr": "s:Sd"
+                          }
+                        ],
                         "hasDefaultArg": true,
-                        "usr": "s:Sd"
+                        "usr": "s:Sq"
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "CachePolicy",
-                        "printedName": "Foundation.NSURLRequest.CachePolicy",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSURLRequest.CachePolicy?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CachePolicy",
+                            "printedName": "Foundation.NSURLRequest.CachePolicy",
+                            "usr": "c:@E@NSURLRequestCachePolicy"
+                          }
+                        ],
                         "hasDefaultArg": true,
-                        "usr": "c:@E@NSURLRequestCachePolicy"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "hasDefaultArg": true,
-                        "usr": "s:Sb"
+                        "usr": "s:Sq"
                       }
                     ],
                     "declKind": "Func",
-                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV012microserviceE03url6method8httpBody0F013authorization0I7Headers15timeoutInterval11cachePolicy11simpleChecks6ResultOy10Foundation10URLRequestVSo7NSErrorCGAT3URLV_9Alamofire10HTTPMethodVSDySSs8Sendable_pGSgAeC13AuthorizationVSgA0_11HTTPHeadersVSgSdSo017NSURLRequestCacheP0VSbtFZ",
-                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV012microserviceE03url6method8httpBody0F013authorization0I7Headers15timeoutInterval11cachePolicy11simpleChecks6ResultOy10Foundation10URLRequestVSo7NSErrorCGAT3URLV_9Alamofire10HTTPMethodVSDySSs8Sendable_pGSgAeC13AuthorizationVSgA0_11HTTPHeadersVSgSdSo017NSURLRequestCacheP0VSbtFZ",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV012microserviceE00F04path6method10queryItems13authorization8httpBody0L7Headers15timeoutInterval11cachePolicys6ResultOy10Foundation10URLRequestVSo7NSErrorCGAE_SS9Alamofire10HTTPMethodVSayAT12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAZ11HTTPHeadersVSgSdSgSo017NSURLRequestCacheR0VSgtFZ",
+                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV7RequestV012microserviceE00F04path6method10queryItems13authorization8httpBody0L7Headers15timeoutInterval11cachePolicys6ResultOy10Foundation10URLRequestVSo7NSErrorCGAE_SS9Alamofire10HTTPMethodVSayAT12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAZ11HTTPHeadersVSgSdSgSo017NSURLRequestCacheR0VSgtFZ",
                     "moduleName": "EdgeCore",
                     "static": true,
                     "declAttributes": [
@@ -15360,123 +15225,6 @@
                         "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV9ContainerV7imageIdSSSgvM",
                         "moduleName": "EdgeCore",
                         "implicit": true,
-                        "accessorKind": "_modify"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "image",
-                    "printedName": "image",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvp",
-                    "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvp",
-                    "moduleName": "EdgeCore",
-                    "deprecated": true,
-                    "declAttributes": [
-                      "HasInitialValue",
-                      "HasStorage",
-                      "AccessControl",
-                      "Available",
-                      "RawDocComment"
-                    ],
-                    "hasStorage": true,
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvg",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvg",
-                        "moduleName": "EdgeCore",
-                        "implicit": true,
-                        "accessorKind": "get"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Set",
-                        "printedName": "Set()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvs",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvs",
-                        "moduleName": "EdgeCore",
-                        "implicit": true,
-                        "accessorKind": "set"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Modify",
-                        "printedName": "Modify()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvM",
-                        "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV9ContainerV5imageSSSgvM",
-                        "moduleName": "EdgeCore",
-                        "deprecated": true,
-                        "implicit": true,
-                        "declAttributes": [
-                          "Available"
-                        ],
                         "accessorKind": "_modify"
                       }
                     ]
@@ -20636,6 +20384,831 @@
                     "declKind": "Struct",
                     "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV18CompletionResponseV",
                     "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV18CompletionResponseV",
+                    "moduleName": "EdgeCore",
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "isFromExtension": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Copyable",
+                        "printedName": "Copyable",
+                        "usr": "s:s8CopyableP",
+                        "mangledName": "$ss8CopyableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Escapable",
+                        "printedName": "Escapable",
+                        "usr": "s:s9EscapableP",
+                        "mangledName": "$ss9EscapableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Decodable",
+                        "printedName": "Decodable",
+                        "usr": "s:Se",
+                        "mangledName": "$sSe"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Encodable",
+                        "printedName": "Encodable",
+                        "usr": "s:SE",
+                        "mangledName": "$sSE"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeDecl",
+                    "name": "DeleteModelResponseData",
+                    "printedName": "DeleteModelResponseData",
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "name": "data",
+                        "printedName": "data",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "DeleteModelResponse",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse",
+                                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasInitialValue",
+                          "HasStorage",
+                          "AccessControl"
+                        ],
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "DeleteModelResponse",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Set",
+                            "printedName": "Set()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "DeleteModelResponse",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvs",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvs",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "set"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Modify",
+                            "printedName": "Modify()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvM",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4dataAG0feG0VSgvM",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "_modify"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(from:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeleteModelResponseData",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponseData",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Decoder",
+                            "printedName": "any Swift.Decoder",
+                            "usr": "s:s7DecoderP"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4fromAIs7Decoder_p_tKcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV4fromAIs7Decoder_p_tKcfc",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "encode",
+                        "printedName": "encode(to:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Encoder",
+                            "printedName": "any Swift.Encoder",
+                            "usr": "s:s7EncoderP"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV6encode2toys7Encoder_p_tKF",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV6encode2toys7Encoder_p_tKF",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Struct",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV",
+                    "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE12ResponseDataV",
+                    "moduleName": "EdgeCore",
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "isFromExtension": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Copyable",
+                        "printedName": "Copyable",
+                        "usr": "s:s8CopyableP",
+                        "mangledName": "$ss8CopyableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Escapable",
+                        "printedName": "Escapable",
+                        "usr": "s:s9EscapableP",
+                        "mangledName": "$ss9EscapableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Decodable",
+                        "printedName": "Decodable",
+                        "usr": "s:Se",
+                        "mangledName": "$sSe"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Encodable",
+                        "printedName": "Encodable",
+                        "usr": "s:SE",
+                        "mangledName": "$sSE"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeDecl",
+                    "name": "DeleteModelResponse",
+                    "printedName": "DeleteModelResponse",
+                    "children": [
+                      {
+                        "kind": "TypeDecl",
+                        "name": "Object",
+                        "printedName": "Object",
+                        "children": [
+                          {
+                            "kind": "Var",
+                            "name": "model",
+                            "printedName": "model",
+                            "children": [
+                              {
+                                "kind": "TypeFunc",
+                                "name": "Function",
+                                "printedName": "(EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object.Type) -> EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Object",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Metatype",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object.Type",
+                                    "children": [
+                                      {
+                                        "kind": "TypeNominal",
+                                        "name": "Object",
+                                        "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "declKind": "EnumElement",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO5modelyA2KmF",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO5modelyA2KmF",
+                            "moduleName": "EdgeCore"
+                          },
+                          {
+                            "kind": "Constructor",
+                            "name": "init",
+                            "printedName": "init(rawValue:)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Object",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Constructor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueAKSgSS_tcfc",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueAKSgSS_tcfc",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "init_kind": "Designated"
+                          },
+                          {
+                            "kind": "Var",
+                            "name": "rawValue",
+                            "printedName": "rawValue",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Var",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueSSvp",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueSSvp",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessors": [
+                              {
+                                "kind": "Accessor",
+                                "name": "Get",
+                                "printedName": "Get()",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "declKind": "Accessor",
+                                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueSSvg",
+                                "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO8rawValueSSvg",
+                                "moduleName": "EdgeCore",
+                                "implicit": true,
+                                "accessorKind": "get"
+                              }
+                            ]
+                          }
+                        ],
+                        "declKind": "Enum",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "AccessControl"
+                        ],
+                        "enumRawTypeName": "String",
+                        "conformances": [
+                          {
+                            "kind": "Conformance",
+                            "name": "Copyable",
+                            "printedName": "Copyable",
+                            "usr": "s:s8CopyableP",
+                            "mangledName": "$ss8CopyableP"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Escapable",
+                            "printedName": "Escapable",
+                            "usr": "s:s9EscapableP",
+                            "mangledName": "$ss9EscapableP"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Equatable",
+                            "printedName": "Equatable",
+                            "usr": "s:SQ",
+                            "mangledName": "$sSQ"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Hashable",
+                            "printedName": "Hashable",
+                            "usr": "s:SH",
+                            "mangledName": "$sSH"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "RawRepresentable",
+                            "printedName": "RawRepresentable",
+                            "children": [
+                              {
+                                "kind": "TypeWitness",
+                                "name": "RawValue",
+                                "printedName": "RawValue",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ]
+                              }
+                            ],
+                            "usr": "s:SY",
+                            "mangledName": "$sSY"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Decodable",
+                            "printedName": "Decodable",
+                            "usr": "s:Se",
+                            "mangledName": "$sSe"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Encodable",
+                            "printedName": "Encodable",
+                            "usr": "s:SE",
+                            "mangledName": "$sSE"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "id",
+                        "printedName": "id",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasInitialValue",
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.String?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Set",
+                            "printedName": "Set()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.String?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvs",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvs",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "set"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Modify",
+                            "printedName": "Modify()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvM",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV2idSSSgvM",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "_modify"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "object",
+                        "printedName": "object",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Object",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasInitialValue",
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Object",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Set",
+                            "printedName": "Set()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Object",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6ObjectO"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvs",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvs",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "set"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Modify",
+                            "printedName": "Modify()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvM",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6objectAI6ObjectOSgvM",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "_modify"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "deleted",
+                        "printedName": "deleted",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Bool?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Bool",
+                                "printedName": "Swift.Bool",
+                                "usr": "s:Sb"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasInitialValue",
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Bool?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Bool",
+                                    "printedName": "Swift.Bool",
+                                    "usr": "s:Sb"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Set",
+                            "printedName": "Set()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Bool?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Bool",
+                                    "printedName": "Swift.Bool",
+                                    "usr": "s:Sb"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvs",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvs",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "set"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Modify",
+                            "printedName": "Modify()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvM",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV7deletedSbSgvM",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "_modify"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(from:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DeleteModelResponse",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.DeleteModelResponse",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Decoder",
+                            "printedName": "any Swift.Decoder",
+                            "usr": "s:s7DecoderP"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV4fromAIs7Decoder_p_tKcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV4fromAIs7Decoder_p_tKcfc",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "encode",
+                        "printedName": "encode(to:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Encoder",
+                            "printedName": "any Swift.Encoder",
+                            "usr": "s:s7EncoderP"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6encode2toys7Encoder_p_tKF",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV6encode2toys7Encoder_p_tKF",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Struct",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV",
+                    "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV06DeleteE8ResponseV",
                     "moduleName": "EdgeCore",
                     "declAttributes": [
                       "AccessControl"
@@ -30581,7 +31154,7 @@
                   {
                     "kind": "Function",
                     "name": "validate",
-                    "printedName": "validate(token:simpleCheck:)",
+                    "printedName": "validate(token:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -30607,18 +31180,11 @@
                         "name": "String",
                         "printedName": "Swift.String",
                         "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "hasDefaultArg": true,
-                        "usr": "s:Sb"
                       }
                     ],
                     "declKind": "Func",
-                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV11AccessTokenV8validate5token11simpleChecks6ResultOyytSo7NSErrorCGSS_SbtFZ",
-                    "mangledName": "$s8EdgeCore0A6ClientC13AuthorizationV11AccessTokenV8validate5token11simpleChecks6ResultOyytSo7NSErrorCGSS_SbtFZ",
+                    "usr": "s:8EdgeCore0A6ClientC13AuthorizationV11AccessTokenV8validate5tokens6ResultOyytSo7NSErrorCGSS_tFZ",
+                    "mangledName": "$s8EdgeCore0A6ClientC13AuthorizationV11AccessTokenV8validate5tokens6ResultOyytSo7NSErrorCGSS_tFZ",
                     "moduleName": "EdgeCore",
                     "static": true,
                     "declAttributes": [
@@ -33023,6 +33589,45 @@
                     "usr": "s:8EdgeCore0A6ClientC7RequestV20URLComponentsBuilderC3set7serviceAgC7ServiceV_tF",
                     "mangledName": "$s8EdgeCore0A6ClientC7RequestV20URLComponentsBuilderC3set7serviceAgC7ServiceV_tF",
                     "moduleName": "EdgeCore",
+                    "deprecated": true,
+                    "isOpen": true,
+                    "declAttributes": [
+                      "AccessControl",
+                      "Available",
+                      "RawDocComment"
+                    ],
+                    "funcSelfKind": "NonMutating"
+                  },
+                  {
+                    "kind": "Function",
+                    "name": "set",
+                    "printedName": "set(components:)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URLComponentsBuilder",
+                        "printedName": "EdgeCore.EdgeClient.Request.URLComponentsBuilder",
+                        "usr": "s:8EdgeCore0A6ClientC7RequestV20URLComponentsBuilderC"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.URLComponents?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "URLComponents",
+                            "printedName": "Foundation.URLComponents",
+                            "usr": "s:10Foundation13URLComponentsV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Func",
+                    "usr": "s:8EdgeCore0A6ClientC7RequestV20URLComponentsBuilderC3set10componentsAG10Foundation0E0VSg_tF",
+                    "mangledName": "$s8EdgeCore0A6ClientC7RequestV20URLComponentsBuilderC3set10componentsAG10Foundation0E0VSg_tF",
+                    "moduleName": "EdgeCore",
                     "isOpen": true,
                     "declAttributes": [
                       "AccessControl",
@@ -35301,35 +35906,35 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3204,
+      "offset": 2973,
       "length": 3,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3229,
+      "offset": 2998,
       "length": 8,
       "value": "\"event:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3258,
+      "offset": 3027,
       "length": 7,
       "value": "\"data:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3284,
+      "offset": 3053,
       "length": 5,
       "value": "\"id:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3311,
+      "offset": 3080,
       "length": 8,
       "value": "\"retry:\""
     },
@@ -35350,7 +35955,7 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/EdgeClient.Microservice+Container.swift",
       "kind": "FloatLiteral",
-      "offset": 1228,
+      "offset": 945,
       "length": 3,
       "value": "0.0"
     },
@@ -35369,37 +35974,9 @@
       "value": "\"containers\""
     },
     {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice.Request+Internal.swift",
-      "kind": "FloatLiteral",
-      "offset": 519,
-      "length": 4,
-      "value": "60.0"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/EdgeClient.Microservice.Request+Internal.swift",
-      "kind": "BooleanLiteral",
-      "offset": 608,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/EdgeClient.Microservice+Request.swift",
-      "kind": "FloatLiteral",
-      "offset": 6445,
-      "length": 4,
-      "value": "60.0"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/EdgeClient.Microservice+Request.swift",
-      "kind": "BooleanLiteral",
-      "offset": 6534,
-      "length": 5,
-      "value": "false"
-    },
-    {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Internal\/EdgeClient.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2098,
+      "offset": 2117,
       "length": 18,
       "value": "\"application\/json\""
     },
@@ -35493,13 +36070,6 @@
       "offset": 642,
       "length": 14,
       "value": "\"total_tokens\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Public\/EdgeClient.Authorization+AccessToken.swift",
-      "kind": "BooleanLiteral",
-      "offset": 5323,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AuthenticationServices\/Internal\/EdgeClient.Authorization+InternalTypes.swift",

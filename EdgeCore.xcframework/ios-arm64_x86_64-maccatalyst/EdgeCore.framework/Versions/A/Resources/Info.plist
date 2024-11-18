@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>24C5057p</string>
+	<string>24C5079e</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -41,7 +41,7 @@
 	<key>DTXcodeBuild</key>
 	<string>16B40</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>12.0</string>
+	<string>13.5</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>2</integer>

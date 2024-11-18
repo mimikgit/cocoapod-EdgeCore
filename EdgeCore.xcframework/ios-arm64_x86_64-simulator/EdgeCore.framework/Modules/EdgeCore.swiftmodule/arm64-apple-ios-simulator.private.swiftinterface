@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name EdgeCore
+// swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name EdgeCore
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import Alamofire
@@ -71,16 +71,13 @@ extension EdgeCore.EdgeClient {
 }
 extension EdgeCore.EdgeClient {
   final public func integrateAI(accessToken: Swift.String, apiKey: Swift.String, configUrl: Swift.String, model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest?, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>
-  @available(*, deprecated, renamed: "integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)")
-  final public func integrateAI(accessToken: Swift.String, apiKey: Swift.String, configUrl: Swift.String, downloadModel: EdgeCore.EdgeClient.AI.Model.CreateModelRequest?, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.UseCase, Foundation.NSError>
   final public func downloadAI(model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
-  @available(*, deprecated, renamed: "downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)")
-  final public func downloadAIModel(accessToken: Swift.String, apiKey: Swift.String, model: EdgeCore.EdgeClient.AI.Model.CreateModelRequest, useCase: EdgeCore.EdgeClient.UseCase, downloadHandler: @escaping (_ download: Swift.Result<EdgeCore.EdgeClient.AI.Model.DownloadProgress, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
+  final public func askAIModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, question: Swift.String, useCase: EdgeCore.EdgeClient.UseCase, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
+  @available(*, deprecated, renamed: "askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)")
   final public func askAI(modelId: Swift.String, accessToken: Swift.String, apiKey: Swift.String, question: Swift.String, useCase: EdgeCore.EdgeClient.UseCase, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
   final public func aiModels(accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<[EdgeCore.EdgeClient.AI.Model], Foundation.NSError>
-  @available(*, deprecated, renamed: "aiModels(accessToken:apiKey:useCase:)")
-  final public func availableAIModels(accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<[EdgeCore.EdgeClient.AI.Model], Foundation.NSError>
   final public func aiModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model, Foundation.NSError>
+  final public func deleteAIModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.EdgeClient.UseCase) async -> Swift.Result<EdgeCore.EdgeClient.AI.Model.DeleteModelResponseData, Foundation.NSError>
 }
 extension EdgeCore.EdgeClient.Request {
   public static func call<T>(config: EdgeCore.EdgeClient.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
@@ -88,6 +85,28 @@ extension EdgeCore.EdgeClient.Request {
 }
 extension EdgeCore.EdgeClient.Request {
   public static func decode<T>(_ type: T.Type, from data: Foundation.Data) -> (decodableObj: T?, error: (any Swift.Error)?) where T : Swift.Decodable
+}
+extension EdgeCore.EdgeClient.AI.Model {
+  public struct DeleteModelResponseData : Swift.Codable {
+    public var data: EdgeCore.EdgeClient.AI.Model.DeleteModelResponse?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct DeleteModelResponse : Swift.Codable {
+    public enum Object : Swift.String, Swift.Codable {
+      case model
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public var id: Swift.String?
+    public var object: EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object?
+    public var deleted: Swift.Bool?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
 }
 extension EdgeCore.EdgeClient.Authorization {
   public struct ValidationCodes : Swift.Codable {
@@ -188,8 +207,6 @@ extension EdgeCore.EdgeClient.Microservice {
 extension EdgeCore.EdgeClient.Microservice {
   public struct Container : Swift.Codable {
     public var imageId: Swift.String?
-    @available(*, deprecated, renamed: "imageId")
-    public var image: Swift.String?
     public var state: Swift.String?
     public var created: Swift.Double
     public var name: Swift.String?
@@ -336,7 +353,11 @@ extension EdgeCore.EdgeClient {
     public var container: EdgeCore.EdgeClient.Microservice.Container?
     public var image: EdgeCore.EdgeClient.Microservice.Image?
     public init(image: EdgeCore.EdgeClient.Microservice.Image, container: EdgeCore.EdgeClient.Microservice.Container)
+    public func urlComponents() -> Foundation.URLComponents?
+    @available(*, deprecated, renamed: "urlComponents()")
     public func fullPathUrl() -> Foundation.URLComponents?
+    public func urlComponents(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
+    @available(*, deprecated, renamed: "urlComponents(endpoint:)")
     public func fullPathUrl(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
     public func basePath() -> Swift.String?
     public func encode(to encoder: any Swift.Encoder) throws
@@ -357,19 +378,26 @@ extension EdgeCore.EdgeClient {
 extension EdgeCore.EdgeClient.Microservice {
   public struct Request : Swift.Codable {
     public struct Config {
-      public let authorization: EdgeCore.EdgeClient.Authorization?
-      public let edgeAccessToken: Swift.String?
-      public let endpoint: Swift.String
+      public let path: Swift.String
       public let method: Alamofire.HTTPMethod
       public let queryItems: [Foundation.URLQueryItem]?
+      public let authorization: EdgeCore.EdgeClient.Authorization?
       public let httpBody: Alamofire.Parameters?
       public let httpHeaders: Alamofire.HTTPHeaders?
       public let dataKey: Swift.String?
-      public init?(edgeAccessToken: Swift.String, endpoint: Swift.String, method: Alamofire.HTTPMethod)
-      public init?(edgeAccessToken: Swift.String?, endpoint: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
-      public init?(authorization: EdgeCore.EdgeClient.Authorization, endpoint: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
+      @available(*, deprecated, renamed: "authorization")
+      public let edgeAccessToken: Swift.String?
+      @available(*, deprecated, renamed: "path")
+      public let endpoint: Swift.String
+      public init?(path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
+      @available(swift, obsoleted: 4.1)
+      public init?(accessToken: Swift.String, path: Swift.String, method: Alamofire.HTTPMethod)
+      @available(swift, obsoleted: 4.1)
+      public init?(accessToken: Swift.String?, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
+      @available(swift, obsoleted: 4.1)
+      public init?(authorization: EdgeCore.EdgeClient.Authorization, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
     }
-    public static func microserviceRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, httpBody: Alamofire.Parameters?, microservice: EdgeCore.EdgeClient.Microservice, authorization: EdgeCore.EdgeClient.Authorization?, httpHeaders: Alamofire.HTTPHeaders? = nil, timeoutInterval: Foundation.TimeInterval = 60.0, cachePolicy: Foundation.URLRequest.CachePolicy = .useProtocolCachePolicy, simpleCheck: Swift.Bool = false) -> Swift.Result<Foundation.URLRequest, Foundation.NSError>
+    public static func microserviceRequest(microservice: EdgeCore.EdgeClient.Microservice, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.EdgeClient.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, timeoutInterval: Foundation.TimeInterval? = nil, cachePolicy: Foundation.URLRequest.CachePolicy? = nil) -> Swift.Result<Foundation.URLRequest, Foundation.NSError>
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -553,7 +581,7 @@ extension EdgeCore.EdgeClient.Authorization {
     public func subscriber() -> Swift.String?
     public func clientId() -> Swift.String?
     public func valueFrom(key: Swift.String) -> Swift.String?
-    public static func validate(token: Swift.String, simpleCheck: Swift.Bool = false) -> Swift.Result<Swift.Void, Foundation.NSError>
+    public static func validate(token: Swift.String) -> Swift.Result<Swift.Void, Foundation.NSError>
     public static func decodeToJWT(token: Swift.String) -> (any JWTDecode.JWT)?
     public static func decodeToJson(token: Swift.String) -> SwiftyJSON.JSON?
     public static func subscriber(token: Swift.String) -> Swift.String?
@@ -837,7 +865,9 @@ extension EdgeCore.EdgeClient.Request {
   open class URLComponentsBuilder {
     public init()
     open func create() -> Foundation.URLComponents
+    @available(*, deprecated, renamed: "set(components:)")
     open func set(service: EdgeCore.EdgeClient.Service) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
+    open func set(components: Foundation.URLComponents?) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int, path: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
     open func set(scheme: Swift.String) -> EdgeCore.EdgeClient.Request.URLComponentsBuilder
@@ -932,6 +962,9 @@ extension EdgeCore.EdgeClient {
 extension EdgeCore.EdgeClient.AI.Model.CompletionResponse.CodingKeys : Swift.Equatable {}
 extension EdgeCore.EdgeClient.AI.Model.CompletionResponse.CodingKeys : Swift.Hashable {}
 extension EdgeCore.EdgeClient.AI.Model.CompletionResponse.CodingKeys : Swift.RawRepresentable {}
+extension EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object : Swift.Equatable {}
+extension EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object : Swift.Hashable {}
+extension EdgeCore.EdgeClient.AI.Model.DeleteModelResponse.Object : Swift.RawRepresentable {}
 extension EdgeCore.EdgeClient.AI.Model.ModelsResponse.Object : Swift.Equatable {}
 extension EdgeCore.EdgeClient.AI.Model.ModelsResponse.Object : Swift.Hashable {}
 extension EdgeCore.EdgeClient.AI.Model.ModelsResponse.Object : Swift.RawRepresentable {}

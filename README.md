@@ -1,13 +1,6 @@
 # ``EdgeCore``
 
-mimik Client Library for iOS provides a programmatic way to work with the mim OE (edgeEngine) Runtime to access information about the mobile device on which the application is running.
-
-@Metadata {
-    @CallToAction(purpose: link, url: "https://github.com/mimikgit/cocoapod-EdgeCore")
-    @PageKind(article)
-    @PageColor(purple)
-}
-
+**mimik Client Library** helps iOS developers integrate the mim OE (edgeEngine) Runtime and its services into their projects.
 
 ## Overview
 
@@ -15,35 +8,33 @@ The purpose of the **mimik Client Library for iOS** is to provide a programmatic
 
 The **mimik Client Library for iOS** consists of the following cocoapod components:
 
-    - EdgeCore
-    - mimOE-SE-iOS-developer (for developer projects) 
-    - mimOE-SE-iOS (for enterprise projects) 
+    - mimOE-SE-iOS-developer (required)
+    - EdgeCore (required)
+    - EdgeService (optional)
 
 These components provide various APIs that help developers with the core operations such as mim OE (edgeEngine) Runtime setup, developer authentication, deployment of edge microservices, as well as optionally integrating with [mimik ai components](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index).
 
-Generally speaking, developers only need to add the **`mimOE-SE-iOS-developer (for developer projects)`** or **`mimOE-SE-iOS (for enterprise projects)`** cocoapod to their project.
-
-Expanding the client library ecosystem is an optional **`EdgeService` cocoapod**, providing API for integrating additional mimik edge and backend microservices.
+Generally speaking, developers only need to add the **`mimOE-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
 
 
 ## Supported Platforms, Targets
-* `iOS Devices running iOS 15+`
-* `iOS Simulators running iOS 15+`
-* `iOS Mac Catalyst running macOS 12.0`
+* `iOS Devices running iOS 16+`
+* `iOS Simulators running iOS 16+`
+* `iOS Mac Catalyst running macOS 14.0`
 
 
 ## Requirements
 ```
-iOS 15.0+
+iOS 16.0+
 ```
 
 ## Installation
 
-To get started simply add **`EdgeCore`** and **`mimOE-SE-iOS-developer`** cocoapod to your Podfile:
+To get started, simply incorporate the following configuration to your Podfile:
 
 
 ```swift
-platform :ios, '15.0'
+platform :ios, '16.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/mimikgit/cocoapod-edge-specs.git'
 
@@ -53,7 +44,6 @@ inhibit_all_warnings!
 def mimik
   pod 'EdgeCore'
   pod 'mimOE-SE-iOS-developer'
-  ### or pod 'mimOE-SE-iOS' (for enterprise projects, see the notes above)
 end
 
 target '{target}' do
@@ -65,36 +55,26 @@ post_install do |installer|
     target.build_configurations.each do |config|
       config.build_settings['ENABLE_BITCODE'] = 'NO'
       config.build_settings['VALID_ARCHS'] = '$(ARCHS_STANDARD_64_BIT)'
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
       config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
     end
   end
 end
 ```
 
-> **_NOTE:_** Developers should get their **developer edge license** for using [mimOE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer) at the [mimik developer console](https://developer.mimik.com/console).
+> **_NOTE:_** Developers can get their **developer edge license** for initializing the [mimOE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer) component at the [mimik developer console](https://developer.mimik.com/console).
 
-> **_NOTE:_** Enterprise project developers should get their **enterprise edge license** for using [mimOE-SE-iOS](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS) from [mimik support](https://developer.mimik.com/support/).
-
-
-## Tutorials
-
-After installation, try the following tutorials:
-
-- [Understanding the mimik Client Library for iOS](https://devdocs.mimik.com/key-concepts/10-index).
-- [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/01-index).
-- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
-- [Working with mimOE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
-- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).
+> **_NOTE:_** Enterprise project developers should request their **enterprise edge license** for initializing the [mimOE-SE-iOS](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS) component from [mimik support](https://developer.mimik.com/support/).
 
 
 ## Documentation
 
-`EdgeCore/EdgeClient` API reference documentation can be found  [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient). Alternatively a docc archive file can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally in Xcode.
+`EdgeCore/EdgeClient` API reference documentation can be found  [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient). Alternatively a docc archive file can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally in Xcode.
 
-`EdgeEngineClient` platform protocol API reference documentation can also be found [online](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
+`EdgeEngineClient` platform protocol API reference documentation is [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
 
-`EdgeService` API reference documentation is also [online](https://mimikgit.github.io/cocoapod-EdgeService/documentation/edgeservice/).
+`EdgeService` API references are available [here](https://mimikgit.github.io/cocoapod-EdgeService/documentation/edgeservice/).
+
 
 ## EdgeClient
 
@@ -149,9 +129,10 @@ After installation, try the following tutorials:
 
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
-- ``EdgeClient/askAI(modelId:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)``
+- ``EdgeClient/askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)``
 - ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
 - ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
+- ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
 
 
 ## EdgeClient/Authorization/AccessToken
@@ -161,8 +142,7 @@ After installation, try the following tutorials:
 - ``EdgeClient/Authorization/AccessToken/decodeToJson(token:)``
 - ``EdgeClient/Authorization/AccessToken/expiresIn(token:)``
 - ``EdgeClient/Authorization/AccessToken/subscriber(token:)``
-- ``EdgeClient/Authorization/AccessToken/validate(token:simpleCheck:)``
-- ``EdgeClient/Authorization/AccessToken/validate(token:simpleCheck:)``
+- ``EdgeClient/Authorization/AccessToken/validate(token:)``
 - ``EdgeClient/Authorization/AccessToken/valueFrom(key:)``
 
 ## EdgeClient/Document
@@ -191,8 +171,8 @@ After installation, try the following tutorials:
 - ``EdgeClient/Microservice/callStream(config:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStream(config:type:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStreamSSE(config:streamHandler:requestHandler:)``
-- ``EdgeClient/Microservice/fullPathUrl()``
-- ``EdgeClient/Microservice/fullPathUrl(withEndpoint:)``
+- ``EdgeClient/Microservice/urlComponents()``
+- ``EdgeClient/Microservice/urlComponents(withEndpoint:)``
 - ``EdgeClient/Microservice/expectedDeployedBasePath(path:clientId:)``
 - ``EdgeClient/Microservice/expectedDeployedImageId(imageName:clientId:)``
 - ``EdgeClient/Microservice/expectedDeployedContainerId(containerName:clientId:)``
@@ -205,7 +185,7 @@ After installation, try the following tutorials:
 - ``EdgeClient/Microservice/Container/basePath()
 
 ## EdgeClient/Microservice/Request
-- ``EdgeClient/Microservice/Request/microserviceRequest(url:method:httpBody:microservice:authorization:httpHeaders:timeoutInterval:cachePolicy:simpleCheck:)``
+- ``EdgeClient/Microservice/Request/microserviceRequest(microservice:path:method:queryItems:authorization:httpBody:httpHeaders:timeoutInterval:cachePolicy:)``
 
 
 ## EdgeClient/Node
@@ -224,20 +204,20 @@ After installation, try the following tutorials:
 - ``EdgeClient/Request/decode(_:from:)``
 
 ## EdgeClient/Request/URLComponentsBuilder
-- ``EdgeClient/Request/URLComponentsBuilder/append(path:)``
 - ``EdgeClient/Request/URLComponentsBuilder/create()``
-- ``EdgeClient/Request/URLComponentsBuilder/set(fragment:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(components:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:path:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(host:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(password:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(path:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(port:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(query:)``
-- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(queryItems:)``
-- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:)``
-- ``EdgeClient/Request/URLComponentsBuilder/set(scheme:host:port:path:)``
-- ``EdgeClient/Request/URLComponentsBuilder/set(service:)``
 - ``EdgeClient/Request/URLComponentsBuilder/set(user:)``
+- ``EdgeClient/Request/URLComponentsBuilder/set(fragment:)``
+- ``EdgeClient/Request/URLComponentsBuilder/append(path:)``
 
 
 ## EdgeClient/Service
@@ -262,6 +242,18 @@ Provides mim OE (edgeEngine) controls and vendors the actual mim OE (edgeEngine)
 - ``EdgeEngineClient/manageEdgeEngineLifecycle(manage:)``
 - ``EdgeEngineClient/expectedEdgeEngineVersion()``
 - ``EdgeEngineClient/setCustomPort(number:)``
+
+
+## Tutorials
+
+After installation, try the following tutorials:
+
+- [Understanding the mimik Client Library for iOS](https://devdocs.mimik.com/key-concepts/10-index).
+- [Creating a Simple iOS Application that Uses an edge microservice](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/01-index).
+- [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
+- [Working with mimOE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
+- [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).
+
 
 ## mimik Client Library cocoapods
 

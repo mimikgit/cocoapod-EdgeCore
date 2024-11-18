@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.7.0"
+  s.version      = "5.8.0"
   s.summary      = "mimik edge core client library"
 
   s.description  = <<-DESC
@@ -30,5 +30,5 @@ EdgeCore cocoapod is a Cocopods.org distributed framework that provides APIs to 
   s.dependency 'JWTDecode', '~> 3.2.0'
   s.dependency 'AppAuth', '~> 1.7.5'
 
-  s.platform = 'ios', '15.0'
+  s.platform = 'ios', '16.0'
 end
