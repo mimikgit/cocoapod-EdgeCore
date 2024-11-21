@@ -1,20 +1,20 @@
-# ``EdgeCore``
+# ``mimik Client Library``
 
-**mimik Client Library** helps iOS developers integrate the mim OE (edgeEngine) Runtime and its services into their projects.
+**mimik Client Library** provides a programmatic interface for the mim OE Runtime (formerly known as edgeEngine), enabling its startup and integration into iOS projects.
 
 ## Overview
 
-The purpose of the **mimik Client Library for iOS** is to provide a programmatic way to work with the mim OE (edgeEngine) Runtime, access information about its mobile device clusters, use on-device light-weight RESTful API edge microservices and optionally integrate with mimik ai components.
+The purpose of the **mimik Client Library** is to provide a programmatic interface for working with the mim OE Runtime (formerly known as edgeEngine), accessing information about mobile device clusters, using on-device lightweight RESTful API microservices, and optionally integrating with mimik AI components.
 
-The **mimik Client Library for iOS** consists of the following cocoapod components:
+Please note the following **mimik Client Library** client library cocoapods:
 
-    - mimOE-SE-iOS-developer (required)
+    - mim-OE-ai-SE-iOS-developer (required)
     - EdgeCore (required)
     - EdgeService (optional)
 
-These components provide various APIs that help developers with the core operations such as mim OE (edgeEngine) Runtime setup, developer authentication, deployment of edge microservices, as well as optionally integrating with [mimik ai components](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index).
+These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with [mimik ai](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index).
 
-Generally speaking, developers only need to add the **`mimOE-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
+Generally speaking, developers only need to add the **`mim-OE-ai-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
 
 
 ## Supported Platforms, Targets
@@ -30,7 +30,7 @@ iOS 16.0+
 
 ## Installation
 
-To get started, simply incorporate the following configuration to your Podfile:
+To get started, simply incorporate a configuration such as this to your Podfile:
 
 
 ```swift
@@ -43,7 +43,7 @@ inhibit_all_warnings!
 
 def mimik
   pod 'EdgeCore'
-  pod 'mimOE-SE-iOS-developer'
+  pod 'mim-OE-ai-SE-iOS-developer'
 end
 
 target '{target}' do
@@ -62,9 +62,9 @@ post_install do |installer|
 end
 ```
 
-> **_NOTE:_** Developers can get their **developer edge license** for initializing the [mimOE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer) component at the [mimik developer console](https://developer.mimik.com/console).
+> **_NOTE:_** Developers can get their **developer edge license** for initializing [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer) at the [mimik developer console](https://developer.mimik.com/console).
 
-> **_NOTE:_** Enterprise project developers should request their **enterprise edge license** for initializing the [mimOE-SE-iOS](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS) component from [mimik support](https://developer.mimik.com/support/).
+> **_NOTE:_** Enterprise project developers should request their **enterprise edge license** from [mimik support](https://developer.mimik.com/support/).
 
 
 ## Documentation
@@ -258,8 +258,8 @@ After installation, try the following tutorials:
 ## mimik Client Library cocoapods
 
 * [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore)
-* [mimOE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer)
-* [mimOE-SE-iOS](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS)
+* [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer)
+* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer)
 * [EdgeService](https://github.com/mimikgit/cocoapod-EdgeService)
 
 

@@ -8549,6 +8549,13 @@
                     "printedName": "Encodable",
                     "usr": "s:SE",
                     "mangledName": "$sSE"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
                   }
                 ]
               },
@@ -9433,6 +9440,13 @@
                             "printedName": "Encodable",
                             "usr": "s:SE",
                             "mangledName": "$sSE"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Sendable",
+                            "printedName": "Sendable",
+                            "usr": "s:s8SendableP",
+                            "mangledName": "$ss8SendableP"
                           }
                         ]
                       },
@@ -9589,6 +9603,13 @@
                             "printedName": "Encodable",
                             "usr": "s:SE",
                             "mangledName": "$sSE"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Sendable",
+                            "printedName": "Sendable",
+                            "usr": "s:s8SendableP",
+                            "mangledName": "$ss8SendableP"
                           }
                         ]
                       },
@@ -9680,6 +9701,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -10317,6 +10345,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -10408,6 +10443,13 @@
                     "printedName": "Encodable",
                     "usr": "s:SE",
                     "mangledName": "$sSE"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
                   }
                 ]
               },
@@ -11131,6 +11173,13 @@
                 "printedName": "Equatable",
                 "usr": "s:SQ",
                 "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
               }
             ]
           },
@@ -16817,6 +16866,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -18366,6 +18422,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       },
                       {
                         "kind": "Conformance",
@@ -20417,6 +20480,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -20623,6 +20693,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -20818,6 +20895,13 @@
                             "printedName": "Encodable",
                             "usr": "s:SE",
                             "mangledName": "$sSE"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Sendable",
+                            "printedName": "Sendable",
+                            "usr": "s:s8SendableP",
+                            "mangledName": "$ss8SendableP"
                           }
                         ]
                       },
@@ -21242,6 +21326,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -21438,6 +21529,13 @@
                             "printedName": "Encodable",
                             "usr": "s:SE",
                             "mangledName": "$sSE"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "Sendable",
+                            "printedName": "Sendable",
+                            "usr": "s:s8SendableP",
+                            "mangledName": "$ss8SendableP"
                           }
                         ]
                       },
@@ -21775,6 +21873,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -22067,6 +22172,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -22385,6 +22497,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -23508,6 +23627,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -24375,6 +24501,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   },
@@ -25390,6 +25523,13 @@
                         "printedName": "Encodable",
                         "usr": "s:SE",
                         "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
                       }
                     ]
                   }
@@ -25438,6 +25578,13 @@
                     "printedName": "Hashable",
                     "usr": "s:SH",
                     "mangledName": "$sSH"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
                   },
                   {
                     "kind": "Conformance",
@@ -25493,6 +25640,13 @@
                 "printedName": "Hashable",
                 "usr": "s:SH",
                 "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
               },
               {
                 "kind": "Conformance",
@@ -35850,14 +36004,14 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+CompletionResponse.swift",
       "kind": "StringLiteral",
-      "offset": 838,
+      "offset": 848,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+CompletionResponse.swift",
       "kind": "StringLiteral",
-      "offset": 952,
+      "offset": 962,
       "length": 20,
       "value": "\"system_fingerprint\""
     },
@@ -35983,14 +36137,14 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+CreateModelRequest.swift",
       "kind": "StringLiteral",
-      "offset": 812,
+      "offset": 822,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+CreateModelRequest.swift",
       "kind": "StringLiteral",
-      "offset": 889,
+      "offset": 899,
       "length": 10,
       "value": "\"owned_by\""
     },
@@ -36053,21 +36207,21 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+Usage.swift",
       "kind": "StringLiteral",
-      "offset": 539,
+      "offset": 549,
       "length": 15,
       "value": "\"prompt_tokens\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+Usage.swift",
       "kind": "StringLiteral",
-      "offset": 591,
+      "offset": 601,
       "length": 19,
       "value": "\"completion_tokens\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+Usage.swift",
       "kind": "StringLiteral",
-      "offset": 642,
+      "offset": 652,
       "length": 14,
       "value": "\"total_tokens\""
     },
@@ -36256,7 +36410,7 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI.Model+Choice.swift",
       "kind": "StringLiteral",
-      "offset": 743,
+      "offset": 753,
       "length": 15,
       "value": "\"finish_reason\""
     },
@@ -36270,14 +36424,14 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI+Model.swift",
       "kind": "StringLiteral",
-      "offset": 1052,
+      "offset": 1072,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/CoreServices\/Public\/Models\/EdgeClient.AI+Model.swift",
       "kind": "StringLiteral",
-      "offset": 1133,
+      "offset": 1153,
       "length": 10,
       "value": "\"owned_by\""
     },

@@ -10,10 +10,18 @@ Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
   s.version      = "5.8.0"
-  s.summary      = "mimik edge core client library"
+  s.summary      = "mimik Client Library (Core)"
 
   s.description  = <<-DESC
-EdgeCore cocoapod is a Cocopods.org distributed framework that provides APIs to help you interact with mimik core services. For the edgeEngine framework and its APIs see EdgeEngine.
+mimik Client Library provides a programmatic interface for working with the mim OE Runtime (formerly known as edgeEngine), accessing information about mobile device clusters, using on-device lightweight RESTful API microservices, and optionally integrating with mimik ai components.
+
+Please note the following mimik Client Library client library cocoapods:
+
+    - mim-OE-ai-SE-iOS (required)
+    - EdgeCore (required)
+    - EdgeService (optional)
+
+These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with mimik ai.
   DESC
 
   s.homepage     = "https://github.com/mimikgit/cocoapod-EdgeCore"
