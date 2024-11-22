@@ -17,7 +17,7 @@ mimik Client Library provides a programmatic interface for working with the mim 
 
 Please note the following mimik Client Library client library cocoapods:
 
-    - mim-OE-ai-SE-iOS (required)
+    - mim-OE-ai-SE-iOS-developer (required)
     - EdgeCore (required)
     - EdgeService (optional)
 
