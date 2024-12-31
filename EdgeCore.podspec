@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.8.0"
+  s.version      = "5.8.1"
   s.summary      = "mimik Client Library (Core)"
 
   s.description  = <<-DESC
@@ -17,8 +17,8 @@ mimik Client Library provides a programmatic interface for working with the mim 
 
 Please note the following mimik Client Library client library cocoapods:
 
-    - mim-OE-ai-SE-iOS-developer (required)
-    - EdgeCore (required)
+    - mim-OE-ai-SE-iOS-developer
+    - EdgeCore
     - EdgeService (optional)
 
 These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with mimik ai.
@@ -33,10 +33,12 @@ These components provide various APIs that help developers with core operations,
 
   s.vendored_frameworks = "EdgeCore.xcframework"
 
-  s.dependency 'Alamofire', '~> 5.10.1'
+  s.dependency 'Alamofire', '~> 5.10.2'
   s.dependency 'SwiftyJSON', '~> 5.0.2'
   s.dependency 'JWTDecode', '~> 3.2.0'
-  s.dependency 'AppAuth', '~> 1.7.5'
+  s.dependency 'AppAuth', '~> 1.7.6'
 
   s.platform = 'ios', '16.0'
+  
+  s.xcconfig = {'ENABLE_USER_SCRIPT_SANDBOXING' => 'NO',}
 end

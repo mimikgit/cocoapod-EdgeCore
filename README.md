@@ -1,4 +1,4 @@
-# ``mimik Client Library``
+# mimik Client Library
 
 **mimik Client Library** provides a programmatic interface for the mim OE Runtime (formerly known as edgeEngine), enabling its startup and integration into iOS projects.
 
@@ -6,13 +6,16 @@
 
 The purpose of the **mimik Client Library** is to provide a programmatic interface for working with the mim OE Runtime (formerly known as edgeEngine), accessing information about mobile device clusters, using on-device lightweight RESTful API microservices, and optionally integrating with mimik AI components.
 
-Please note the following **mimik Client Library** client library cocoapods:
-
-    - mim-OE-ai-SE-iOS-developer (required)
-    - EdgeCore (required)
-    - EdgeService (optional)
-
 These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with [mimik ai](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index).
+
+## mimik Client Library cocoapods
+
+Bundle configurations: developers have the option to choose from new bundling combinations for more tailored deployment: with or without AI Runtime. Integrate mim OE into your project with the choice of including or omitting the AI runtime, based on your application’s needs.
+
+* [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore) (required)
+* [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) (with AI Runtime)
+* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) (without AI)
+* [EdgeService](https://github.com/mimikgit/cocoapod-EdgeService) (optional)
 
 Generally speaking, developers only need to add the **`mim-OE-ai-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
 
@@ -53,7 +56,6 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
       config.build_settings['VALID_ARCHS'] = '$(ARCHS_STANDARD_64_BIT)'
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
       config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
@@ -129,7 +131,8 @@ end
 
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
-- ``EdgeClient/askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)``
+- ``EdgeClient/chatAI(modelId:accessToken:apiKey:question:useCase:context:config:streamHandler:requestHandler:)``
+- ``EdgeClient/chatAI(modelId:accessToken:apiKey:question:useCase:context:config:)``
 - ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
 - ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
@@ -253,14 +256,6 @@ After installation, try the following tutorials:
 - [Integrating the mimik Client Library into an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index).
 - [Working with mimOE in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
 - [Working with edge microservices in an iOS project](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/04-index).
-
-
-## mimik Client Library cocoapods
-
-* [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore)
-* [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer)
-* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer)
-* [EdgeService](https://github.com/mimikgit/cocoapod-EdgeService)
 
 
 ## Author
