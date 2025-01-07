@@ -1,20 +1,20 @@
 # mimik Client Library
 
-**mimik Client Library** provides a programmatic interface for the mim OE Runtime (formerly known as edgeEngine), enabling its startup and integration into iOS projects.
+The **mimik Client Library** provides a programmatic interface for the mim OE Runtime (formerly edgeEngine), enabling its integration into iOS projects.
 
 ## Overview
 
-The purpose of the **mimik Client Library** is to provide a programmatic interface for working with the mim OE Runtime (formerly known as edgeEngine), accessing information about mobile device clusters, using on-device lightweight RESTful API microservices, and optionally integrating with mimik AI components.
+The **mimik Client Library** enables developers to interact with the mim OE Runtime (formerly known as edgeEngine), providing access to mobile device clusters, on-device RESTful API microservices, and optional integration with mimik AI components.
 
-These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with [mimik ai](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index).
+It offers APIs for setting up the runtime, authenticating developers, deploying edge microservices, integrating with [mimik ai](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index) and more.
 
 ## mimik Client Library cocoapods
 
-Bundle configurations: developers have the option to choose from new bundling combinations for more tailored deployment: with or without AI Runtime. Integrate mim OE into your project with the choice of including or omitting the AI runtime, based on your application’s needs.
+Bundle configurations: Developers can choose from new bundling options for more tailored deployments, with the flexibility to include or exclude the AI Runtime. Integrate mim OE into your project based on your application’s needs, selecting whether to include the AI Runtime as part of the integration or not.
 
 * [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore) (required)
 * [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) (with AI Runtime)
-* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) (without AI)
+* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) (no AI)
 * [EdgeService](https://github.com/mimikgit/cocoapod-EdgeService) (optional)
 
 Generally speaking, developers only need to add the **`mim-OE-ai-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
@@ -131,11 +131,12 @@ end
 
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
-- ``EdgeClient/chatAI(modelId:accessToken:apiKey:question:useCase:context:config:streamHandler:requestHandler:)``
-- ``EdgeClient/chatAI(modelId:accessToken:apiKey:question:useCase:context:config:)``
+- ``EdgeClient/chatAI(request:streamHandler:requestHandler:)``
+- ``EdgeClient/chatAI(request:requestHandler:)``
 - ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
 - ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
+- ``EdgeClient/warmUpAI(request:)``
 
 
 ## EdgeClient/Authorization/AccessToken
@@ -171,6 +172,8 @@ end
 - ``EdgeClient/Microservice/basePath()``
 - ``EdgeClient/Microservice/call(config:)``
 - ``EdgeClient/Microservice/call(config:type:)``
+- ``EdgeClient/Microservice/call(config:requestHandler:)``
+- ``EdgeClient/Microservice/call(config:type:requestHandler:)``
 - ``EdgeClient/Microservice/callStream(config:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStream(config:type:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStreamSSE(config:streamHandler:requestHandler:)``

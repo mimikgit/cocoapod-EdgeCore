@@ -303,16 +303,39 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-/// The purpose of the mimik Client Library is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
-/// By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
-/// Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
-/// Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
-/// note:
-/// Requires <a href="https://github.com/mimikgit/cocoapod-EdgeCore">EdgeCore</a> component to be added to the project <code>Podfile</code>.
+/// <code>EdgeClient</code> is the main class of the <em>mimik Client Library</em>.
+/// Integration steps with code examples are described in detail in this <a href="https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index">tutorial</a>
+/// Full API reference documentation is <a href="https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient">here</a>
+/// \code
+/// // Import cocoapods
+/// import EdgeCore
+/// import EdgeEngine
+///
+///  // Initialize mimik Client Library
+/// let edgeClient: EdgeClient = {
+///     // Adjust console logging output
+///     EdgeClient.setLoggingLevel(module: .edgeCore, level: .debug, privacy: .publicAccess)
+///     EdgeClient.setLoggingLevel(module: .edgeEngine, level: .debug, privacy: .publicAccess)
+///     return EdgeClient()
+/// }()
+///
+/// // Start mim OE with your license that you get from https://console.mimik.com/
+/// let license = <DEVELOPER-MIM-OE-LICENSE>
+/// let startupParameters = EdgeClient.StartupParameters(license: license)
+/// switch await self.edgeClient.startEdgeEngine(parameters: startupParameters) {
+/// case .success:
+///     return .success(())
+/// case .failure(let error):
+///     return .failure(error)
+/// }
+///
+/// \endcode
 SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 
 
@@ -666,16 +689,39 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-/// The purpose of the mimik Client Library is to provide a programmatic way to work with the edgeEngine Runtime to access information about the mobile device on which the application is running, as well as mobile devices running within a cluster of mobile devices that are hosting the edgeEngine Runtime. Also, to allow developers to use edge microservices running within a particular cluster.
-/// By leveraging the Core component of the mimik Client Library, developers can build applications compatible with the edgeEngine Runtime. This not only harnesses the strength of edge computing but also provides an inherent flexibility in its paradigm.
-/// Additionally, this component provides utility APIs that help developers with core operations such as Authentication, edgeEngine Runtime Setup, deployment of edge microservices and handling of Network calls.
-/// Furthermore, the mimik Client Library Engine component provides additional edgeEngine Runtime utility APIs, as well as vendoring the actual edgeEngine Runtime binary into the iOS project.
-/// note:
-/// Requires <a href="https://github.com/mimikgit/cocoapod-EdgeCore">EdgeCore</a> component to be added to the project <code>Podfile</code>.
+/// <code>EdgeClient</code> is the main class of the <em>mimik Client Library</em>.
+/// Integration steps with code examples are described in detail in this <a href="https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index">tutorial</a>
+/// Full API reference documentation is <a href="https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient">here</a>
+/// \code
+/// // Import cocoapods
+/// import EdgeCore
+/// import EdgeEngine
+///
+///  // Initialize mimik Client Library
+/// let edgeClient: EdgeClient = {
+///     // Adjust console logging output
+///     EdgeClient.setLoggingLevel(module: .edgeCore, level: .debug, privacy: .publicAccess)
+///     EdgeClient.setLoggingLevel(module: .edgeEngine, level: .debug, privacy: .publicAccess)
+///     return EdgeClient()
+/// }()
+///
+/// // Start mim OE with your license that you get from https://console.mimik.com/
+/// let license = <DEVELOPER-MIM-OE-LICENSE>
+/// let startupParameters = EdgeClient.StartupParameters(license: license)
+/// switch await self.edgeClient.startEdgeEngine(parameters: startupParameters) {
+/// case .success:
+///     return .success(())
+/// case .failure(let error):
+///     return .failure(error)
+/// }
+///
+/// \endcode
 SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 
 

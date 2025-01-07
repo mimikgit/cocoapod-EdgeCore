@@ -224,6 +224,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
         "declKind": "Import",
@@ -2992,8 +3002,51 @@
           },
           {
             "kind": "Function",
-            "name": "askAIModel",
-            "printedName": "askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)",
+            "name": "warmUpAI",
+            "printedName": "warmUpAI(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<(), Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WarmupRequest",
+                "printedName": "EdgeCore.EdgeClient.AI.Model.WarmupRequest",
+                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC8warmUpAI7requests6ResultOyytSo7NSErrorCGAC0F0V5ModelV13WarmupRequestV_tYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC8warmUpAI7requests6ResultOyytSo7NSErrorCGAC0F0V5ModelV13WarmupRequestV_tYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "chatAI",
+            "printedName": "chatAI(request:streamHandler:requestHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3017,33 +3070,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Message",
-                "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
-                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UseCase",
-                "printedName": "EdgeCore.EdgeClient.UseCase",
-                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                "name": "ChatRequest",
+                "printedName": "EdgeCore.EdgeClient.AI.Model.ChatRequest",
+                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV"
               },
               {
                 "kind": "TypeFunc",
@@ -3097,14 +3126,82 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC2AIV5ModelV7MessageVAC03UseM0VyAMyAY0V4TypeOATGcyAPctYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC2AIV5ModelV7MessageVAC03UseM0VyAMyAY0V4TypeOATGcyAPctYaF",
+            "usr": "s:8EdgeCore0A6ClientC6chatAI7request13streamHandler0fH0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGAC0E0V5ModelV04ChatM0V_yAIyAU0N4TypeOAPGcyALctYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC6chatAI7request13streamHandler0fH0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGAC0E0V5ModelV04ChatM0V_yAIyAU0N4TypeOAPGcyALctYaF",
             "moduleName": "EdgeCore",
-            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "Available",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "chatAI",
+            "printedName": "chatAI(request:requestHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.Message, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Message",
+                    "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ChatRequest",
+                "printedName": "EdgeCore.EdgeClient.AI.Model.ChatRequest",
+                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DataTask",
+                    "printedName": "Alamofire.DataTask<Foundation.Data>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:9Alamofire8DataTaskV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC6chatAI7request0F7Handlers6ResultOyAC0E0V5ModelV7MessageVSo7NSErrorCGAL11ChatRequestV_y9Alamofire8DataTaskVy10Foundation0O0VGctYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC6chatAI7request0F7Handlers6ResultOyAC0E0V5ModelV7MessageVSo7NSErrorCGAL11ChatRequestV_y9Alamofire8DataTaskVy10Foundation0O0VGctYaF",
+            "moduleName": "EdgeCore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
               "RawDocComment"
             ],
             "isFromExtension": true,
@@ -3258,10 +3355,11 @@
             "usr": "s:8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6config13streamHandler07requestR0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC0E0V5ModelV7MessageVAC03UseN0VSayA1_GSgA1_6ConfigVSgyAOyA_0Y4TypeOAVGcyARctYaF",
             "mangledName": "$s8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6config13streamHandler07requestR0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC0E0V5ModelV7MessageVAC03UseN0VSayA1_GSgA1_6ConfigVSgyAOyA_0Y4TypeOAVGcyARctYaF",
             "moduleName": "EdgeCore",
+            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment"
+              "Available"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -3274,13 +3372,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "Result",
-                "printedName": "Swift.Result<Swift.String, Foundation.NSError>",
+                "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.Message, Foundation.NSError>",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Message",
+                    "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -3361,13 +3459,133 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6configs6ResultOySSSo7NSErrorCGSS_S2SAC0E0V5ModelV7MessageVAC03UseN0VSayAVGSgAV6ConfigVSgtYaF",
-            "mangledName": "$s8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6configs6ResultOySSSo7NSErrorCGSS_S2SAC0E0V5ModelV7MessageVAC03UseN0VSayAVGSgAV6ConfigVSgtYaF",
+            "usr": "s:8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6configs6ResultOyAC0E0V5ModelV7MessageVSo7NSErrorCGSS_S2SAsC03UseN0VSayASGSgAS6ConfigVSgtYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC6chatAI7modelId11accessToken6apiKey8question7useCase7context6configs6ResultOyAC0E0V5ModelV7MessageVSo7NSErrorCGSS_S2SAsC03UseN0VSayASGSgAS6ConfigVSgtYaF",
             "moduleName": "EdgeCore",
+            "deprecated": true,
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment"
+              "Available"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "askAIModel",
+            "printedName": "askAIModel(id:accessToken:apiKey:question:useCase:streamHandler:requestHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Completion",
+                    "printedName": "Alamofire.DataStreamRequest.Completion",
+                    "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Message",
+                "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UseCase",
+                "printedName": "EdgeCore.EdgeClient.UseCase",
+                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<EdgeCore.EdgeClient.AI.Model.CompletionType, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CompletionType",
+                        "printedName": "EdgeCore.EdgeClient.AI.Model.CompletionType",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV14CompletionTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Alamofire.DataStreamRequest) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DataStreamRequest",
+                    "printedName": "Alamofire.DataStreamRequest",
+                    "usr": "s:9Alamofire17DataStreamRequestC"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC2AIV5ModelV7MessageVAC03UseM0VyAMyAY0V4TypeOATGcyAPctYaF",
+            "mangledName": "$s8EdgeCore0A6ClientC10askAIModel2id11accessToken6apiKey8question7useCase13streamHandler07requestO0s6ResultOy9Alamofire17DataStreamRequestC10CompletionVSo7NSErrorCGSS_S2SAC2AIV5ModelV7MessageVAC03UseM0VyAMyAY0V4TypeOATGcyAPctYaF",
+            "moduleName": "EdgeCore",
+            "deprecated": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Available"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -13211,6 +13429,75 @@
               {
                 "kind": "Function",
                 "name": "call",
+                "printedName": "call(config:requestHandler:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Foundation.Data, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Config",
+                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DataTask",
+                        "printedName": "Alamofire.DataTask<Foundation.Data>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:9Alamofire8DataTaskV"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGctYaF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGctYaF",
+                "moduleName": "EdgeCore",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "call",
                 "printedName": "call(config:type:)",
                 "children": [
                   {
@@ -13254,6 +13541,88 @@
                 "declKind": "Func",
                 "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config4types6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmtYaSeRzSERzlF",
                 "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config4types6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmtYaSeRzSERzlF",
+                "moduleName": "EdgeCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
+                "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "call",
+                "printedName": "call(config:type:requestHandler:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_0_0, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Config",
+                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "τ_0_0.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DataTask",
+                        "printedName": "Alamofire.DataTask<Foundation.Data>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:9Alamofire8DataTaskV"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGctYaSeRzSERzlF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGctYaSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
@@ -21423,6 +21792,336 @@
                   },
                   {
                     "kind": "TypeDecl",
+                    "name": "WarmupRequest",
+                    "printedName": "WarmupRequest",
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "name": "modelId",
+                        "printedName": "modelId",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelIdSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelIdSSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelIdSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelIdSSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "accessToken",
+                        "printedName": "accessToken",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV11accessTokenSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV11accessTokenSSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV11accessTokenSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV11accessTokenSSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "apiKey",
+                        "printedName": "apiKey",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6apiKeySSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6apiKeySSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6apiKeySSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6apiKeySSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "useCase",
+                        "printedName": "useCase",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UseCase",
+                            "printedName": "EdgeCore.EdgeClient.UseCase",
+                            "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7useCaseAC03UseI0Vvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7useCaseAC03UseI0Vvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UseCase",
+                                "printedName": "EdgeCore.EdgeClient.UseCase",
+                                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7useCaseAC03UseI0Vvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7useCaseAC03UseI0Vvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(modelId:accessToken:apiKey:useCase:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "WarmupRequest",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.WarmupRequest",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UseCase",
+                            "printedName": "EdgeCore.EdgeClient.UseCase",
+                            "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelId11accessToken6apiKey7useCaseAISS_S2SAC03UseO0Vtcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV7modelId11accessToken6apiKey7useCaseAISS_S2SAC03UseO0Vtcfc",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(from:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "WarmupRequest",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.WarmupRequest",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Decoder",
+                            "printedName": "any Swift.Decoder",
+                            "usr": "s:s7DecoderP"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV4fromAIs7Decoder_p_tKcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV4fromAIs7Decoder_p_tKcfc",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "encode",
+                        "printedName": "encode(to:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Encoder",
+                            "printedName": "any Swift.Encoder",
+                            "usr": "s:s7EncoderP"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6encode2toys7Encoder_p_tKF",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV6encode2toys7Encoder_p_tKF",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Struct",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV",
+                    "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV13WarmupRequestV",
+                    "moduleName": "EdgeCore",
+                    "declAttributes": [
+                      "AccessControl",
+                      "RawDocComment"
+                    ],
+                    "isFromExtension": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Copyable",
+                        "printedName": "Copyable",
+                        "usr": "s:s8CopyableP",
+                        "mangledName": "$ss8CopyableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Escapable",
+                        "printedName": "Escapable",
+                        "usr": "s:s9EscapableP",
+                        "mangledName": "$ss9EscapableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Decodable",
+                        "printedName": "Decodable",
+                        "usr": "s:Se",
+                        "mangledName": "$sSe"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Encodable",
+                        "printedName": "Encodable",
+                        "usr": "s:SE",
+                        "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeDecl",
                     "name": "CompletionResponse",
                     "printedName": "CompletionResponse",
                     "children": [
@@ -24101,6 +24800,586 @@
                   },
                   {
                     "kind": "TypeDecl",
+                    "name": "ChatRequest",
+                    "printedName": "ChatRequest",
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "name": "modelId",
+                        "printedName": "modelId",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelIdSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelIdSSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelIdSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelIdSSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "accessToken",
+                        "printedName": "accessToken",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11accessTokenSSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11accessTokenSSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11accessTokenSSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11accessTokenSSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "apiKey",
+                        "printedName": "apiKey",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6apiKeySSvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6apiKeySSvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6apiKeySSvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6apiKeySSvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "question",
+                        "printedName": "question",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Message",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV8questionAG7MessageVvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV8questionAG7MessageVvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Message",
+                                "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                                "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV8questionAG7MessageVvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV8questionAG7MessageVvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "useCase",
+                        "printedName": "useCase",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UseCase",
+                            "printedName": "EdgeCore.EdgeClient.UseCase",
+                            "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7useCaseAC03UseI0Vvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7useCaseAC03UseI0Vvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UseCase",
+                                "printedName": "EdgeCore.EdgeClient.UseCase",
+                                "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7useCaseAC03UseI0Vvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7useCaseAC03UseI0Vvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "context",
+                        "printedName": "context",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Array",
+                                "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Message",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                                  }
+                                ],
+                                "usr": "s:Sa"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7contextSayAG7MessageVGSgvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7contextSayAG7MessageVGSgvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "isLet": true,
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Array",
+                                    "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]",
+                                    "children": [
+                                      {
+                                        "kind": "TypeNominal",
+                                        "name": "Message",
+                                        "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                                      }
+                                    ],
+                                    "usr": "s:Sa"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7contextSayAG7MessageVGSgvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7contextSayAG7MessageVGSgvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Var",
+                        "name": "temperature",
+                        "printedName": "temperature",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Float",
+                            "printedName": "Swift.Float",
+                            "usr": "s:Sf"
+                          }
+                        ],
+                        "declKind": "Var",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvp",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvp",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "HasStorage",
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "hasStorage": true,
+                        "accessors": [
+                          {
+                            "kind": "Accessor",
+                            "name": "Get",
+                            "printedName": "Get()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvg",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvg",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "get"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Set",
+                            "printedName": "Set()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvs",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvs",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "set"
+                          },
+                          {
+                            "kind": "Accessor",
+                            "name": "Modify",
+                            "printedName": "Modify()",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Void",
+                                "printedName": "()"
+                              }
+                            ],
+                            "declKind": "Accessor",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvM",
+                            "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV11temperatureSfvM",
+                            "moduleName": "EdgeCore",
+                            "implicit": true,
+                            "accessorKind": "_modify"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(modelId:accessToken:apiKey:question:useCase:context:temperature:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ChatRequest",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.ChatRequest",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Message",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UseCase",
+                            "printedName": "EdgeCore.EdgeClient.UseCase",
+                            "usr": "s:8EdgeCore0A6ClientC7UseCaseV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Array",
+                                "printedName": "[EdgeCore.EdgeClient.AI.Model.Message]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Message",
+                                    "printedName": "EdgeCore.EdgeClient.AI.Model.Message",
+                                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV"
+                                  }
+                                ],
+                                "usr": "s:Sa"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Float?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelId11accessToken6apiKey8question7useCase7context11temperatureAISS_S2SAG7MessageVAC03UseP0VSayARGSgSfSgtcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV7modelId11accessToken6apiKey8question7useCase7context11temperatureAISS_S2SAG7MessageVAC03UseP0VSayARGSgSfSgtcfc",
+                        "moduleName": "EdgeCore",
+                        "declAttributes": [
+                          "AccessControl",
+                          "RawDocComment"
+                        ],
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Constructor",
+                        "name": "init",
+                        "printedName": "init(from:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ChatRequest",
+                            "printedName": "EdgeCore.EdgeClient.AI.Model.ChatRequest",
+                            "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Decoder",
+                            "printedName": "any Swift.Decoder",
+                            "usr": "s:s7DecoderP"
+                          }
+                        ],
+                        "declKind": "Constructor",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV4fromAIs7Decoder_p_tKcfc",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV4fromAIs7Decoder_p_tKcfc",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "init_kind": "Designated"
+                      },
+                      {
+                        "kind": "Function",
+                        "name": "encode",
+                        "printedName": "encode(to:)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Encoder",
+                            "printedName": "any Swift.Encoder",
+                            "usr": "s:s7EncoderP"
+                          }
+                        ],
+                        "declKind": "Func",
+                        "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6encode2toys7Encoder_p_tKF",
+                        "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV6encode2toys7Encoder_p_tKF",
+                        "moduleName": "EdgeCore",
+                        "implicit": true,
+                        "throwing": true,
+                        "funcSelfKind": "NonMutating"
+                      }
+                    ],
+                    "declKind": "Struct",
+                    "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV",
+                    "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV11ChatRequestV",
+                    "moduleName": "EdgeCore",
+                    "declAttributes": [
+                      "AccessControl",
+                      "RawDocComment"
+                    ],
+                    "isFromExtension": true,
+                    "conformances": [
+                      {
+                        "kind": "Conformance",
+                        "name": "Copyable",
+                        "printedName": "Copyable",
+                        "usr": "s:s8CopyableP",
+                        "mangledName": "$ss8CopyableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Escapable",
+                        "printedName": "Escapable",
+                        "usr": "s:s9EscapableP",
+                        "mangledName": "$ss9EscapableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Decodable",
+                        "printedName": "Decodable",
+                        "usr": "s:Se",
+                        "mangledName": "$sSe"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Encodable",
+                        "printedName": "Encodable",
+                        "usr": "s:SE",
+                        "mangledName": "$sSE"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "Sendable",
+                        "printedName": "Sendable",
+                        "usr": "s:s8SendableP",
+                        "mangledName": "$ss8SendableP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeDecl",
                     "name": "ModelsResponse",
                     "printedName": "ModelsResponse",
                     "children": [
@@ -25702,7 +26981,11 @@
                                 "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV6ConfigV11temperatureSfSgvM",
                                 "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV7MessageV6ConfigV11temperatureSfSgvM",
                                 "moduleName": "EdgeCore",
+                                "deprecated": true,
                                 "implicit": true,
+                                "declAttributes": [
+                                  "Available"
+                                ],
                                 "accessorKind": "_modify"
                               }
                             ]
@@ -25896,8 +27179,10 @@
                         "usr": "s:8EdgeCore0A6ClientC2AIV5ModelV7MessageV6ConfigV",
                         "mangledName": "$s8EdgeCore0A6ClientC2AIV5ModelV7MessageV6ConfigV",
                         "moduleName": "EdgeCore",
+                        "deprecated": true,
                         "declAttributes": [
-                          "AccessControl"
+                          "AccessControl",
+                          "Available"
                         ],
                         "isFromExtension": true,
                         "conformances": [
@@ -40189,6 +41474,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Alamofire",
         "printedName": "Alamofire",
         "declKind": "Import",
@@ -40201,6 +41496,30 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "EdgeCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EdgeCore"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
         "declKind": "Import",
         "moduleName": "EdgeCore"
       },
@@ -40857,7 +42176,7 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Models\/EdgeClient.AI.Model.Message+Config.swift",
       "kind": "FloatLiteral",
-      "offset": 643,
+      "offset": 673,
       "length": 3,
       "value": "0.1"
     },
