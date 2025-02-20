@@ -64,18 +64,18 @@ post_install do |installer|
 end
 ```
 
-> **_NOTE:_** Developers can get their **developer edge license** for initializing [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mimOE-SE-iOS-developer) at the [mimik developer console](https://developer.mimik.com/console).
+> **_NOTE:_** Developers can get their **mim OE (Edge)** for initializing [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) at the [mimik developer console](https://developer.mimik.com/console).
 
-> **_NOTE:_** Enterprise project developers should request their **enterprise edge license** from [mimik support](https://developer.mimik.com/support/).
+> **_NOTE:_** Enterprise project developers can request an **enterprise mim OE (Edge) license** from [mimik support](https://developer.mimik.com/support/).
 
 
 ## Documentation
 
-`EdgeCore/EdgeClient` API reference documentation can be found  [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient). Alternatively a docc archive file can be downloaded as a [zip file](https://github.com/mimikgit/cocoapod-EdgeCore/tree/main/EdgeCore.doccarchive.zip) and opened locally in Xcode.
+`EdgeCore/EdgeClient` API reference documentation is available [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient), as well as in Xcode, where it is included as built-in documentation for all methods and structs.
 
-`EdgeEngineClient` platform protocol API reference documentation is [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
+`EdgeEngineClient` protocol API reference documentation is accessible from [here](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeengineclient).
 
-`EdgeService` API references are available [here](https://mimikgit.github.io/cocoapod-EdgeService/documentation/edgeservice/).
+`EdgeService/EdgeServiceClient` API reference documentation can be found [here](https://mimikgit.github.io/cocoapod-EdgeService/documentation/edgeservice/).
 
 
 ## EdgeClient
@@ -111,8 +111,11 @@ end
 
 ### Edge microservices
 
+- ``EdgeClient/deployUseCase(accessToken:config:dynamicConfig:)``
 - ``EdgeClient/deployUseCase(accessToken:configUrl:dynamicConfig:)``
 - ``EdgeClient/deployMicroservice(edgeEngineAccessToken:config:imageTarPath:)``
+- ``EdgeClient/deployImage(accessToken:imageTarPath:)``
+- ``EdgeClient/deployContainer(accessToken:config:)``
 - ``EdgeClient/microservices(edgeEngineAccessToken:)``
 - ``EdgeClient/microservice(containerName:edgeEngineAccessToken:)``
 - ``EdgeClient/updateMicroserviceEnv(edgeEngineAccessToken:microservice:envVariables:)``
@@ -129,10 +132,11 @@ end
 
 ## EdgeClient/AI
 
+- ``EdgeClient/integrateAI(accessToken:apiKey:config:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
-- ``EdgeClient/chatAI(request:streamHandler:requestHandler:)``
 - ``EdgeClient/chatAI(request:requestHandler:)``
+- ``EdgeClient/chatAI(request:streamHandler:requestHandler:)``
 - ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
 - ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
@@ -144,6 +148,7 @@ end
 - ``EdgeClient/Authorization/AccessToken/clientId(token:)``
 - ``EdgeClient/Authorization/AccessToken/decodeToJWT(token:)``
 - ``EdgeClient/Authorization/AccessToken/decodeToJson(token:)``
+- ``EdgeClient/Authorization/AccessToken/expiresIn(token:)``
 - ``EdgeClient/Authorization/AccessToken/expiresIn(token:)``
 - ``EdgeClient/Authorization/AccessToken/subscriber(token:)``
 - ``EdgeClient/Authorization/AccessToken/validate(token:)``
@@ -188,7 +193,7 @@ end
 - ``EdgeClient/Microservice/preferredImageName(name:)``
 
 ## EdgeClient/Microservice/Container
-- ``EdgeClient/Microservice/Container/basePath()
+- ``EdgeClient/Microservice/Container/basePath()``
 
 ## EdgeClient/Microservice/Request
 - ``EdgeClient/Microservice/Request/microserviceRequest(microservice:path:method:queryItems:authorization:httpBody:httpHeaders:timeoutInterval:cachePolicy:)``
@@ -236,7 +241,7 @@ end
     
 Provides mim OE (edgeEngine) controls and vendors the actual mim OE (edgeEngine) binary into the project.
 
-> **To enable EdgeEngineClient** protocol API in the project, add [EdgeEngineDeveloper](https://github.com/mimikgit/cocoapod-EdgeEngineDeveloper) or [EdgeEngine](https://github.com/mimikgit/cocoapod-EdgeEngine) to the `Podfile`.
+> **To enable EdgeEngineClient** protocol API in the project, add [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) to your `Podfile`.
 
 - ``EdgeEngineClient/startEdgeEngine(parameters:)``
 - ``EdgeEngineClient/stopEdgeEngine()``
@@ -270,6 +275,6 @@ More details about how the edgeEngine platform revolutionizes computing with the
 
 ## License
 
-Developers can get their developer edge license by following this [tutorial](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/03-index).
+Developers can get their mim OE (Edge) license for initializing [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) at the [mimik developer console](https://developer.mimik.com/console).
 
-For details about an enterprise edge license please contact [mimik support](https://mimik.com/contact-us/).
+For details about an enterprise mim OE (Edge) license please contact [mimik support](https://mimik.com/contact-us/).
