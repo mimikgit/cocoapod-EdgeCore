@@ -13718,49 +13718,6 @@
               {
                 "kind": "Function",
                 "name": "call",
-                "printedName": "call(config:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Foundation.Data, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Data",
-                        "printedName": "Foundation.Data",
-                        "usr": "s:10Foundation4DataV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Config",
-                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
-                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6configs6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_tYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6configs6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_tYaF",
-                "moduleName": "EdgeCore",
-                "declAttributes": [
-                  "AccessControl",
-                  "RawDocComment"
-                ],
-                "isFromExtension": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Function",
-                "name": "call",
                 "printedName": "call(config:requestHandler:)",
                 "children": [
                   {
@@ -13790,92 +13747,45 @@
                     "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
                   },
                   {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Alamofire.DataTask<Foundation.Data>) -> ())?",
                     "children": [
                       {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "DataTask",
-                        "printedName": "Alamofire.DataTask<Foundation.Data>",
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "Data",
-                            "printedName": "Foundation.Data",
-                            "usr": "s:10Foundation4DataV"
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DataTask",
+                            "printedName": "Alamofire.DataTask<Foundation.Data>",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Data",
+                                "printedName": "Foundation.Data",
+                                "usr": "s:10Foundation4DataV"
+                              }
+                            ],
+                            "usr": "s:9Alamofire8DataTaskV"
                           }
-                        ],
-                        "usr": "s:9Alamofire8DataTaskV"
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGctYaF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGctYaF",
-                "moduleName": "EdgeCore",
-                "declAttributes": [
-                  "AccessControl",
-                  "RawDocComment"
-                ],
-                "isFromExtension": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Function",
-                "name": "call",
-                "printedName": "call(config:type:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<τ_0_0, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
+                        ]
                       }
                     ],
-                    "usr": "s:s6ResultO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Config",
-                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
-                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "τ_0_0.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      }
-                    ]
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config4types6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmtYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config4types6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmtYaSeRzSERzlF",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGcSgtYaF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAMGcSgtYaF",
                 "moduleName": "EdgeCore",
-                "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
-                "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
@@ -13926,35 +13836,249 @@
                     ]
                   },
                   {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Alamofire.DataTask<Foundation.Data>) -> ())?",
                     "children": [
                       {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "DataTask",
-                        "printedName": "Alamofire.DataTask<Foundation.Data>",
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "Data",
-                            "printedName": "Foundation.Data",
-                            "usr": "s:10Foundation4DataV"
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DataTask",
+                            "printedName": "Alamofire.DataTask<Foundation.Data>",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Data",
+                                "printedName": "Foundation.Data",
+                                "usr": "s:10Foundation4DataV"
+                              }
+                            ],
+                            "usr": "s:9Alamofire8DataTaskV"
                           }
-                        ],
-                        "usr": "s:9Alamofire8DataTaskV"
+                        ]
                       }
-                    ]
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGctYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGctYaSeRzSERzlF",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGcSgtYaSeRzSERzlF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0O0VGcSgtYaSeRzSERzlF",
+                "moduleName": "EdgeCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
+                "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "callMultipartFormData",
+                "printedName": "callMultipartFormData(config:name:mimeType:data:requestHandler:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Foundation.Data, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Config",
+                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Alamofire.DataTask<Foundation.Data>) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DataTask",
+                            "printedName": "Alamofire.DataTask<Foundation.Data>",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Data",
+                                "printedName": "Foundation.Data",
+                                "usr": "s:10Foundation4DataV"
+                              }
+                            ],
+                            "usr": "s:9Alamofire8DataTaskV"
+                          }
+                        ]
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandlers6ResultOy10Foundation0H0VSo7NSErrorCGAE7RequestV6ConfigV_S2SAPy9Alamofire0H4TaskVyAPGcSgtYaF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandlers6ResultOy10Foundation0H0VSo7NSErrorCGAE7RequestV6ConfigV_S2SAPy9Alamofire0H4TaskVyAPGcSgtYaF",
+                "moduleName": "EdgeCore",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isFromExtension": true,
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "callMultipartFormData",
+                "printedName": "callMultipartFormData(config:name:mimeType:data:type:requestHandler:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_0_0, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Config",
+                    "printedName": "EdgeCore.EdgeClient.Microservice.Request.Config",
+                    "usr": "s:8EdgeCore0A6ClientC12MicroserviceV7RequestV6ConfigV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "τ_0_0.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Alamofire.DataTask<Foundation.Data>) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Alamofire.DataTask<Foundation.Data>) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DataTask",
+                            "printedName": "Alamofire.DataTask<Foundation.Data>",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Data",
+                                "printedName": "Foundation.Data",
+                                "usr": "s:10Foundation4DataV"
+                              }
+                            ],
+                            "usr": "s:9Alamofire8DataTaskV"
+                          }
+                        ]
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:8EdgeCore0A6ClientC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_S2S10Foundation0H0Vxmy9Alamofire0H4TaskVyAXGcSgtYaSeRzSERzlF",
+                "mangledName": "$s8EdgeCore0A6ClientC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_S2S10Foundation0H0Vxmy9Alamofire0H4TaskVyAXGcSgtYaSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",

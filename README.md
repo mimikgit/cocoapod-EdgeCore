@@ -175,10 +175,10 @@ end
 
 ## EdgeClient/Microservice
 - ``EdgeClient/Microservice/basePath()``
-- ``EdgeClient/Microservice/call(config:)``
-- ``EdgeClient/Microservice/call(config:type:)``
 - ``EdgeClient/Microservice/call(config:requestHandler:)``
 - ``EdgeClient/Microservice/call(config:type:requestHandler:)``
+- ``EdgeClient/Microservice/callMultipartFormData(config:name:mimeType:data:requestHandler:)``
+- ``EdgeClient/Microservice/callMultipartFormData(config:name:mimeType:data:type:requestHandler:)``
 - ``EdgeClient/Microservice/callStream(config:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStream(config:type:streamHandler:requestHandler:)``
 - ``EdgeClient/Microservice/callStreamSSE(config:streamHandler:requestHandler:)``

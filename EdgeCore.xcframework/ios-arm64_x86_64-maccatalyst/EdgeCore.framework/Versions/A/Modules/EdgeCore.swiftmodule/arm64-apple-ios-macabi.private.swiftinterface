@@ -595,10 +595,10 @@ extension EdgeCore.EdgeClient.AI.Model {
   }
 }
 extension EdgeCore.EdgeClient.Microservice {
-  public func call(config: EdgeCore.EdgeClient.Microservice.Request.Config) async -> Swift.Result<Foundation.Data, Foundation.NSError>
-  public func call(config: EdgeCore.EdgeClient.Microservice.Request.Config, requestHandler: @escaping (_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void) async -> Swift.Result<Foundation.Data, Foundation.NSError>
-  public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
-  public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type, requestHandler: @escaping (_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  public func call(config: EdgeCore.EdgeClient.Microservice.Request.Config, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<Foundation.Data, Foundation.NSError>
+  public func call<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  public func callMultipartFormData(config: EdgeCore.EdgeClient.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<Foundation.Data, Foundation.NSError>
+  public func callMultipartFormData<T>(config: EdgeCore.EdgeClient.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
 }
 extension EdgeCore.EdgeClient.Microservice {
   public enum ServerSentEventType : Swift.Codable, Swift.Sendable {
