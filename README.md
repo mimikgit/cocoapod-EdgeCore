@@ -137,6 +137,7 @@ end
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
 - ``EdgeClient/chatAI(request:requestHandler:)``
 - ``EdgeClient/chatAI(request:streamHandler:requestHandler:)``
+- ``EdgeClient/visionAI(request:image:resizeImgOptions:streamHandler:requestHandler:)``
 - ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
 - ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
@@ -164,11 +165,11 @@ end
 
 
 ## EdgeClient/Log
-- ``EdgeClient/Log/log(level:function:line:items:module:marker:)``
-- ``EdgeClient/Log/logDebug(function:line:items:module:marker:)``
-- ``EdgeClient/Log/logError(function:line:items:module:marker:)``
-- ``EdgeClient/Log/logFault(function:line:items:module:marker:)``
-- ``EdgeClient/Log/logInfo(function:line:items:module:marker:)``
+- ``EdgeClient/Log/log(level:function:line:items:module:)``
+- ``EdgeClient/Log/logDebug(function:line:items:module:)``
+- ``EdgeClient/Log/logError(function:line:items:module:)``
+- ``EdgeClient/Log/logFault(function:line:items:module:)``
+- ``EdgeClient/Log/logInfo(function:line:items:module:)``
 - ``EdgeClient/Log/loggingLevel(module:)``
 - ``EdgeClient/Log/loggingPrivacy(module:)``
 

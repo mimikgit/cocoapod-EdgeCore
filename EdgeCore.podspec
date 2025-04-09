@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.8.4"
+  s.version      = "5.9.0"
   s.summary      = "mimik Client Library (Core)"
 
   s.description  = <<-DESC
@@ -35,7 +35,7 @@ These components provide various APIs that help developers with core operations,
 
   s.dependency 'Alamofire', '~> 5.10.2'
   s.dependency 'SwiftyJSON', '~> 5.0.2'
-  s.dependency 'JWTDecode', '~> 3.2.0'
+  s.dependency 'JWTDecode', '~> 3.3.0'
   s.dependency 'AppAuth', '~> 1.7.6'
 
   s.platform = 'ios', '16.0'
