@@ -9,19 +9,46 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.9.0"
+  s.version      = "5.9.1"
   s.summary      = "mimik Client Library (Core)"
 
   s.description  = <<-DESC
-mimik Client Library provides a programmatic interface for working with the mim OE Runtime (formerly known as edgeEngine), accessing information about mobile device clusters, using on-device lightweight RESTful API microservices, and optionally integrating with mimik ai components.
+The mimik Client Library provides a low-level, programmatic interface for interacting with the mim OE Runtime (formerly known as the edge engine).
 
-Please note the following mimik Client Library client library cocoapods:
+Quick Start:
 
-    - mim-OE-ai-SE-iOS-developer
-    - EdgeCore
-    - EdgeService (optional)
+- Onboarding Tutorial
+    Step-by-step setup and usage guide:
+    https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index
 
-These components provide various APIs that help developers with core operations, such as setting up the mim OE Runtime (formerly known as edgeEngine), authenticating developers, deploying edge microservices, and optionally integrating with mimik ai.
+- API Documentation
+    Complete reference for available classes, methods, and usage patterns:
+    https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgecore
+
+Features:
+
+The library exposes functionality to:
+
+- Initialize and configure the mim OE Runtime, including local runtime setup, configuration loading, and lifecycle management
+- Discover and interact with nodes in a Hybrid Edge Cloud cluster using built-in discovery and service registration APIs
+- Deploy and manage RESTful microservices to the node using a lightweight container abstraction
+- Authenticate and authorize developers and services using token-based flows (OAuth2, JWT)
+- (Optional) Integrate with on-device AI runtimes, allowing local invocation of Vision and Language models without requiring cloud access
+
+Runtime Characteristics:
+
+- Written for resource-constrained environments
+- Supports offline-first and peer-to-peer communication paradigms
+- Built for decentralized orchestration across nodes in distributed environments
+
+Use Case Examples:
+
+- Register and expose a microservice on a local node
+- Query cluster topology and fetch metadata from peer nodes
+- Secure communication between services using tokens
+- (Optional) Launch a local AI model for image or text inference
+
+This library is intended for developers building distributed edge cloud native apps where network reliability, low-latency processing, and on-device compute are critical.
   DESC
 
   s.homepage     = "https://github.com/mimikgit/cocoapod-EdgeCore"

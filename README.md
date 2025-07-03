@@ -1,29 +1,76 @@
 # mimik Client Library
 
-The **mimik Client Library** provides a programmatic interface for the mim OE Runtime (formerly edgeEngine), enabling its integration into iOS projects.
-
-## Overview
-
-The **mimik Client Library** enables developers to interact with the mim OE Runtime (formerly known as edgeEngine), providing access to mobile device clusters, on-device RESTful API microservices, and optional integration with mimik AI components.
-
-It offers APIs for setting up the runtime, authenticating developers, deploying edge microservices, integrating with [mimik ai](https://devdocs.mimik.com/tutorials/02-submenu/02-submenu/01-index) and more.
-
-## mimik Client Library cocoapods
-
-Bundle configurations: Developers can choose from new bundling options for more tailored deployments, with the flexibility to include or exclude the AI Runtime. Integrate mim OE into your project based on your application’s needs, selecting whether to include the AI Runtime as part of the integration or not.
-
-* [EdgeCore](https://github.com/mimikgit/cocoapod-EdgeCore) (required)
-* [mim-OE-ai-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) (with AI Runtime)
-* [mim-OE-SE-iOS-developer](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) (no AI)
-* [EdgeService](https://github.com/mimikgit/cocoapod-EdgeService) (optional)
-
-Generally speaking, developers only need to add the **`mim-OE-ai-SE-iOS-developer`** and **EdgeCore** cocoapods to their projects.
+The mimik Client Library is a unified SDK for embedding and controlling the mim OE runtime, enabling seamless bootstrapping, configuration, and lifecycle management of your edge-cloud infrastructure. It handles OAuth2/JWT authentication, dynamic discovery of edge nodes, and the deployment, scaling, and orchestration of RESTful microservices and end-to-end use-case pipelines. It also provides an integrated AI client for on-device, edge, or cloud model discovery, prompt streaming, and standardized response handling across conversational and vision workloads.
 
 
-## Supported Platforms, Targets
-* `iOS Devices running iOS 16+`
-* `iOS Simulators running iOS 16+`
-* `iOS Mac Catalyst running macOS 14.0`
+## Quick Start
+
+- **Onboarding Tutorial**  
+    Step-by-step setup and usage guide:  
+    [https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index](https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index)
+
+- **API Documentation**  
+    Complete reference for available classes, methods, and usage patterns:  
+    [https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgecore](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgecore)
+
+
+## Features
+
+The mimik Client Library provides a unified API to:
+
+### Bootstrap mim OE
+- Initialize, configure, and manage the lifecycle of the local mim OE runtime (startup parameters, logging, health checks).
+
+### Authenticate & Authorize
+- Handle developer- and user-level sign-up, sign-in, token exchanges, scope discovery, password flows, and account management via standard OAuth2/JWT patterns.
+
+### Discover & Orchestrate Edge Nodes
+- Locate local or remote edge nodes (`Node`), register services, and route requests dynamically across your Hybrid Edge-Cloud cluster.
+
+### Deploy & Manage Microservices
+- Package, deploy, scale, update, and tear down RESTful microservices or full “use-case” workflows  
+  using lightweight container abstractions and dynamic configuration.
+
+### Unified AI Client & Model Discovery
+- Use `HybridClient` and `AssistantModels` to seamlessly list and select on-device, edge, or cloud AI models via a common interface.
+
+### Flexible AI Prompting & Streaming Responses
+- Send prompts (`AssistantPrompt`), receive full or token-by-token replies, and handle streaming cancellation when users abort long-running generations.
+
+### Standardized AI Outputs
+- Normalize responses through `AssistantOutput` into either complete chat transcripts or single messages for easy integration with chat widgets, system agents, or batch jobs.
+
+
+
+## Distribution
+
+Select the CocoaPod bundle(s) that match your project requirements:
+
+- **EdgeCore** (required)  
+  [`cocoapod-EdgeCore`](https://github.com/mimikgit/cocoapod-EdgeCore)  
+  The core runtime engine and foundational library—always include this pod.
+
+- **mim-OE-SE-iOS-developer** (no AI)  
+  [`cocoapod-mim-OE-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer)  
+  Adds the mim OE edge runtime without AI capabilities.
+
+- **mim-OE-ai-SE-iOS-developer** (with AI)  
+  [`cocoapod-mim-OE-ai-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer)  
+  Includes the core runtime **plus** on-device Vision & Language model support.
+
+- **EdgeService** (optional)  
+  [`cocoapod-EdgeService`](https://github.com/mimikgit/cocoapod-EdgeService)  
+  Helpers and utilities for packaging, deploying, and managing your own microservices on the edge node.
+
+> **Quickstart:** In most cases, simply add **EdgeCore** and **mim-OE-ai-SE-iOS-developer** to your Podfile.
+
+
+
+## Supported Platforms & Targets
+
+- **iOS Devices**: iOS 16.0 and later  
+- **iOS Simulators**: iOS 16.0 and later  
+- **Mac Catalyst**: macOS 14.0 and later  
 
 
 ## Requirements
@@ -127,7 +174,7 @@ end
 - ``EdgeClient/deactivateExternalEdgeEngine()``
 - ``EdgeClient/edgeEngineWorkingDirectory()``
 - ``EdgeClient/externalEdgeEngineIsActivated()``
-- ``EdgeClient/setLoggingLevel(module:level:privacy:)``
+- ``EdgeClient/setLoggingLevel(module:level:privacy:marker:)``
 
 
 ## EdgeClient/AI
@@ -135,13 +182,39 @@ end
 - ``EdgeClient/integrateAI(accessToken:apiKey:config:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/integrateAI(accessToken:apiKey:configUrl:model:downloadHandler:requestHandler:)``
 - ``EdgeClient/downloadAI(model:accessToken:apiKey:useCase:downloadHandler:requestHandler:)``
-- ``EdgeClient/chatAI(request:requestHandler:)``
-- ``EdgeClient/chatAI(request:streamHandler:requestHandler:)``
-- ``EdgeClient/visionAI(request:image:resizeImgOptions:streamHandler:requestHandler:)``
-- ``EdgeClient/aiModels(accessToken:apiKey:useCase:)``
-- ``EdgeClient/aiModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/deleteAIModel(id:accessToken:apiKey:useCase:)``
 - ``EdgeClient/warmUpAI(request:)``
+
+
+## EdgeClient/AI/HybridClient
+
+- ``EdgeClient/AI/HybridClient/assistantPrompt(prompt:)``
+- ``EdgeClient/AI/HybridClient/assistantVisionPrompt(prompt:image:resizeImgOptions:)``
+- ``EdgeClient/AI/HybridClient/availableModels()``
+- ``EdgeClient/AI/HybridClient/availableModelsMessage()``
+
+
+### EdgeClient/AI/ServiceInterface
+
+- ``EdgeClient/AI/ServiceInterface/configuration``
+
+### EdgeClient/AI/ServiceConfiguration
+
+- ``EdgeClient/AI/ServiceConfiguration``
+
+### EdgeClient/AI/AssistantModels
+
+- ``EdgeClient/AI/AssistantModels/availableModels()``
+- ``EdgeClient/AI/AssistantModels/availableModelsMessage()``
+
+### EdgeClient/AI/AssistantPrompt
+
+- ``EdgeClient/AI/AssistantPrompt/assistantPrompt(prompt:)``
+- ``EdgeClient/AI/AssistantPrompt/assistantVisionPrompt(prompt:image:resizeImgOptions:)``
+
+### EdgeClient/AI/AssistantOutput
+
+- ``EdgeClient/AI/AssistantOutput/assistantOutput()``
 
 
 ## EdgeClient/Authorization/AccessToken
