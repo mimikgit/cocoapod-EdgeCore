@@ -164,5 +164,5 @@ For enterprise projects or commercial distribution, contact:
 
 ## 👤 Author
 
-[mimik Technology, Inc.](https://mimik.com)  
+[mimik](https://mimik.com)  
 Learn more at [mimik Developer Documentation](https://devdocs.mimik.com)
