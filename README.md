@@ -1,12 +1,13 @@
 # mimik Client Library
 
-The **mimik Client Library** is a unified SDK that embeds and manages **mimik OE** — a lightweight mimik operating environment enabling developers to build, deploy, and orchestrate microservices and AI-powered workflows across hybrid edge-cloud systems.
+The **mimik Client Library** is a unified SDK for integrating and managing **mimik OE** — a lightweight mimik operating environment enabling developers to build, deploy, and orchestrate microservices and AI-powered workflows across hybrid edge-cloud systems.
 
 It abstracts away the complexities of:
 - OAuth2 / JWT-based authentication
-- Edge node discovery and orchestration
+- Network node discovery and orchestration
 - Lifecycle and configuration management for microservices
-- AI model integration, streaming prompts, and unified outputs
+- AI model integration, unified assistant streaming prompts
+
 
 ---
 
@@ -105,10 +106,10 @@ Use the table below to choose the CocoaPods that best match your use case:
 
 | Pod | Includes | AI Support | Recommended For |
 |-----|----------|------------|------------------|
-| [`EdgeCore`](https://github.com/mimikgit/cocoapod-EdgeCore) | Core engine | ❌ | Always include |
+| [`EdgeCore`](https://github.com/mimikgit/cocoapod-EdgeCore) | Core |  | Always include |
 | [`mim-OE-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) | Core + mim OE | ❌ | Lightweight, non-AI apps |
 | [`mim-OE-ai-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) | Core + mim OE + AI | ✅ | Vision/Language AI support |
-| [`EdgeService`](https://github.com/mimikgit/cocoapod-EdgeService) | Deployment tools | ❌ | For managing custom microservices |
+| [`EdgeService`](https://github.com/mimikgit/cocoapod-EdgeService) | Deployment tools |  | For managing custom microservices |
 
 > **✅ Recommended Default:** Add `EdgeCore` and `mim-OE-ai-SE-iOS-developer` to your Podfile.
 

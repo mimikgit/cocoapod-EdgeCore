@@ -304,37 +304,61 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-/// The primary entry point for the mimik Client Library, providing programmatic control over the mim OE Runtime.
-/// Use this class to initialize, configure, and manage the local edge-engine, including logging setup and lifecycle control.
-/// Integration steps and end-to-end code samples are available in the <a href="https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index">Getting Started Tutorial</a>.
-/// Full API reference is on the <a href="https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient">EdgeCore Documentation site</a>.
+/// The primary interface to the mimik Client Library.
+/// Use this class to initialize, configure, and manage the <code>mim OE</code> runtime, including:
+/// <ul>
+///   <li>
+///     <em>Lifecycle</em>: start, stop, and monitor the runtime
+///   </li>
+///   <li>
+///     <em>Logging</em>: configure verbosity and privacy levels
+///   </li>
+///   <li>
+///     <em>Authentication</em>: OAuth2 flows for developers and users, token exchange, and account management
+///   </li>
+///   <li>
+///     <em>Node Discovery</em>: automatic node discovery and hybrid‐cluster routing
+///   </li>
+///   <li>
+///     <em>Microservices</em>: deploy, scale, update, and tear down services or workflows
+///   </li>
+///   <li>
+///     <em>AI Integration</em>: list and invoke vision & language models across device, edge, and cloud
+///   </li>
+///   <li>
+///     <em>AI Assistant Streaming</em>: prompt and receive streamed AI responses with cancellation support
+///   </li>
+///   <li>
+///     <em>AI Assistant Output Handling</em>: unified <code>AssistantOutput</code> format for UIs, automation, or batch jobs
+///   </li>
+/// </ul>
+/// Integration and usage examples are available in the
+/// <a href="https://devdocs.mimik.com/tutorials/01-submenu/02-submenu/02-index">Getting Started Tutorial</a>
+/// and the full API reference on the
+/// <a href="https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/edgeclient">EdgeCore Documentation site</a>.
 /// <h2>Example</h2>
 /// \code
 /// import EdgeCore
 /// import EdgeEngine
 ///
-/// // Configure logging
-/// EdgeClient.setLoggingLevel(module: .edgeCore,   level: .debug, privacy: .publicAccess)
-/// EdgeClient.setLoggingLevel(module: .edgeEngine, level: .debug, privacy: .publicAccess)
+/// // Configure logging levels
+/// EdgeClient.setLoggingLevel(module: .mimikCore, level: .debug, privacy: .publicAccess)
+/// EdgeClient.setLoggingLevel(module: .mimikRuntime, level: .debug, privacy: .publicAccess)
 ///
-/// // Create the client
-/// let edgeClient = EdgeClient()
+/// // Start the runtime
+/// let licenseKey = "<YOUR-DEVELOPER-MIM-OE-LICENSE>"
+/// let startupParams = EdgeClient.RuntimeParameters(license: licenseKey)
 ///
-/// // Start the mim OE Runtime
-/// let license = "<YOUR-DEVELOPER-MIM-OE-LICENSE>"
-/// let params  = EdgeClient.StartupParameters(license: license)
-///
-/// switch await edgeClient.startEdgeEngine(parameters: params) {
-/// case .success:
-///     print("Edge Engine started successfully")
-/// case .failure(let error):
-///     print("Failed to start Edge Engine:", error)
+/// Task {
+///     switch await EdgeClient.startRuntime(parameters: startupParams) {
+///     case .success:
+///         print("mim OE runtime started successfully")
+///     case .failure(let error):
+///         print("Failed to start the mim OE runtime:", error)
+///     }
 /// }
 ///
-/// \endcodeseealso:
-/// <code>EdgeClient.StartupParameters</code>
-/// seealso:
-/// <code>EdgeClient.setLoggingLevel(module:level:privacy:)</code>
+/// \endcode
 SWIFT_CLASS("_TtC8EdgeCore10EdgeClient")
 @interface EdgeClient : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
