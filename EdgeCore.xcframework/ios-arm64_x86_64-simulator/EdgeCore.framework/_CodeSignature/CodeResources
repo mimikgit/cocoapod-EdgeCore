@@ -6,51 +6,51 @@
 	<dict>
 		<key>Headers/EdgeCore-Swift.h</key>
 		<data>
-		/K9wOeLUQkJalxFGCwvraSfZbIs=
+		tJG/N5Po0IMKrheDcxbrVwLBsFM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		UW6HjWRlXmHeAxner3w1ZOP8e8k=
+		7aTWCSmzwzU6sQuZVubm+3lL2mQ=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ouVVlGgemY/eXyVssNGnxEpEAYg=
+		1Gk8ydaIRF5pWrw1Y+Ut3V4MeLg=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		AMQKisCwi0pYkc+3Hp3GrLA8aQo=
+		FT9FMvpFhwze/NSpbGQe6zCTXkE=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Uixmb/hM9O/QxdEibETg0Y7yRjo=
+		Z76Nw7UMAER4DV6CXX4xdwlEtnI=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		AMQKisCwi0pYkc+3Hp3GrLA8aQo=
+		FT9FMvpFhwze/NSpbGQe6zCTXkE=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6/w/c0gSC4pMz9nYdHiltL4usf4=
+		vrrclgw/ZzYjesQQtoshD3f3+u0=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ouVVlGgemY/eXyVssNGnxEpEAYg=
+		1Gk8ydaIRF5pWrw1Y+Ut3V4MeLg=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PaSsrLEVuNomveQwISQwLXvFmk8=
+		JKm8tHgE0dQdbCDJx/5NF2RnCn4=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Ki+a+qK44nKejRzEm0Miwp6Iq9U=
+		LnGBQ5iduFU6tIuIYwM29kwXCpQ=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PaSsrLEVuNomveQwISQwLXvFmk8=
+		JKm8tHgE0dQdbCDJx/5NF2RnCn4=
 		</data>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RopKO4Rj0dIDoA69coUpwm0ZKus=
+		Rv2AtOE+2LhSuC98HDxuiI7sMVE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,77 +63,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DX34o5OwxScFOA/rfHlEhvmvTGJBhHJvCKxoed/zn/c=
+			kR1EHEGoJpjtsbzDB8J8Sl+bbYOX/aSGh7LDpLIujx4=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tZsjK5d7m10kb3CYNrWhddGpeddGrqpsGXmrsRlOSRo=
+			8Zaw9xn0eUDQYQDtBGvhlZHS5tqWQdb2ldIT09srR/I=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fllaYffOjLIPcWYTYZtDVoVaph3722pih/076caTxq8=
+			uLG9uKNYRFldSvNOomdpG5AgfyjS0p9oME8u7I5jnhc=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iatOQCVD5c3AYFRlo3wtmHiA9+YvF/s/Ff2fRcckyuU=
+			cLEIDaEBrWNt1ChC9/aeyqrTNJcmPiOmU6uRybswgCA=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fllaYffOjLIPcWYTYZtDVoVaph3722pih/076caTxq8=
+			uLG9uKNYRFldSvNOomdpG5AgfyjS0p9oME8u7I5jnhc=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y9xVL2HvI0b2MaK+OyU90RLKiqVuevZXCjOUEUNpJiA=
+			/sAYc2tuwhvo8drgh8qi6TL43MOx3WQ5BBY/t8HDVi0=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tZsjK5d7m10kb3CYNrWhddGpeddGrqpsGXmrsRlOSRo=
+			8Zaw9xn0eUDQYQDtBGvhlZHS5tqWQdb2ldIT09srR/I=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kNXFVBPhv0F+KbejlTnUQGDVNAIerovGTFLh+vdJNHk=
+			7B+an2Iyl/EeBIQFokaLEs6IzKYueAGhWSkTLEQkzV0=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			izlaHVW8v07i+iruYanJ8VMg1aru+K7sI5JnWlpiojc=
+			wGO1HrDvfOwCcJBNoVEMSv3jOAmfpXeqpN97A13bhUw=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kNXFVBPhv0F+KbejlTnUQGDVNAIerovGTFLh+vdJNHk=
+			7B+an2Iyl/EeBIQFokaLEs6IzKYueAGhWSkTLEQkzV0=
 			</data>
 		</dict>
 		<key>Modules/EdgeCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MElT9qNR8IFQD1CjMK1RodJsIvQTQYnwT5Mq4PNCvC8=
+			WwKEgDgyEaS2azdAQqPDt9fIzQZ6+neU24OVkh+rvHQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

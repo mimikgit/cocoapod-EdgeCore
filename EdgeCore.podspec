@@ -9,17 +9,17 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.9.3"
-  s.summary      = "mimik Client Library (Core)"
+  s.version      = "5.10.0"
+  s.summary      = "mimik SDK for embedding mim OE with APIs for auth, device discovery, microservice management, AI models, and Dev Console."
 
   s.description  = <<-DESC
-The **mimik Client Library** is a unified SDK that embeds and manages **mimik OE** — a lightweight mimik operating environment enabling developers to build, deploy, and orchestrate microservices and AI-powered workflows across hybrid edge-cloud systems.
-
-It abstracts away the complexities of:
-- OAuth2 / JWT-based authentication
-- Edge node discovery and orchestration
-- Lifecycle and configuration management for microservices
-- AI model integration, streaming prompts, and unified outputs.
+The mimik Client Library is a unified SDK that lets developers embed and manage mim OE while also providing higher-level services for building hybrid edge–cloud applications. It includes APIs for:
+- OE runtime control: initialize, configure, and monitor the mim OE runtime
+- Authentication: OAuth2/JWT flows, developer console login/signup, token exchange, and session management
+- Edge node discovery & orchestration: auto-discovery, routing, and service registration across clusters
+- Microservice lifecycle management: deploy, scale, update, and remove services dynamically
+- AI integration: unified interface to query device, edge, and cloud models, with streaming prompts and standardized outputs
+- Developer Console integration: prebuilt authentication views, application APIs, and ID token handling
   DESC
 
   s.homepage     = "https://github.com/mimikgit/cocoapod-EdgeCore"
