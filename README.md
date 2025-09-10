@@ -1,6 +1,6 @@
 # mimik Client Library
 
-The **mimik Client Library** is a unified SDK for integrating and managing **mimik OE** — a lightweight mimik operating environment enabling developers to build, deploy, and orchestrate microservices and AI-powered workflows across hybrid edge-cloud systems.
+The **mimik Client Library** is a unified SDK for integrating and managing **mim OE** — a lightweight mimik operating environment enabling developers to build, deploy, and orchestrate microservices and AI-powered workflows across hybrid edge-cloud systems.
 
 It abstracts away the complexities of:
 - OAuth2 / JWT-based authentication
