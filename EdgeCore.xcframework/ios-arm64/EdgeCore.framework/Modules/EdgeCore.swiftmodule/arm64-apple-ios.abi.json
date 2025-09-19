@@ -948,23 +948,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Microservice",
-                    "printedName": "EdgeCore.ClientLibrary.Microservice",
-                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "Microservice",
+                "printedName": "EdgeCore.ClientLibrary.Microservice",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
               },
               {
                 "kind": "TypeNominal",
@@ -986,8 +972,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC18deployMicroservice11accessToken6config12imageTarPaths6ResultOyAC0F0VSo7NSErrorCGSS_AK6ConfigVSStYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC18deployMicroservice11accessToken6config12imageTarPaths6ResultOyAC0F0VSo7NSErrorCGSS_AK6ConfigVSStYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC18deployMicroservice11accessToken6config12imageTarPathAC0F0VSS_AI6ConfigVSStYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC18deployMicroservice11accessToken6config12imageTarPathAC0F0VSS_AI6ConfigVSStYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -995,6 +981,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1004,23 +991,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.Microservice.NewImage, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NewImage",
-                    "printedName": "EdgeCore.ClientLibrary.Microservice.NewImage",
-                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV8NewImageV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "NewImage",
+                "printedName": "EdgeCore.ClientLibrary.Microservice.NewImage",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV8NewImageV"
               },
               {
                 "kind": "TypeNominal",
@@ -1036,8 +1009,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC11deployImage11accessToken12imageTarPaths6ResultOyAC12MicroserviceV03NewF0VSo7NSErrorCGSS_SStYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC11deployImage11accessToken12imageTarPaths6ResultOyAC12MicroserviceV03NewF0VSo7NSErrorCGSS_SStYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC11deployImage11accessToken12imageTarPathAC12MicroserviceV03NewF0VSS_SStYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC11deployImage11accessToken12imageTarPathAC12MicroserviceV03NewF0VSS_SStYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1045,6 +1018,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1054,23 +1028,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.Microservice.NewContainer, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NewContainer",
-                    "printedName": "EdgeCore.ClientLibrary.Microservice.NewContainer",
-                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV12NewContainerV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "NewContainer",
+                "printedName": "EdgeCore.ClientLibrary.Microservice.NewContainer",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV12NewContainerV"
               },
               {
                 "kind": "TypeNominal",
@@ -1086,8 +1046,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC15deployContainer11accessToken6configs6ResultOyAC12MicroserviceV03NewF0VSo7NSErrorCGSS_AJ6ConfigVtYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC15deployContainer11accessToken6configs6ResultOyAC12MicroserviceV03NewF0VSo7NSErrorCGSS_AJ6ConfigVtYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC15deployContainer11accessToken6configAC12MicroserviceV03NewF0VSS_AH6ConfigVtYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC15deployContainer11accessToken6configAC12MicroserviceV03NewF0VSS_AH6ConfigVtYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1095,6 +1055,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1104,23 +1065,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.UseCase, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UseCase",
-                    "printedName": "EdgeCore.ClientLibrary.UseCase",
-                    "usr": "s:8EdgeCore13ClientLibraryC7UseCaseV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "UseCase",
+                "printedName": "EdgeCore.ClientLibrary.UseCase",
+                "usr": "s:8EdgeCore13ClientLibraryC7UseCaseV"
               },
               {
                 "kind": "TypeNominal",
@@ -1150,8 +1097,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC13deployUseCase11accessToken9configUrl13dynamicConfigs6ResultOyAC0fG0VSo7NSErrorCGSS_SSSayAC12MicroserviceV07DynamicM0VGtYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC13deployUseCase11accessToken9configUrl13dynamicConfigs6ResultOyAC0fG0VSo7NSErrorCGSS_SSSayAC12MicroserviceV07DynamicM0VGtYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC13deployUseCase11accessToken9configUrl13dynamicConfigAC0fG0VSS_SSSayAC12MicroserviceV07DynamicM0VGtYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC13deployUseCase11accessToken9configUrl13dynamicConfigAC0fG0VSS_SSSayAC12MicroserviceV07DynamicM0VGtYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1159,6 +1106,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1168,23 +1116,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.UseCase, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UseCase",
-                    "printedName": "EdgeCore.ClientLibrary.UseCase",
-                    "usr": "s:8EdgeCore13ClientLibraryC7UseCaseV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "UseCase",
+                "printedName": "EdgeCore.ClientLibrary.UseCase",
+                "usr": "s:8EdgeCore13ClientLibraryC7UseCaseV"
               },
               {
                 "kind": "TypeNominal",
@@ -1214,8 +1148,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC13deployUseCase11accessToken6config13dynamicConfigs6ResultOyAC0fG0VSo7NSErrorCGSS_AKSayAC12MicroserviceV07DynamicL0VGtYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC13deployUseCase11accessToken6config13dynamicConfigs6ResultOyAC0fG0VSo7NSErrorCGSS_AKSayAC12MicroserviceV07DynamicL0VGtYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC13deployUseCase11accessToken6config13dynamicConfigAC0fG0VSS_AISayAC12MicroserviceV07DynamicL0VGtYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC13deployUseCase11accessToken6config13dynamicConfigAC0fG0VSS_AISayAC12MicroserviceV07DynamicL0VGtYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1223,6 +1157,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1268,31 +1203,17 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<[EdgeCore.ClientLibrary.Microservice], Foundation.NSError>",
+                "name": "Array",
+                "printedName": "[EdgeCore.ClientLibrary.Microservice]",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[EdgeCore.ClientLibrary.Microservice]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Microservice",
-                        "printedName": "EdgeCore.ClientLibrary.Microservice",
-                        "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
+                    "name": "Microservice",
+                    "printedName": "EdgeCore.ClientLibrary.Microservice",
+                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
                   }
                 ],
-                "usr": "s:s6ResultO"
+                "usr": "s:Sa"
               },
               {
                 "kind": "TypeNominal",
@@ -1302,8 +1223,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC13microservices11accessTokens6ResultOySayAC12MicroserviceVGSo7NSErrorCGSS_tYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC13microservices11accessTokens6ResultOySayAC12MicroserviceVGSo7NSErrorCGSS_tYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC13microservices11accessTokenSayAC12MicroserviceVGSS_tYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC13microservices11accessTokenSayAC12MicroserviceVGSS_tYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1311,6 +1232,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1320,23 +1242,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Microservice",
-                    "printedName": "EdgeCore.ClientLibrary.Microservice",
-                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "Microservice",
+                "printedName": "EdgeCore.ClientLibrary.Microservice",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
               },
               {
                 "kind": "TypeNominal",
@@ -1352,8 +1260,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC12microservice13containerName11accessTokens6ResultOyAC12MicroserviceVSo7NSErrorCGSS_SStYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC12microservice13containerName11accessTokens6ResultOyAC12MicroserviceVSo7NSErrorCGSS_SStYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC12microservice13containerName11accessTokenAC12MicroserviceVSS_SStYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC12microservice13containerName11accessTokenAC12MicroserviceVSS_SStYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1361,6 +1269,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1370,28 +1279,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<Swift.String, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC14runtimeIdTokens6ResultOySSSo7NSErrorCGyYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC14runtimeIdTokens6ResultOySSSo7NSErrorCGyYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC14runtimeIdTokenSSyYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC14runtimeIdTokenSSyYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -1399,6 +1294,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -2988,6 +2884,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               }
@@ -3036,6 +2939,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -3109,23 +3019,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData, Foundation.NSError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DeleteModelResponseData",
-                    "printedName": "EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData",
-                    "usr": "s:8EdgeCore13ClientLibraryC2AIC5ModelV06DeleteF12ResponseDataV"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSError",
-                    "printedName": "Foundation.NSError",
-                    "usr": "c:objc(cs)NSError"
-                  }
-                ],
-                "usr": "s:s6ResultO"
+                "name": "DeleteModelResponseData",
+                "printedName": "EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData",
+                "usr": "s:8EdgeCore13ClientLibraryC2AIC5ModelV06DeleteF12ResponseDataV"
               },
               {
                 "kind": "TypeNominal",
@@ -3153,8 +3049,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8EdgeCore13ClientLibraryC13deleteAIModel2id11accessToken6apiKey7useCases6ResultOyAC2AIC5ModelV06DeleteP12ResponseDataVSo7NSErrorCGSS_S2SAC03UseM0VtYaFZ",
-            "mangledName": "$s8EdgeCore13ClientLibraryC13deleteAIModel2id11accessToken6apiKey7useCases6ResultOyAC2AIC5ModelV06DeleteP12ResponseDataVSo7NSErrorCGSS_S2SAC03UseM0VtYaFZ",
+            "usr": "s:8EdgeCore13ClientLibraryC13deleteAIModel2id11accessToken6apiKey7useCaseAC2AIC5ModelV06DeleteO12ResponseDataVSS_S2SAC03UseM0VtYaKFZ",
+            "mangledName": "$s8EdgeCore13ClientLibraryC13deleteAIModel2id11accessToken6apiKey7useCaseAC2AIC5ModelV06DeleteO12ResponseDataVSS_S2SAC03UseM0VtYaKFZ",
             "moduleName": "EdgeCore",
             "static": true,
             "declAttributes": [
@@ -3163,6 +3059,7 @@
               "Final"
             ],
             "isFromExtension": true,
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4488,6 +4385,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -4677,6 +4581,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -4842,6 +4753,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -5072,6 +4990,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -5297,6 +5222,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -5522,6 +5454,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -5747,6 +5686,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -6150,6 +6096,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -6375,6 +6328,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -6616,6 +6576,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -7829,6 +7796,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               }
@@ -7877,6 +7851,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -8966,6 +8947,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -9843,6 +9831,13 @@
                             "printedName": "Sendable",
                             "usr": "s:s8SendableP",
                             "mangledName": "$ss8SendableP"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -10007,6 +10002,13 @@
                             "printedName": "Sendable",
                             "usr": "s:s8SendableP",
                             "mangledName": "$ss8SendableP"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -10105,6 +10107,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -10696,6 +10705,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -10794,6 +10810,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -10893,6 +10916,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -11467,6 +11497,13 @@
                 "printedName": "Hashable",
                 "usr": "s:SH",
                 "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -11763,6 +11800,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -12382,6 +12426,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -12488,23 +12539,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Microservice",
-                        "printedName": "EdgeCore.ClientLibrary.Microservice",
-                        "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Microservice",
+                    "printedName": "EdgeCore.ClientLibrary.Microservice",
+                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -12534,13 +12571,14 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV9updateEnv11accessToken12envVariabless6ResultOyAESo7NSErrorCGSS_SDyS2SGtYaF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV9updateEnv11accessToken12envVariabless6ResultOyAESo7NSErrorCGSS_SDyS2SGtYaF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV9updateEnv11accessToken12envVariablesAESS_SDyS2SGtYaKF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV9updateEnv11accessToken12envVariablesAESS_SDyS2SGtYaKF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -13207,6 +13245,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -13217,23 +13262,9 @@
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Result",
-                        "printedName": "Swift.Result<Foundation.URLRequest, Foundation.NSError>",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "URLRequest",
-                            "printedName": "Foundation.URLRequest",
-                            "usr": "s:10Foundation10URLRequestV"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "NSError",
-                            "printedName": "Foundation.NSError",
-                            "usr": "c:objc(cs)NSError"
-                          }
-                        ],
-                        "usr": "s:s6ResultO"
+                        "name": "URLRequest",
+                        "printedName": "Foundation.URLRequest",
+                        "usr": "s:10Foundation10URLRequestV"
                       },
                       {
                         "kind": "TypeNominal",
@@ -13364,14 +13395,15 @@
                       }
                     ],
                     "declKind": "Func",
-                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV7RequestV012microserviceF00G04path6method10queryItems13authorization8httpBody0M7Headers15timeoutInterval11cachePolicys6ResultOy10Foundation10URLRequestVSo7NSErrorCGAE_SS9Alamofire10HTTPMethodVSayAT12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAZ11HTTPHeadersVSgSdSgSo017NSURLRequestCacheS0VSgtFZ",
-                    "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV7RequestV012microserviceF00G04path6method10queryItems13authorization8httpBody0M7Headers15timeoutInterval11cachePolicys6ResultOy10Foundation10URLRequestVSo7NSErrorCGAE_SS9Alamofire10HTTPMethodVSayAT12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAZ11HTTPHeadersVSgSdSgSo017NSURLRequestCacheS0VSgtFZ",
+                    "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV7RequestV012microserviceF00G04path6method10queryItems13authorization8httpBody0M7Headers15timeoutInterval11cachePolicy10Foundation10URLRequestVAE_SS9Alamofire10HTTPMethodVSayAR12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAU11HTTPHeadersVSgSdSgSo017NSURLRequestCacheS0VSgtKFZ",
+                    "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV7RequestV012microserviceF00G04path6method10queryItems13authorization8httpBody0M7Headers15timeoutInterval11cachePolicy10Foundation10URLRequestVAE_SS9Alamofire10HTTPMethodVSayAR12URLQueryItemVGSgAC13AuthorizationVSgSDySSs8Sendable_pGSgAU11HTTPHeadersVSgSdSgSo017NSURLRequestCacheS0VSgtKFZ",
                     "moduleName": "EdgeCore",
                     "static": true,
                     "declAttributes": [
                       "AccessControl",
                       "RawDocComment"
                     ],
+                    "throwing": true,
                     "funcSelfKind": "NonMutating"
                   },
                   {
@@ -13470,6 +13502,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -13480,23 +13519,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Foundation.Data, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Data",
-                        "printedName": "Foundation.Data",
-                        "usr": "s:10Foundation4DataV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -13541,14 +13566,15 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0L4TaskVyAMGcSgtYaF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV4call6config14requestHandlers6ResultOy10Foundation4DataVSo7NSErrorCGAE7RequestV6ConfigV_y9Alamofire0L4TaskVyAMGcSgtYaF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV4call6config14requestHandler10Foundation4DataVAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAKGcSgtYaKF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV4call6config14requestHandler10Foundation4DataVAE7RequestV6ConfigV_y9Alamofire0K4TaskVyAKGcSgtYaKF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -13558,22 +13584,8 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<τ_0_0, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
                   },
                   {
                     "kind": "TypeNominal",
@@ -13630,8 +13642,8 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0P0VGcSgtYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV4call6config4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0P0VGcSgtYaSeRzSERzlF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV4call6config4type14requestHandlerxAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0N0VGcSgtYaKSeRzSERzlF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV4call6config4type14requestHandlerxAE7RequestV6ConfigV_xmy9Alamofire8DataTaskVy10Foundation0N0VGcSgtYaKSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
@@ -13640,6 +13652,7 @@
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -13649,23 +13662,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Foundation.Data, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Data",
-                        "printedName": "Foundation.Data",
-                        "usr": "s:10Foundation4DataV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -13728,14 +13727,15 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandlers6ResultOy10Foundation0I0VSo7NSErrorCGAE7RequestV6ConfigV_S2SAPy9Alamofire0I4TaskVyAPGcSgtYaF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandlers6ResultOy10Foundation0I0VSo7NSErrorCGAE7RequestV6ConfigV_S2SAPy9Alamofire0I4TaskVyAPGcSgtYaF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandler10Foundation0I0VAE7RequestV6ConfigV_S2SANy9Alamofire0I4TaskVyANGcSgtYaKF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data14requestHandler10Foundation0I0VAE7RequestV6ConfigV_S2SANy9Alamofire0I4TaskVyANGcSgtYaKF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -13745,22 +13745,8 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<τ_0_0, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
                   },
                   {
                     "kind": "TypeNominal",
@@ -13835,8 +13821,8 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_S2S10Foundation0I0Vxmy9Alamofire0I4TaskVyAXGcSgtYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlers6ResultOyxSo7NSErrorCGAE7RequestV6ConfigV_S2S10Foundation0I0Vxmy9Alamofire0I4TaskVyAXGcSgtYaSeRzSERzlF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlerxAE7RequestV6ConfigV_S2S10Foundation0I0Vxmy9Alamofire0I4TaskVyASGcSgtYaKSeRzSERzlF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV21callMultipartFormData6config4name8mimeType4data4type14requestHandlerxAE7RequestV6ConfigV_S2S10Foundation0I0Vxmy9Alamofire0I4TaskVyASGcSgtYaKSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
@@ -13845,6 +13831,7 @@
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -14372,6 +14359,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -14382,23 +14376,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Completion",
-                        "printedName": "Alamofire.DataStreamRequest.Completion",
-                        "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Completion",
+                    "printedName": "Alamofire.DataStreamRequest.Completion",
+                    "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -14458,14 +14438,15 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV13callStreamSSE6config13streamHandler07requestK0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0P0V6ConfigV_yAKyAE19ServerSentEventTypeOARGcyANctYaF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV13callStreamSSE6config13streamHandler07requestK0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0P0V6ConfigV_yAKyAE19ServerSentEventTypeOARGcyANctYaF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV13callStreamSSE6config13streamHandler07requestK09Alamofire04DataG7RequestC10CompletionVAE0O0V6ConfigV_ys6ResultOyAE19ServerSentEventTypeOSo7NSErrorCGcyALctYaKF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV13callStreamSSE6config13streamHandler07requestK09Alamofire04DataG7RequestC10CompletionVAE0O0V6ConfigV_ys6ResultOyAE19ServerSentEventTypeOSo7NSErrorCGcyALctYaKF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -14475,23 +14456,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Completion",
-                        "printedName": "Alamofire.DataStreamRequest.Completion",
-                        "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Completion",
+                    "printedName": "Alamofire.DataStreamRequest.Completion",
+                    "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -14551,14 +14518,15 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config13streamHandler07requestJ0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_yAKy10Foundation0N0VARGcyANctYaF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config13streamHandler07requestJ0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0O0V6ConfigV_yAKy10Foundation0N0VARGcyANctYaF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config13streamHandler07requestJ09Alamofire04DataG7RequestC10CompletionVAE0N0V6ConfigV_ys6ResultOy10Foundation0M0VSo7NSErrorCGcyALctYaKF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config13streamHandler07requestJ09Alamofire04DataG7RequestC10CompletionVAE0N0V6ConfigV_ys6ResultOy10Foundation0M0VSo7NSErrorCGcyALctYaKF",
                 "moduleName": "EdgeCore",
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -14568,23 +14536,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Completion",
-                        "printedName": "Alamofire.DataStreamRequest.Completion",
-                        "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "Completion",
+                    "printedName": "Alamofire.DataStreamRequest.Completion",
+                    "usr": "s:9Alamofire17DataStreamRequestC10CompletionV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -14655,8 +14609,8 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config4type13streamHandler07requestK0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0P0V6ConfigV_xmyALyxASGcyAOctYaSeRzSERzlF",
-                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config4type13streamHandler07requestK0s6ResultOy9Alamofire04DataG7RequestC10CompletionVSo7NSErrorCGAE0P0V6ConfigV_xmyALyxASGcyAOctYaSeRzSERzlF",
+                "usr": "s:8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config4type13streamHandler07requestK09Alamofire04DataG7RequestC10CompletionVAE0O0V6ConfigV_xmys6ResultOyxSo7NSErrorCGcyAMctYaKSeRzSERzlF",
+                "mangledName": "$s8EdgeCore13ClientLibraryC12MicroserviceV10callStream6config4type13streamHandler07requestK09Alamofire04DataG7RequestC10CompletionVAE0O0V6ConfigV_xmys6ResultOyxSo7NSErrorCGcyAMctYaKSeRzSERzlF",
                 "moduleName": "EdgeCore",
                 "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
                 "sugared_genericSig": "<T where T : Swift.Decodable, T : Swift.Encodable>",
@@ -14665,6 +14619,7 @@
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -15142,6 +15097,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -15516,6 +15478,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -15753,6 +15722,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -16546,6 +16522,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -17096,6 +17079,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -17333,6 +17323,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -17686,6 +17683,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -18743,6 +18747,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -19110,6 +19121,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -19704,6 +19722,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -19945,6 +19970,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -21658,6 +21690,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -23110,6 +23149,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -23472,6 +23518,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -23682,6 +23735,13 @@
                             "printedName": "Hashable",
                             "usr": "s:SH",
                             "mangledName": "$sSH"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -24287,6 +24347,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -24873,6 +24940,13 @@
                         "printedName": "Sendable",
                         "usr": "s:s8SendableP",
                         "mangledName": "$ss8SendableP"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       }
                     ]
                   },
@@ -25079,6 +25153,13 @@
                             "printedName": "Hashable",
                             "usr": "s:SH",
                             "mangledName": "$sSH"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -25590,6 +25671,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -26039,6 +26127,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       },
                       {
                         "kind": "Conformance",
@@ -27142,6 +27237,13 @@
                             "printedName": "Hashable",
                             "usr": "s:SH",
                             "mangledName": "$sSH"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -27344,6 +27446,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       },
                       {
                         "kind": "Conformance",
@@ -28757,6 +28866,13 @@
                             "printedName": "Hashable",
                             "usr": "s:SH",
                             "mangledName": "$sSH"
+                          },
+                          {
+                            "kind": "Conformance",
+                            "name": "SendableMetatype",
+                            "printedName": "SendableMetatype",
+                            "usr": "s:s16SendableMetatypeP",
+                            "mangledName": "$ss16SendableMetatypeP"
                           }
                         ]
                       },
@@ -29982,6 +30098,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -30719,6 +30842,13 @@
                         "printedName": "Hashable",
                         "usr": "s:SH",
                         "mangledName": "$sSH"
+                      },
+                      {
+                        "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
                       },
                       {
                         "kind": "Conformance",
@@ -31588,6 +31718,13 @@
                       },
                       {
                         "kind": "Conformance",
+                        "name": "SendableMetatype",
+                        "printedName": "SendableMetatype",
+                        "usr": "s:s16SendableMetatypeP",
+                        "mangledName": "$ss16SendableMetatypeP"
+                      },
+                      {
+                        "kind": "Conformance",
                         "name": "Equatable",
                         "printedName": "Equatable",
                         "usr": "s:SQ",
@@ -31647,6 +31784,13 @@
                     "printedName": "Hashable",
                     "usr": "s:SH",
                     "mangledName": "$sSH"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   },
                   {
                     "kind": "Conformance",
@@ -34600,6 +34744,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -34966,6 +35117,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -35207,6 +35365,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -35523,6 +35688,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -35951,6 +36123,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -37307,6 +37486,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -37628,6 +37814,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -37869,6 +38062,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -38040,6 +38240,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -38276,6 +38483,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -39059,6 +39273,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -39385,6 +39606,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -40140,6 +40368,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -41163,6 +41398,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               }
@@ -41211,6 +41453,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -41660,17 +41909,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.URLRequest?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "URLRequest",
-                        "printedName": "Foundation.URLRequest",
-                        "usr": "s:10Foundation10URLRequestV"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "URLRequest",
+                    "printedName": "Foundation.URLRequest",
+                    "usr": "s:10Foundation10URLRequestV"
                   },
                   {
                     "kind": "TypeNominal",
@@ -41749,14 +41990,15 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC7RequestV010authorizedE03url6method13authorization11httpHeaders0J4Body11contentType10Foundation10URLRequestVSgAM3URLV_9Alamofire10HTTPMethodVAC13AuthorizationVSgAS11HTTPHeadersVSgSDySSs8Sendable_pGSgSStFZ",
-                "mangledName": "$s8EdgeCore13ClientLibraryC7RequestV010authorizedE03url6method13authorization11httpHeaders0J4Body11contentType10Foundation10URLRequestVSgAM3URLV_9Alamofire10HTTPMethodVAC13AuthorizationVSgAS11HTTPHeadersVSgSDySSs8Sendable_pGSgSStFZ",
+                "usr": "s:8EdgeCore13ClientLibraryC7RequestV010authorizedE03url6method13authorization11httpHeaders0J4Body11contentType10Foundation10URLRequestVAM3URLV_9Alamofire10HTTPMethodVAC13AuthorizationVSgAR11HTTPHeadersVSgSDySSs8Sendable_pGSgSStKFZ",
+                "mangledName": "$s8EdgeCore13ClientLibraryC7RequestV010authorizedE03url6method13authorization11httpHeaders0J4Body11contentType10Foundation10URLRequestVAM3URLV_9Alamofire10HTTPMethodVAC13AuthorizationVSgAR11HTTPHeadersVSgSDySSs8Sendable_pGSgSStKFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
                   "AccessControl",
                   "RawDocComment"
                 ],
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -42078,23 +42320,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Result",
-                    "printedName": "Swift.Result<UIKit.UIImage, Foundation.NSError>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIImage",
-                        "printedName": "UIKit.UIImage",
-                        "usr": "c:objc(cs)UIImage"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSError",
-                        "printedName": "Foundation.NSError",
-                        "usr": "c:objc(cs)NSError"
-                      }
-                    ],
-                    "usr": "s:s6ResultO"
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
                   },
                   {
                     "kind": "TypeNominal",
@@ -42104,8 +42332,8 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8EdgeCore13ClientLibraryC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaFZ",
-                "mangledName": "$s8EdgeCore13ClientLibraryC7RequestV20downloadImageContent9sourceUrls6ResultOySo7UIImageCSo7NSErrorCG10Foundation3URLV_tYaFZ",
+                "usr": "s:8EdgeCore13ClientLibraryC7RequestV20downloadImageContent9sourceUrlSo7UIImageC10Foundation3URLV_tYaKFZ",
+                "mangledName": "$s8EdgeCore13ClientLibraryC7RequestV20downloadImageContent9sourceUrlSo7UIImageC10Foundation3URLV_tYaKFZ",
                 "moduleName": "EdgeCore",
                 "static": true,
                 "declAttributes": [
@@ -42113,6 +42341,7 @@
                   "RawDocComment"
                 ],
                 "isFromExtension": true,
+                "throwing": true,
                 "funcSelfKind": "NonMutating"
               },
               {
@@ -42829,6 +43058,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -43057,6 +43293,13 @@
                     "printedName": "Sendable",
                     "usr": "s:s8SendableP",
                     "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SendableMetatype",
+                    "printedName": "SendableMetatype",
+                    "usr": "s:s16SendableMetatypeP",
+                    "mangledName": "$ss16SendableMetatypeP"
                   }
                 ]
               },
@@ -43648,6 +43891,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           }
@@ -43689,6 +43939,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -44568,6 +44825,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -44872,6 +45136,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -45123,6 +45394,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -46093,6 +46371,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           },
@@ -46448,6 +46733,13 @@
                 "printedName": "Sendable",
                 "usr": "s:s8SendableP",
                 "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "SendableMetatype",
+                "printedName": "SendableMetatype",
+                "usr": "s:s16SendableMetatypeP",
+                "mangledName": "$ss16SendableMetatypeP"
               }
             ]
           }
@@ -46489,6 +46781,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -48256,6 +48555,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Encodable",
             "printedName": "Encodable",
             "usr": "s:SE",
@@ -48274,35 +48580,6 @@
             "printedName": "_HasContiguousBytes",
             "usr": "s:s19_HasContiguousBytesP",
             "mangledName": "$ss19_HasContiguousBytesP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_ObjectiveCBridgeable",
-            "printedName": "_ObjectiveCBridgeable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "_ObjectiveCType",
-                "printedName": "_ObjectiveCType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSArray",
-                    "printedName": "Foundation.NSArray",
-                    "usr": "c:objc(cs)NSArray"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:s21_ObjectiveCBridgeableP",
-            "mangledName": "$ss21_ObjectiveCBridgeableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
           },
           {
             "kind": "Conformance",
@@ -48400,6 +48677,35 @@
           },
           {
             "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSArray",
+                    "printedName": "Foundation.NSArray",
+                    "usr": "c:objc(cs)NSArray"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
             "name": "AlamofireExtended",
             "printedName": "AlamofireExtended",
             "children": [
@@ -48426,6 +48732,20 @@
             ],
             "usr": "s:9Alamofire0A8ExtendedP",
             "mangledName": "$s9Alamofire0A8ExtendedP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Content",
+            "printedName": "Content",
+            "usr": "s:So17CMSampleBufferRefa9CoreMediaE7ContentP",
+            "mangledName": "$sSo17CMSampleBufferRefa9CoreMediaE7ContentP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ContentWithFormatDescription",
+            "printedName": "ContentWithFormatDescription",
+            "usr": "s:So17CMSampleBufferRefa9CoreMediaE28ContentWithFormatDescriptionP",
+            "mangledName": "$sSo17CMSampleBufferRefa9CoreMediaE28ContentWithFormatDescriptionP"
           }
         ]
       },
@@ -48731,364 +49051,259 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 647,
+      "offset": 634,
       "length": 21,
       "value": "\"Manifest file error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 734,
+      "offset": 711,
       "length": 21,
       "value": "\"Manifest file error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 763,
+      "offset": 740,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 856,
+      "offset": 832,
       "length": 10,
       "value": "\"useCase:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1195,
-      "length": 27,
-      "value": "\"Use Case Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 1288,
-      "length": 27,
-      "value": "\"Use Case Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1323,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 1829,
+      "offset": 1594,
       "length": 6,
       "value": "\".mim\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1967,
+      "offset": 1732,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 2059,
+      "offset": 1814,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 2089,
+      "offset": 1844,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 2446,
-      "length": 21,
-      "value": "\"Manifest file error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 2537,
-      "length": 21,
-      "value": "\"Manifest file error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2566,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 2761,
+      "offset": 2179,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 2791,
+      "offset": 2209,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "Array",
-      "offset": 3073,
+      "offset": 2480,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "BooleanLiteral",
-      "offset": 3154,
+      "offset": 2560,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 3394,
+      "offset": 2773,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 3471,
+      "offset": 2855,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 3501,
+      "offset": 2885,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 3847,
-      "length": 14,
-      "value": "\"Config error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 3916,
-      "length": 14,
-      "value": "\"Config error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3938,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 4048,
+      "offset": 3214,
       "length": 9,
       "value": "\"bundled\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4060,
+      "offset": 3226,
       "length": 13,
       "value": "\"not bundled\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4852,
-      "length": 18,
-      "value": "\"Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 4925,
-      "length": 18,
-      "value": "\"Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4951,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 5123,
+      "offset": 3912,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5138,
+      "offset": 3927,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 5549,
+      "offset": 4317,
       "length": 6,
       "value": "\".mim\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 5683,
+      "offset": 4451,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 5760,
+      "offset": 4529,
       "length": 22,
       "value": "\"Invalid source error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5790,
+      "offset": 4559,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 6025,
+      "offset": 4793,
       "length": 14,
       "value": "\"Bundle error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 6094,
+      "offset": 4867,
       "length": 14,
       "value": "\"Config error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 6116,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 6499,
-      "length": 14,
-      "value": "\"Config error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 6568,
-      "length": 14,
-      "value": "\"Config error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6590,
+      "offset": 4889,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "Dictionary",
-      "offset": 6938,
+      "offset": 5403,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "Dictionary",
-      "offset": 6980,
+      "offset": 5457,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7427,
+      "offset": 5903,
       "length": 85,
       "value": "\"Required user input value \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7476,
+      "offset": 5952,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7482,
+      "offset": 5958,
       "length": 2,
       "value": "\" is missing for \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7505,
+      "offset": 5981,
       "length": 5,
       "value": "\" error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7586,
+      "offset": 6052,
       "length": 85,
       "value": "\"Required user input value \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7635,
+      "offset": 6101,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7641,
+      "offset": 6107,
       "length": 2,
       "value": "\" is missing for \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "StringLiteral",
-      "offset": 7664,
+      "offset": 6130,
       "length": 5,
       "value": "\" error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+UseCaseInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 7679,
+      "offset": 6145,
       "length": 3,
       "value": "500"
     },
@@ -49480,84 +49695,84 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2271,
+      "offset": 2037,
       "length": 22,
       "value": "\"Unknown Format Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3729,
+      "offset": 3495,
       "length": 3,
       "value": "\":\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3754,
+      "offset": 3520,
       "length": 8,
       "value": "\"event:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3783,
+      "offset": 3549,
       "length": 7,
       "value": "\"data:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3809,
+      "offset": 3575,
       "length": 5,
       "value": "\"id:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3836,
+      "offset": 3602,
       "length": 8,
       "value": "\"retry:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 4335,
+      "offset": 4101,
       "length": 22,
       "value": "\"Unknown Format Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 4407,
+      "offset": 4173,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 4962,
+      "offset": 4728,
       "length": 22,
       "value": "\"Unknown Format Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5025,
+      "offset": 4791,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5079,
+      "offset": 4845,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+CallSSE.Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5128,
+      "offset": 4894,
       "length": 1,
       "value": "1"
     },
@@ -50131,49 +50346,49 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1373,
+      "offset": 1029,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1456,
+      "offset": 1112,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 1491,
+      "offset": 1147,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1842,
+      "offset": 1498,
       "length": 9,
       "value": "\"Success\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1971,
+      "offset": 1627,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "StringLiteral",
-      "offset": 2034,
+      "offset": 1690,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+MicroserviceInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 2049,
+      "offset": 1705,
       "length": 3,
       "value": "500"
     },
@@ -50229,91 +50444,77 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+CallInternal.swift",
       "kind": "StringLiteral",
-      "offset": 705,
-      "length": 15,
-      "value": "\"Request Error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+CallInternal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 728,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+CallInternal.swift",
-      "kind": "StringLiteral",
-      "offset": 1380,
+      "offset": 1279,
       "length": 20,
       "value": "\"DecodableObj Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+CallInternal.swift",
       "kind": "StringLiteral",
-      "offset": 1470,
+      "offset": 1359,
       "length": 20,
       "value": "\"DecodableObj Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+CallInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 1498,
+      "offset": 1387,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 9348,
+      "offset": 9490,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 9666,
+      "offset": 9788,
       "length": 60,
       "value": "\"Device storage capacity information is not available error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 9734,
+      "offset": 9856,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 10290,
+      "offset": 10390,
       "length": 64,
       "value": "\".edge-service\/.edge\/.edge-mcm\/containers\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 10346,
+      "offset": 10446,
       "length": 1,
       "value": "\"\/cache\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 10443,
+      "offset": 10543,
       "length": 25,
       "value": "\"Working directory error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "Array",
-      "offset": 10755,
+      "offset": 10855,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Download+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 10846,
+      "offset": 10946,
       "length": 28,
       "value": "\"Directory enumerator error\""
     },
@@ -50689,20 +50890,6 @@
       "value": "\"Error\""
     },
     {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+Call.Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 3054,
-      "length": 15,
-      "value": "\"Request Error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Internal\/ClientLibrary.Microservice+Call.Internal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3077,
-      "length": 3,
-      "value": "500"
-    },
-    {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/DeveloperConsole\/DeveloperConsole+Internal.swift",
       "kind": "StringLiteral",
       "offset": 435,
@@ -50796,79 +50983,177 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/ClientLibrary+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 4298,
+      "offset": 4283,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/ClientLibrary+Microservice.swift",
       "kind": "StringLiteral",
-      "offset": 4395,
+      "offset": 4370,
       "length": 27,
       "value": "\"Invalid identifiers error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Microservices\/Public\/ClientLibrary+Microservice.swift",
       "kind": "IntegerLiteral",
-      "offset": 4430,
+      "offset": 4405,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2265,
-      "length": 18,
-      "value": "\"application\/json\""
+      "offset": 884,
+      "length": 11,
+      "value": "\"Url error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2719,
-      "length": 30,
-      "value": "\"Custom HTTPHeaderField added\""
+      "offset": 951,
+      "length": 11,
+      "value": "\"Url error\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "IntegerLiteral",
+      "offset": 970,
+      "length": 3,
+      "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3072,
+      "offset": 1387,
       "length": 27,
       "value": "\"Bearer \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3098,
+      "offset": 1413,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3121,
+      "offset": 1436,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3182,
+      "offset": 1489,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 1529,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 1651,
+      "length": 63,
+      "value": "\"Access token validation failed: \""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 1713,
+      "length": 22,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 1774,
+      "length": 32,
+      "value": "\"Access token validation failed\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1814,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 2463,
+      "length": 18,
+      "value": "\"application\/json\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 2917,
+      "length": 30,
+      "value": "\"Custom HTTPHeaderField added\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3270,
+      "length": 27,
+      "value": "\"Bearer \""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3296,
+      "length": 24,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3319,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 3380,
       "length": 42,
       "value": "\"Access token validation failed: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3223,
+      "offset": 3421,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3312,
+      "offset": 3510,
       "length": 14,
       "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "StringLiteral",
+      "offset": 4042,
+      "length": 24,
+      "value": "\"Request Encoding Error\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+Internal.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4074,
+      "length": 3,
+      "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/DeveloperConsole\/AuthUI\/Internal\/BottomEnvText.swift",
@@ -50915,329 +51200,252 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 1802,
+      "offset": 1803,
       "length": 9,
       "value": "\"milm-v1\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 1822,
+      "offset": 1823,
       "length": 9,
       "value": "\"API_KEY\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2109,
-      "length": 18,
-      "value": "\"Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 2183,
-      "length": 18,
-      "value": "\"Deployment error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2209,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 2301,
+      "offset": 2141,
       "length": 53,
       "value": "\"AI use case deployed successfully, model downloaded\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2673,
+      "offset": 2505,
       "length": 10,
       "value": "\"aiModels\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2861,
+      "offset": 2614,
       "length": 20,
       "value": "\"Microservice error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2947,
-      "length": 20,
-      "value": "\"Microservice error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2975,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 3222,
-      "length": 20,
-      "value": "\"Microservice error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 3308,
+      "offset": 2690,
       "length": 20,
       "value": "\"Microservice error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 3336,
+      "offset": 2718,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3422,
+      "offset": 3043,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3446,
+      "offset": 3067,
       "length": 18,
       "value": "\"bearer \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3463,
+      "offset": 3084,
       "length": 3,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3765,
+      "offset": 3393,
       "length": 21,
       "value": "\"Configuration error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3852,
+      "offset": 3470,
       "length": 21,
       "value": "\"Configuration error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 3881,
+      "offset": 3499,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "Array",
-      "offset": 4125,
+      "offset": 3749,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "Array",
-      "offset": 4202,
+      "offset": 3817,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "BooleanLiteral",
-      "offset": 4316,
+      "offset": 3923,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 4959,
+      "offset": 4325,
       "length": 15,
       "value": "\"deleteAIModel\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5152,
+      "offset": 4439,
       "length": 20,
       "value": "\"Microservice error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5238,
-      "length": 20,
-      "value": "\"Microservice error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5266,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 5513,
-      "length": 20,
-      "value": "\"Microservice error\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
-      "kind": "StringLiteral",
-      "offset": 5599,
+      "offset": 4515,
       "length": 20,
       "value": "\"Microservice error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5627,
+      "offset": 4543,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5713,
+      "offset": 4868,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5737,
+      "offset": 4892,
       "length": 18,
       "value": "\"bearer \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5754,
+      "offset": 4909,
       "length": 3,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5909,
+      "offset": 5071,
       "length": 9,
       "value": "\"modelId\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 6095,
+      "offset": 5257,
       "length": 21,
       "value": "\"Configuration error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 6182,
+      "offset": 5334,
       "length": 21,
       "value": "\"Configuration error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 6211,
+      "offset": 5363,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary+AI+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 6460,
+      "offset": 5597,
       "length": 16,
       "value": "\"Deleted model:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 661,
+      "offset": 672,
       "length": 36,
       "value": "\"Generating mim OE runtime ID token\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
-      "kind": "StringLiteral",
-      "offset": 996,
-      "length": 44,
-      "value": "\"Failed to generate mim OE runtime ID token\""
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1048,
-      "length": 3,
-      "value": "500"
-    },
-    {
-      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "Array",
-      "offset": 1233,
+      "offset": 1099,
       "length": 76,
       "value": "[\"openid\", \"read:me\", \"edge:mcm\", \"edge:clusters\", \"edge:account:associate\"]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1406,
+      "offset": 1272,
       "length": 5,
       "value": "\"aud\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1501,
+      "offset": 1367,
       "length": 5,
       "value": "\"iss\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1596,
+      "offset": 1462,
       "length": 28,
       "value": "\"Invalid developer ID token\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "IntegerLiteral",
-      "offset": 1632,
+      "offset": 1498,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1802,
+      "offset": 1668,
       "length": 11,
       "value": "\"clientId:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Authentication-Services\/Internal\/ClientLibrary+AuthDeveloperIdToken.swift",
       "kind": "StringLiteral",
-      "offset": 1825,
+      "offset": 1691,
       "length": 6,
       "value": "\"url:\""
     },
@@ -51930,112 +52138,112 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 742,
+      "offset": 732,
       "length": 20,
       "value": "\"Not an image error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 832,
+      "offset": 812,
       "length": 20,
       "value": "\"Not an image error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 860,
+      "offset": 840,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 2939,
+      "offset": 2853,
       "length": 12,
       "value": "\"File error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 3021,
+      "offset": 2925,
       "length": 12,
       "value": "\"File error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 3041,
+      "offset": 2945,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4074,
+      "offset": 3954,
       "length": 12,
       "value": "\"File error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4146,
+      "offset": 4026,
       "length": 12,
       "value": "\"File error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 4166,
+      "offset": 4046,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4686,
+      "offset": 4566,
       "length": 16,
       "value": "\"sourceFileUrl:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4719,
+      "offset": 4599,
       "length": 17,
       "value": "\"destinationUrl:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4754,
+      "offset": 4634,
       "length": 11,
       "value": "\"mimeType:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 4983,
+      "offset": 4863,
       "length": 12,
       "value": "\"File Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 5051,
+      "offset": 4931,
       "length": 12,
       "value": "\"File Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5071,
+      "offset": 4951,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary.Request+TransferInternal.swift",
       "kind": "StringLiteral",
-      "offset": 5125,
+      "offset": 5005,
       "length": 14,
       "value": "\"Content-Type\""
     },
@@ -52322,196 +52530,196 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 2913,
+      "offset": 3020,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 2936,
+      "offset": 3043,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3288,
+      "offset": 3395,
       "length": 46,
       "value": "\"Stream Explicitly Terminated. End of Stream.\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3418,
+      "offset": 3525,
       "length": 46,
       "value": "\"Stream Explicitly Terminated. End of Stream.\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 3472,
+      "offset": 3579,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 3712,
+      "offset": 3819,
       "length": 43,
       "value": "\"Task Explicitly Cancelled. End of Stream.\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5164,
+      "offset": 5271,
       "length": 4,
       "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "BooleanLiteral",
-      "offset": 5197,
+      "offset": 5304,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5237,
+      "offset": 5344,
       "length": 8,
       "value": "\"data: \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "IntegerLiteral",
-      "offset": 5303,
+      "offset": 5410,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5338,
+      "offset": 5445,
       "length": 8,
       "value": "\"[DONE]\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5437,
+      "offset": 5544,
       "length": 48,
       "value": "\"Raw SSE event contained [DONE]. End of Stream.\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5809,
+      "offset": 5916,
       "length": 16,
       "value": "\"Raw SSE event:\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/AI-Services\/Internal\/ClientLibrary.AI.HybridClient+Internal.swift",
       "kind": "StringLiteral",
-      "offset": 5870,
+      "offset": 5977,
       "length": 17,
       "value": "\"<invalid UTF-8>\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 648,
+      "offset": 667,
       "length": 13,
       "value": "\"Token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 731,
+      "offset": 740,
       "length": 13,
       "value": "\"Token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "IntegerLiteral",
-      "offset": 752,
+      "offset": 761,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 924,
+      "offset": 922,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 1362,
+      "offset": 1349,
       "length": 13,
       "value": "\"Token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 1435,
+      "offset": 1422,
       "length": 13,
       "value": "\"Token Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "IntegerLiteral",
-      "offset": 1456,
+      "offset": 1443,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 1610,
+      "offset": 1597,
       "length": 13,
       "value": "\"fullPathUrl\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 1794,
+      "offset": 1781,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 2091,
+      "offset": 2078,
       "length": 36,
       "value": "\"External mim OE runtime IS running\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "BooleanLiteral",
-      "offset": 2168,
+      "offset": 2155,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 2271,
+      "offset": 2258,
       "length": 74,
       "value": "\"External mim OE runtime is NOT running — \""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "StringLiteral",
-      "offset": 2344,
+      "offset": 2331,
       "length": 22,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Info.swift",
       "kind": "BooleanLiteral",
-      "offset": 2386,
+      "offset": 2373,
       "length": 5,
       "value": "false"
     },
@@ -52546,273 +52754,280 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 480,
+      "offset": 470,
       "length": 16,
       "value": "\"\/mcm\/v1\/images\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 926,
+      "offset": 773,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1007,
+      "offset": 844,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1030,
+      "offset": 867,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1201,
+      "offset": 1192,
       "length": 19,
       "value": "\"File not found at\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1300,
+      "offset": 1281,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1315,
+      "offset": 1296,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1500,
+      "offset": 1480,
       "length": 34,
       "value": "\"Unable to load file content from\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1614,
+      "offset": 1584,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1629,
+      "offset": 1599,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1769,
+      "offset": 1719,
       "length": 7,
       "value": "\"image\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 1788,
+      "offset": 1738,
       "length": 17,
       "value": "\"application\/tar\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1841,
+      "offset": 1815,
       "length": 11,
       "value": "100000000"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 2654,
+      "offset": 2617,
       "length": 20,
       "value": "\"\/mcm\/v1\/containers\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 3177,
+      "offset": 2990,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 3258,
+      "offset": 3061,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 3281,
+      "offset": 3084,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 4077,
+      "offset": 4081,
       "length": 10,
       "value": "\"\/mcm\/v1\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 4111,
+      "offset": 4115,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 4559,
+      "offset": 4418,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 4630,
+      "offset": 4489,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 4653,
+      "offset": 4512,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 6106,
+      "offset": 5954,
       "length": 16,
       "value": "\"\/mcm\/v1\/images\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 6551,
+      "offset": 6257,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 6632,
+      "offset": 6328,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 6655,
+      "offset": 6351,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "Array",
-      "offset": 6973,
+      "offset": 6875,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 7457,
+      "offset": 7336,
       "length": 20,
       "value": "\"\/mcm\/v1\/containers\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 7906,
+      "offset": 7643,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 7987,
+      "offset": 7714,
       "length": 15,
       "value": "\"Request Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 8010,
+      "offset": 7737,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "Array",
-      "offset": 8332,
+      "offset": 8265,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 9184,
+      "offset": 8946,
       "length": 7,
       "value": "\"Error\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 9199,
+      "offset": 8961,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9636,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 9945,
+      "offset": 9927,
       "length": 11,
       "value": "\"Not Found\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 10022,
+      "offset": 9994,
       "length": 28,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 10039,
+      "offset": 10011,
       "length": 3,
       "value": "\" Not Found\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "IntegerLiteral",
-      "offset": 10058,
+      "offset": 10030,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Internal\/ClientLibrary+Deploy.swift",
       "kind": "StringLiteral",
-      "offset": 10179,
+      "offset": 10133,
       "length": 7,
       "value": "\"Error\""
     },
@@ -53064,16 +53279,30 @@
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Public\/Request\/ClientLibrary+Request.swift",
       "kind": "StringLiteral",
-      "offset": 1238,
+      "offset": 1262,
       "length": 18,
       "value": "\"application\/json\""
     },
     {
       "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Public\/Request\/ClientLibrary+Request.swift",
       "kind": "StringLiteral",
-      "offset": 1548,
+      "offset": 1578,
       "length": 15,
       "value": "\"Request Error\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Public\/Request\/ClientLibrary+Request.swift",
+      "kind": "StringLiteral",
+      "offset": 1653,
+      "length": 15,
+      "value": "\"Request Error\""
+    },
+    {
+      "filePath": "\/Users\/rb\/Code\/client-libraries\/ios-edge-core\/EdgeCore\/Core-Services\/Public\/Request\/ClientLibrary+Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1676,
+      "length": 3,
+      "value": "500"
     }
   ]
 }

@@ -121,7 +121,6 @@ Use the table below to choose the CocoaPods that best match your use case:
 | [`EdgeCore`](https://github.com/mimikgit/cocoapod-EdgeCore) | Core |  | Always include |
 | [`mim-OE-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-SE-iOS-developer) | Core + mim OE | ❌ | Lightweight, non-AI apps |
 | [`mim-OE-ai-SE-iOS-developer`](https://github.com/mimikgit/cocoapod-mim-OE-ai-SE-iOS-developer) | Core + mim OE + AI | ✅ | Vision/Language AI support |
-| [`EdgeService`](https://github.com/mimikgit/cocoapod-EdgeService) | Deployment tools |  | For managing custom microservices |
 
 > **✅ Recommended Default:** Add `EdgeCore` and `mim-OE-ai-SE-iOS-developer` to your Podfile.
 
@@ -141,11 +140,12 @@ Use the table below to choose the CocoaPods that best match your use case:
   [ClientLibrary Reference](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/clientlibrary)  
   [ClientRuntime Protocol](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/clientruntime)
 
-- **EdgeService Reference:**  
-  [EdgeServiceClient Docs](https://mimikgit.github.io/cocoapod-EdgeService/documentation/edgeservice)
-
 - **Developer Console Reference:**  
   [DeveloperConsole APIs](https://mimikgit.github.io/cocoapod-EdgeCore/documentation/edgecore/developerconsole)
+
+- **ClientAccess Reference:**  
+  [ClientAccess Docs](https://mimikgit.github.io/cocoapod-EdgeService/documentation/clientaccess)
+
 
 - All APIs are also documented in Xcode with built-in method and struct descriptions.
 

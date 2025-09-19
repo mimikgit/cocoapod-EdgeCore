@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target x86_64-apple-ios16.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature DeprecateApplicationMain -enable-upcoming-feature ImportObjcForwardDeclarations -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature IsolatedDefaultValues -enable-upcoming-feature GlobalConcurrency -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name EdgeCore
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AVFoundation
 import Alamofire
 import AppAuth
@@ -27,9 +27,15 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var systemFingerprint: Swift.String?
     public var choices: [EdgeCore.ClientLibrary.AI.Model.Choice]?
     public var usage: EdgeCore.ClientLibrary.AI.Model.Usage?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(id: Swift.String? = nil, object: Swift.String? = nil, created: Swift.Int? = nil, model: Swift.String? = nil, systemFingerprint: Swift.String? = nil, choices: [EdgeCore.ClientLibrary.AI.Model.Choice]? = nil, usage: EdgeCore.ClientLibrary.AI.Model.Usage? = nil)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func contentMessage() -> EdgeCore.ClientLibrary.AI.Model.Message?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func contentText() -> Swift.String?
+    #endif
     public func role() -> Swift.String
     public func finished() -> Swift.Bool
     public func assistantOutput() -> EdgeCore.ClientLibrary.AI.Model.CompletionResponse
@@ -56,21 +62,25 @@ extension EdgeCore.ClientLibrary {
       get
     }
     @_Concurrency.MainActor public static func preferredNodeName() -> Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
     public func effectiveUrl() -> Foundation.URL?
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.ClientLibrary {
   public static func integrateAIService(accessToken: Swift.String, apiKey: Swift.String, useCase source: EdgeCore.ClientLibrary.UseCase.ConfigurationSource, requestHandler: @escaping (Alamofire.DataStreamRequest) -> Swift.Void = { _ in }) async throws -> EdgeCore.ClientLibrary.AI.ServiceIntegration
-  public static func deleteAIModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.ClientLibrary.UseCase) async -> Swift.Result<EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData, Foundation.NSError>
+  public static func deleteAIModel(id: Swift.String, accessToken: Swift.String, apiKey: Swift.String, useCase: EdgeCore.ClientLibrary.UseCase) async throws -> EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData
 }
 extension EdgeCore.ClientLibrary.Request {
   public static func call<T>(config: EdgeCore.ClientLibrary.Request.Config, type: T.Type) async throws -> T where T : Swift.Decodable, T : Swift.Encodable
   public static func call(config: EdgeCore.ClientLibrary.Request.Config) async throws -> SwiftyJSON.JSON
 }
 extension EdgeCore.ClientLibrary.Request {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func decode<T>(_ type: T.Type, from data: Foundation.Data) -> (decodableObj: T?, error: (any Swift.Error)?) where T : Swift.Decodable
+  #endif
 }
 extension EdgeCore.ClientLibrary.AI {
   public protocol ServiceInterface : Combine.ObservableObject, EdgeCore.ClientLibrary.AI.AssistantModels, EdgeCore.ClientLibrary.AI.AssistantPrompt {
@@ -78,7 +88,9 @@ extension EdgeCore.ClientLibrary.AI {
   }
   public protocol AssistantPrompt {
     func assistantPrompt(prompt: EdgeCore.ClientLibrary.AI.Model.Message) async throws -> EdgeCore.ClientLibrary.AI.CancellableStream<EdgeCore.ClientLibrary.AI.Model.CompletionResponse>
+    #if compiler(>=5.3) && $NonescapableTypes
     func assistantVisionPrompt(prompt: EdgeCore.ClientLibrary.AI.Model.Message, image: UIKit.UIImage, resizeImgOptions: EdgeCore.ClientLibrary.ImageResizeOptions?) async throws -> EdgeCore.ClientLibrary.AI.CancellableStream<EdgeCore.ClientLibrary.AI.Model.CompletionResponse>
+    #endif
   }
   public enum DownloadAIEvent {
     case request(Alamofire.DataStreamRequest)
@@ -102,7 +114,9 @@ extension EdgeCore.ClientLibrary.AI {
   public class HybridClient : EdgeCore.ClientLibrary.AI.ServiceInterface {
     final public let configuration: EdgeCore.ClientLibrary.AI.ServiceConfiguration
     public init(configuration: EdgeCore.ClientLibrary.AI.ServiceConfiguration)
+    #if compiler(>=5.3) && $NonescapableTypes
     public func assistantVisionPrompt(prompt: EdgeCore.ClientLibrary.AI.Model.Message, image: UIKit.UIImage, resizeImgOptions: EdgeCore.ClientLibrary.ImageResizeOptions?) async throws -> EdgeCore.ClientLibrary.AI.CancellableStream<EdgeCore.ClientLibrary.AI.Model.CompletionResponse>
+    #endif
     public func assistantPrompt(prompt: EdgeCore.ClientLibrary.AI.Model.Message) async throws -> EdgeCore.ClientLibrary.AI.CancellableStream<EdgeCore.ClientLibrary.AI.Model.CompletionResponse>
     public func availableModels() async throws -> [EdgeCore.ClientLibrary.AI.Model]
     public func availableModelsMessage() async throws -> EdgeCore.ClientLibrary.AI.Model.Message
@@ -123,7 +137,9 @@ extension EdgeCore.ClientLibrary.AI.ServiceConfiguration {
     public var id: Swift.String {
       get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(baseURL: Swift.String, apiKey: Swift.String?, modelEndpoint: Swift.String, chatEndpoint: Swift.String?, headers: Alamofire.HTTPHeaders, separators: Swift.String, modelId: Swift.String?)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.ServiceConfiguration.Endpoint, b: EdgeCore.ClientLibrary.AI.ServiceConfiguration.Endpoint) -> Swift.Bool
     public typealias ID = Swift.String
     public func hash(into hasher: inout Swift.Hasher)
@@ -140,7 +156,9 @@ extension EdgeCore.DeveloperConsole {
       public let footer: Swift.String
       public init(name: Swift.String, logoName: Swift.String, footer: Swift.String)
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     @_Concurrency.MainActor @preconcurrency public init(appInfo: EdgeCore.DeveloperConsole.AuthenticationView.AppInfo, onSuccess: ((EdgeCore.DeveloperConsole.Session) -> Swift.Void)? = nil, onError: ((Foundation.NSError) -> Swift.Void)? = nil)
+    #endif
     @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
       get
     }
@@ -151,7 +169,9 @@ extension EdgeCore.ClientLibrary.Microservice {
   public struct NewImage : Swift.Codable, Swift.Sendable {
     public var url: Swift.String?
     public var base64Image: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(url: Swift.String?, base64Image: Swift.String?)
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -159,7 +179,9 @@ extension EdgeCore.ClientLibrary.Microservice {
 extension EdgeCore.ClientLibrary.AI.Model {
   public struct DeleteModelResponseData : Swift.Codable, Swift.Sendable, Swift.Hashable {
     public var data: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(data: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse? = nil)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData, b: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponseData) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -171,7 +193,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
   public struct DeleteModelResponse : Swift.Codable, Swift.Sendable, Swift.Hashable {
     public enum Object : Swift.String, Swift.Codable, Swift.Sendable, Swift.Hashable {
       case model
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -180,7 +204,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var id: Swift.String?
     public var object: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse.Object?
     public var deleted: Swift.Bool?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(id: Swift.String? = nil, object: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse.Object? = nil, deleted: Swift.Bool? = nil)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse, b: EdgeCore.ClientLibrary.AI.Model.DeleteModelResponse) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -201,7 +227,9 @@ extension EdgeCore.ClientLibrary.Authorization {
     public var bindingCode: Swift.String? {
       get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(mfaCode: Swift.String?, oobCode: Swift.String?, bindingCode: Swift.String?)
+    #endif
     public var description: Swift.String {
       get
     }
@@ -218,7 +246,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public let useCase: EdgeCore.ClientLibrary.UseCase
     public let context: [EdgeCore.ClientLibrary.AI.Model.Message]?
     public var temperature: Swift.Float
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(modelId: Swift.String, accessToken: Swift.String, apiKey: Swift.String, prompt: EdgeCore.ClientLibrary.AI.Model.Message, useCase: EdgeCore.ClientLibrary.UseCase, context: [EdgeCore.ClientLibrary.AI.Model.Message]? = nil, temperature: Swift.Float? = nil)
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -235,10 +265,14 @@ extension EdgeCore.ClientLibrary {
     public var expectedVersion: Swift.String?
     public var healthCheckPath: Swift.String?
     public var scope: [Swift.String]?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(rootUrl: Foundation.URL, basePath: Swift.String? = nil, clientId: Swift.String? = nil, expectedVersion: Swift.String? = nil, healthCheckPath: Swift.String? = nil, scope: [Swift.String]? = [])
+    #endif
     public func healthCheck() async throws -> EdgeCore.ClientLibrary.Service.HealthCheck
     public func versionCheck(requireMatch: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Service.VersionCheck
+    #if compiler(>=5.3) && $NonescapableTypes
     public func urlComponents() -> Foundation.URLComponents?
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -292,7 +326,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
   public struct ModelsResponse : Swift.Codable, Swift.Sendable, Swift.Hashable {
     public enum Object : Swift.String, Swift.Codable, Swift.Sendable, Swift.Hashable {
       case list
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -300,7 +336,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     }
     public var object: EdgeCore.ClientLibrary.AI.Model.ModelsResponse.Object?
     public var data: [EdgeCore.ClientLibrary.AI.Model]?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(object: EdgeCore.ClientLibrary.AI.Model.ModelsResponse.Object? = nil, data: [EdgeCore.ClientLibrary.AI.Model]? = nil)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.ModelsResponse, b: EdgeCore.ClientLibrary.AI.Model.ModelsResponse) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -334,7 +372,9 @@ extension EdgeCore.ClientLibrary.Microservice {
       case removing
       case paused
       case started
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -348,7 +388,9 @@ extension EdgeCore.ClientLibrary.Microservice {
     public var env: [Swift.String : Swift.String]?
     public var name: Swift.String?
     public var clientId: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public func basePath() -> Swift.String?
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -365,7 +407,9 @@ extension EdgeCore.ClientLibrary {
     public let features: [EdgeCore.ClientLibrary.UseCase.Feature]?
     public let microservices: [EdgeCore.ClientLibrary.UseCase.Config]?
     public var deployedMicroservices: [EdgeCore.ClientLibrary.Microservice]?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(name: Swift.String?, bundled: Swift.Bool?, version: Swift.String?, features: [EdgeCore.ClientLibrary.UseCase.Feature]?, microservices: [EdgeCore.ClientLibrary.UseCase.Config]?, deployedMicroservices: [EdgeCore.ClientLibrary.Microservice]? = nil)
+    #endif
     public struct Feature : Swift.Codable, Swift.Sendable {
       public let signature: Swift.String
       public let endpoint: Swift.String
@@ -421,7 +465,9 @@ extension EdgeCore.ClientLibrary {
   }
 }
 extension EdgeCore.ClientLibrary.Microservice {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func preferredConfig(imageName: Swift.String, containerName: Swift.String, basePath: Swift.String, runtimeFullPathUrl: Foundation.URLComponents, clientId: Swift.String, envVariables: [Swift.String : Swift.String]? = nil, signatureKey: Swift.String? = nil, ownerCode: Swift.String? = nil) -> EdgeCore.ClientLibrary.Microservice.Config?
+  #endif
   public static func expectedDeployedImageId(imageName: Swift.String, clientId: Swift.String) -> Swift.String
   public static func expectedDeployedContainerId(containerName: Swift.String, clientId: Swift.String) -> Swift.String
   public static func expectedDeployedBasePath(path: Swift.String, clientId: Swift.String) -> Swift.String
@@ -435,18 +481,20 @@ public typealias EdgeClient = EdgeCore.ClientLibrary
   public static func activateExternalRuntime(host: Swift.String, port: Swift.Int) throws -> Foundation.URLComponents
   public static func externalRuntimeIsActivated() -> Swift.Bool
   public static func deactivateExternalRuntime() throws
-  public static func deployMicroservice(accessToken: Swift.String, config: EdgeCore.ClientLibrary.Microservice.Config, imageTarPath: Swift.String) async -> Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>
-  public static func deployImage(accessToken: Swift.String, imageTarPath: Swift.String) async -> Swift.Result<EdgeCore.ClientLibrary.Microservice.NewImage, Foundation.NSError>
-  public static func deployContainer(accessToken: Swift.String, config: EdgeCore.ClientLibrary.Microservice.Config) async -> Swift.Result<EdgeCore.ClientLibrary.Microservice.NewContainer, Foundation.NSError>
-  public static func deployUseCase(accessToken: Swift.String, configUrl: Swift.String, dynamicConfig: [EdgeCore.ClientLibrary.Microservice.DynamicConfig]) async -> Swift.Result<EdgeCore.ClientLibrary.UseCase, Foundation.NSError>
-  public static func deployUseCase(accessToken: Swift.String, config: EdgeCore.ClientLibrary.UseCase, dynamicConfig: [EdgeCore.ClientLibrary.Microservice.DynamicConfig]) async -> Swift.Result<EdgeCore.ClientLibrary.UseCase, Foundation.NSError>
+  public static func deployMicroservice(accessToken: Swift.String, config: EdgeCore.ClientLibrary.Microservice.Config, imageTarPath: Swift.String) async throws -> EdgeCore.ClientLibrary.Microservice
+  public static func deployImage(accessToken: Swift.String, imageTarPath: Swift.String) async throws -> EdgeCore.ClientLibrary.Microservice.NewImage
+  public static func deployContainer(accessToken: Swift.String, config: EdgeCore.ClientLibrary.Microservice.Config) async throws -> EdgeCore.ClientLibrary.Microservice.NewContainer
+  public static func deployUseCase(accessToken: Swift.String, configUrl: Swift.String, dynamicConfig: [EdgeCore.ClientLibrary.Microservice.DynamicConfig]) async throws -> EdgeCore.ClientLibrary.UseCase
+  public static func deployUseCase(accessToken: Swift.String, config: EdgeCore.ClientLibrary.UseCase, dynamicConfig: [EdgeCore.ClientLibrary.Microservice.DynamicConfig]) async throws -> EdgeCore.ClientLibrary.UseCase
   public static func undeployMicroservice(accessToken: Swift.String, microservice: EdgeCore.ClientLibrary.Microservice) async throws
-  public static func microservices(accessToken: Swift.String) async -> Swift.Result<[EdgeCore.ClientLibrary.Microservice], Foundation.NSError>
-  public static func microservice(containerName: Swift.String, accessToken: Swift.String) async -> Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>
-  public static func runtimeIdToken() async -> Swift.Result<Swift.String, Foundation.NSError>
+  public static func microservices(accessToken: Swift.String) async throws -> [EdgeCore.ClientLibrary.Microservice]
+  public static func microservice(containerName: Swift.String, accessToken: Swift.String) async throws -> EdgeCore.ClientLibrary.Microservice
+  public static func runtimeIdToken() async throws -> Swift.String
   public static func runtimeInfo() async throws -> SwiftyJSON.JSON
   public static func runtimeIsRunning() async -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func runtimeWorkingDirectory() -> Foundation.URL?
+  #endif
   public static func externalRuntimeIsRunning() async -> Swift.Bool
   public static func runtimeFullPathUrl() -> Foundation.URLComponents
   @objc deinit
@@ -484,11 +532,15 @@ extension EdgeCore.ClientLibrary.AI {
     public let apiKey: Swift.String?
     public let mimOEPort: Swift.Int?
     public let mimOEClientId: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(kind: EdgeCore.ClientLibrary.AI.ServiceConfiguration.Kind, model: EdgeCore.ClientLibrary.AI.Model?, apiKey: Swift.String?, mimOEPort: Swift.Int?, mimOEClientId: Swift.String?)
+    #endif
     public enum Kind : Swift.String {
       case gemini
       case mimikAI
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -497,10 +549,14 @@ extension EdgeCore.ClientLibrary.AI {
     public var id: Swift.String {
       get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public var modelId: Swift.String? {
       get
     }
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func endpoint() -> EdgeCore.ClientLibrary.AI.ServiceConfiguration.Endpoint?
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.ServiceConfiguration, b: EdgeCore.ClientLibrary.AI.ServiceConfiguration) -> Swift.Bool
     public typealias ID = Swift.String
     public func hash(into hasher: inout Swift.Hasher)
@@ -517,12 +573,20 @@ extension EdgeCore.ClientLibrary {
 }
 extension Swift.Encodable {
   public func prettyPrinted() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public var dictionary: [Swift.String : any Swift.Sendable]? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func json() -> SwiftyJSON.JSON?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func jsonString() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func jsonData() -> Foundation.Data?
+  #endif
   public func encoded() throws -> Foundation.Data
 }
 extension EdgeCore.ClientLibrary {
@@ -530,7 +594,9 @@ extension EdgeCore.ClientLibrary {
     public enum Component : Swift.String, Swift.Codable, Swift.Sendable {
       case image
       case container
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -546,10 +612,16 @@ extension EdgeCore.ClientLibrary {
       public func encode(to encoder: any Swift.Encoder) throws
       public init(from decoder: any Swift.Decoder) throws
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public func urlComponents() -> Foundation.URLComponents?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func urlComponents(withEndpoint endpoint: Swift.String) -> Foundation.URLComponents?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func basePath() -> Swift.String?
-    public func updateEnv(accessToken: Swift.String, envVariables: [Swift.String : Swift.String]) async -> Swift.Result<EdgeCore.ClientLibrary.Microservice, Foundation.NSError>
+    #endif
+    public func updateEnv(accessToken: Swift.String, envVariables: [Swift.String : Swift.String]) async throws -> EdgeCore.ClientLibrary.Microservice
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -573,9 +645,13 @@ extension EdgeCore.ClientLibrary.Microservice {
       public let httpBody: Alamofire.Parameters?
       public let httpHeaders: Alamofire.HTTPHeaders?
       public let dataKey: Swift.String?
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.ClientLibrary.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders?, dataKey: Swift.String?)
+      #endif
     }
-    public static func microserviceRequest(microservice: EdgeCore.ClientLibrary.Microservice, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.ClientLibrary.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, timeoutInterval: Foundation.TimeInterval? = nil, cachePolicy: Foundation.URLRequest.CachePolicy? = nil) -> Swift.Result<Foundation.URLRequest, Foundation.NSError>
+    #if compiler(>=5.3) && $NonescapableTypes
+    public static func microserviceRequest(microservice: EdgeCore.ClientLibrary.Microservice, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.ClientLibrary.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, timeoutInterval: Foundation.TimeInterval? = nil, cachePolicy: Foundation.URLRequest.CachePolicy? = nil) throws -> Foundation.URLRequest
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -600,7 +676,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var content: Swift.String?
     public var thumbnailBase64: Swift.String?
     public var modelId: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(role: Swift.String? = nil, content: Swift.String? = nil, thumbnailBase64: Swift.String? = nil, modelId: Swift.String? = nil)
+    #endif
     public var isAiType: Swift.Bool {
       get
     }
@@ -643,7 +721,9 @@ extension EdgeCore.ClientLibrary.Service {
       case expected
       case unexpectedWarning
       case unexpectedFailure
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -658,7 +738,9 @@ extension EdgeCore.ClientLibrary.Service {
 @_hasMissingDesignatedInitializers public actor DeveloperConsole {
   @_hasMissingDesignatedInitializers public actor Auth {
     public static func authenticate(email: Swift.String, password: Swift.String) async throws -> EdgeCore.ClientLibrary.Authorization
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func authorizeRuntimeAccess(idToken: Swift.String, runtimeIdToken: Swift.String? = nil) async throws -> EdgeCore.ClientLibrary.Authorization
+    #endif
     public static func signup(email: Swift.String, password: Swift.String) async throws -> EdgeCore.ClientLibrary.Authorization
     public static func verifySignup(codes: EdgeCore.ClientLibrary.Authorization.ValidationCodes, password: Swift.String) async throws -> EdgeCore.ClientLibrary.Authorization
     public static func requestPasswordReset(email: Swift.String) async throws -> EdgeCore.ClientLibrary.Authorization
@@ -676,8 +758,12 @@ extension EdgeCore.ClientLibrary.Service {
   @_hasMissingDesignatedInitializers public actor Apps {
     public static func create(accessToken: Swift.String, payload: EdgeCore.DeveloperConsole.CreateAppRequest) async throws -> EdgeCore.DeveloperConsole.AppRegistration
     public static func list(accessToken: Swift.String) async throws -> [EdgeCore.DeveloperConsole.AppRegistration]
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func find(accessToken: Swift.String, name: Swift.String) async throws -> EdgeCore.DeveloperConsole.AppRegistration?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func find(accessToken: Swift.String, clientId: Swift.String) async throws -> EdgeCore.DeveloperConsole.AppRegistration?
+    #endif
     public static func delete(accessToken: Swift.String, clientId: Swift.String) async throws -> Swift.String
     @objc deinit
     @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
@@ -732,7 +818,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
       case granite
       case gigachat
       case megrez
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -747,7 +835,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var ownedBy: Swift.String?
     public var expectedDownloadSize: Swift.Int64
     public var excludeFromBackup: Swift.Bool?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(id: Swift.String, object: Swift.String, url: Swift.String, expectedDownloadSize: Swift.Int64, kind: EdgeCore.ClientLibrary.AI.Model.Kind? = .llm, chatTemplateHint: EdgeCore.ClientLibrary.AI.Model.CreateModelRequest.ChatTemplateHint? = nil, mmprojUrl: Swift.String? = nil, ownedBy: Swift.String? = nil, excludeFromBackup: Swift.Bool? = true)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.CreateModelRequest, b: EdgeCore.ClientLibrary.AI.Model.CreateModelRequest) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -758,10 +848,18 @@ extension EdgeCore.ClientLibrary.AI.Model {
   }
 }
 extension EdgeCore.ClientLibrary.Microservice {
-  public func call(config: EdgeCore.ClientLibrary.Microservice.Request.Config, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<Foundation.Data, Foundation.NSError>
-  public func call<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
-  public func callMultipartFormData(config: EdgeCore.ClientLibrary.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<Foundation.Data, Foundation.NSError>
-  public func callMultipartFormData<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async -> Swift.Result<T, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func call(config: EdgeCore.ClientLibrary.Microservice.Request.Config, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async throws -> Foundation.Data
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func call<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async throws -> T where T : Swift.Decodable, T : Swift.Encodable
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func callMultipartFormData(config: EdgeCore.ClientLibrary.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async throws -> Foundation.Data
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func callMultipartFormData<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, name: Swift.String, mimeType: Swift.String, data: Foundation.Data, type: T.Type, requestHandler: ((_ request: Alamofire.DataTask<Foundation.Data>) -> Swift.Void)? = nil) async throws -> T where T : Swift.Decodable, T : Swift.Encodable
+  #endif
 }
 extension EdgeCore.ClientLibrary.Microservice {
   public enum ServerSentEventType : Swift.Codable, Swift.Sendable {
@@ -777,7 +875,9 @@ extension EdgeCore.ClientLibrary.Microservice {
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
-  public func callStreamSSE(config: EdgeCore.ClientLibrary.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.ClientLibrary.Microservice.ServerSentEventType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func callStreamSSE(config: EdgeCore.ClientLibrary.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<EdgeCore.ClientLibrary.Microservice.ServerSentEventType, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async throws -> Alamofire.DataStreamRequest.Completion
+  #endif
 }
 extension EdgeCore.ClientLibrary {
   public struct Log : Swift.Codable, Swift.Sendable {
@@ -787,7 +887,9 @@ extension EdgeCore.ClientLibrary {
       case error
       case fault
       case off
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.Int)
+      #endif
       public typealias RawValue = Swift.Int
       public var rawValue: Swift.Int {
         get
@@ -796,7 +898,9 @@ extension EdgeCore.ClientLibrary {
     public enum Privacy : Swift.Int, Swift.Codable, Swift.Sendable {
       case privateOnly
       case publicAccess
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.Int)
+      #endif
       public typealias RawValue = Swift.Int
       public var rawValue: Swift.Int {
         get
@@ -828,7 +932,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var completionTokens: Swift.Int?
     public var totalTokens: Swift.Int?
     public var tokenPerSecond: Swift.Float?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(promptTokens: Swift.Int? = nil, completionTokens: Swift.Int? = nil, totalTokens: Swift.Int? = nil, tokenPerSecond: Swift.Float? = nil)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.Usage, b: EdgeCore.ClientLibrary.AI.Model.Usage) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -869,20 +975,44 @@ extension EdgeCore.ClientLibrary.Authorization {
     public var idToken: Swift.String? {
       get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(accessToken: Swift.String? = nil, refreshToken: Swift.String? = nil, scope: Swift.String? = nil, tokenType: Swift.String? = nil, expiresIn: Foundation.Date? = nil, idToken: Swift.String? = nil)
+    #endif
     public func validate() throws
+    #if compiler(>=5.3) && $NonescapableTypes
     public func decodeToJWT() -> (any JWTDecode.JWT)?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func decodeToJson() -> SwiftyJSON.JSON?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func subscriber() -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func clientId() -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public func valueFrom(key: Swift.String) -> Swift.String?
+    #endif
     public static func validate(token: Swift.String) throws
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func decodeToJWT(token: Swift.String) -> (any JWTDecode.JWT)?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func decodeToJson(token: Swift.String) -> SwiftyJSON.JSON?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func subscriber(token: Swift.String) -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func expiresIn(token: Swift.String) -> Foundation.Date?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func clientId(token: Swift.String) -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func valueFrom(token: Swift.String, key: Swift.String) -> Swift.String?
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -890,14 +1020,16 @@ extension EdgeCore.ClientLibrary.Authorization {
 extension EdgeCore.ClientLibrary.Request {
   public static func uploadContent(sourceFileUrl: Foundation.URL, destinationUrl: Foundation.URL, mimeType: Swift.String, progressHandler: @escaping EdgeCore.ClientLibrary.Request.ProgressHandler) async throws
   public static func downloadContent(sourceUrl: Foundation.URL, destinationFileUrl: Foundation.URL, progressHandler: @escaping EdgeCore.ClientLibrary.Request.ProgressHandler) async throws
-  public static func downloadImageContent(sourceUrl: Foundation.URL) async -> Swift.Result<UIKit.UIImage, Foundation.NSError>
+  public static func downloadImageContent(sourceUrl: Foundation.URL) async throws -> UIKit.UIImage
 }
 extension EdgeCore.ClientLibrary {
   public struct ImageResizeOptions {
     public var size: CoreFoundation.CGSize
     public var compressionQuality: CoreFoundation.CGFloat
     public var bytesLimit: Swift.Int?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(size: CoreFoundation.CGSize, compressionQuality: CoreFoundation.CGFloat, bytesLimit: Swift.Int? = nil)
+    #endif
   }
 }
 extension EdgeCore.ClientLibrary.Request {
@@ -910,7 +1042,9 @@ extension EdgeCore.ClientLibrary.Request {
     public let httpBody: Alamofire.Parameters?
     public let httpHeaders: Alamofire.HTTPHeaders?
     public let pagingHandler: EdgeCore.ClientLibrary.Request.PagingInfoHandler?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(service: EdgeCore.ClientLibrary.Service, path: Swift.String, method: Alamofire.HTTPMethod, queryItems: [Foundation.URLQueryItem]?, authorization: EdgeCore.ClientLibrary.Authorization?, httpBody: Alamofire.Parameters?, httpHeaders: Alamofire.HTTPHeaders? = nil, pagingHandler: EdgeCore.ClientLibrary.Request.PagingInfoHandler? = nil)
+    #endif
   }
 }
 extension EdgeCore.ClientLibrary {
@@ -929,7 +1063,9 @@ extension EdgeCore.ClientLibrary {
       case error
       case critical
       case off
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -940,7 +1076,9 @@ extension EdgeCore.ClientLibrary {
       case off
       case name
       case hwInfoOnly
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -949,19 +1087,25 @@ extension EdgeCore.ClientLibrary {
     public enum LocalDiscovery : Swift.String, Swift.Codable, Swift.Sendable {
       case on
       case off
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
       }
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     @_Concurrency.MainActor public init(license: Swift.String, logLevel: EdgeCore.ClientLibrary.RuntimeParameters.LogLevel = .error, nodeInfoLevel: EdgeCore.ClientLibrary.RuntimeParameters.NodeInfoLevel = .off, nodeName: Swift.String = UIDevice.current.name + "-" + UIDevice.current.model, localDiscovery: EdgeCore.ClientLibrary.RuntimeParameters.LocalDiscovery = .off, logFileDir: Swift.String? = nil)
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.ClientLibrary {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func passwordChange(email: Swift.String, currentPassword: Swift.String, newPassword: Swift.String, idToken: Swift.String?, service: EdgeCore.ClientLibrary.Service, webFlow: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Authorization
+  #endif
 }
 extension EdgeCore.ClientLibrary {
   public struct AuthUserData : Swift.Codable, Swift.Sendable {
@@ -975,14 +1119,20 @@ extension EdgeCore.ClientLibrary {
     public var phoneNumber: Swift.String?
     public var roles: [Swift.String]?
     public var identities: EdgeCore.ClientLibrary.JSONValue?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(userId: Swift.String?, email: Swift.String?, phoneNumber: Swift.String?, roles: [Swift.String]?, identities: EdgeCore.ClientLibrary.JSONValue?)
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.ClientLibrary.Microservice {
-  public func callStream(config: EdgeCore.ClientLibrary.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<Foundation.Data, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError>
-  public func callStream<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, type: T.Type, streamHandler: @escaping (_ stream: Swift.Result<T, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async -> Swift.Result<Alamofire.DataStreamRequest.Completion, Foundation.NSError> where T : Swift.Decodable, T : Swift.Encodable
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func callStream(config: EdgeCore.ClientLibrary.Microservice.Request.Config, streamHandler: @escaping (_ stream: Swift.Result<Foundation.Data, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async throws -> Alamofire.DataStreamRequest.Completion
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func callStream<T>(config: EdgeCore.ClientLibrary.Microservice.Request.Config, type: T.Type, streamHandler: @escaping (_ stream: Swift.Result<T, Foundation.NSError>) -> Swift.Void, requestHandler: @escaping (_ request: Alamofire.DataStreamRequest) -> Swift.Void) async throws -> Alamofire.DataStreamRequest.Completion where T : Swift.Decodable, T : Swift.Encodable
+  #endif
 }
 extension EdgeCore.ClientLibrary.AI.Model {
   public struct Choice : Swift.Codable, Swift.Sendable, Swift.Hashable {
@@ -991,7 +1141,9 @@ extension EdgeCore.ClientLibrary.AI.Model {
     public var message: EdgeCore.ClientLibrary.AI.Model.Message?
     public var logprobs: EdgeCore.ClientLibrary.JSONValue?
     public var finishReason: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(index: Swift.Int? = nil, delta: EdgeCore.ClientLibrary.AI.Model.Message? = nil, message: EdgeCore.ClientLibrary.AI.Model.Message? = nil, logprobs: EdgeCore.ClientLibrary.JSONValue? = nil, finishReason: Swift.String? = nil)
+    #endif
     public static func == (a: EdgeCore.ClientLibrary.AI.Model.Choice, b: EdgeCore.ClientLibrary.AI.Model.Choice) -> Swift.Bool
     public func encode(to encoder: any Swift.Encoder) throws
     public func hash(into hasher: inout Swift.Hasher)
@@ -1003,23 +1155,41 @@ extension EdgeCore.ClientLibrary.AI.Model {
 }
 extension EdgeCore.ClientLibrary {
   public struct Document : Swift.Codable, Swift.Sendable {
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func uttypeFor(filenameExtension: Swift.String) -> UniformTypeIdentifiers.UTType?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func uttypeFor(mimeType: Swift.String) -> UniformTypeIdentifiers.UTType?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func filenameExtensionFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func filenameExtentionFor(mimeType: Swift.String) -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func mimeTypeFor(type: UniformTypeIdentifiers.UTType) -> Swift.String?
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func mimeTypeFor(filenameExtension: Swift.String) -> Swift.String?
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }
 }
 extension EdgeCore.ClientLibrary {
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(*, unavailable, message: "Start using DeveloperConsole/Apps/authenticateRuntime function instead.")
   public static func authorizeDeveloper(developerIdToken: Swift.String, runtimeIdToken: Swift.String?) async -> Swift.Result<EdgeCore.ClientLibrary.Authorization, Foundation.NSError>
+  #endif
 }
 extension EdgeCore.ClientLibrary {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func passwordReset(email: Swift.String, idToken: Swift.String?, service: EdgeCore.ClientLibrary.Service, webFlow: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Authorization
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func verifyPasswordReset(codes: EdgeCore.ClientLibrary.Authorization.ValidationCodes, newPassword: Swift.String, idToken: Swift.String?, service: EdgeCore.ClientLibrary.Service, webFlow: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Authorization
+  #endif
 }
 extension EdgeCore.ClientLibrary.Service {
   public struct HealthCheckData : Swift.Codable, Swift.Sendable {
@@ -1134,12 +1304,18 @@ public protocol ClientRuntime {
   @_Concurrency.MainActor static func restartRuntime() async throws
   @_Concurrency.MainActor static func resetRuntime() throws
   @_Concurrency.MainActor static func runtimeIsRunning() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   static func runtimeParameters() -> EdgeCore.ClientLibrary.RuntimeParameters?
+  #endif
   static func runtimeLifecycleIsManaged() -> Swift.Bool
 }
 extension EdgeCore.ClientLibrary {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func signup(email: Swift.String, password: Swift.String, idToken: Swift.String?, service: EdgeCore.ClientLibrary.Service, webFlow: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Authorization
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func verifySignup(codes: EdgeCore.ClientLibrary.Authorization.ValidationCodes, password: Swift.String, idToken: Swift.String?, service: EdgeCore.ClientLibrary.Service, webFlow: Swift.Bool = false) async throws -> EdgeCore.ClientLibrary.Authorization
+  #endif
 }
 extension EdgeCore.ClientLibrary {
   public static func initiateAccountDeletion(email: Swift.String, password: Swift.String, idToken: Swift.String, service: EdgeCore.ClientLibrary.Service) async throws -> EdgeCore.ClientLibrary.Authorization
@@ -1154,7 +1330,9 @@ extension EdgeCore.ClientLibrary.Request {
   open class URLComponentsBuilder {
     public init()
     open func create() -> Foundation.URLComponents
+    #if compiler(>=5.3) && $NonescapableTypes
     open func set(components: Foundation.URLComponents?) -> EdgeCore.ClientLibrary.Request.URLComponentsBuilder
+    #endif
     open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int, path: Swift.String) -> EdgeCore.ClientLibrary.Request.URLComponentsBuilder
     open func set(scheme: Swift.String, host: Swift.String, port: Swift.Int) -> EdgeCore.ClientLibrary.Request.URLComponentsBuilder
     open func set(scheme: Swift.String) -> EdgeCore.ClientLibrary.Request.URLComponentsBuilder
@@ -1181,11 +1359,15 @@ extension EdgeCore.ClientLibrary.Microservice {
 }
 extension EdgeCore.ClientLibrary.AI {
   public struct Model : Swift.Codable, Swift.Sendable, Swift.Hashable {
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(id: Swift.String? = nil, kind: EdgeCore.ClientLibrary.AI.Model.Kind? = nil, object: EdgeCore.ClientLibrary.AI.Model.Object? = nil, created: Swift.Int? = nil, ownedBy: Swift.String? = nil, readyToUse: Swift.Bool? = nil, totalSize: Swift.Double? = nil, mmprojTotalSize: Swift.Double? = nil, excludeFromBackup: Swift.Bool? = nil, url: Swift.String? = nil, mmprojUrl: Swift.String? = nil, modelChatHint: Swift.String? = nil, serviceType: Swift.String? = nil)
+    #endif
     public var id: Swift.String?
     public enum Object : Swift.String, Swift.Codable, Swift.Sendable, Swift.Hashable {
       case model
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -1194,7 +1376,9 @@ extension EdgeCore.ClientLibrary.AI {
     public enum Kind : Swift.String, Swift.Codable, Swift.Sendable, Swift.Hashable {
       case llm
       case vlm
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -1237,7 +1421,9 @@ extension EdgeCore.ClientLibrary.Request {
 }
 extension EdgeCore.ClientLibrary {
   public struct Request : Swift.Codable, Swift.Sendable {
-    public static func authorizedRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, authorization: EdgeCore.ClientLibrary.Authorization?, httpHeaders: Alamofire.HTTPHeaders?, httpBody: Alamofire.Parameters?, contentType: Swift.String = "application/json") -> Foundation.URLRequest?
+    #if compiler(>=5.3) && $NonescapableTypes
+    public static func authorizedRequest(url: Foundation.URL, method: Alamofire.HTTPMethod, authorization: EdgeCore.ClientLibrary.Authorization?, httpHeaders: Alamofire.HTTPHeaders?, httpBody: Alamofire.Parameters?, contentType: Swift.String = "application/json") throws -> Foundation.URLRequest
+    #endif
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
   }

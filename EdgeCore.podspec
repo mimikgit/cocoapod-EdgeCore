@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EdgeCore"
-  s.version      = "5.10.0"
+  s.version      = "5.10.1"
   s.summary      = "SDK for embedding mim OE with APIs for auth, device discovery, microservice management, AI models, and Dev Console."
 
   s.description  = <<-DESC
